@@ -35,7 +35,6 @@ namespace DIA_Project
             this.button1 = new System.Windows.Forms.Button();
             this.DashboardBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.UserNameTB = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.MaximizeBtn = new System.Windows.Forms.Button();
@@ -67,7 +66,7 @@ namespace DIA_Project
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.Location = new System.Drawing.Point(0, 279);
             this.button3.Name = "button3";
@@ -83,7 +82,7 @@ namespace DIA_Project
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.Location = new System.Drawing.Point(0, 234);
             this.button2.Name = "button2";
@@ -99,7 +98,7 @@ namespace DIA_Project
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.Location = new System.Drawing.Point(0, 189);
             this.button1.Name = "button1";
@@ -115,7 +114,7 @@ namespace DIA_Project
             this.DashboardBtn.FlatAppearance.BorderSize = 0;
             this.DashboardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DashboardBtn.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.DashboardBtn.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.DashboardBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.DashboardBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.DashboardBtn.Location = new System.Drawing.Point(0, 144);
             this.DashboardBtn.Name = "DashboardBtn";
@@ -127,7 +126,6 @@ namespace DIA_Project
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.UserNameTB);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -135,23 +133,12 @@ namespace DIA_Project
             this.panel2.Size = new System.Drawing.Size(185, 144);
             this.panel2.TabIndex = 0;
             // 
-            // UserNameTB
-            // 
-            this.UserNameTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.UserNameTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.UserNameTB.Location = new System.Drawing.Point(0, 91);
-            this.UserNameTB.Name = "UserNameTB";
-            this.UserNameTB.Size = new System.Drawing.Size(185, 18);
-            this.UserNameTB.TabIndex = 1;
-            this.UserNameTB.Text = "User Name";
-            this.UserNameTB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::DIA_Project.Properties.Resources.profilepic;
-            this.pictureBox1.Location = new System.Drawing.Point(60, 25);
+            this.pictureBox1.Image = global::DIA_Project.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(43, 21);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 63);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -174,7 +161,7 @@ namespace DIA_Project
             this.MaximizeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.MaximizeBtn.FlatAppearance.BorderSize = 0;
             this.MaximizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MaximizeBtn.Image = global::DIA_Project.Properties.Resources.maximize__1_;
+            this.MaximizeBtn.Image = global::DIA_Project.Properties.Resources.maximize;
             this.MaximizeBtn.Location = new System.Drawing.Point(699, 0);
             this.MaximizeBtn.Name = "MaximizeBtn";
             this.MaximizeBtn.Size = new System.Drawing.Size(30, 30);
@@ -235,7 +222,6 @@ namespace DIA_Project
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button DashboardBtn;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label UserNameTB;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
