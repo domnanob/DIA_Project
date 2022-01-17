@@ -130,7 +130,7 @@ namespace DIA_Project.Forms
             this.LogoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LogoutBtn.Location = new System.Drawing.Point(0, 535);
             this.LogoutBtn.Name = "LogoutBtn";
-            this.LogoutBtn.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.LogoutBtn.Padding = new System.Windows.Forms.Padding(0, 0, 12, 0);
             this.LogoutBtn.Size = new System.Drawing.Size(190, 45);
             this.LogoutBtn.TabIndex = 4;
             this.LogoutBtn.Text = "Kijelentkezés";
@@ -165,11 +165,11 @@ namespace DIA_Project.Forms
             this.DolgozatokBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DolgozatokBtn.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DolgozatokBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.DolgozatokBtn.Image = global::DIA_Project.Properties.Resources.exam;
+            this.DolgozatokBtn.Image = global::DIA_Project.Properties.Resources.tests;
             this.DolgozatokBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.DolgozatokBtn.Location = new System.Drawing.Point(0, 189);
             this.DolgozatokBtn.Name = "DolgozatokBtn";
-            this.DolgozatokBtn.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
+            this.DolgozatokBtn.Padding = new System.Windows.Forms.Padding(0, 0, 9, 0);
             this.DolgozatokBtn.Size = new System.Drawing.Size(190, 45);
             this.DolgozatokBtn.TabIndex = 2;
             this.DolgozatokBtn.Text = "Dolgozatok";

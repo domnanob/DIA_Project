@@ -93,7 +93,12 @@ namespace DIA_Project.Forms
 
         private void ExitBtn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            WarningMessageForm WMF = new WarningMessageForm("Biztosan ki szeretnél lépni?");
+            WMF.ShowDialog();
+            if (WMF.DialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void MinimizeBtn_Click(object sender, EventArgs e)

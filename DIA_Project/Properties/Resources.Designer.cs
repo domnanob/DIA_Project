@@ -163,9 +163,9 @@ namespace DIA_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap profilepic {
+        public static System.Drawing.Bitmap repair_tool {
             get {
-                object obj = ResourceManager.GetObject("profilepic", resourceCulture);
+                object obj = ResourceManager.GetObject("repair_tool", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +173,9 @@ namespace DIA_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap repair_tool {
+        public static System.Drawing.Bitmap tests {
             get {
-                object obj = ResourceManager.GetObject("repair_tool", resourceCulture);
+                object obj = ResourceManager.GetObject("tests", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
