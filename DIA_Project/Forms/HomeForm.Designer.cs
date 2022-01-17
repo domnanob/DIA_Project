@@ -90,7 +90,7 @@ namespace DIA_Project.Forms
             this.InfoBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.InfoBtn.Location = new System.Drawing.Point(0, 324);
             this.InfoBtn.Name = "InfoBtn";
-            this.InfoBtn.Padding = new System.Windows.Forms.Padding(0, 0, 12, 0);
+            this.InfoBtn.Padding = new System.Windows.Forms.Padding(0, 0, 11, 0);
             this.InfoBtn.Size = new System.Drawing.Size(190, 45);
             this.InfoBtn.TabIndex = 5;
             this.InfoBtn.Text = "Info";
