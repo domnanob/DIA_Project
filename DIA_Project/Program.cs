@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DIA_Project.Forms;
 
 namespace DIA_Project
 { 
@@ -23,7 +24,7 @@ namespace DIA_Project
             BF.ShowDialog();
             if (BF.IsLoggedIn)
             {
-                Application.Run(new Form1());
+                Application.Run(new HomeForm());
             }
         }
     }

@@ -1,5 +1,5 @@
 ﻿
-namespace DIA_Project
+namespace DIA_Project.Forms
 {
     partial class BejelentkezesForm
     {
@@ -156,6 +156,7 @@ namespace DIA_Project
             this.JelszoTB.PlaceholderText = "Jelszó";
             this.JelszoTB.Size = new System.Drawing.Size(246, 23);
             this.JelszoTB.TabIndex = 2;
+            this.JelszoTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.JelszoTB_KeyPress);
             // 
             // BejelentkezesBtn
             // 

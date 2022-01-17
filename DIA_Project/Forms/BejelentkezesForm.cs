@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DIA_Project.Models;
 using DIA_Project.Lib;
 
-namespace DIA_Project
+namespace DIA_Project.Forms
 {
     public partial class BejelentkezesForm : Form
     {
@@ -34,9 +34,7 @@ namespace DIA_Project
                 }
             });
         }
-
-        private void BejelentkezesBtn_Click(object sender, EventArgs e)
-        {
+        private void Bejelentkezes() {
             List<string> Usersnames = new List<string>();
             foreach (Users u in list)
             {
@@ -83,9 +81,14 @@ namespace DIA_Project
                     }
                 }
             }
-            else {
+            else
+            {
                 MessageBox.Show("Hibás felhasználónév vagy jelszó!", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void BejelentkezesBtn_Click(object sender, EventArgs e)
+        {
+            Bejelentkezes();
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -104,5 +107,12 @@ namespace DIA_Project
             FrameMover.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        private void JelszoTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Convert.ToInt32(e.KeyChar) == 13)
+            {
+                Bejelentkezes();
+            }
+        }
     }
 }
