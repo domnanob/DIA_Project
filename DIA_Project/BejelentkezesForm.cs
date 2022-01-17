@@ -20,6 +20,7 @@ namespace DIA_Project
             _Load().GetAwaiter();
         }
         private List<Users> list = new List<Users>();
+        public Boolean IsLoggedIn = false;
         private async Task _Load()
         {
             await Task.Run(() =>
@@ -55,7 +56,9 @@ namespace DIA_Project
                             sql.SaveChanges();
                             if (u.RoleID == 1)
                             {
-                                MessageBox.Show("Sikeres bejelentkezés", "Login success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                IsLoggedIn = true;
+                                this.Close();
+                                //MessageBox.Show("Sikeres bejelentkezés", "Login success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
                             {
@@ -83,6 +86,22 @@ namespace DIA_Project
             else {
                 MessageBox.Show("Hibás felhasználónév vagy jelszó!", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void MinimizeBtn_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            FrameMover.ReleaseCapture();
+            FrameMover.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
     }

@@ -19,7 +19,12 @@ namespace DIA_Project
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             SQL.ConnectionString = Program.ConnectionString;
-            Application.Run(new Form1());
+            BejelentkezesForm BF = new BejelentkezesForm();
+            BF.ShowDialog();
+            if (BF.IsLoggedIn)
+            {
+                Application.Run(new Form1());
+            }
         }
     }
 }
