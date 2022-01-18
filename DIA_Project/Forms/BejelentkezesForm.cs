@@ -21,6 +21,7 @@ namespace DIA_Project.Forms
         }
         private List<Users> list = new List<Users>();
         public Boolean IsLoggedIn = false;
+        public Users CurrentUser = new Users();
         private async Task _Load()
         {
             await Task.Run(() =>
@@ -55,6 +56,7 @@ namespace DIA_Project.Forms
                             if (u.RoleID == 1)
                             {
                                 IsLoggedIn = true;
+                                CurrentUser = u;
                                 this.Close();
                                 //MessageBox.Show("Sikeres bejelentkezés", "Login success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }

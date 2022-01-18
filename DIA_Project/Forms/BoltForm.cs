@@ -8,14 +8,16 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DIA_Project.Models;
 
 namespace DIA_Project.Forms
 {
     public partial class BoltForm : Form
     {
-        public BoltForm()
+        public BoltForm(Users u)
         {
             InitializeComponent();
+            PontL.Text = u.Money + "";
         }
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -28,16 +30,11 @@ namespace DIA_Project.Forms
             int nHeightEllipse // height of ellipse
         );
 
-
-        private void button1_Paint(object sender, PaintEventArgs e)
+        private void buttons_Paint(object sender, PaintEventArgs e)
         {
-            button1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button1.Width,
-            button1.Height, 30, 30));
-        }
-
-        private void button2_Paint(object sender, PaintEventArgs e)
-        {
-
+            var btn = sender as Button;
+            btn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn.Width,
+            btn.Height, 30, 30));
         }
     }
 }

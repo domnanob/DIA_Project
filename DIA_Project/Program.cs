@@ -24,7 +24,7 @@ namespace DIA_Project
             BF.ShowDialog();
             if (BF.IsLoggedIn)
             {
-                Application.Run(new HomeForm());
+                Application.Run(new HomeForm(BF.CurrentUser));
             }
         }
     }

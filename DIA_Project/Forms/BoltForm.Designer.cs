@@ -36,8 +36,10 @@ namespace DIA_Project.Forms
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.PontL = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -70,9 +72,9 @@ namespace DIA_Project.Forms
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(213, 120);
             this.button1.TabIndex = 9;
-            this.button1.Text = "világos kék";
+            this.button1.Text = "Felelés felmetés";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Paint += new System.Windows.Forms.PaintEventHandler(this.button2_Paint);
+            this.button1.Paint += new System.Windows.Forms.PaintEventHandler(this.buttons_Paint);
             // 
             // button2
             // 
@@ -83,9 +85,9 @@ namespace DIA_Project.Forms
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(213, 120);
             this.button2.TabIndex = 10;
-            this.button2.Text = "világos lila";
+            this.button2.Text = "Házifeladat felmentés";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Paint += new System.Windows.Forms.PaintEventHandler(this.button2_Paint);
+            this.button2.Paint += new System.Windows.Forms.PaintEventHandler(this.buttons_Paint);
             // 
             // button3
             // 
@@ -96,22 +98,22 @@ namespace DIA_Project.Forms
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(213, 120);
             this.button3.TabIndex = 9;
-            this.button3.Text = "sötét zöld";
+            this.button3.Text = "5-ös érdemjegy";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Paint += new System.Windows.Forms.PaintEventHandler(this.button2_Paint);
+            this.button3.Paint += new System.Windows.Forms.PaintEventHandler(this.buttons_Paint);
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(132)))));
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Location = new System.Drawing.Point(34, 249);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(213, 120);
             this.button4.TabIndex = 10;
-            this.button4.Text = "világos zöld";
+            this.button4.Text = "Késés felmentés";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Paint += new System.Windows.Forms.PaintEventHandler(this.button2_Paint);
+            this.button4.Paint += new System.Windows.Forms.PaintEventHandler(this.buttons_Paint);
             // 
             // button5
             // 
@@ -122,22 +124,28 @@ namespace DIA_Project.Forms
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(213, 120);
             this.button5.TabIndex = 9;
-            this.button5.Text = "sötét lila";
+            this.button5.Text = "Több...";
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Paint += new System.Windows.Forms.PaintEventHandler(this.button2_Paint);
+            this.button5.Paint += new System.Windows.Forms.PaintEventHandler(this.buttons_Paint);
             // 
-            // button6
+            // pictureBox2
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(132)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(511, 249);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(213, 120);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "sötét kék";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Paint += new System.Windows.Forms.PaintEventHandler(this.button2_Paint);
+            this.pictureBox2.Image = global::DIA_Project.Properties.Resources.coins;
+            this.pictureBox2.Location = new System.Drawing.Point(692, 39);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // PontL
+            // 
+            this.PontL.Location = new System.Drawing.Point(641, 45);
+            this.PontL.Name = "PontL";
+            this.PontL.Size = new System.Drawing.Size(50, 20);
+            this.PontL.TabIndex = 12;
+            this.PontL.Text = "Pont";
+            this.PontL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // BoltForm
             // 
@@ -145,9 +153,10 @@ namespace DIA_Project.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(760, 548);
+            this.Controls.Add(this.PontL);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -158,6 +167,7 @@ namespace DIA_Project.Forms
             this.Name = "BoltForm";
             this.Text = "BoltForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,6 +182,7 @@ namespace DIA_Project.Forms
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label PontL;
     }
 }

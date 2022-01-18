@@ -9,12 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DIA_Project.Lib;
+using DIA_Project.Models;
 
 namespace DIA_Project.Forms
 {
     public partial class HomeForm : Form
     {
-        public HomeForm()
+        public HomeForm(Users CU)
         {
             InitializeComponent();
             this.Text = string.Empty;
@@ -28,7 +29,9 @@ namespace DIA_Project.Forms
             NavArrowP.Left = HomeBtn.Left;
             HomeBtn.BackColor = Color.FromArgb(46, 51, 73);
             OpenChildForm(new DashBoardForm());
+            CurrentUser = CU;
         }
+        public Users CurrentUser = new Users();
         private Form currentChildForm;
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
@@ -95,7 +98,9 @@ namespace DIA_Project.Forms
                 this.Hide();
                 BejelentkezesForm BF = new BejelentkezesForm();
                 BF.ShowDialog();
-                this.Show();
+                HomeForm HF = new HomeForm(BF.CurrentUser);
+                HF.ShowDialog();
+                this.Close();
             }
             LogoutBtn.BackColor = Color.FromArgb(24, 30, 54);
         }
@@ -133,7 +138,7 @@ namespace DIA_Project.Forms
             NavArrowP.Top = BoltBtn.Top;
             NavArrowP.Left = BoltBtn.Left;
             BoltBtn.BackColor = Color.FromArgb(46, 51, 73);
-            OpenChildForm(new BoltForm());
+            OpenChildForm(new BoltForm(CurrentUser));
         }
 
         private void InfoBtn_Click(object sender, EventArgs e)
