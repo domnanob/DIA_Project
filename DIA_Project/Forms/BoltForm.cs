@@ -18,7 +18,9 @@ namespace DIA_Project.Forms
         {
             InitializeComponent();
             PontL.Text = u.Money + "";
+            CurrentUser = u;
         }
+        Users CurrentUser = new Users();
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -55,6 +57,54 @@ namespace DIA_Project.Forms
                     break;
                 default:
                     return;
+            }
+        }
+
+        private void Panels_MouseClick(object sender, MouseEventArgs e)
+        {
+            var Pnl = sender as Panel;
+            int price = 0;
+            string item = string.Empty;
+            switch (Pnl.Name)
+            {
+                case "Panel1":
+                    price = int.Parse(Panel1PriceL.Text);
+                    item = Panel1Text.Text + "-et";
+                    break;
+                case "Panel2":
+                    price = int.Parse(Panel2PriceL.Text);
+                    item = Panel2Text.Text + "-t";
+                    break;
+                case "Panel3":
+                    price = int.Parse(Panel3PriceL.Text);
+                    item = Panel3Text.Text + "-t";
+                    break;
+                case "Panel4":
+                    price = int.Parse(Panel4PriceL.Text);
+                    item = Panel4Text.Text + "-et";
+                    break;
+                default:
+                    break;
+            }
+            WarningMessageForm WMF = new WarningMessageForm("Biztosan meg szeretnéd vásárolni a(z) " + item + " " + price + " áron?");
+            WMF.ShowDialog();
+            if (WMF.DialogResult == DialogResult.Yes)
+            {
+                using (SQL sql = SQL.MySql())
+                {
+                    Users u = sql.users.Single(a => a.Username == CurrentUser.Username);
+                    if (u.Money - price >= 0)
+                    {
+                        u.Money = u.Money - price;
+                        PontL.Text = u.Money + string.Empty;
+                        sql.SaveChanges();
+                    }
+                    else
+                    {
+                        ErrorMessageForm EMF = new ErrorMessageForm("Sajnos nincs elég pénzed!");
+                        EMF.ShowDialog();
+                    }
+                }
             }
         }
     }

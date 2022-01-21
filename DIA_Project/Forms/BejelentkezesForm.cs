@@ -79,6 +79,7 @@ namespace DIA_Project.Forms
                         else
                         {
                             MessageBox.Show("Hibás felhasználónév vagy jelszó!", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            JelszoTB.Text = string.Empty;
                         }
                     }
                 }
@@ -86,6 +87,7 @@ namespace DIA_Project.Forms
             else
             {
                 MessageBox.Show("Hibás felhasználónév vagy jelszó!", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                JelszoTB.Text = string.Empty;
             }
         }
         private void BejelentkezesBtn_Click(object sender, EventArgs e)
