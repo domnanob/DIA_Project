@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DIA_Project.Forms;
+using DIA_Project.Forms.TeacherForms;
+using DIA_Project.Forms.UserForms;
 
 namespace DIA_Project
 { 
@@ -11,6 +13,24 @@ namespace DIA_Project
     {
         public static string ConnectionString = "Server=localhost;Database=szakdoga;Uid=root;";
         public static HomeForm HF = new HomeForm(new Models.Users());
+        public static TeacherHomeForm TF = new TeacherHomeForm(new Models.Teachers());
+        public static void FormLoader() {
+            BejelentkezesForm BF = new BejelentkezesForm();
+            BF.ShowDialog();
+            if (BF.IsLoggedIn)
+            {
+                if (BF.CurrentUser.Username != null)
+                {
+                    HF = new HomeForm(BF.CurrentUser);
+                    HF.ShowDialog();
+                }
+                else
+                {
+                    TF = new TeacherHomeForm(BF.CurrentTeacher);
+                    TF.ShowDialog();
+                }
+            }
+        }
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -21,22 +41,7 @@ namespace DIA_Project
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             SQL.ConnectionString = Program.ConnectionString;
-            BejelentkezesForm BF = new BejelentkezesForm();
-            BF.ShowDialog();
-            if (BF.IsLoggedIn)
-            {
-                if (BF.CurrentUser.Username != null)
-                {
-                    HF = new HomeForm(BF.CurrentUser);
-                    Application.Run(HF);
-                }
-                else
-                {
-                    ErrorMessageForm emf = new ErrorMessageForm("A tanár felület még készítés alatt!");
-                    emf.ShowDialog();
-                }
-            }
-            
+            FormLoader();
         }
     }
 }

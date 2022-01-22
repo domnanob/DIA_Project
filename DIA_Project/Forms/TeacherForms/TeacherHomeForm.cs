@@ -11,11 +11,11 @@ using System.Windows.Forms;
 using DIA_Project.Lib;
 using DIA_Project.Models;
 
-namespace DIA_Project.Forms
+namespace DIA_Project.Forms.TeacherForms
 {
-    public partial class HomeForm : Form
+    public partial class TeacherHomeForm : Form
     {
-        public HomeForm(Users CU)
+        public TeacherHomeForm(Teachers CT)
         {
             InitializeComponent();
             this.Text = string.Empty;
@@ -30,10 +30,10 @@ namespace DIA_Project.Forms
             HomeBtn.BackColor = Color.FromArgb(46, 51, 73);
             CurrentNavBtn = HomeBtn;
             OpenChildForm(new DashBoardForm());
-            CurrentUser = CU;
+            CurrentTeacher = CT;
         }
         private Button CurrentNavBtn = new Button();
-        public Users CurrentUser = new Users();
+        public Teachers CurrentTeacher = new Teachers();
         private Form currentChildForm;
         private void OpenChildForm(Form childForm)
         {
@@ -89,10 +89,7 @@ namespace DIA_Project.Forms
             if (WMF.DialogResult == DialogResult.Yes)
             {
                 this.Hide();
-                BejelentkezesForm BF = new BejelentkezesForm();
-                BF.ShowDialog();
-                HomeForm HF = new HomeForm(BF.CurrentUser);
-                HF.ShowDialog();
+                Program.FormLoader();
                 this.Close();
             }
             LogoutBtn.BackColor = Color.FromArgb(24, 30, 54);
@@ -121,10 +118,10 @@ namespace DIA_Project.Forms
                     OpenChildForm(new DolgozatokForm());
                     break;
                 case "ProfilBtn":
-                    OpenChildForm(new ProfileForm(CurrentUser));
+                    OpenChildForm(new TeacherProfileForm(CurrentTeacher));
                     break;
-                case "BoltBtn":
-                    OpenChildForm(new BoltForm(CurrentUser));
+                case "ClassesBtn":
+                    
                     break;
                 case "InfoBtn":
                     OpenChildForm(new InfoForm());

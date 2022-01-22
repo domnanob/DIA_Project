@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DIA_Project.Models;
 using DIA_Project.Lib;
 
-namespace DIA_Project.Forms
+namespace DIA_Project.Forms.UserForms
 {
     public partial class ProfileForm : Form
     {

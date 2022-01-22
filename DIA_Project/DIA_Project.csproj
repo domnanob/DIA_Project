@@ -13,10 +13,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Forms\SuccessMessageForm.cs">
+    <Compile Update="Forms\TeacherForms\TeacherProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\ErrorMessageForm.cs">
+    <Compile Update="Forms\TeacherForms\TeacherHomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\MessageForms\SuccessMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\MessageForms\ErrorMessageForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">

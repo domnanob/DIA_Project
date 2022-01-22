@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DIA_Project.Models;
 
-namespace DIA_Project.Forms
+namespace DIA_Project.Forms.UserForms
 {
     public partial class BoltForm : Form
     {
