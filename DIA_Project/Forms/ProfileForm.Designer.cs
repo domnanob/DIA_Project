@@ -64,9 +64,9 @@ namespace DIA_Project.Forms
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::DIA_Project.Properties.Resources.repair_tool;
-            this.pictureBox1.Location = new System.Drawing.Point(596, 431);
+            this.pictureBox1.Location = new System.Drawing.Point(602, 425);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 58);
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -172,7 +172,7 @@ namespace DIA_Project.Forms
             this.ClassCB.Name = "ClassCB";
             this.ClassCB.Size = new System.Drawing.Size(348, 28);
             this.ClassCB.TabIndex = 33;
-            this.ClassCB.SelectedIndexChanged += new System.EventHandler(this.TextBoxes_TextChanged);
+            this.ClassCB.TextChanged += new System.EventHandler(this.ClassCB_TextChanged);
             // 
             // MentesBtn
             // 

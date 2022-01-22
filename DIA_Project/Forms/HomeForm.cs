@@ -28,20 +28,13 @@ namespace DIA_Project.Forms
             NavArrowP.Top = HomeBtn.Top;
             NavArrowP.Left = HomeBtn.Left;
             HomeBtn.BackColor = Color.FromArgb(46, 51, 73);
+            CurrentNavBtn = HomeBtn;
             OpenChildForm(new DashBoardForm());
             CurrentUser = CU;
         }
+        private Button CurrentNavBtn = new Button();
         public Users CurrentUser = new Users();
         private Form currentChildForm;
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn(
-            int nLeftRect,
-            int nTopRect,
-            int nRightRect,
-            int nBottomRect,
-            int nWidthEllipse,
-            int nHeightEllipse
-        );
         private void OpenChildForm(Form childForm)
         {
             if (currentChildForm != childForm)
@@ -105,79 +98,40 @@ namespace DIA_Project.Forms
             LogoutBtn.BackColor = Color.FromArgb(24, 30, 54);
         }
 
-        private void HomeBtn_Click(object sender, EventArgs e)
-        {
-            NavArrowP.Height = HomeBtn.Height;
-            NavArrowP.Top = HomeBtn.Top;
-            NavArrowP.Left = HomeBtn.Left;
-            HomeBtn.BackColor = Color.FromArgb(46, 51, 73);
-            OpenChildForm(new DashBoardForm());
-        }
-
-        private void DolgozatokBtn_Click(object sender, EventArgs e)
-        {
-            NavArrowP.Height = DolgozatokBtn.Height;
-            NavArrowP.Top = DolgozatokBtn.Top;
-            NavArrowP.Left = DolgozatokBtn.Left;
-            DolgozatokBtn.BackColor = Color.FromArgb(46, 51, 73);
-            OpenChildForm(new DolgozatokForm());
-        }
-
-        private void ProfilBtn_Click(object sender, EventArgs e)
-        {
-            NavArrowP.Height = ProfilBtn.Height;
-            NavArrowP.Top = ProfilBtn.Top;
-            NavArrowP.Left = ProfilBtn.Left;
-            ProfilBtn.BackColor = Color.FromArgb(46, 51, 73);
-            OpenChildForm(new ProfileForm(CurrentUser));
-        }
-
-        private void BoltBtn_Click(object sender, EventArgs e)
-        {
-            NavArrowP.Height = BoltBtn.Height;
-            NavArrowP.Top = BoltBtn.Top;
-            NavArrowP.Left = BoltBtn.Left;
-            BoltBtn.BackColor = Color.FromArgb(46, 51, 73);
-            OpenChildForm(new BoltForm(CurrentUser));
-        }
-
-        private void InfoBtn_Click(object sender, EventArgs e)
-        {
-            NavArrowP.Height = InfoBtn.Height;
-            NavArrowP.Top = InfoBtn.Top;
-            NavArrowP.Left = InfoBtn.Left;
-            InfoBtn.BackColor = Color.FromArgb(46, 51, 73);
-            OpenChildForm(new InfoForm());
-        }
-
-        private void HomeBtn_Leave(object sender, EventArgs e)
-        {
-            HomeBtn.BackColor = Color.FromArgb(24, 30, 54);
-        }
-
-        private void DolgozatokBtn_Leave(object sender, EventArgs e)
-        {
-            DolgozatokBtn.BackColor = Color.FromArgb(24, 30, 54);
-        }
-
-        private void ProfilBtn_Leave(object sender, EventArgs e)
-        {
-            ProfilBtn.BackColor = Color.FromArgb(24, 30, 54);
-        }
-
-        private void BoltBtn_Leave(object sender, EventArgs e)
-        {
-            BoltBtn.BackColor = Color.FromArgb(24, 30, 54);
-        }
-
-        private void InfoBtn_Leave(object sender, EventArgs e)
-        {
-            InfoBtn.BackColor = Color.FromArgb(24, 30, 54);
-        }
-
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             OpenChildForm(new DashBoardForm());
+        }
+
+        private void NavButtons_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            NavArrowP.Height = btn.Height;
+            NavArrowP.Top = btn.Top;
+            NavArrowP.Left = btn.Left;
+            btn.BackColor = Color.FromArgb(46, 51, 73);
+            CurrentNavBtn.BackColor = Color.FromArgb(24, 30, 54);
+            CurrentNavBtn = btn;
+            switch (btn.Name)
+            {
+                case "HomeBtn":
+                    OpenChildForm(new DashBoardForm());
+                    break;
+                case "DolgozatokBtn":
+                    OpenChildForm(new DolgozatokForm());
+                    break;
+                case "ProfilBtn":
+                    OpenChildForm(new ProfileForm(CurrentUser));
+                    break;
+                case "BoltBtn":
+                    OpenChildForm(new BoltForm(CurrentUser));
+                    break;
+                case "InfoBtn":
+                    OpenChildForm(new InfoForm());
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

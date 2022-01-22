@@ -63,6 +63,32 @@ namespace DIA_Project.Forms
         private void Panels_MouseClick(object sender, MouseEventArgs e)
         {
             var Pnl = sender as Panel;
+            Vasarlas(Pnl);
+        }
+
+        private void Labels_Click(object sender, EventArgs e)
+        {
+            var Lb = sender as Label;
+            switch (Lb.Name)
+            {
+                case "Panel1Text":
+                    Vasarlas(Panel1);
+                    break;
+                case "Panel2Text":
+                    Vasarlas(Panel2);
+                    break;
+                case "Panel3Text":
+                    Vasarlas(Panel3);
+                    break;
+                case "Panel4Text":
+                    Vasarlas(Panel4);
+                    break;
+                default:
+                    break;
+            }
+        }
+        private void Vasarlas(Panel Pnl)
+        {
             int price = 0;
             string item = string.Empty;
             switch (Pnl.Name)

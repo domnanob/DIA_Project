@@ -30,7 +30,6 @@ namespace DIA_Project.Forms
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PontL = new System.Windows.Forms.Label();
             this.Panel1 = new System.Windows.Forms.Panel();
@@ -74,22 +73,12 @@ namespace DIA_Project.Forms
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::DIA_Project.Properties.Resources.repair_tool;
-            this.pictureBox1.Location = new System.Drawing.Point(611, 474);
+            this.pictureBox1.Location = new System.Drawing.Point(684, 472);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(77, 49);
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(528, 526);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(228, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "A Bolt menü még fejlesztés alatt!";
             // 
             // pictureBox2
             // 
@@ -150,6 +139,7 @@ namespace DIA_Project.Forms
             this.Panel1Text.Size = new System.Drawing.Size(151, 23);
             this.Panel1Text.TabIndex = 14;
             this.Panel1Text.Text = "Javítási lehetőség";
+            this.Panel1Text.Click += new System.EventHandler(this.Labels_Click);
             // 
             // Panel1PriceL
             // 
@@ -209,6 +199,7 @@ namespace DIA_Project.Forms
             this.Panel2Text.Size = new System.Drawing.Size(186, 23);
             this.Panel2Text.TabIndex = 16;
             this.Panel2Text.Text = "Házifeladat felmentés";
+            this.Panel2Text.Click += new System.EventHandler(this.Labels_Click);
             // 
             // Panel2PriceL
             // 
@@ -268,6 +259,7 @@ namespace DIA_Project.Forms
             this.Panel3Text.Size = new System.Drawing.Size(122, 23);
             this.Panel3Text.TabIndex = 18;
             this.Panel3Text.Text = "Késés igazolás";
+            this.Panel3Text.Click += new System.EventHandler(this.Labels_Click);
             // 
             // Panel3PriceL
             // 
@@ -327,6 +319,7 @@ namespace DIA_Project.Forms
             this.Panel4Text.Size = new System.Drawing.Size(139, 23);
             this.Panel4Text.TabIndex = 18;
             this.Panel4Text.Text = "Jeles érdemjegy";
+            this.Panel4Text.Click += new System.EventHandler(this.Labels_Click);
             // 
             // Panel4PriceL
             // 
@@ -372,7 +365,6 @@ namespace DIA_Project.Forms
             this.Controls.Add(this.PontL);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BoltForm";
@@ -396,14 +388,12 @@ namespace DIA_Project.Forms
             ((System.ComponentModel.ISupportInitialize)(this.Info4Pb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label PontL;
         private System.Windows.Forms.Panel Panel1;

@@ -81,6 +81,7 @@ namespace DIA_Project.Forms
             // 
             // InfoBtn
             // 
+            this.InfoBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.InfoBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.InfoBtn.FlatAppearance.BorderSize = 0;
             this.InfoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -96,11 +97,11 @@ namespace DIA_Project.Forms
             this.InfoBtn.Text = "Info";
             this.InfoBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.InfoBtn.UseVisualStyleBackColor = true;
-            this.InfoBtn.Click += new System.EventHandler(this.InfoBtn_Click);
-            this.InfoBtn.Leave += new System.EventHandler(this.InfoBtn_Leave);
+            this.InfoBtn.Click += new System.EventHandler(this.NavButtons_Click);
             // 
             // BoltBtn
             // 
+            this.BoltBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BoltBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.BoltBtn.FlatAppearance.BorderSize = 0;
             this.BoltBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -116,11 +117,11 @@ namespace DIA_Project.Forms
             this.BoltBtn.Text = "Bolt";
             this.BoltBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BoltBtn.UseVisualStyleBackColor = true;
-            this.BoltBtn.Click += new System.EventHandler(this.BoltBtn_Click);
-            this.BoltBtn.Leave += new System.EventHandler(this.BoltBtn_Leave);
+            this.BoltBtn.Click += new System.EventHandler(this.NavButtons_Click);
             // 
             // LogoutBtn
             // 
+            this.LogoutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogoutBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.LogoutBtn.FlatAppearance.BorderSize = 0;
             this.LogoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -140,6 +141,7 @@ namespace DIA_Project.Forms
             // 
             // ProfilBtn
             // 
+            this.ProfilBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ProfilBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.ProfilBtn.FlatAppearance.BorderSize = 0;
             this.ProfilBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -155,11 +157,11 @@ namespace DIA_Project.Forms
             this.ProfilBtn.Text = "Profil";
             this.ProfilBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.ProfilBtn.UseVisualStyleBackColor = true;
-            this.ProfilBtn.Click += new System.EventHandler(this.ProfilBtn_Click);
-            this.ProfilBtn.Leave += new System.EventHandler(this.ProfilBtn_Leave);
+            this.ProfilBtn.Click += new System.EventHandler(this.NavButtons_Click);
             // 
             // DolgozatokBtn
             // 
+            this.DolgozatokBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DolgozatokBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.DolgozatokBtn.FlatAppearance.BorderSize = 0;
             this.DolgozatokBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -175,11 +177,11 @@ namespace DIA_Project.Forms
             this.DolgozatokBtn.Text = "Dolgozatok";
             this.DolgozatokBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.DolgozatokBtn.UseVisualStyleBackColor = true;
-            this.DolgozatokBtn.Click += new System.EventHandler(this.DolgozatokBtn_Click);
-            this.DolgozatokBtn.Leave += new System.EventHandler(this.DolgozatokBtn_Leave);
+            this.DolgozatokBtn.Click += new System.EventHandler(this.NavButtons_Click);
             // 
             // HomeBtn
             // 
+            this.HomeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HomeBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.HomeBtn.FlatAppearance.BorderSize = 0;
             this.HomeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -195,8 +197,7 @@ namespace DIA_Project.Forms
             this.HomeBtn.Text = "Home";
             this.HomeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.HomeBtn.UseVisualStyleBackColor = true;
-            this.HomeBtn.Click += new System.EventHandler(this.HomeBtn_Click);
-            this.HomeBtn.Leave += new System.EventHandler(this.HomeBtn_Leave);
+            this.HomeBtn.Click += new System.EventHandler(this.NavButtons_Click);
             // 
             // panel2
             // 
@@ -211,6 +212,7 @@ namespace DIA_Project.Forms
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = global::DIA_Project.Properties.Resources.logo;
             this.pictureBox3.Location = new System.Drawing.Point(27, 14);
             this.pictureBox3.Name = "pictureBox3";
