@@ -8,23 +8,20 @@ using System.Threading.Tasks;
 
 namespace DIA_Project.Models
 {
-    [Table("tests")]
-    public class Tests
+    [Table("positions")]
+    public class Positions
     {
         [Key]
         public int ID { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string TeacherID { get; set; }
+
+        [Required]
+        public int ClassID { get; set; }
 
         [Required]
         public int SubjectID { get; set; }
-
-        [Required]
-        public int Locked { get; set; } = 0;
-
-        [Required]
-        public DateTime FinishDate { get; set; }
 
 
 

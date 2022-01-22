@@ -19,9 +19,11 @@ namespace DIA_Project.Forms
             InitializeComponent();
             _Load().GetAwaiter();
         }
-        private List<Users> list = new List<Users>();
+        private List<string> Ulist = new List<string>();
+        private List<string> Tlist = new List<string>();
         public Boolean IsLoggedIn = false;
         public Users CurrentUser = new Users();
+        public Teachers CurrentTeacher = new Teachers();
         private async Task _Load()
         {
             await Task.Run(() =>
@@ -30,59 +32,58 @@ namespace DIA_Project.Forms
                 {
                     foreach (Users u in sql.users)
                     {
-                        list.Add(u);
+                        Ulist.Add(u.Username);
+                    }
+                    foreach (Teachers t in sql.teachers)
+                    {
+                        Tlist.Add(t.Username);
                     }
                 }
             });
         }
         private void Bejelentkezes() {
-            List<string> Usersnames = new List<string>();
-            foreach (Users u in list)
-            {
-                Usersnames.Add(u.Username);
-            }
-            if (Usersnames.Contains(FelhTB.Text))
+            if (Ulist.Contains(FelhTB.Text))
             {
                 using (SQL sql = SQL.MySql())
                 {
                     Users u = sql.users.Single(a => a.Username == FelhTB.Text);
-                    foreach (Users item in list)
+                    bool result = SecurePasswordHasher.Verify(JelszoTB.Text, u.Password);
+                    if (result)
                     {
-                        bool result = SecurePasswordHasher.Verify(JelszoTB.Text, item.Password);
-                        if (result)
-                        {
-                            u.LastLogon = DateTime.Now;
-                            sql.SaveChanges();
-                            if (u.RoleID == 1)
-                            {
-                                IsLoggedIn = true;
-                                CurrentUser = u;
-                                this.Close();
-                                //MessageBox.Show("Sikeres bejelentkezés", "Login success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            else
-                            {
-                                /*
-                                UserForm UF = new UserForm(u);
-                                this.Hide();
-                                UF.ShowDialog();
-                                if (UF.DialogResult == DialogResult.OK)
-                                {
-                                    this.Show();
-                                    FelhTB.Text = "";
-                                    JelszoTB.Text = "";
-                                    return;
-                                }
-                                this.Close();*/
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Hibás felhasználónév vagy jelszó!", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            JelszoTB.Text = string.Empty;
-                        }
+                        u.LastLogon = DateTime.Now;
+                        sql.SaveChanges();
+                        IsLoggedIn = true;
+                        CurrentUser = u;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hibás felhasználónév vagy jelszó!", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        JelszoTB.Text = string.Empty;
+                    }                    
+                }
+            }
+            else if (Tlist.Contains(FelhTB.Text))
+            {
+                using (SQL sql = SQL.MySql())
+                {
+                    Teachers t = sql.teachers.Single(a => a.Username == FelhTB.Text);
+                    bool result = SecurePasswordHasher.Verify(JelszoTB.Text, t.Password);
+                    if (result)
+                    {
+                        t.LastLogon = DateTime.Now;
+                        sql.SaveChanges();
+                        IsLoggedIn = true;
+                        CurrentTeacher = t;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hibás felhasználónév vagy jelszó!", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        JelszoTB.Text = string.Empty;
                     }
                 }
+
             }
             else
             {
@@ -123,9 +124,5 @@ namespace DIA_Project.Forms
                 Bejelentkezes();
             }
         }
-
-
-
-        
     }
 }

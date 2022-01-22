@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace DIA_Project.Models
 {
-    [Table("users")]
-    public class Users
+    [Table("teachers")]
+    public class Teachers
     {
         [Key]
         public string Username { get; set; }
@@ -24,18 +24,10 @@ namespace DIA_Project.Models
         public int Enable { get; set; } = 1;
 
         [Required]
-        public DateTime LastLogon { get; set; } = DateTime.Now;
-
-        [Required]
-        public int Money { get; set; }
-
-        [Required]
-        public int ClassID { get; set; }
-
-        [Required]
         public string Email { get; set; }
 
         [Required]
-        public int RoleID { get; set; }
+        public DateTime LastLogon { get; set; } = DateTime.Now;
+
     }
 }

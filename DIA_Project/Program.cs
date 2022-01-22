@@ -24,7 +24,15 @@ namespace DIA_Project
             BF.ShowDialog();
             if (BF.IsLoggedIn)
             {
-                Application.Run(new HomeForm(BF.CurrentUser));
+                if (BF.CurrentUser.Username != null)
+                {
+                    Application.Run(new HomeForm(BF.CurrentUser));
+                }
+                else
+                {
+                    ErrorMessageForm emf = new ErrorMessageForm("A tanár felület még készítés alatt!");
+                    emf.ShowDialog();
+                }
             }
         }
     }
