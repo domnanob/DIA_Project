@@ -294,6 +294,7 @@ namespace DIA_Project.Forms
             // 
             // DesktopP
             // 
+            this.DesktopP.AutoScroll = true;
             this.DesktopP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DesktopP.Location = new System.Drawing.Point(190, 32);
             this.DesktopP.Name = "DesktopP";

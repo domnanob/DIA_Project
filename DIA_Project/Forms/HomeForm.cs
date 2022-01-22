@@ -129,7 +129,7 @@ namespace DIA_Project.Forms
             NavArrowP.Top = ProfilBtn.Top;
             NavArrowP.Left = ProfilBtn.Left;
             ProfilBtn.BackColor = Color.FromArgb(46, 51, 73);
-            OpenChildForm(new ProfileForm());
+            OpenChildForm(new ProfileForm(CurrentUser));
         }
 
         private void BoltBtn_Click(object sender, EventArgs e)

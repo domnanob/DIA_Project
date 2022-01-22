@@ -10,6 +10,7 @@ namespace DIA_Project
     static class Program
     {
         public static string ConnectionString = "Server=localhost;Database=szakdoga;Uid=root;";
+        public static HomeForm HF = new HomeForm(new Models.Users());
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -26,7 +27,8 @@ namespace DIA_Project
             {
                 if (BF.CurrentUser.Username != null)
                 {
-                    Application.Run(new HomeForm(BF.CurrentUser));
+                    HF = new HomeForm(BF.CurrentUser);
+                    Application.Run(HF);
                 }
                 else
                 {
@@ -34,6 +36,7 @@ namespace DIA_Project
                     emf.ShowDialog();
                 }
             }
+            
         }
     }
 }
