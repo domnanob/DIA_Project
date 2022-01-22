@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DIA_Project.Lib;
 using DIA_Project.Models;
+using DIA_Project.Forms;
 
 namespace DIA_Project.Forms.TeacherForms
 {
@@ -121,7 +122,7 @@ namespace DIA_Project.Forms.TeacherForms
                     OpenChildForm(new TeacherProfileForm(CurrentTeacher));
                     break;
                 case "ClassesBtn":
-                    
+                    OpenChildForm(new ClassesForm(CurrentTeacher));
                     break;
                 case "InfoBtn":
                     OpenChildForm(new InfoForm());
