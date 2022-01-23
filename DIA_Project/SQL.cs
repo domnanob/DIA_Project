@@ -34,6 +34,7 @@ namespace DIA_Project
         public DbSet<Teachers> teachers { get; set; }
         public DbSet<Subjects> subjects { get; set; }
         public DbSet<Positions> positions { get; set; }
+        public DbSet<Purchases> purchases { get; set; }
 
     }
 }

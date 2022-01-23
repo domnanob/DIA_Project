@@ -19,20 +19,26 @@ namespace DIA_Project.Forms.TeacherForms
             InitializeComponent();
             CurrentTeacher = t;
             ReLoad();
+            ClassesCB.SelectedItem = "None";
         }
         private Teachers CurrentTeacher = new Teachers();
         private List<Classes> classes = new List<Classes>();
-        private List<Subjects> subjects = new List<Subjects>();
         private List<Positions> positions = new List<Positions>();
+        private List<Purchases> purchases = new List<Purchases>();
+        private List<Purchases> FilteredP = new List<Purchases>();
+        private List<FormattedPurchases> FPL = new List<FormattedPurchases>();
         public void ReLoad() {
             classes.Clear();
-            subjects.Clear();
             positions.Clear();
             using (SQL sql = SQL.MySql())
             {
                 foreach (var item in sql.positions)
                 {
                     positions.Add(item);
+                }
+                foreach (var item in sql.purchases)
+                {
+                    purchases.Add(item);
                 }
                 foreach (var item in sql.classes.OrderBy(x => x.Name))
                 {
@@ -48,51 +54,71 @@ namespace DIA_Project.Forms.TeacherForms
                         }
                     }
                 }
-                foreach (var item in sql.subjects.OrderBy(x => x.Name))
+                DGVLoad(purchases);
+            }
+        }
+        void DGVLoad(List<Purchases> l)
+        {
+            FPL.Clear();
+            //this.PurchasesDGV.Rows.Clear();
+            foreach (var item in l)
+            {
+                FPL.Add(new FormattedPurchases(item));
+            }
+            PurchasesDGV.DataSource = l;
+            return;
+        }
+        private void ClassesCB_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (ClassesCB.Items[ClassesCB.SelectedIndex] == "None")
+            {
+                DGVLoad(purchases);
+                return;
+            }
+            using (SQL sql = SQL.MySql())
+            {
+                Classes c = sql.classes.Single(a => a.Name == ClassesCB.Items[ClassesCB.SelectedIndex]);
+                List<Users> SelectedUsers = sql.users.Where(x => x.ClassID == c.ID).ToList();
+                FilteredP.Clear();
+                foreach (var p in purchases)
                 {
-                    foreach (var p in positions)
+                    foreach (var u in SelectedUsers)
                     {
-                        if (p.TeacherID == CurrentTeacher.Username && p.SubjectID == item.ID)
+                        if (p.UserID == u.Username)
                         {
-                            if (!SubjectCB.Items.Contains(item.Name))
-                            {
-                                SubjectCB.Items.Add(item.Name);
-                                subjects.Add(item);
-                            }
+                            FilteredP.Add(p);
                         }
                     }
                 }
-                dataGridView1.DataSource = classes;
+                DGVLoad(FilteredP);
             }
         }
 
-        private void ClassesCB_SelectedValueChanged(object sender, EventArgs e)
+        private void NameTb_TextChanged(object sender, EventArgs e)
         {
-            SubjectCB.Items.Clear();
-            Classes c = classes.Single(x => x.Name == ClassesCB.Items[ClassesCB.SelectedIndex]);
-            foreach (var item in positions)
+            List<Purchases> lp = new List<Purchases>();
+            if (ClassesCB.Items[ClassesCB.SelectedIndex] == "None")
             {
-                if (item.TeacherID == CurrentTeacher.Username && item.ClassID == c.ID)
+                foreach (var item in purchases)
                 {
-                    Subjects s = subjects.Single(x => x.ID == item.SubjectID);
-                    SubjectCB.Items.Add(s.Name);
+                    if (item.UserID.Contains(NameTb.Text))
+                    {
+                        lp.Add(item);
+                    }
                 }
             }
-        }
-
-        private void SubjectCB_SelectedValueChanged(object sender, EventArgs e)
-        {
-            /*
-            ClassesCB.Items.Clear();
-            Subjects s = subjects.Single(x => x.Name == SubjectCB.Items[SubjectCB.SelectedIndex]);
-            foreach (var item in positions)
+            else 
             {
-                if (item.TeacherID == CurrentTeacher.Username && item.SubjectID == s.ID)
+                foreach (var item in FilteredP)
                 {
-                    Classes c = classes.Single(x => x.ID == item.ClassID);
-                    ClassesCB.Items.Add(c.Name);
+                    if (item.UserID.Contains(NameTb.Text))
+                    {
+                        lp.Add(item);
+                    }
                 }
-            }*/
+            }
+            DGVLoad(lp);
+
         }
     }
 }
