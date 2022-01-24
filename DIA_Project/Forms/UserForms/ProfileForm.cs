@@ -124,5 +124,10 @@ namespace DIA_Project.Forms.UserForms
         {
             ReLoad();
         }
+
+        private void ProfileForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
+        }
     }
 }

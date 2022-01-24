@@ -130,5 +130,10 @@ namespace DIA_Project.Forms.UserForms
                     break;
             }
         }
+
+        private void HomeForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
+        }
     }
 }

@@ -131,5 +131,10 @@ namespace DIA_Project.Forms.TeacherForms
                     break;
             }
         }
+
+        private void TeacherHomeForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
+        }
     }
 }

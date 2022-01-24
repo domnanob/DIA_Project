@@ -20,6 +20,7 @@ namespace DIA_Project.Forms.TeacherForms
             CurrentTeacher = t;
             ReLoad();
             ClassesCB.SelectedItem = "None";
+            this.ClassesCB.SelectedValueChanged += new System.EventHandler(this.ClassesCB_SelectedValueChanged);
         }
         private Teachers CurrentTeacher = new Teachers();
         private List<Classes> classes = new List<Classes>();
@@ -60,12 +61,12 @@ namespace DIA_Project.Forms.TeacherForms
         void DGVLoad(List<Purchases> l)
         {
             FPL.Clear();
-            //this.PurchasesDGV.Rows.Clear();
+            PurchasesDGV.DataSource = null;
             foreach (var item in l)
             {
                 FPL.Add(new FormattedPurchases(item));
             }
-            PurchasesDGV.DataSource = l;
+            PurchasesDGV.DataSource = FPL;
             return;
         }
         private void ClassesCB_SelectedValueChanged(object sender, EventArgs e)
@@ -111,7 +112,7 @@ namespace DIA_Project.Forms.TeacherForms
             {
                 foreach (var item in FilteredP)
                 {
-                    if (item.UserID.Contains(NameTb.Text))
+                    if (SQL.MySql().users.Single(x => x.Username == item.UserID).Name.Contains(NameTb.Text))
                     {
                         lp.Add(item);
                     }
@@ -119,6 +120,28 @@ namespace DIA_Project.Forms.TeacherForms
             }
             DGVLoad(lp);
 
+        }
+
+        void DataGridHeaderChange(DataGridView dgv)
+        {
+            if (dgv.Columns.Count > 0)
+            {
+                dgv.Columns[0].HeaderText = "Diák";
+                dgv.Columns[1].HeaderText = "Javítási lehetőség";
+                dgv.Columns[2].HeaderText = "Házifeladat Felmentés";
+                dgv.Columns[3].HeaderText = "Késés Igazolás";
+                dgv.Columns[4].HeaderText = "Jeles érdemjegy";
+                //dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(24, 30, 54);
+            }
+        }
+        private void PurchasesDGV_DataSourceChanged(object sender, EventArgs e)
+        {
+            DataGridHeaderChange(PurchasesDGV);
+        }
+
+        private void ClassesForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
         }
     }
 }

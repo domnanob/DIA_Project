@@ -133,5 +133,10 @@ namespace DIA_Project.Forms.UserForms
                 }
             }
         }
+
+        private void BoltForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
+        }
     }
 }

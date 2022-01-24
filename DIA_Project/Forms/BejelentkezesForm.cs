@@ -125,5 +125,10 @@ namespace DIA_Project.Forms
                 Bejelentkezes();
             }
         }
+
+        private void BejelentkezesForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
+        }
     }
 }

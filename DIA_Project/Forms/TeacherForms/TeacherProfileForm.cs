@@ -115,5 +115,10 @@ namespace DIA_Project.Forms.TeacherForms
         {
             ReLoad();
         }
+
+        private void TeacherProfileForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
+        }
     }
 }

@@ -209,6 +209,7 @@ namespace DIA_Project.Forms
             this.Name = "BejelentkezesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bejelentkezés";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BejelentkezesForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

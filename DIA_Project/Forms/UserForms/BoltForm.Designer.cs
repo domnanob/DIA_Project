@@ -369,6 +369,7 @@ namespace DIA_Project.Forms.UserForms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BoltForm";
             this.Text = "BoltForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BoltForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.Panel1.ResumeLayout(false);

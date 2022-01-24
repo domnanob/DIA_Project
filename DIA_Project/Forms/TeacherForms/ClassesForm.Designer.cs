@@ -60,8 +60,8 @@ namespace DIA_Project.Forms.TeacherForms
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             this.PurchasesDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.PurchasesDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.PurchasesDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.PurchasesDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.PurchasesDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.PurchasesDGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.PurchasesDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PurchasesDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -101,6 +101,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.PurchasesDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.PurchasesDGV.Size = new System.Drawing.Size(645, 343);
             this.PurchasesDGV.TabIndex = 6;
+            this.PurchasesDGV.DataSourceChanged += new System.EventHandler(this.PurchasesDGV_DataSourceChanged);
             // 
             // panel6
             // 
@@ -133,11 +134,10 @@ namespace DIA_Project.Forms.TeacherForms
             this.ClassesCB.FormattingEnabled = true;
             this.ClassesCB.Items.AddRange(new object[] {
             "None"});
-            this.ClassesCB.Location = new System.Drawing.Point(51, 75);
+            this.ClassesCB.Location = new System.Drawing.Point(50, 77);
             this.ClassesCB.Name = "ClassesCB";
             this.ClassesCB.Size = new System.Drawing.Size(214, 28);
             this.ClassesCB.TabIndex = 8;
-            this.ClassesCB.SelectedValueChanged += new System.EventHandler(this.ClassesCB_SelectedValueChanged);
             // 
             // ClassesForm
             // 
@@ -154,6 +154,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ClassesForm";
             this.Text = "InfoForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClassesForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PurchasesDGV)).EndInit();
             this.ResumeLayout(false);
