@@ -116,7 +116,7 @@ namespace DIA_Project.Forms.TeacherForms
                     OpenChildForm(new DashBoardForm());
                     break;
                 case "DolgozatokBtn":
-                    OpenChildForm(new DolgozatokForm());
+                    OpenChildForm(new TeacherTestsForm(CurrentTeacher));
                     break;
                 case "ProfilBtn":
                     OpenChildForm(new TeacherProfileForm(CurrentTeacher));

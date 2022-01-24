@@ -310,6 +310,7 @@ namespace DIA_Project.Forms.UserForms
             this.UserTB.Location = new System.Drawing.Point(6, 105);
             this.UserTB.Name = "UserTB";
             this.UserTB.PlaceholderText = "Felhasználónév";
+            this.UserTB.ReadOnly = true;
             this.UserTB.Size = new System.Drawing.Size(349, 23);
             this.UserTB.TabIndex = 19;
             this.UserTB.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);

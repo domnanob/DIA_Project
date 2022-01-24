@@ -118,17 +118,17 @@ namespace DIA_Project.Forms
             FrameMover.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void JelszoTB_KeyPress(object sender, KeyPressEventArgs e)
+        private void BejelentkezesForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
+        }
+
+        private void Enter_Press(object sender, KeyPressEventArgs e)
         {
             if (Convert.ToInt32(e.KeyChar) == 13)
             {
                 Bejelentkezes();
             }
-        }
-
-        private void BejelentkezesForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            GC.Collect();
         }
     }
 }

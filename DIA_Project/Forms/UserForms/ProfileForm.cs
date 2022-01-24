@@ -29,6 +29,7 @@ namespace DIA_Project.Forms.UserForms
             EmailTB.Text = CurrentUser.Email;
             PasswordTB.Text = string.Empty;
             Password2TB.Text = string.Empty;
+            ClassCB.Items.Clear();
             using (SQL sql = SQL.MySql())
             {
                 foreach (Classes c in sql.classes)
@@ -65,6 +66,7 @@ namespace DIA_Project.Forms.UserForms
             }
             if (string.IsNullOrEmpty(PasswordTB.Text))
             {
+                Password2TB.Text = string.Empty;
                 Password2TB.Enabled = false;
             }
         }

@@ -57,6 +57,7 @@ namespace DIA_Project.Forms.TeacherForms
             }
             if (string.IsNullOrEmpty(PasswordTB.Text))
             {
+                Password2TB.Text = string.Empty;
                 Password2TB.Enabled = false;
             }
         }

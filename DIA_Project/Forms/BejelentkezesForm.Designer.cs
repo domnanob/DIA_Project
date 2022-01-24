@@ -58,6 +58,7 @@ namespace DIA_Project.Forms
             this.FelhTB.PlaceholderText = "Felhasználónév";
             this.FelhTB.Size = new System.Drawing.Size(246, 23);
             this.FelhTB.TabIndex = 1;
+            this.FelhTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Enter_Press);
             // 
             // pictureBox2
             // 
@@ -157,7 +158,7 @@ namespace DIA_Project.Forms
             this.JelszoTB.PlaceholderText = "Jelszó";
             this.JelszoTB.Size = new System.Drawing.Size(246, 23);
             this.JelszoTB.TabIndex = 2;
-            this.JelszoTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.JelszoTB_KeyPress);
+            this.JelszoTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Enter_Press);
             // 
             // BejelentkezesBtn
             // 

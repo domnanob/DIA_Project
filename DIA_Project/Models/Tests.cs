@@ -18,7 +18,13 @@ namespace DIA_Project.Models
         public string Name { get; set; }
 
         [Required]
+        public string TeacherID { get; set; }
+
+        [Required]
         public int SubjectID { get; set; }
+
+        [Required]
+        public int ClassID { get; set; }
 
         [Required]
         public int Locked { get; set; } = 0;
