@@ -1,7 +1,7 @@
 ﻿
 namespace DIA_Project.Forms.TeacherForms
 {
-    partial class ClassesForm
+    partial class TeacherClassesForm
     {
         /// <summary>
         /// Required designer variable.

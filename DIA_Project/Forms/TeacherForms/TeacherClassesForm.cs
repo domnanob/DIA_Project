@@ -12,9 +12,9 @@ using DIA_Project.Lib;
 
 namespace DIA_Project.Forms.TeacherForms
 {
-    public partial class ClassesForm : Form
+    public partial class TeacherClassesForm : Form
     {
-        public ClassesForm(Teachers t)
+        public TeacherClassesForm(Teachers t)
         {
             InitializeComponent();
             CurrentTeacher = t;

@@ -36,7 +36,7 @@ namespace DIA_Project.Forms.TeacherForms
         private Button CurrentNavBtn = new Button();
         public Teachers CurrentTeacher = new Teachers();
         private Form currentChildForm;
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             if (currentChildForm != childForm)
             {
@@ -122,7 +122,7 @@ namespace DIA_Project.Forms.TeacherForms
                     OpenChildForm(new TeacherProfileForm(CurrentTeacher));
                     break;
                 case "ClassesBtn":
-                    OpenChildForm(new ClassesForm(CurrentTeacher));
+                    OpenChildForm(new TeacherClassesForm(CurrentTeacher));
                     break;
                 case "InfoBtn":
                     OpenChildForm(new InfoForm());

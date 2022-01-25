@@ -24,6 +24,7 @@ namespace DIA_Project.Forms.TeacherForms
         }
         private Teachers CurrentTeacher = new Teachers();
         private List<Tests> tests = new List<Tests>();
+        private List<Tests> SelectedTests = new List<Tests>();
         private List<Positions> positions = new List<Positions>();
         private List<FormattedTests> FTL = new List<FormattedTests>();
         public void LoadingDataSources() {
@@ -63,7 +64,17 @@ namespace DIA_Project.Forms.TeacherForms
         }
         private void ClassesCB_SelectedValueChanged(object sender, EventArgs e)
         {
-            
+            if (ClassesCB.Items[ClassesCB.SelectedIndex] == "None")
+            {
+                DGVLoad(tests);
+                return;
+            }
+            using (SQL sql = SQL.MySql())
+            {
+                Classes c = sql.classes.Single(x => x.Name == ClassesCB.Items[ClassesCB.SelectedIndex]);
+                SelectedTests = tests.Where(x => x.ClassID == c.ID).ToList();
+                DGVLoad(SelectedTests);
+            }
         }
 
         private void DataGridHeaderChange(DataGridView dgv)
@@ -85,6 +96,13 @@ namespace DIA_Project.Forms.TeacherForms
         private void TeacherTestsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             GC.Collect();
+        }
+
+        private void MegnyitasBtn_Click(object sender, EventArgs e)
+        {
+            string SelectedTestName = TestsDGV.SelectedRows[0].Cells[0].Value.ToString();
+            Tests t = SQL.MySql().tests.Single(x => x.Name ==SelectedTestName);
+            Program.TF.OpenChildForm(new TeacherTestsUsersForm(CurrentTeacher, t));
         }
     }
 }
