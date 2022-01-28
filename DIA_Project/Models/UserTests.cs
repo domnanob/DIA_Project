@@ -24,5 +24,7 @@ namespace DIA_Project.Models
         public int Completed { get; set; } = 0;
 
         public DateTime? FinishDate { get; set; }
+
+
     }
 }

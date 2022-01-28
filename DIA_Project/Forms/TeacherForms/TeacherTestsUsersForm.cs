@@ -24,15 +24,21 @@ namespace DIA_Project.Forms.TeacherForms
         private Teachers CurrentTeacher = new Teachers();
         private Tests CurrentTest = new Tests();
         private List<UserTests> UT = new List<UserTests>();
+        private List<FormattedUserTests> FUT = new List<FormattedUserTests>();
         public void LoadingDataSources() {
             using (SQL sql = SQL.MySql())
             {
                 UT = sql.userTests.Where(x => x.TestID == CurrentTest.ID).ToList();
             }
+            DGVLoad(UT);
         }
-        void DGVLoad()
+        void DGVLoad(List<UserTests> ut)
         {
-            UsersTestsDGV.DataSource = UT;
+            foreach (var item in ut)
+            {
+                FUT.Add(new FormattedUserTests(item));
+            }
+            UsersTestsDGV.DataSource = FUT;
             return;
         }
 
@@ -41,15 +47,14 @@ namespace DIA_Project.Forms.TeacherForms
             
             if (dgv.Columns.Count > 0)
             {
-                dgv.Columns[0].HeaderText = "Dolgozat";
-                dgv.Columns[1].HeaderText = "Tantárgy";
-                dgv.Columns[2].HeaderText = "Osztály";
-                dgv.Columns[3].HeaderText = "Határidő";
+                dgv.Columns[0].HeaderText = "Diák";
+                dgv.Columns[1].HeaderText = "Állapot";
+                dgv.Columns[2].HeaderText = "Leadási idő";
             }
         }
         private void PurchasesDGV_DataSourceChanged(object sender, EventArgs e)
         {
-            //DataGridHeaderChange(UsersTestsDGV);
+            DataGridHeaderChange(UsersTestsDGV);
         }
 
         private void TeacherTestsUsersForm_FormClosed(object sender, FormClosedEventArgs e)

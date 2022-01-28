@@ -102,7 +102,7 @@ namespace DIA_Project.Forms.TeacherForms
             {
                 foreach (var item in purchases)
                 {
-                    if (item.UserID.Contains(NameTb.Text))
+                    if (SQL.MySql().users.Single(x => x.Username == item.UserID).Name.ToLower().Contains(NameTb.Text.ToLower()))
                     {
                         lp.Add(item);
                     }
@@ -112,7 +112,7 @@ namespace DIA_Project.Forms.TeacherForms
             {
                 foreach (var item in FilteredP)
                 {
-                    if (SQL.MySql().users.Single(x => x.Username == item.UserID).Name.Contains(NameTb.Text))
+                    if (SQL.MySql().users.Single(x => x.Username == item.UserID).Name.ToLower().Contains(NameTb.Text.ToLower()))
                     {
                         lp.Add(item);
                     }

@@ -101,7 +101,7 @@ namespace DIA_Project.Forms.TeacherForms
         private void MegnyitasBtn_Click(object sender, EventArgs e)
         {
             string SelectedTestName = TestsDGV.SelectedRows[0].Cells[0].Value.ToString();
-            Tests t = SQL.MySql().tests.Single(x => x.Name ==SelectedTestName);
+            Tests t = SQL.MySql().tests.Single(x => x.Name == SelectedTestName);
             Program.TF.OpenChildForm(new TeacherTestsUsersForm(CurrentTeacher, t));
         }
     }
