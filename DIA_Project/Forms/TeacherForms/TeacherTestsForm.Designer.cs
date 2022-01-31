@@ -36,7 +36,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TestsDGV = new System.Windows.Forms.DataGridView();
             this.ClassesCB = new System.Windows.Forms.ComboBox();
-            this.YesBtn = new System.Windows.Forms.Button();
+            this.NewTestBtn = new System.Windows.Forms.Button();
             this.MegnyitasBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestsDGV)).BeginInit();
@@ -118,20 +118,21 @@ namespace DIA_Project.Forms.TeacherForms
             this.ClassesCB.Size = new System.Drawing.Size(214, 28);
             this.ClassesCB.TabIndex = 8;
             // 
-            // YesBtn
+            // NewTestBtn
             // 
-            this.YesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.YesBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.YesBtn.FlatAppearance.BorderSize = 2;
-            this.YesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.YesBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.YesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.YesBtn.Location = new System.Drawing.Point(590, 72);
-            this.YesBtn.Name = "YesBtn";
-            this.YesBtn.Size = new System.Drawing.Size(105, 36);
-            this.YesBtn.TabIndex = 9;
-            this.YesBtn.Text = "Új";
-            this.YesBtn.UseVisualStyleBackColor = false;
+            this.NewTestBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.NewTestBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.NewTestBtn.FlatAppearance.BorderSize = 2;
+            this.NewTestBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewTestBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NewTestBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.NewTestBtn.Location = new System.Drawing.Point(590, 72);
+            this.NewTestBtn.Name = "NewTestBtn";
+            this.NewTestBtn.Size = new System.Drawing.Size(105, 36);
+            this.NewTestBtn.TabIndex = 9;
+            this.NewTestBtn.Text = "Új";
+            this.NewTestBtn.UseVisualStyleBackColor = false;
+            this.NewTestBtn.Click += new System.EventHandler(this.NewTestBtn_Click);
             // 
             // MegnyitasBtn
             // 
@@ -156,7 +157,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(760, 548);
             this.Controls.Add(this.MegnyitasBtn);
-            this.Controls.Add(this.YesBtn);
+            this.Controls.Add(this.NewTestBtn);
             this.Controls.Add(this.ClassesCB);
             this.Controls.Add(this.TestsDGV);
             this.Controls.Add(this.pictureBox1);
@@ -176,7 +177,7 @@ namespace DIA_Project.Forms.TeacherForms
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView TestsDGV;
         private System.Windows.Forms.ComboBox ClassesCB;
-        private System.Windows.Forms.Button YesBtn;
+        private System.Windows.Forms.Button NewTestBtn;
         private System.Windows.Forms.Button MegnyitasBtn;
     }
 }

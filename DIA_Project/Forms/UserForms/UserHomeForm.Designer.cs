@@ -1,7 +1,7 @@
 ﻿
 namespace DIA_Project.Forms.UserForms
 {
-    partial class HomeForm
+    partial class UserHomeForm
     {
         /// <summary>
         ///  Required designer variable.

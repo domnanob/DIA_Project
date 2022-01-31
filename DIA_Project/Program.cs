@@ -12,7 +12,7 @@ namespace DIA_Project
     static class Program
     {
         public static string ConnectionString = "Server=localhost;Database=szakdoga;Uid=root;";
-        public static HomeForm HF = new HomeForm(new Models.Users());
+        public static UserHomeForm HF = new UserHomeForm(new Models.Users());
         public static TeacherHomeForm TF = new TeacherHomeForm(new Models.Teachers());
         public static void FormLoader() {
             BejelentkezesForm BF = new BejelentkezesForm();
@@ -21,7 +21,7 @@ namespace DIA_Project
             {
                 if (BF.CurrentUser.Username != null)
                 {
-                    HF = new HomeForm(BF.CurrentUser);
+                    HF = new UserHomeForm(BF.CurrentUser);
                     HF.ShowDialog();
                 }
                 else

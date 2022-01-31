@@ -12,9 +12,9 @@ using DIA_Project.Lib;
 
 namespace DIA_Project.Forms.UserForms
 {
-    public partial class ProfileForm : Form
+    public partial class UserProfileForm : Form
     {
-        public ProfileForm(Users u)
+        public UserProfileForm(Users u)
         {
             InitializeComponent();
             CurrentUser = u;

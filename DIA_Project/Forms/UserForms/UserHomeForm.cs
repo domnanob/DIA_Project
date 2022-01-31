@@ -13,9 +13,9 @@ using DIA_Project.Models;
 
 namespace DIA_Project.Forms.UserForms
 {
-    public partial class HomeForm : Form
+    public partial class UserHomeForm : Form
     {
-        public HomeForm(Users CU)
+        public UserHomeForm(Users CU)
         {
             InitializeComponent();
             this.Text = string.Empty;
@@ -118,10 +118,10 @@ namespace DIA_Project.Forms.UserForms
                     OpenChildForm(new DolgozatokForm());
                     break;
                 case "ProfilBtn":
-                    OpenChildForm(new ProfileForm(CurrentUser));
+                    OpenChildForm(new UserProfileForm(CurrentUser));
                     break;
                 case "BoltBtn":
-                    OpenChildForm(new BoltForm(CurrentUser));
+                    OpenChildForm(new UserBoltForm(CurrentUser));
                     break;
                 case "InfoBtn":
                     OpenChildForm(new InfoForm());

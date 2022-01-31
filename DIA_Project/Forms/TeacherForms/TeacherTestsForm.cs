@@ -104,5 +104,10 @@ namespace DIA_Project.Forms.TeacherForms
             Tests t = SQL.MySql().tests.Single(x => x.Name == SelectedTestName);
             Program.TF.OpenChildForm(new TeacherTestsUsersForm(CurrentTeacher, t));
         }
+
+        private void NewTestBtn_Click(object sender, EventArgs e)
+        {
+            Program.TF.OpenChildForm(new TeacherNewTestForm(CurrentTeacher, positions));
+        }
     }
 }

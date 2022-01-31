@@ -12,9 +12,9 @@ using DIA_Project.Models;
 
 namespace DIA_Project.Forms.UserForms
 {
-    public partial class BoltForm : Form
+    public partial class UserBoltForm : Form
     {
-        public BoltForm(Users u)
+        public UserBoltForm(Users u)
         {
             InitializeComponent();
             PontL.Text = u.Money + "";
