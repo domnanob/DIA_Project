@@ -19,10 +19,9 @@ namespace DIA_Project.Forms.UserForms
             InitializeComponent();
             CurrentUser = u;
             ReLoad();
-            
         }
         Users CurrentUser = new Users();
-        private void ReLoad() 
+        private async void ReLoad() 
         {
             NameTb.Text = CurrentUser.Name;
             UserTB.Text = CurrentUser.Username;
@@ -131,5 +130,6 @@ namespace DIA_Project.Forms.UserForms
         {
             GC.Collect();
         }
+
     }
 }

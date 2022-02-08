@@ -47,6 +47,14 @@ namespace DIA_Project.Forms.UserForms
                 DesktopP.Tag = childForm;
                 childForm.BringToFront();
                 childForm.Show();
+                if (childForm.GetType() == new DashBoardForm().GetType())
+                {
+                    DesktopP.BackgroundImage = global::DIA_Project.Properties.Resources.WinFormBg2D;
+                }
+                else
+                {
+                    DesktopP.BackgroundImage = childForm.BackgroundImage;
+                }
             }
         }
         private void ExitBtn_Click(object sender, EventArgs e)

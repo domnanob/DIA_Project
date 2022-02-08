@@ -23,6 +23,8 @@ namespace DIA_Project.Forms.TeacherForms
             LoadResources();
         }
         private int ChoiseDB = 0;
+        private int CurrentTestID = 0;
+        private int CurrentTaskID = 0;
         private Teachers CurrentTeacher = new Teachers();
         private List<Positions> CurrentPositions = new List<Positions>();
         private List<UserTests> UT = new List<UserTests>();
@@ -31,6 +33,8 @@ namespace DIA_Project.Forms.TeacherForms
             TaskTypesCB.Items.Clear();
             using (SQL sql = SQL.MySql())
             {
+                CurrentTestID = sql.tests.Max(x => x.ID)+1;
+                CurrentTaskID = sql.tasks.Max(y => y.ID)+1;
                 foreach (var item in sql.taskTypes)
                 {
                     TaskTypesCB.Items.Add(item.Name);
@@ -112,6 +116,70 @@ namespace DIA_Project.Forms.TeacherForms
             this.HomePnl.Controls.Remove(Current);
             this.HomePnl.Height -= MCUL.Single(x => x.Item1 == Current.Name).Item2;
             MCUL.Remove(MCUL.Single(x => x.Item1 == Current.Name));
+        }
+        private void MentesBtn_Click(object sender, EventArgs e)
+        {
+            if (SubjectsCB.SelectedIndex == 0 || ClassesCB.SelectedIndex == 0 || StartDTP.Value >= FinishDTP.Value || string.IsNullOrEmpty(TestNameTb.Text))
+            {
+                new ErrorMessageForm("Minden mező kitöltése kötelező!").ShowDialog();
+                return;
+            }
+            using (SQL sql = SQL.MySql())
+            {
+                Tests tst = new Tests()
+                {
+                    ID = CurrentTestID,
+                    ClassID = sql.classes.Single(x => x.Name == ClassesCB.Items[ClassesCB.SelectedIndex]).ID,
+                    Name = TestNameTb.Text,
+                    SubjectID = sql.subjects.Single(x => x.Name == SubjectsCB.Items[SubjectsCB.SelectedIndex]).ID,
+                    Locked = 0,
+                    TeacherID = CurrentTeacher.Username,
+                    StartDate = StartDTP.Value,
+                    FinishDate = FinishDTP.Value,
+                };
+                sql.tests.Add(tst);
+                sql.SaveChanges();
+                foreach (var item in this.HomePnl.Controls.OfType<MultipleChoiseUC>()) //Végigmegy az összes Feladaton
+                {
+                    Tasks tsk = new Tasks() {
+                        ID = CurrentTaskID,
+                        TestID = CurrentTestID,
+                        Task = item.GetTaskName(),
+                        TypeID = 1,
+                    };
+                    sql.tasks.Add(tsk);
+                    sql.SaveChanges();
+                    List<RadioButtonsUC> ItemData = item.GetRBUC();
+                    foreach (var RB in ItemData) //Feladatokon bellüli válaszok
+                    {
+                        Tuple<string,bool> RBData = RB.GetAnswer();
+                        Answers ans = new Answers()
+                        {
+                            TaskID = CurrentTaskID,
+                            Answer = RBData.Item1,
+                            Correct = (RBData.Item2) ? 1 : 0,
+                        };
+                        sql.answers.Add(ans);
+                    }
+                    sql.SaveChanges();
+                    CurrentTaskID++;
+                }
+                int cID = sql.classes.Single(x => x.Name == ClassesCB.Items[ClassesCB.SelectedIndex]).ID;
+                foreach (var item in sql.users)
+                {
+                    if (item.ClassID == cID)
+                    {
+                        UserTests UT = new UserTests() {
+                            UserID = item.Username,
+                            TestID = CurrentTestID,
+                            Completed = 0,                            
+                        };
+                        sql.userTests.Add(UT);
+                    }
+                }
+                sql.SaveChanges();
+            }
+            new SuccessMessageForm("Sikeresen létrehoztad a dolgozatot!").ShowDialog();
         }
     }
 }

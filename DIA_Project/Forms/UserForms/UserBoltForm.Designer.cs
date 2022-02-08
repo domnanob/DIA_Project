@@ -72,8 +72,9 @@ namespace DIA_Project.Forms.UserForms
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::DIA_Project.Properties.Resources.repair_tool;
-            this.pictureBox1.Location = new System.Drawing.Point(684, 472);
+            this.pictureBox1.Location = new System.Drawing.Point(684, 504);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(64, 64);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -83,8 +84,9 @@ namespace DIA_Project.Forms.UserForms
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::DIA_Project.Properties.Resources.coins;
-            this.pictureBox2.Location = new System.Drawing.Point(692, 39);
+            this.pictureBox2.Location = new System.Drawing.Point(692, 56);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(32, 32);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -94,8 +96,9 @@ namespace DIA_Project.Forms.UserForms
             // PontL
             // 
             this.PontL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PontL.BackColor = System.Drawing.Color.Transparent;
             this.PontL.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.PontL.Location = new System.Drawing.Point(641, 45);
+            this.PontL.Location = new System.Drawing.Point(641, 62);
             this.PontL.Name = "PontL";
             this.PontL.Size = new System.Drawing.Size(50, 20);
             this.PontL.TabIndex = 12;
@@ -110,7 +113,7 @@ namespace DIA_Project.Forms.UserForms
             this.Panel1.Controls.Add(this.Panel1PriceL);
             this.Panel1.Controls.Add(this.pictureBox3);
             this.Panel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Panel1.Location = new System.Drawing.Point(34, 104);
+            this.Panel1.Location = new System.Drawing.Point(34, 121);
             this.Panel1.MaximumSize = new System.Drawing.Size(426, 240);
             this.Panel1.MinimumSize = new System.Drawing.Size(215, 120);
             this.Panel1.Name = "Panel1";
@@ -170,7 +173,7 @@ namespace DIA_Project.Forms.UserForms
             this.Panel2.Controls.Add(this.Panel2PriceL);
             this.Panel2.Controls.Add(this.pictureBox4);
             this.Panel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Panel2.Location = new System.Drawing.Point(273, 104);
+            this.Panel2.Location = new System.Drawing.Point(273, 121);
             this.Panel2.MaximumSize = new System.Drawing.Size(426, 240);
             this.Panel2.MinimumSize = new System.Drawing.Size(215, 120);
             this.Panel2.Name = "Panel2";
@@ -230,7 +233,7 @@ namespace DIA_Project.Forms.UserForms
             this.Panel3.Controls.Add(this.Panel3PriceL);
             this.Panel3.Controls.Add(this.pictureBox5);
             this.Panel3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Panel3.Location = new System.Drawing.Point(509, 104);
+            this.Panel3.Location = new System.Drawing.Point(509, 121);
             this.Panel3.MaximumSize = new System.Drawing.Size(426, 240);
             this.Panel3.MinimumSize = new System.Drawing.Size(215, 120);
             this.Panel3.Name = "Panel3";
@@ -290,7 +293,7 @@ namespace DIA_Project.Forms.UserForms
             this.Panel4.Controls.Add(this.Panel4PriceL);
             this.Panel4.Controls.Add(this.pictureBox6);
             this.Panel4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Panel4.Location = new System.Drawing.Point(34, 247);
+            this.Panel4.Location = new System.Drawing.Point(34, 264);
             this.Panel4.MaximumSize = new System.Drawing.Size(426, 240);
             this.Panel4.MinimumSize = new System.Drawing.Size(215, 120);
             this.Panel4.Name = "Panel4";
@@ -344,19 +347,22 @@ namespace DIA_Project.Forms.UserForms
             // 
             // InfoL
             // 
+            this.InfoL.BackColor = System.Drawing.Color.Transparent;
             this.InfoL.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.InfoL.Location = new System.Drawing.Point(34, 420);
+            this.InfoL.Location = new System.Drawing.Point(34, 437);
             this.InfoL.Name = "InfoL";
             this.InfoL.Size = new System.Drawing.Size(690, 51);
             this.InfoL.TabIndex = 16;
             this.InfoL.Text = "Info: Az i-betüre kattintva tudhatsz meg többet az egyes lehetőségekről!";
             // 
-            // BoltForm
+            // UserBoltForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(760, 548);
+            this.BackgroundImage = global::DIA_Project.Properties.Resources.WinFormBg;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(760, 580);
             this.Controls.Add(this.InfoL);
             this.Controls.Add(this.Panel4);
             this.Controls.Add(this.Panel3);
@@ -365,9 +371,10 @@ namespace DIA_Project.Forms.UserForms
             this.Controls.Add(this.PontL);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "BoltForm";
+            this.Name = "UserBoltForm";
             this.Text = "BoltForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BoltForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

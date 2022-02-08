@@ -29,7 +29,6 @@ namespace DIA_Project.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.FelhTB = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.MinimizeBtn = new System.Windows.Forms.Button();
@@ -41,32 +40,21 @@ namespace DIA_Project.Forms
             this.JelszoTB = new System.Windows.Forms.TextBox();
             this.BejelentkezesBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.FelhTB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
-            // FelhTB
-            // 
-            this.FelhTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.FelhTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.FelhTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FelhTB.ForeColor = System.Drawing.Color.White;
-            this.FelhTB.Location = new System.Drawing.Point(67, 211);
-            this.FelhTB.Name = "FelhTB";
-            this.FelhTB.PlaceholderText = "Felhasználónév";
-            this.FelhTB.Size = new System.Drawing.Size(246, 23);
-            this.FelhTB.TabIndex = 1;
-            this.FelhTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Enter_Press);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::DIA_Project.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(126, 72);
+            this.pictureBox2.Location = new System.Drawing.Point(91, 67);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox2.Size = new System.Drawing.Size(159, 116);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
@@ -112,6 +100,7 @@ namespace DIA_Project.Forms
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::DIA_Project.Properties.Resources.user;
             this.pictureBox1.Location = new System.Drawing.Point(29, 202);
             this.pictureBox1.Name = "pictureBox1";
@@ -138,6 +127,7 @@ namespace DIA_Project.Forms
             // 
             // pictureBox3
             // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::DIA_Project.Properties.Resources.key;
             this.pictureBox3.Location = new System.Drawing.Point(29, 256);
             this.pictureBox3.Name = "pictureBox3";
@@ -177,7 +167,7 @@ namespace DIA_Project.Forms
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.button1.FlatAppearance.BorderSize = 3;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -190,22 +180,37 @@ namespace DIA_Project.Forms
             this.button1.Text = "Regisztráció\r\n";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // FelhTB
+            // 
+            this.FelhTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.FelhTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FelhTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FelhTB.ForeColor = System.Drawing.Color.White;
+            this.FelhTB.Location = new System.Drawing.Point(67, 211);
+            this.FelhTB.Name = "FelhTB";
+            this.FelhTB.PlaceholderText = "Felhasználónév";
+            this.FelhTB.Size = new System.Drawing.Size(246, 23);
+            this.FelhTB.TabIndex = 1;
+            this.FelhTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Enter_Press);
+            // 
             // BejelentkezesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(341, 555);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BejelentkezesBtn);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.FelhTB);
             this.Controls.Add(this.JelszoTB);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.FelhTB);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BejelentkezesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -221,7 +226,6 @@ namespace DIA_Project.Forms
         }
 
         #endregion
-        private System.Windows.Forms.TextBox FelhTB;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -233,6 +237,7 @@ namespace DIA_Project.Forms
         private System.Windows.Forms.Button MinimizeBtn;
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox FelhTB;
     }
 }
 

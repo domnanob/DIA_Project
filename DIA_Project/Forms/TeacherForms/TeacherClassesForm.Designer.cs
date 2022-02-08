@@ -45,8 +45,9 @@ namespace DIA_Project.Forms.TeacherForms
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::DIA_Project.Properties.Resources.repair_tool;
-            this.pictureBox1.Location = new System.Drawing.Point(684, 472);
+            this.pictureBox1.Location = new System.Drawing.Point(684, 504);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(64, 64);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -83,7 +84,7 @@ namespace DIA_Project.Forms.TeacherForms
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.PurchasesDGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.PurchasesDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.PurchasesDGV.Location = new System.Drawing.Point(50, 123);
+            this.PurchasesDGV.Location = new System.Drawing.Point(50, 139);
             this.PurchasesDGV.MultiSelect = false;
             this.PurchasesDGV.Name = "PurchasesDGV";
             this.PurchasesDGV.ReadOnly = true;
@@ -106,7 +107,7 @@ namespace DIA_Project.Forms.TeacherForms
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Location = new System.Drawing.Point(501, 104);
+            this.panel6.Location = new System.Drawing.Point(501, 120);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(194, 1);
             this.panel6.TabIndex = 28;
@@ -117,7 +118,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.NameTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NameTb.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NameTb.ForeColor = System.Drawing.Color.White;
-            this.NameTb.Location = new System.Drawing.Point(502, 75);
+            this.NameTb.Location = new System.Drawing.Point(502, 91);
             this.NameTb.Name = "NameTb";
             this.NameTb.PlaceholderText = "Tanuló neve";
             this.NameTb.Size = new System.Drawing.Size(193, 23);
@@ -134,25 +135,28 @@ namespace DIA_Project.Forms.TeacherForms
             this.ClassesCB.FormattingEnabled = true;
             this.ClassesCB.Items.AddRange(new object[] {
             "None"});
-            this.ClassesCB.Location = new System.Drawing.Point(50, 77);
+            this.ClassesCB.Location = new System.Drawing.Point(50, 93);
             this.ClassesCB.Name = "ClassesCB";
             this.ClassesCB.Size = new System.Drawing.Size(214, 28);
             this.ClassesCB.TabIndex = 8;
             // 
-            // ClassesForm
+            // TeacherClassesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(760, 548);
+            this.BackgroundImage = global::DIA_Project.Properties.Resources.WinFormBg;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(760, 580);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.NameTb);
             this.Controls.Add(this.ClassesCB);
             this.Controls.Add(this.PurchasesDGV);
             this.Controls.Add(this.pictureBox1);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ClassesForm";
+            this.Name = "TeacherClassesForm";
             this.Text = "InfoForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClassesForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

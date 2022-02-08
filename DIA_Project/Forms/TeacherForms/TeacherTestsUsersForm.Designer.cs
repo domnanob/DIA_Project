@@ -35,15 +35,18 @@ namespace DIA_Project.Forms.TeacherForms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.UsersTestsDGV = new System.Windows.Forms.DataGridView();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsersTestsDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::DIA_Project.Properties.Resources.repair_tool;
-            this.pictureBox1.Location = new System.Drawing.Point(684, 472);
+            this.pictureBox1.Location = new System.Drawing.Point(682, 503);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(64, 64);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -81,7 +84,7 @@ namespace DIA_Project.Forms.TeacherForms
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.UsersTestsDGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.UsersTestsDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.UsersTestsDGV.Location = new System.Drawing.Point(59, 62);
+            this.UsersTestsDGV.Location = new System.Drawing.Point(57, 140);
             this.UsersTestsDGV.MultiSelect = false;
             this.UsersTestsDGV.Name = "UsersTestsDGV";
             this.UsersTestsDGV.ReadOnly = true;
@@ -98,18 +101,34 @@ namespace DIA_Project.Forms.TeacherForms
             this.UsersTestsDGV.RowHeadersWidth = 51;
             this.UsersTestsDGV.RowTemplate.Height = 29;
             this.UsersTestsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.UsersTestsDGV.Size = new System.Drawing.Size(645, 404);
+            this.UsersTestsDGV.Size = new System.Drawing.Size(642, 343);
             this.UsersTestsDGV.TabIndex = 6;
             this.UsersTestsDGV.DataSourceChanged += new System.EventHandler(this.PurchasesDGV_DataSourceChanged);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::DIA_Project.Properties.Resources.back;
+            this.pictureBox2.Location = new System.Drawing.Point(57, 70);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // TeacherTestsUsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(760, 548);
+            this.BackgroundImage = global::DIA_Project.Properties.Resources.WinFormBg;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(760, 580);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.UsersTestsDGV);
             this.Controls.Add(this.pictureBox1);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TeacherTestsUsersForm";
@@ -117,6 +136,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TeacherTestsUsersForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsersTestsDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -125,5 +145,6 @@ namespace DIA_Project.Forms.TeacherForms
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView UsersTestsDGV;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

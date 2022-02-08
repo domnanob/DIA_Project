@@ -16,6 +16,14 @@ namespace DIA_Project.Forms.User_Controlls
         {
             InitializeComponent();
         }
+        public string GetTaskName()
+        {
+            return TaskNameTb.Text;
+        }
+        public List<RadioButtonsUC> GetRBUC()
+        {
+            return this.panel2.Controls.OfType<RadioButtonsUC>().ToList();
+        }
         RadioButtonsUC RBUC = new RadioButtonsUC()
         {
             Height = 55,

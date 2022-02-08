@@ -32,6 +32,9 @@ namespace DIA_Project.Models
         [Required]
         public DateTime FinishDate { get; set; }
 
+        [Required]
+        public DateTime StartDate { get; set; }
+
 
 
     }

@@ -16,6 +16,10 @@ namespace DIA_Project.Forms.User_Controlls
         {
             InitializeComponent();
         }
+        public Tuple<string,bool> GetAnswer()
+        {
+            return Tuple.Create(AnswerTB.Text, CorrectCb.Checked);
+        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

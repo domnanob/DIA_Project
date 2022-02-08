@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.AnswerTB = new System.Windows.Forms.TextBox();
             this.CorrectCb = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -47,16 +47,16 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // AnswerTB
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(133, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Válasz";
-            this.textBox1.Size = new System.Drawing.Size(400, 20);
-            this.textBox1.TabIndex = 1;
+            this.AnswerTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.AnswerTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.AnswerTB.ForeColor = System.Drawing.Color.White;
+            this.AnswerTB.Location = new System.Drawing.Point(133, 15);
+            this.AnswerTB.Name = "AnswerTB";
+            this.AnswerTB.PlaceholderText = "Válasz";
+            this.AnswerTB.Size = new System.Drawing.Size(400, 20);
+            this.AnswerTB.TabIndex = 1;
             // 
             // CorrectCb
             // 
@@ -91,11 +91,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CorrectCb);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.AnswerTB);
             this.Controls.Add(this.radioButton1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.Name = "RadioButtonsUC";
@@ -109,7 +109,7 @@
         #endregion
 
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox AnswerTB;
         private System.Windows.Forms.CheckBox CorrectCb;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;

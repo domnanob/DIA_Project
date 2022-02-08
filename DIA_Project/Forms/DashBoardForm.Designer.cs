@@ -31,6 +31,8 @@ namespace DIA_Project.Forms
         {
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,31 +40,73 @@ namespace DIA_Project.Forms
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(311, 256);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(6, 200);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 20);
+            this.label1.Size = new System.Drawing.Size(256, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Üdvözöllek a DIA-ban!";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::DIA_Project.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(300, 120);
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::DIA_Project.Properties.Resources.world_globe;
+            this.pictureBox1.Location = new System.Drawing.Point(352, 131);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(183, 133);
+            this.pictureBox1.Size = new System.Drawing.Size(407, 343);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(17, 240);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(229, 60);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Nálunk igazán megéri tanulni,\r\ntanulj, gyújtsd a pontjaid és\r\nzsebeld be az érték" +
+    "es jutalmakat!\r\n";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(51, 315);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(146, 41);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Vágjunk bele!";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Paint += new System.Windows.Forms.PaintEventHandler(this.button1_Paint);
             // 
             // DashBoardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::DIA_Project.Properties.Resources.WinFormBg2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(760, 580);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DashBoardForm";
@@ -77,5 +121,7 @@ namespace DIA_Project.Forms
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -43,6 +43,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.HozzaadasBtn);
@@ -121,7 +122,7 @@
             // 
             // radioButtonsuc1
             // 
-            this.radioButtonsuc1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.radioButtonsuc1.BackColor = System.Drawing.Color.Transparent;
             this.radioButtonsuc1.Dock = System.Windows.Forms.DockStyle.Top;
             this.radioButtonsuc1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.radioButtonsuc1.Location = new System.Drawing.Point(0, 0);
@@ -134,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "MultipleChoiseUC";

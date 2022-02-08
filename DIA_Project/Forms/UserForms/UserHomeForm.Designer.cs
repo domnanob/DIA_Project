@@ -41,16 +41,17 @@ namespace DIA_Project.Forms.UserForms
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ExitBtn = new System.Windows.Forms.Button();
-            this.MaximizeBtn = new System.Windows.Forms.Button();
-            this.MinimizeBtn = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.DesktopP = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.ExitBtn = new System.Windows.Forms.Button();
+            this.MinimizeBtn = new System.Windows.Forms.Button();
+            this.MaximizeBtn = new System.Windows.Forms.Button();
             this.NavP.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.DesktopP.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -242,31 +243,43 @@ namespace DIA_Project.Forms.UserForms
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // DesktopP
+            // 
+            this.DesktopP.AutoScroll = true;
+            this.DesktopP.BackgroundImage = global::DIA_Project.Properties.Resources.WinFormBg2;
+            this.DesktopP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.DesktopP.Controls.Add(this.panel3);
+            this.DesktopP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DesktopP.Location = new System.Drawing.Point(190, 0);
+            this.DesktopP.Name = "DesktopP";
+            this.DesktopP.Size = new System.Drawing.Size(760, 580);
+            this.DesktopP.TabIndex = 5;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.ExitBtn);
+            this.panel3.Controls.Add(this.MinimizeBtn);
+            this.panel3.Controls.Add(this.MaximizeBtn);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(760, 34);
+            this.panel3.TabIndex = 0;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
+            // 
             // ExitBtn
             // 
             this.ExitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ExitBtn.FlatAppearance.BorderSize = 0;
             this.ExitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitBtn.Image = global::DIA_Project.Properties.Resources.cancel;
-            this.ExitBtn.Location = new System.Drawing.Point(730, 0);
+            this.ExitBtn.Location = new System.Drawing.Point(730, 1);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(30, 30);
-            this.ExitBtn.TabIndex = 1;
+            this.ExitBtn.TabIndex = 7;
             this.ExitBtn.UseVisualStyleBackColor = true;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
-            // 
-            // MaximizeBtn
-            // 
-            this.MaximizeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MaximizeBtn.FlatAppearance.BorderSize = 0;
-            this.MaximizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MaximizeBtn.Image = global::DIA_Project.Properties.Resources.maximize;
-            this.MaximizeBtn.Location = new System.Drawing.Point(694, 0);
-            this.MaximizeBtn.Name = "MaximizeBtn";
-            this.MaximizeBtn.Size = new System.Drawing.Size(30, 30);
-            this.MaximizeBtn.TabIndex = 2;
-            this.MaximizeBtn.UseVisualStyleBackColor = true;
-            this.MaximizeBtn.Click += new System.EventHandler(this.MaximizeBtn_Click);
             // 
             // MinimizeBtn
             // 
@@ -275,35 +288,27 @@ namespace DIA_Project.Forms.UserForms
             this.MinimizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MinimizeBtn.ForeColor = System.Drawing.SystemColors.Highlight;
             this.MinimizeBtn.Image = global::DIA_Project.Properties.Resources.minus;
-            this.MinimizeBtn.Location = new System.Drawing.Point(658, 0);
+            this.MinimizeBtn.Location = new System.Drawing.Point(658, 1);
             this.MinimizeBtn.Name = "MinimizeBtn";
             this.MinimizeBtn.Size = new System.Drawing.Size(30, 30);
-            this.MinimizeBtn.TabIndex = 3;
+            this.MinimizeBtn.TabIndex = 9;
             this.MinimizeBtn.UseVisualStyleBackColor = true;
             this.MinimizeBtn.Click += new System.EventHandler(this.MinimizeBtn_Click);
             // 
-            // panel3
+            // MaximizeBtn
             // 
-            this.panel3.Controls.Add(this.ExitBtn);
-            this.panel3.Controls.Add(this.MinimizeBtn);
-            this.panel3.Controls.Add(this.MaximizeBtn);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(190, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(760, 32);
-            this.panel3.TabIndex = 4;
-            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
+            this.MaximizeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MaximizeBtn.FlatAppearance.BorderSize = 0;
+            this.MaximizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MaximizeBtn.Image = global::DIA_Project.Properties.Resources.maximize;
+            this.MaximizeBtn.Location = new System.Drawing.Point(694, 1);
+            this.MaximizeBtn.Name = "MaximizeBtn";
+            this.MaximizeBtn.Size = new System.Drawing.Size(30, 30);
+            this.MaximizeBtn.TabIndex = 8;
+            this.MaximizeBtn.UseVisualStyleBackColor = true;
+            this.MaximizeBtn.Click += new System.EventHandler(this.MaximizeBtn_Click);
             // 
-            // DesktopP
-            // 
-            this.DesktopP.AutoScroll = true;
-            this.DesktopP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DesktopP.Location = new System.Drawing.Point(190, 32);
-            this.DesktopP.Name = "DesktopP";
-            this.DesktopP.Size = new System.Drawing.Size(760, 548);
-            this.DesktopP.TabIndex = 5;
-            // 
-            // HomeForm
+            // UserHomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -311,10 +316,9 @@ namespace DIA_Project.Forms.UserForms
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(950, 580);
             this.Controls.Add(this.DesktopP);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.NavP);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "HomeForm";
+            this.Name = "UserHomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HomeForm_FormClosed);
             this.NavP.ResumeLayout(false);
@@ -322,6 +326,7 @@ namespace DIA_Project.Forms.UserForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.DesktopP.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -336,16 +341,16 @@ namespace DIA_Project.Forms.UserForms
         private System.Windows.Forms.Button LogoutBtn;
         private System.Windows.Forms.Button ProfilBtn;
         private System.Windows.Forms.Button DolgozatokBtn;
-        private System.Windows.Forms.Button ExitBtn;
-        private System.Windows.Forms.Button MaximizeBtn;
-        private System.Windows.Forms.Button MinimizeBtn;
         private System.Windows.Forms.Button BoltBtn;
         private System.Windows.Forms.Button InfoBtn;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel NavArrowP;
         private System.Windows.Forms.Panel DesktopP;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button ExitBtn;
+        private System.Windows.Forms.Button MinimizeBtn;
+        private System.Windows.Forms.Button MaximizeBtn;
     }
 }
 

@@ -61,5 +61,10 @@ namespace DIA_Project.Forms.TeacherForms
         {
             GC.Collect();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

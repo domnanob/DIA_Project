@@ -21,6 +21,6 @@ namespace DIA_Project.Models
         public string Answer { get; set; }
 
         [Required]
-        public bool Correct { get; set; }
+        public int Correct { get; set; }
     }
 }
