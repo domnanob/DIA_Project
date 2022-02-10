@@ -8,11 +8,11 @@ namespace DIA_Project.Models
 {
     public class FormattedUserTests
     {
-        public string UserName { get; set; }
+        public string UserName { get; private set; }
 
-        public string Completed { get; set; }
+        public string Completed { get; private set; }
 
-        public string FinishDate { get; set; }
+        public string FinishDate { get; private set; }
 
         public FormattedUserTests(UserTests ut)
         {

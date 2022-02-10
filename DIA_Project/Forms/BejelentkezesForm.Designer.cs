@@ -138,7 +138,7 @@ namespace DIA_Project.Forms
             // 
             // JelszoTB
             // 
-            this.JelszoTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.JelszoTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(63)))), ((int)(((byte)(108)))));
             this.JelszoTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.JelszoTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.JelszoTB.ForeColor = System.Drawing.Color.White;
@@ -182,7 +182,7 @@ namespace DIA_Project.Forms
             // 
             // FelhTB
             // 
-            this.FelhTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.FelhTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(65)))), ((int)(((byte)(113)))));
             this.FelhTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.FelhTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FelhTB.ForeColor = System.Drawing.Color.White;
@@ -198,6 +198,7 @@ namespace DIA_Project.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.BackgroundImage = global::DIA_Project.Properties.Resources.WinFormBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(341, 555);
             this.Controls.Add(this.button1);

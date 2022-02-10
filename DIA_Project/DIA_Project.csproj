@@ -37,6 +37,9 @@
     <Compile Update="Forms\MessageForms\ErrorMessageForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\UserForms\UserTestsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

@@ -123,7 +123,7 @@ namespace DIA_Project.Forms.UserForms
                     OpenChildForm(new DashBoardForm());
                     break;
                 case "DolgozatokBtn":
-                    OpenChildForm(new DolgozatokForm());
+                    OpenChildForm(new UserTestsForm(CurrentUser));
                     break;
                 case "ProfilBtn":
                     OpenChildForm(new UserProfileForm(CurrentUser));

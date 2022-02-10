@@ -6,23 +6,22 @@ using System.Threading.Tasks;
 
 namespace DIA_Project.Models
 {
-    public class FormattedTests
+    public class FormattedTestsForUsers
     {
         public string TestName { get; private set; }
         public string Subject { get; private set; }
-        public string Class { get; private set; }
         public DateTime ExpireDate { get; private set; }
 
-        public FormattedTests(Tests t)
+        public string Score { get; private set; }
+        public FormattedTestsForUsers(Tests t)
         {
             using (SQL sql = SQL.MySql())
             {
                 TestName = t.Name;
                 Subject = sql.subjects.Single(x => x.ID == t.SubjectID).Name;
-                Class = sql.classes.Single(x => x.ID == t.ClassID).Name;
                 ExpireDate = t.FinishDate;
+                Score = "100/";
             }
         }
-
     }
 }
