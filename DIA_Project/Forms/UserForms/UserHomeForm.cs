@@ -35,7 +35,7 @@ namespace DIA_Project.Forms.UserForms
         private Button CurrentNavBtn = new Button();
         public Users CurrentUser = new Users();
         private Form currentChildForm;
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             if (currentChildForm != childForm)
             {

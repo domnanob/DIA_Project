@@ -98,7 +98,14 @@ namespace DIA_Project.Forms.UserForms
         {
             string SelectedTestName = TestsDGV.SelectedRows[0].Cells[0].Value.ToString();
             Tests t = SQL.MySql().tests.Single(x => x.Name == SelectedTestName);
-            //Program.TF.OpenChildForm(new TeacherTestsUsersForm(CurrentUser, t));
+            if (SQL.MySql().userTests.Single(x => x.TestID == t.ID && x.UserID == CurrentUser.Username).Completed == 0)
+            {
+                Program.HF.OpenChildForm(new UserTestWrittingForm(CurrentUser, t));
+            }
+            else 
+            {
+                Program.HF.OpenChildForm(new UserTestWatchingForm(CurrentUser, t));
+            }
         }
     }
 }
