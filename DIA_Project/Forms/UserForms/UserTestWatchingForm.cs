@@ -79,5 +79,9 @@ namespace DIA_Project.Forms.UserForms
             GC.Collect();
         }
 
+        private void VisszaBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

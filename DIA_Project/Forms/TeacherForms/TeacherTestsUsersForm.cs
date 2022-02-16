@@ -48,8 +48,8 @@ namespace DIA_Project.Forms.TeacherForms
             if (dgv.Columns.Count > 0)
             {
                 dgv.Columns[0].HeaderText = "Diák";
-                dgv.Columns[1].HeaderText = "Állapot";
-                dgv.Columns[2].HeaderText = "Leadási idő";
+                dgv.Columns[1].HeaderText = "Leadási idő";
+                dgv.Columns[2].HeaderText = "Állapot";
             }
         }
         private void PurchasesDGV_DataSourceChanged(object sender, EventArgs e)
@@ -65,6 +65,17 @@ namespace DIA_Project.Forms.TeacherForms
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void MegnyitasBtn_Click(object sender, EventArgs e)
+        {
+            string SelectedUserName = UsersTestsDGV.SelectedRows[0].Cells[0].Value.ToString();
+            List<Users> alluser = new List<Users>();
+            foreach (var item in UT)
+            {
+                alluser.Add(SQL.MySql().users.Single(x => x.Username == item.UserID));
+            }
+            Program.TF.OpenChildForm(new TeacherTestWatchingForm(alluser.Single(x => x.Name == SelectedUserName), CurrentTest));
         }
     }
 }

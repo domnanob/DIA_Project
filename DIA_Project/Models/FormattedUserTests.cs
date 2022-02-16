@@ -10,15 +10,27 @@ namespace DIA_Project.Models
     {
         public string UserName { get; private set; }
 
-        public string Completed { get; private set; }
-
         public string FinishDate { get; private set; }
+        
+        public string State { get; private set; }
 
         public FormattedUserTests(UserTests ut)
         {
             UserName = SQL.MySql().users.Single(x => x.Username == ut.UserID).Name;
-            Completed = (ut.Completed==1) ? "Leadva" : "Folyamatban";
             FinishDate = (ut.FinishDate==null)? "-" : ut.FinishDate.ToString();
+            if (ut.CorrectState == 1)
+            {
+                State = "Kijavítva!";
+            }
+            else {
+                if (ut.Completed == 1)
+                {
+                    State = "Javításra vár!";
+                }
+                else {
+                    State = "Hiányzik!";
+                }
+            }
         }
     }
 }

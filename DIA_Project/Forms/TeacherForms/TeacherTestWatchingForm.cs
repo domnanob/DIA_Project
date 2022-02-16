@@ -11,23 +11,27 @@ using DIA_Project.Models;
 using DIA_Project.Lib;
 using DIA_Project.Forms.User_Controlls;
 
-namespace DIA_Project.Forms.UserForms
+namespace DIA_Project.Forms.TeacherForms
 {
-    public partial class UserTestWrittingForm : Form
+    public partial class TeacherTestWatchingForm : Form
     {
-        public UserTestWrittingForm(Users u, Tests t)
+        public TeacherTestWatchingForm(Users u, Tests t)
         {
             InitializeComponent();
             CurrentUser = u;
             CurrentTest = t;
+
             DNameL.Text = t.Name;
+            UserNameTb.Text = t.Name;
+
             LoadingDataSources();
             LoadingTasks();
         }
         private Users CurrentUser = new Users();
         private Tests CurrentTest = new Tests();
         private List<Tasks> CurrentTasks = new List<Tasks>();
-        private List<Answers> CurrentAnswers = new List<Answers>();
+        private List<Answers> CurrentAns = new List<Answers>();
+        private List<Answers> UserAns = new List<Answers>();
         private int ChoiseDb = 0;
         private void LoadingDataSources() {
             using (SQL sql = SQL.MySql())
@@ -37,25 +41,30 @@ namespace DIA_Project.Forms.UserForms
                 {
                     foreach (var item2 in CurrentTasks)
                     {
-                        if (item.TaskID == item2.ID)
+                        if (item.TaskID == item2.ID && item.Correct==1)
                         {
-                            CurrentAnswers.Add(item);
+                            CurrentAns.Add(item);
                             break;
                         }
                     }
+                }
+                int userTestID = sql.userTests.Single(x => x.UserID == CurrentUser.Username && x.TestID == CurrentTest.ID).ID;
+                foreach (var item in sql.userAnswers.Where(x => x.UserTestID == userTestID))
+                {
+                    UserAns.Add(SQL.MySql().answers.Single(y => y.ID == item.AnswerID));
                 }
             }
         }
         private void NewMultipleChoiseTask(Tasks t) 
         {
-            MultipleChoiseTaskUC MCTUC = new MultipleChoiseTaskUC(t, CurrentAnswers.Where(x => x.TaskID == t.ID).ToList())
+            MultipleChoiseCorrectingUC MCTRC = new MultipleChoiseCorrectingUC(t, CurrentAns.Where(x => x.TaskID == t.ID).ToList(), UserAns.Where(y => y.TaskID == t.ID).ToList())
             {
-                Height = 115,
                 Dock = DockStyle.Top,
                 Name = "MultipleChoise" + ChoiseDb,
+                Enabled = false,
             };
-            this.HomePnl.Height += 115;
-            this.HomePnl.Controls.Add(MCTUC);
+            this.HomePnl.Height += MCTRC.Height;
+            this.HomePnl.Controls.Add(MCTRC);
             ChoiseDb++;
         }
         private void LoadingTasks() {
@@ -73,31 +82,9 @@ namespace DIA_Project.Forms.UserForms
             GC.Collect();
         }
 
-        private void LeadasBtn_Click(object sender, EventArgs e)
+        private void VisszaBtn_Click(object sender, EventArgs e)
         {
-            using (SQL sql = SQL.MySql())
-            {
-                UserTests UT = sql.userTests.Single(x => x.TestID == CurrentTest.ID && x.UserID == CurrentUser.Username);
-                UT.Completed = 1;
-                UT.FinishDate = DateTime.Now;
-                sql.SaveChanges();
-                foreach (var item in HomePnl.Controls.OfType<MultipleChoiseTaskUC>().ToList())
-                {
-                    foreach (var ans in item.GetAnswers())
-                    {
-                        UserAnswers UA = new UserAnswers()
-                        {
-                            UserTestID = UT.ID,
-                            TaskID = item.CurrentTask.ID,
-                            AnswerID = ans.ID,
-                        };
-                        sql.userAnswers.Add(UA);
-                    }
-                }
-                sql.SaveChanges();
-                new SuccessMessageForm("Sikeresen leadtad a dolgozatot!").ShowDialog();
-                Program.HF.ImitateClick("HomeBtn");
-            }
+            this.Close();
         }
     }
 }

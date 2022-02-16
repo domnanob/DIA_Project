@@ -36,6 +36,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.UsersTestsDGV = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.MegnyitasBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsersTestsDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -109,13 +110,29 @@ namespace DIA_Project.Forms.TeacherForms
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::DIA_Project.Properties.Resources.back;
-            this.pictureBox2.Location = new System.Drawing.Point(57, 70);
+            this.pictureBox2.Location = new System.Drawing.Point(57, 98);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(32, 32);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // MegnyitasBtn
+            // 
+            this.MegnyitasBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.MegnyitasBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.MegnyitasBtn.FlatAppearance.BorderSize = 2;
+            this.MegnyitasBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MegnyitasBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MegnyitasBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.MegnyitasBtn.Location = new System.Drawing.Point(594, 98);
+            this.MegnyitasBtn.Name = "MegnyitasBtn";
+            this.MegnyitasBtn.Size = new System.Drawing.Size(105, 36);
+            this.MegnyitasBtn.TabIndex = 10;
+            this.MegnyitasBtn.Text = "Megnyitás";
+            this.MegnyitasBtn.UseVisualStyleBackColor = false;
+            this.MegnyitasBtn.Click += new System.EventHandler(this.MegnyitasBtn_Click);
             // 
             // TeacherTestsUsersForm
             // 
@@ -125,6 +142,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.BackgroundImage = global::DIA_Project.Properties.Resources.WinFormBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(760, 580);
+            this.Controls.Add(this.MegnyitasBtn);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.UsersTestsDGV);
             this.Controls.Add(this.pictureBox1);
@@ -146,5 +164,6 @@ namespace DIA_Project.Forms.TeacherForms
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView UsersTestsDGV;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button MegnyitasBtn;
     }
 }

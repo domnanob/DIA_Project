@@ -1,7 +1,7 @@
 ﻿
-namespace DIA_Project.Forms.UserForms
+namespace DIA_Project.Forms.TeacherForms
 {
-    partial class UserTestWatchingForm
+    partial class TeacherTestWatchingForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,6 +35,7 @@ namespace DIA_Project.Forms.UserForms
             this.DNameL = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.VisszaBtn = new System.Windows.Forms.Button();
+            this.UserNameTb = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -64,6 +65,7 @@ namespace DIA_Project.Forms.UserForms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.UserNameTb);
             this.panel1.Controls.Add(this.DNameL);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -110,7 +112,16 @@ namespace DIA_Project.Forms.UserForms
             this.VisszaBtn.UseVisualStyleBackColor = false;
             this.VisszaBtn.Click += new System.EventHandler(this.VisszaBtn_Click);
             // 
-            // UserTestWatchingForm
+            // UserNameTb
+            // 
+            this.UserNameTb.Location = new System.Drawing.Point(0, 31);
+            this.UserNameTb.Name = "UserNameTb";
+            this.UserNameTb.Size = new System.Drawing.Size(760, 25);
+            this.UserNameTb.TabIndex = 1;
+            this.UserNameTb.Text = "User Name";
+            this.UserNameTb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // TeacherTestWatchingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -125,7 +136,7 @@ namespace DIA_Project.Forms.UserForms
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "UserTestWatchingForm";
+            this.Name = "TeacherTestWatchingForm";
             this.Text = "InfoForm";
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TeacherTestsForm_FormClosed);
@@ -144,5 +155,6 @@ namespace DIA_Project.Forms.UserForms
         private System.Windows.Forms.Label DNameL;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button VisszaBtn;
+        private System.Windows.Forms.Label UserNameTb;
     }
 }

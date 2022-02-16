@@ -18,19 +18,20 @@ namespace DIA_Project.Forms.UserForms
         public UserHomeForm(Users CU)
         {
             InitializeComponent();
+            CurrentUser = CU;
+
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.FormBorderStyle = FormBorderStyle.None;
             this.SetStyle(ControlStyles.ResizeRedraw, true);
+
             NavArrowP.Height = HomeBtn.Height;
             NavArrowP.Top = HomeBtn.Top;
             NavArrowP.Left = HomeBtn.Left;
-            HomeBtn.BackColor = Color.FromArgb(46, 51, 73);
-            CurrentNavBtn = HomeBtn;
-            OpenChildForm(new DashBoardForm());
-            CurrentUser = CU;
+
+            NavButtons_Click(this.HomeBtn, EventArgs.Empty);
         }
         private Button CurrentNavBtn = new Button();
         public Users CurrentUser = new Users();
@@ -40,8 +41,8 @@ namespace DIA_Project.Forms.UserForms
             if (currentChildForm != childForm)
             {
                 currentChildForm = childForm;
-                childForm.TopLevel = false;
                 childForm.FormBorderStyle = FormBorderStyle.None;
+                childForm.TopLevel = false;
                 childForm.Dock = DockStyle.Fill;
                 DesktopP.Controls.Add(childForm);
                 DesktopP.Tag = childForm;
@@ -49,7 +50,7 @@ namespace DIA_Project.Forms.UserForms
                 childForm.Show();
                 if (childForm.GetType() == new DashBoardForm().GetType())
                 {
-                    DesktopP.BackgroundImage = global::DIA_Project.Properties.Resources.WinFormBg2D;
+                    DesktopP.BackgroundImage = Properties.Resources.WinFormBg2D;
                 }
                 else
                 {
@@ -108,7 +109,7 @@ namespace DIA_Project.Forms.UserForms
             OpenChildForm(new DashBoardForm());
         }
 
-        private void NavButtons_Click(object sender, EventArgs e)
+        public void NavButtons_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
             NavArrowP.Height = btn.Height;
@@ -129,7 +130,7 @@ namespace DIA_Project.Forms.UserForms
                     OpenChildForm(new UserProfileForm(CurrentUser));
                     break;
                 case "BoltBtn":
-                    OpenChildForm(new UserBoltForm(CurrentUser));
+                    OpenChildForm(new UserBoltForm(CurrentUser)) ;
                     break;
                 case "InfoBtn":
                     OpenChildForm(new InfoForm());
@@ -137,6 +138,9 @@ namespace DIA_Project.Forms.UserForms
                 default:
                     break;
             }
+        }
+        public void ImitateClick(string ButtonName) {
+            NavButtons_Click(NavP.Controls.OfType<Button>().ToList().Single(x => x.Name == ButtonName), EventArgs.Empty);
         }
 
         private void HomeForm_FormClosed(object sender, FormClosedEventArgs e)

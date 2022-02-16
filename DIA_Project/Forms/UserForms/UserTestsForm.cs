@@ -55,7 +55,7 @@ namespace DIA_Project.Forms.UserForms
             TestsDGV.DataSource = null;
             foreach (var item in t)
             {
-                FTL.Add(new FormattedTestsForUsers(item));
+                FTL.Add(new FormattedTestsForUsers(item,CurrentUser));
             }
             TestsDGV.DataSource = FTL;
             return;
@@ -82,6 +82,7 @@ namespace DIA_Project.Forms.UserForms
                 dgv.Columns[1].HeaderText = "Tantárgy";
                 dgv.Columns[2].HeaderText = "Határidő";
                 dgv.Columns[3].HeaderText = "Pont";
+                dgv.Columns[4].HeaderText = "Állapot";
             }
         }
         private void PurchasesDGV_DataSourceChanged(object sender, EventArgs e)
@@ -98,13 +99,26 @@ namespace DIA_Project.Forms.UserForms
         {
             string SelectedTestName = TestsDGV.SelectedRows[0].Cells[0].Value.ToString();
             Tests t = SQL.MySql().tests.Single(x => x.Name == SelectedTestName);
-            if (SQL.MySql().userTests.Single(x => x.TestID == t.ID && x.UserID == CurrentUser.Username).Completed == 0)
+            UserTests ut = SQL.MySql().userTests.Single(x => x.TestID == t.ID && x.UserID == CurrentUser.Username);
+            if (ut.Completed == 0)
             {
-                Program.HF.OpenChildForm(new UserTestWrittingForm(CurrentUser, t));
+                WarningMessageForm wmf = new WarningMessageForm("Biztos készen állsz a dolgozatra?");
+                wmf.ShowDialog();
+                if (wmf.DialogResult == DialogResult.Yes)
+                {
+                    new SuccessMessageForm("Sok sikert!").Show();
+                    Program.HF.OpenChildForm(new UserTestWrittingForm(CurrentUser, t));
+                }
             }
-            else 
+            else
             {
-                Program.HF.OpenChildForm(new UserTestWatchingForm(CurrentUser, t));
+                if (ut.CorrectState == 1)
+                {
+                    Program.HF.OpenChildForm(new UserTestWatchingForm(CurrentUser, t));
+                }
+                else {
+                    new ErrorMessageForm("Ez a dolgozat még javítás alatt van!").Show();
+                }
             }
         }
     }

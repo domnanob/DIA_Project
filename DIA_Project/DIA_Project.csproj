@@ -37,6 +37,15 @@
     <Compile Update="Forms\MessageForms\ErrorMessageForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\TeacherForms\TeacherTestWatchingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\UserControlls\MultipleChoiseCorrectingUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\UserControlls\MultipleChoiseCorrectingUC.Designer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Forms\UserControlls\MultipleChoiseResultUC.cs">
       <SubType>UserControl</SubType>
     </Compile>

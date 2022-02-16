@@ -40,7 +40,7 @@ namespace DIA_Project
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            SQL.ConnectionString = Program.ConnectionString;
+            SQL.ConnectionString = ConnectionString;
             FormLoader();
         }
     }

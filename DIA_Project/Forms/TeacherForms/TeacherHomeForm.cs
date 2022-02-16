@@ -28,7 +28,7 @@ namespace DIA_Project.Forms.TeacherForms
             NavArrowP.Height = HomeBtn.Height;
             NavArrowP.Top = HomeBtn.Top;
             NavArrowP.Left = HomeBtn.Left;
-            HomeBtn.BackColor = Color.FromArgb(46, 51, 73);
+            //HomeBtn.BackColor = Color.FromArgb(46, 51, 73);
             CurrentNavBtn = HomeBtn;
             OpenChildForm(new DashBoardForm());
             CurrentTeacher = CT;
@@ -115,8 +115,8 @@ namespace DIA_Project.Forms.TeacherForms
             NavArrowP.Height = btn.Height;
             NavArrowP.Top = btn.Top;
             NavArrowP.Left = btn.Left;
-            btn.BackColor = Color.FromArgb(46, 51, 73);
-            CurrentNavBtn.BackColor = Color.FromArgb(24, 30, 54);
+            //btn.BackColor = Color.FromArgb(46, 51, 73);
+            //CurrentNavBtn.BackColor = Color.FromArgb(24, 30, 54);
             CurrentNavBtn = btn;
             switch (btn.Name)
             {

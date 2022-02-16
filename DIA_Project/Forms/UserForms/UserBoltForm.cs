@@ -4,11 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DIA_Project.Models;
+using DIA_Project.Lib;
 
 namespace DIA_Project.Forms.UserForms
 {
@@ -16,26 +16,16 @@ namespace DIA_Project.Forms.UserForms
     {
         public UserBoltForm(Users u)
         {
+            this.Visible = false;
             InitializeComponent();
             PontL.Text = u.Money + "";
             CurrentUser = u;
         }
         Users CurrentUser = new Users();
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect,     // x-coordinate of upper-left corner
-            int nTopRect,      // y-coordinate of upper-left corner
-            int nRightRect,    // x-coordinate of lower-right corner
-            int nBottomRect,   // y-coordinate of lower-right corner
-            int nWidthEllipse, // width of ellipse
-            int nHeightEllipse // height of ellipse
-        );
-        private void Panels_Paint(object sender, PaintEventArgs e)
+        private async void Panels_Paint(object sender, PaintEventArgs e)
         {
             var Pnl = sender as Panel;
-            Pnl.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Pnl.Width,
-            Pnl.Height, 30, 30));
+            Pnl.Region = Region.FromHrgn(BorderRadius.CreateRoundRectRgn(0, 0, Pnl.Width, Pnl.Height, 30, 30));
         }
 
         private void InfoPb_Enter(object sender, EventArgs e)
@@ -135,6 +125,11 @@ namespace DIA_Project.Forms.UserForms
         }
 
         private void BoltForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
+        }
+
+        private void UserBoltForm_Load(object sender, EventArgs e)
         {
             GC.Collect();
         }
