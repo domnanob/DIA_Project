@@ -25,13 +25,12 @@ namespace DIA_Project.Forms.TeacherForms
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.FormBorderStyle = FormBorderStyle.None;
             this.SetStyle(ControlStyles.ResizeRedraw, true);
+
             NavArrowP.Height = HomeBtn.Height;
             NavArrowP.Top = HomeBtn.Top;
             NavArrowP.Left = HomeBtn.Left;
-            //HomeBtn.BackColor = Color.FromArgb(46, 51, 73);
-            CurrentNavBtn = HomeBtn;
-            OpenChildForm(new DashBoardForm());
-            CurrentTeacher = CT;
+
+            NavButtons_Click(this.HomeBtn, EventArgs.Empty);
         }
         private Button CurrentNavBtn = new Button();
         public Teachers CurrentTeacher = new Teachers();
@@ -41,8 +40,8 @@ namespace DIA_Project.Forms.TeacherForms
             if (currentChildForm != childForm)
             {
                 currentChildForm = childForm;
-                childForm.TopLevel = false;
                 childForm.FormBorderStyle = FormBorderStyle.None;
+                childForm.TopLevel = false;
                 childForm.Dock = DockStyle.Fill;
                 DesktopP.Controls.Add(childForm);
                 DesktopP.Tag = childForm;
@@ -50,7 +49,7 @@ namespace DIA_Project.Forms.TeacherForms
                 childForm.Show();
                 if (childForm.GetType() == new DashBoardForm().GetType())
                 {
-                    DesktopP.BackgroundImage = global::DIA_Project.Properties.Resources.WinFormBg2D;
+                    DesktopP.BackgroundImage = Properties.Resources.WinFormBg2D;
                 }
                 else
                 {
@@ -115,8 +114,8 @@ namespace DIA_Project.Forms.TeacherForms
             NavArrowP.Height = btn.Height;
             NavArrowP.Top = btn.Top;
             NavArrowP.Left = btn.Left;
-            //btn.BackColor = Color.FromArgb(46, 51, 73);
-            //CurrentNavBtn.BackColor = Color.FromArgb(24, 30, 54);
+            btn.BackColor = Color.FromArgb(46, 51, 73);
+            CurrentNavBtn.BackColor = Color.FromArgb(24, 30, 54);
             CurrentNavBtn = btn;
             switch (btn.Name)
             {
@@ -138,6 +137,10 @@ namespace DIA_Project.Forms.TeacherForms
                 default:
                     break;
             }
+        }
+        public void ImitateClick(string ButtonName)
+        {
+            NavButtons_Click(NavP.Controls.OfType<Button>().ToList().Single(x => x.Name == ButtonName), EventArgs.Empty);
         }
 
         private void TeacherHomeForm_FormClosed(object sender, FormClosedEventArgs e)
