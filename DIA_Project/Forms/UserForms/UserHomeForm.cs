@@ -35,17 +35,23 @@ namespace DIA_Project.Forms.UserForms
         }
         private Button CurrentNavBtn = new Button();
         public Users CurrentUser = new Users();
-        private Form currentChildForm;
+        private Form currentChildForm = null;
         public void OpenChildForm(Form childForm)
         {
             if (currentChildForm != childForm)
             {
+                if (currentChildForm != null)
+                {
+                    currentChildForm.Close();
+                }
                 currentChildForm = childForm;
                 childForm.FormBorderStyle = FormBorderStyle.None;
                 childForm.TopLevel = false;
                 childForm.Dock = DockStyle.Fill;
+
                 DesktopP.Controls.Add(childForm);
                 DesktopP.Tag = childForm;
+
                 childForm.BringToFront();
                 childForm.Show();
                 if (childForm.GetType() == new DashBoardForm().GetType())

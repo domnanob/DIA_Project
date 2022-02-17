@@ -32,10 +32,11 @@ namespace DIA_Project.Forms.TeacherForms
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.HomePnl = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.UserNameTb = new System.Windows.Forms.Label();
             this.DNameL = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.MentesBtn = new System.Windows.Forms.Button();
             this.VisszaBtn = new System.Windows.Forms.Button();
-            this.UserNameTb = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -46,7 +47,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::DIA_Project.Properties.Resources.repair_tool;
-            this.pictureBox1.Location = new System.Drawing.Point(717, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(690, -1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(43, 40);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -73,6 +74,16 @@ namespace DIA_Project.Forms.TeacherForms
             this.panel1.Size = new System.Drawing.Size(760, 54);
             this.panel1.TabIndex = 10;
             // 
+            // UserNameTb
+            // 
+            this.UserNameTb.Location = new System.Drawing.Point(0, 38);
+            this.UserNameTb.Name = "UserNameTb";
+            this.UserNameTb.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.UserNameTb.Size = new System.Drawing.Size(760, 18);
+            this.UserNameTb.TabIndex = 1;
+            this.UserNameTb.Text = "User Name";
+            this.UserNameTb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // DNameL
             // 
             this.DNameL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -89,6 +100,7 @@ namespace DIA_Project.Forms.TeacherForms
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.VisszaBtn);
+            this.panel2.Controls.Add(this.MentesBtn);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 537);
@@ -96,30 +108,37 @@ namespace DIA_Project.Forms.TeacherForms
             this.panel2.Size = new System.Drawing.Size(760, 43);
             this.panel2.TabIndex = 12;
             // 
+            // MentesBtn
+            // 
+            this.MentesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.MentesBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.MentesBtn.FlatAppearance.BorderSize = 2;
+            this.MentesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MentesBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MentesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.MentesBtn.Location = new System.Drawing.Point(579, 3);
+            this.MentesBtn.Name = "MentesBtn";
+            this.MentesBtn.Size = new System.Drawing.Size(105, 36);
+            this.MentesBtn.TabIndex = 10;
+            this.MentesBtn.Text = "Mentés";
+            this.MentesBtn.UseVisualStyleBackColor = false;
+            this.MentesBtn.Click += new System.EventHandler(this.MentesBtn_Click);
+            // 
             // VisszaBtn
             // 
-            this.VisszaBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.VisszaBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.VisszaBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.VisszaBtn.FlatAppearance.BorderSize = 2;
             this.VisszaBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.VisszaBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.VisszaBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.VisszaBtn.Location = new System.Drawing.Point(606, 3);
+            this.VisszaBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.VisszaBtn.Location = new System.Drawing.Point(468, 3);
             this.VisszaBtn.Name = "VisszaBtn";
-            this.VisszaBtn.Size = new System.Drawing.Size(105, 36);
-            this.VisszaBtn.TabIndex = 10;
+            this.VisszaBtn.Size = new System.Drawing.Size(105, 37);
+            this.VisszaBtn.TabIndex = 32;
             this.VisszaBtn.Text = "Vissza";
             this.VisszaBtn.UseVisualStyleBackColor = false;
             this.VisszaBtn.Click += new System.EventHandler(this.VisszaBtn_Click);
-            // 
-            // UserNameTb
-            // 
-            this.UserNameTb.Location = new System.Drawing.Point(0, 31);
-            this.UserNameTb.Name = "UserNameTb";
-            this.UserNameTb.Size = new System.Drawing.Size(760, 25);
-            this.UserNameTb.TabIndex = 1;
-            this.UserNameTb.Text = "User Name";
-            this.UserNameTb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // TeacherTestWatchingForm
             // 
@@ -154,7 +173,8 @@ namespace DIA_Project.Forms.TeacherForms
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label DNameL;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button VisszaBtn;
+        private System.Windows.Forms.Button MentesBtn;
         private System.Windows.Forms.Label UserNameTb;
+        private System.Windows.Forms.Button VisszaBtn;
     }
 }

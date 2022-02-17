@@ -29,7 +29,6 @@ namespace DIA_Project.Forms.TeacherForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ClassesCB = new System.Windows.Forms.ComboBox();
             this.SubjectsCB = new System.Windows.Forms.ComboBox();
@@ -46,22 +45,11 @@ namespace DIA_Project.Forms.TeacherForms
             this.MentesBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.MegseBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::DIA_Project.Properties.Resources.repair_tool;
-            this.pictureBox1.Location = new System.Drawing.Point(716, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(44, 42);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
@@ -189,14 +177,14 @@ namespace DIA_Project.Forms.TeacherForms
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Controls.Add(this.MegseBtn);
             this.panel4.Controls.Add(this.FinishDTP);
             this.panel4.Controls.Add(this.StartDTP);
             this.panel4.Controls.Add(this.MentesBtn);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 538);
+            this.panel4.Location = new System.Drawing.Point(0, 535);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(760, 42);
             this.panel4.TabIndex = 11;
@@ -210,7 +198,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.FinishDTP.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.FinishDTP.Checked = false;
             this.FinishDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.FinishDTP.Location = new System.Drawing.Point(394, 5);
+            this.FinishDTP.Location = new System.Drawing.Point(350, 12);
             this.FinishDTP.Name = "FinishDTP";
             this.FinishDTP.Size = new System.Drawing.Size(185, 27);
             this.FinishDTP.TabIndex = 9;
@@ -223,7 +211,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.StartDTP.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.StartDTP.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.StartDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.StartDTP.Location = new System.Drawing.Point(73, 5);
+            this.StartDTP.Location = new System.Drawing.Point(57, 12);
             this.StartDTP.Name = "StartDTP";
             this.StartDTP.Size = new System.Drawing.Size(202, 27);
             this.StartDTP.TabIndex = 9;
@@ -231,16 +219,17 @@ namespace DIA_Project.Forms.TeacherForms
             // MentesBtn
             // 
             this.MentesBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.MentesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.MentesBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.MentesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MentesBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.MentesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.MentesBtn.Location = new System.Drawing.Point(623, 3);
+            this.MentesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.MentesBtn.Location = new System.Drawing.Point(642, 10);
             this.MentesBtn.Name = "MentesBtn";
-            this.MentesBtn.Size = new System.Drawing.Size(94, 29);
+            this.MentesBtn.Size = new System.Drawing.Size(79, 32);
             this.MentesBtn.TabIndex = 8;
             this.MentesBtn.Text = "Mentés";
-            this.MentesBtn.UseVisualStyleBackColor = true;
+            this.MentesBtn.UseVisualStyleBackColor = false;
             this.MentesBtn.Click += new System.EventHandler(this.MentesBtn_Click);
             // 
             // label3
@@ -248,7 +237,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.label3.Location = new System.Drawing.Point(321, 7);
+            this.label3.Location = new System.Drawing.Point(277, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 20);
             this.label3.TabIndex = 1;
@@ -259,11 +248,26 @@ namespace DIA_Project.Forms.TeacherForms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.label2.Location = new System.Drawing.Point(17, 7);
+            this.label2.Location = new System.Drawing.Point(1, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Kezdés:";
+            // 
+            // MegseBtn
+            // 
+            this.MegseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.MegseBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.MegseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MegseBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MegseBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.MegseBtn.Location = new System.Drawing.Point(557, 10);
+            this.MegseBtn.Name = "MegseBtn";
+            this.MegseBtn.Size = new System.Drawing.Size(79, 32);
+            this.MegseBtn.TabIndex = 10;
+            this.MegseBtn.Text = "Mégse";
+            this.MegseBtn.UseVisualStyleBackColor = true;
+            this.MegseBtn.Click += new System.EventHandler(this.MegseBtn_Click);
             // 
             // TeacherNewTestForm
             // 
@@ -283,7 +287,6 @@ namespace DIA_Project.Forms.TeacherForms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TeacherNewTestForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TeacherTestsUsersForm_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -294,8 +297,6 @@ namespace DIA_Project.Forms.TeacherForms
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TestNameTb;
@@ -312,5 +313,6 @@ namespace DIA_Project.Forms.TeacherForms
         private System.Windows.Forms.DateTimePicker FinishDTP;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button MegseBtn;
     }
 }

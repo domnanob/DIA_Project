@@ -15,18 +15,20 @@ namespace DIA_Project.Forms.TeacherForms
 {
     public partial class TeacherTestWatchingForm : Form
     {
-        public TeacherTestWatchingForm(Users u, Tests t)
+        public TeacherTestWatchingForm(Teachers tea, Users u, Tests t)
         {
             InitializeComponent();
             CurrentUser = u;
+            CurrentTeacher = tea;
             CurrentTest = t;
 
             DNameL.Text = t.Name;
-            UserNameTb.Text = t.Name;
+            UserNameTb.Text = u.Name;
 
             LoadingDataSources();
             LoadingTasks();
         }
+        private Teachers CurrentTeacher = new Teachers();
         private Users CurrentUser = new Users();
         private Tests CurrentTest = new Tests();
         private List<Tasks> CurrentTasks = new List<Tasks>();
@@ -61,7 +63,6 @@ namespace DIA_Project.Forms.TeacherForms
             {
                 Dock = DockStyle.Top,
                 Name = "MultipleChoise" + ChoiseDb,
-                Enabled = false,
             };
             this.HomePnl.Height += MCTRC.Height;
             this.HomePnl.Controls.Add(MCTRC);
@@ -84,6 +85,31 @@ namespace DIA_Project.Forms.TeacherForms
 
         private void VisszaBtn_Click(object sender, EventArgs e)
         {
+            Program.TF.OpenChildForm(new TeacherTestsUsersForm(CurrentTeacher, CurrentTest));
+        }
+
+        private void MentesBtn_Click(object sender, EventArgs e)
+        {
+            foreach (var item in HomePnl.Controls.OfType<MultipleChoiseCorrectingUC>().ToList())
+            {
+                if (!item.isCorrected())
+                {
+                    new ErrorMessageForm("Nem javítottál ki minden feladatot!").ShowDialog();
+                    return;
+                }
+            }
+            using (SQL sql = SQL.MySql())
+            {
+                UserTests ut = sql.userTests.Single(x => x.TestID == CurrentTest.ID && x.UserID == CurrentUser.Username);
+                ut.CorrectState = 1;
+                ut.Points = 0;
+                foreach (var item in HomePnl.Controls.OfType<MultipleChoiseCorrectingUC>().ToList())
+                {
+                    ut.Points += double.Parse(item.GetPoints());
+                }
+                sql.SaveChanges();
+            }
+            new SuccessMessageForm("Sikeresen kijavítottad a dolgozatot!").ShowDialog();
             this.Close();
         }
     }

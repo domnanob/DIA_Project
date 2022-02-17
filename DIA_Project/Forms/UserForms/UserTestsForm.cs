@@ -19,13 +19,14 @@ namespace DIA_Project.Forms.UserForms
             InitializeComponent();
             CurrentUser = u;
             LoadingDataSources();
-            SubjectsCB.SelectedItem = "None";
-            this.SubjectsCB.SelectedValueChanged += new System.EventHandler(this.SubjectsCB_SelectedValueChanged);
+            SubjectsCB.SelectedItem = "Tantárgy";
+            SubjectsCB.SelectedValueChanged += new EventHandler(SubjectsCB_SelectedValueChanged);
         }
         private Users CurrentUser = new Users();
         private List<Tests> tests = new List<Tests>();
         private List<Tests> SelectedTests = new List<Tests>();
         private List<FormattedTestsForUsers> FTL = new List<FormattedTestsForUsers>();
+        private List<int> TIDS = new List<int>();
         public void LoadingDataSources() {
             using (SQL sql = SQL.MySql())
             {
@@ -34,7 +35,6 @@ namespace DIA_Project.Forms.UserForms
                     SubjectsCB.Items.Add(item.Name);
                 }
                 tests.Clear();
-                List<int> TIDS = new List<int>();
                 foreach (var item in sql.userTests.Where(x => x.UserID == CurrentUser.Username).ToList())
                 {
                     TIDS.Add(item.TestID);
@@ -44,6 +44,7 @@ namespace DIA_Project.Forms.UserForms
                     if (TIDS.Contains(item.ID))
                     {
                         tests.Add(item);
+                        SelectedTests.Add(item);
                     }
                 }
                 DGVLoad(tests);
@@ -62,14 +63,38 @@ namespace DIA_Project.Forms.UserForms
         }
         private void SubjectsCB_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (SubjectsCB.Items[SubjectsCB.SelectedIndex] == "None")
+            if (SubjectsCB.Items[SubjectsCB.SelectedIndex] == "Tantárgy")
             {
-                DGVLoad(tests);
+                SelectedTests = SQL.MySql().tests.Where(x => TIDS.Contains(x.ID)).ToList();
+                if (ShowCorrectedCb.Checked && ShowInProgressCb.Checked)
+                {
+                    DGVLoad(SelectedTests);
+                    return;
+                }
+                if (!ShowCorrectedCb.Checked) {
+                    ShowCorrectedCb_CheckedChanged(ShowCorrectedCb, EventArgs.Empty);
+                }
+                if (!ShowInProgressCb.Checked)
+                {
+                    ShowInProgressCb_CheckedChanged(ShowCorrectedCb, EventArgs.Empty);
+                }
             }
             else {
                 Subjects s = SQL.MySql().subjects.Single(x => x.Name == SubjectsCB.Items[SubjectsCB.SelectedIndex]);
                 SelectedTests = tests.Where(x => x.SubjectID == s.ID).ToList();
-                DGVLoad(SelectedTests);
+                if (ShowCorrectedCb.Checked && ShowInProgressCb.Checked)
+                {
+                    DGVLoad(SelectedTests);
+                    return;
+                }
+                if (!ShowCorrectedCb.Checked)
+                {
+                    ShowCorrectedCb_CheckedChanged(ShowCorrectedCb, EventArgs.Empty);
+                }
+                if (!ShowInProgressCb.Checked)
+                {
+                    ShowInProgressCb_CheckedChanged(ShowCorrectedCb, EventArgs.Empty);
+                }
             }
         }
 
@@ -102,12 +127,18 @@ namespace DIA_Project.Forms.UserForms
             UserTests ut = SQL.MySql().userTests.Single(x => x.TestID == t.ID && x.UserID == CurrentUser.Username);
             if (ut.Completed == 0)
             {
-                WarningMessageForm wmf = new WarningMessageForm("Biztos készen állsz a dolgozatra?");
-                wmf.ShowDialog();
-                if (wmf.DialogResult == DialogResult.Yes)
+                if (t.StartDate <= DateTime.Now)
                 {
-                    new SuccessMessageForm("Sok sikert!").Show();
-                    Program.HF.OpenChildForm(new UserTestWrittingForm(CurrentUser, t));
+                    WarningMessageForm wmf = new WarningMessageForm("Biztos készen állsz a dolgozatra?");
+                    wmf.ShowDialog();
+                    if (wmf.DialogResult == DialogResult.Yes)
+                    {
+                        new SuccessMessageForm("Sok sikert!").Show();
+                        Program.HF.OpenChildForm(new UserTestWrittingForm(CurrentUser, t));
+                    }
+                }
+                else {
+                    new ErrorMessageForm("Ezt a dolgozatot majd ekkor írhatod meg: "+t.StartDate).Show();
                 }
             }
             else
@@ -119,6 +150,56 @@ namespace DIA_Project.Forms.UserForms
                 else {
                     new ErrorMessageForm("Ez a dolgozat még javítás alatt van!").Show();
                 }
+            }
+        }
+
+        private void ShowCorrectedCb_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ShowCorrectedCb.Checked)
+            {
+                SubjectsCB_SelectedValueChanged(SubjectsCB, EventArgs.Empty);
+            }
+            else 
+            {
+                List<Tests> GarbageItems = new List<Tests>();
+                foreach (var item in SelectedTests)
+                {
+                    UserTests ut = SQL.MySql().userTests.Single(x => x.TestID == item.ID && x.UserID == CurrentUser.Username);
+                    if (ut.CorrectState == 1)
+                    {
+                        GarbageItems.Add(item);
+                    }
+                }
+                foreach (var item in GarbageItems)
+                {
+                    SelectedTests.Remove(item);
+                }
+                DGVLoad(SelectedTests);
+            }
+        }
+
+        private void ShowInProgressCb_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ShowInProgressCb.Checked)
+            {
+                SubjectsCB_SelectedValueChanged(SubjectsCB, EventArgs.Empty);
+            }
+            else
+            {
+                List<Tests> GarbageItems = new List<Tests>();
+                foreach (var item in SelectedTests)
+                {
+                    UserTests ut = SQL.MySql().userTests.Single(x => x.TestID == item.ID && x.UserID == CurrentUser.Username);
+                    if (ut.CorrectState == 0 && ut.Completed == 1)
+                    {
+                        GarbageItems.Add(item);
+                    }
+                }
+                foreach (var item in GarbageItems)
+                {
+                    SelectedTests.Remove(item);
+                }
+                DGVLoad(SelectedTests);
             }
         }
     }

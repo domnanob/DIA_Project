@@ -21,6 +21,9 @@ namespace DIA_Project.Models
         public string Task { get; set; }
 
         [Required]
+        public int Points { get; set; }
+
+        [Required]
         public int TypeID { get; set; }
     }
 }

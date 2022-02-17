@@ -20,23 +20,25 @@ namespace DIA_Project.Models
                 TestName = t.Name;
                 Subject = sql.subjects.Single(x => x.ID == t.SubjectID).Name;
                 ExpireDate = t.FinishDate;
-                Score = "100/";
+                Score = t.MaxPoints+"/";
                 UserTests ut = sql.userTests.Single(x => x.UserID == u.Username && x.TestID == t.ID);
                 if (ut.Completed == 1)
                 {
                     if (ut.CorrectState == 1)
                     {
                         State = "Kijavítva!";
-                        //Score += ;
+                        Score += ut.Points;
                     }
                     else
                     {
                         State = "Javítás alatt!";
+                        Score += "?";
                     }
                 }
                 else 
                 {
                     State = "Nincs leadva!";
+                    Score += "-";
                 }
             }
         }

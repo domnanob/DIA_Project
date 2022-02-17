@@ -132,6 +132,7 @@ namespace DIA_Project.Forms.TeacherForms
                     ClassID = sql.classes.Single(x => x.Name == ClassesCB.Items[ClassesCB.SelectedIndex]).ID,
                     Name = TestNameTb.Text,
                     SubjectID = sql.subjects.Single(x => x.Name == SubjectsCB.Items[SubjectsCB.SelectedIndex]).ID,
+                    MaxPoints = 0,
                     Locked = 0,
                     TeacherID = CurrentTeacher.Username,
                     StartDate = StartDTP.Value,
@@ -139,16 +140,19 @@ namespace DIA_Project.Forms.TeacherForms
                 };
                 sql.tests.Add(tst);
                 sql.SaveChanges();
+                int CurrentMaxPoint = 0;
                 foreach (var item in this.HomePnl.Controls.OfType<MultipleChoiseUC>()) //Végigmegy az összes Feladaton
                 {
                     Tasks tsk = new Tasks() {
                         ID = CurrentTaskID,
                         TestID = CurrentTestID,
                         Task = item.GetTaskName(),
+                        Points = item.GetPoints(),
                         TypeID = 1,
                     };
                     sql.tasks.Add(tsk);
                     sql.SaveChanges();
+                    CurrentMaxPoint += tsk.Points;
                     List<RadioButtonsUC> ItemData = item.GetRBUC();
                     foreach (var RB in ItemData) //Feladatokon bellüli válaszok
                     {
@@ -177,9 +181,16 @@ namespace DIA_Project.Forms.TeacherForms
                         sql.userTests.Add(UT);
                     }
                 }
+                sql.tests.Single(x => x.ID == CurrentTestID).MaxPoints = CurrentMaxPoint;
                 sql.SaveChanges();
             }
             new SuccessMessageForm("Sikeresen létrehoztad a dolgozatot!").ShowDialog();
+            Program.TF.ImitateClick("DolgozatokBtn");
+        }
+
+        private void MegseBtn_Click(object sender, EventArgs e)
+        {
+            Program.TF.ImitateClick("DolgozatokBtn");
         }
     }
 }

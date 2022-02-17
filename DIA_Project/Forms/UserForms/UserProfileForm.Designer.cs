@@ -294,6 +294,7 @@ namespace DIA_Project.Forms.UserForms
             // 
             this.UserTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.UserTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.UserTB.Enabled = false;
             this.UserTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UserTB.ForeColor = System.Drawing.Color.White;
             this.UserTB.Location = new System.Drawing.Point(21, 155);

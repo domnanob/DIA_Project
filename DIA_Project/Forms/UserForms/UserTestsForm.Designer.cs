@@ -37,6 +37,8 @@ namespace DIA_Project.Forms.UserForms
             this.TestsDGV = new System.Windows.Forms.DataGridView();
             this.SubjectsCB = new System.Windows.Forms.ComboBox();
             this.MegnyitasBtn = new System.Windows.Forms.Button();
+            this.ShowCorrectedCb = new System.Windows.Forms.CheckBox();
+            this.ShowInProgressCb = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestsDGV)).BeginInit();
             this.SuspendLayout();
@@ -112,7 +114,7 @@ namespace DIA_Project.Forms.UserForms
             this.SubjectsCB.ForeColor = System.Drawing.Color.White;
             this.SubjectsCB.FormattingEnabled = true;
             this.SubjectsCB.Items.AddRange(new object[] {
-            "None"});
+            "Tantárgy"});
             this.SubjectsCB.Location = new System.Drawing.Point(59, 93);
             this.SubjectsCB.Name = "SubjectsCB";
             this.SubjectsCB.Size = new System.Drawing.Size(214, 28);
@@ -134,6 +136,34 @@ namespace DIA_Project.Forms.UserForms
             this.MegnyitasBtn.UseVisualStyleBackColor = false;
             this.MegnyitasBtn.Click += new System.EventHandler(this.MegnyitasBtn_Click);
             // 
+            // ShowCorrectedCb
+            // 
+            this.ShowCorrectedCb.AutoSize = true;
+            this.ShowCorrectedCb.BackColor = System.Drawing.Color.Transparent;
+            this.ShowCorrectedCb.Checked = true;
+            this.ShowCorrectedCb.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ShowCorrectedCb.Location = new System.Drawing.Point(279, 97);
+            this.ShowCorrectedCb.Name = "ShowCorrectedCb";
+            this.ShowCorrectedCb.Size = new System.Drawing.Size(106, 24);
+            this.ShowCorrectedCb.TabIndex = 10;
+            this.ShowCorrectedCb.Text = "Kijavítottak";
+            this.ShowCorrectedCb.UseVisualStyleBackColor = false;
+            this.ShowCorrectedCb.CheckedChanged += new System.EventHandler(this.ShowCorrectedCb_CheckedChanged);
+            // 
+            // ShowInProgressCb
+            // 
+            this.ShowInProgressCb.AutoSize = true;
+            this.ShowInProgressCb.BackColor = System.Drawing.Color.Transparent;
+            this.ShowInProgressCb.Checked = true;
+            this.ShowInProgressCb.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ShowInProgressCb.Location = new System.Drawing.Point(391, 97);
+            this.ShowInProgressCb.Name = "ShowInProgressCb";
+            this.ShowInProgressCb.Size = new System.Drawing.Size(137, 24);
+            this.ShowInProgressCb.TabIndex = 10;
+            this.ShowInProgressCb.Text = "Függőben lévők";
+            this.ShowInProgressCb.UseVisualStyleBackColor = false;
+            this.ShowInProgressCb.CheckedChanged += new System.EventHandler(this.ShowInProgressCb_CheckedChanged);
+            // 
             // UserTestsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -142,6 +172,8 @@ namespace DIA_Project.Forms.UserForms
             this.BackgroundImage = global::DIA_Project.Properties.Resources.WinFormBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(760, 580);
+            this.Controls.Add(this.ShowInProgressCb);
+            this.Controls.Add(this.ShowCorrectedCb);
             this.Controls.Add(this.MegnyitasBtn);
             this.Controls.Add(this.SubjectsCB);
             this.Controls.Add(this.TestsDGV);
@@ -155,6 +187,7 @@ namespace DIA_Project.Forms.UserForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestsDGV)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -164,5 +197,7 @@ namespace DIA_Project.Forms.UserForms
         private System.Windows.Forms.DataGridView TestsDGV;
         private System.Windows.Forms.ComboBox SubjectsCB;
         private System.Windows.Forms.Button MegnyitasBtn;
+        private System.Windows.Forms.CheckBox ShowCorrectedCb;
+        private System.Windows.Forms.CheckBox ShowInProgressCb;
     }
 }

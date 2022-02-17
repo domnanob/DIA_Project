@@ -27,6 +27,9 @@ namespace DIA_Project.Models
         public int ClassID { get; set; }
 
         [Required]
+        public int MaxPoints { get; set; }
+
+        [Required]
         public int Locked { get; set; } = 0;
 
         [Required]

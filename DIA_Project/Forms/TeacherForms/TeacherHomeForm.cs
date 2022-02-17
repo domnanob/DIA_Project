@@ -25,6 +25,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.FormBorderStyle = FormBorderStyle.None;
             this.SetStyle(ControlStyles.ResizeRedraw, true);
+            this.CurrentTeacher = CT;
 
             NavArrowP.Height = HomeBtn.Height;
             NavArrowP.Top = HomeBtn.Top;
@@ -34,17 +35,24 @@ namespace DIA_Project.Forms.TeacherForms
         }
         private Button CurrentNavBtn = new Button();
         public Teachers CurrentTeacher = new Teachers();
-        private Form currentChildForm;
+        private Form currentChildForm = null;
         public void OpenChildForm(Form childForm)
         {
             if (currentChildForm != childForm)
             {
+                if (currentChildForm != null)
+                {
+                    currentChildForm.Close();
+                }
+
                 currentChildForm = childForm;
                 childForm.FormBorderStyle = FormBorderStyle.None;
                 childForm.TopLevel = false;
                 childForm.Dock = DockStyle.Fill;
+
                 DesktopP.Controls.Add(childForm);
                 DesktopP.Tag = childForm;
+
                 childForm.BringToFront();
                 childForm.Show();
                 if (childForm.GetType() == new DashBoardForm().GetType())

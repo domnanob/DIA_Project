@@ -28,6 +28,7 @@ namespace DIA_Project.Forms.TeacherForms
         private List<Positions> positions = new List<Positions>();
         private List<FormattedTests> FTL = new List<FormattedTests>();
         public void LoadingDataSources() {
+            positions.Clear();
             using (SQL sql = SQL.MySql())
             {
                 foreach (var item in sql.positions)
@@ -108,6 +109,7 @@ namespace DIA_Project.Forms.TeacherForms
         private void NewTestBtn_Click(object sender, EventArgs e)
         {
             Program.TF.OpenChildForm(new TeacherNewTestForm(CurrentTeacher, positions));
+            this.Close();
         }
     }
 }

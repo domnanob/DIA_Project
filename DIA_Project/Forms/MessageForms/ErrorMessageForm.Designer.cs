@@ -68,7 +68,7 @@ namespace DIA_Project.Forms
             this.YesBtn.Name = "YesBtn";
             this.YesBtn.Size = new System.Drawing.Size(105, 39);
             this.YesBtn.TabIndex = 2;
-            this.YesBtn.Text = "Hát jó";
+            this.YesBtn.Text = "OK";
             this.YesBtn.UseVisualStyleBackColor = false;
             this.YesBtn.Click += new System.EventHandler(this.YesBtn_Click);
             // 

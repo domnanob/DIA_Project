@@ -18,13 +18,16 @@ namespace DIA_Project.Forms.User_Controlls
             InitializeComponent();
             CurrentTask = t;
             CorrectAns = ca;
+            oneAnswerPoint = t.Points / CorrectAns.Count;
             UserAns = ua;
             TaskNameL.Text = t.Task;
-            PontTb.Text = "2/";
+            PontTb.Text = t.Points+"/"+ t.Points;
             LoadAnswers();
         }
         private int ansDb = 0;
         private int panelDb = 0;
+        private double oneAnswerPoint = 0;
+        private bool Locked = false;
         public Tasks CurrentTask = new Tasks();
         private List<Answers> CorrectAns = new List<Answers>();
         private List<Answers> UserAns = new List<Answers>();
@@ -98,11 +101,13 @@ namespace DIA_Project.Forms.User_Controlls
                     {
                         UserAnswerP.BackColor = Color.FromArgb(28, 150, 56);
                         UserAnswerCB.Checked = true;
+                        //PontTb.Text = PontTb.Text.Split("/")[0].ToString() + "/" + (double.Parse(PontTb.Text.Split("/")[1]) + oneAnswerPoint).ToString();
                         break;
                     }
                     else
                     { 
                         UserAnswerP.BackColor = Color.FromArgb(148, 33, 55);
+                        PontTb.Text = PontTb.Text.Split("/")[0].ToString() + "/" + (double.Parse(PontTb.Text.Split("/")[1]) - oneAnswerPoint).ToString();
                     }
                 }
                 UserAnswerP.Controls.Add(UserAnswerCB);
@@ -120,10 +125,35 @@ namespace DIA_Project.Forms.User_Controlls
             }
             return ChoosenAns;
         }
+        public string GetPoints() {
+            return PontTb.Text.Split('/')[1];
+        }
+        public bool isCorrected() {
+            if (PontTb.Enabled)
+            {
+                return false;
+            }
+            return true;
+        }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-            PontTb.Enabled = false;
+            if (string.IsNullOrEmpty(PontTb.Text.Split('/')[1]))
+            {
+                PontTb.Text += "0";
+            }
+            if (Locked)
+            {
+                pictureBox1.Image = Properties.Resources.check_lists;
+                PontTb.Enabled = true;
+                Locked = false;
+            }
+            else 
+            {
+                pictureBox1.Image = Properties.Resources.cancel;
+                PontTb.Enabled = false;
+                Locked = true;
+            }
         }
     }
 }

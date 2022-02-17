@@ -20,6 +20,10 @@ namespace DIA_Project.Forms.User_Controlls
         {
             return TaskNameTb.Text;
         }
+        public int GetPoints()
+        {
+            return int.Parse(PointsTb.Text);
+        }
         public List<RadioButtonsUC> GetRBUC()
         {
             return this.panel2.Controls.OfType<RadioButtonsUC>().ToList();
@@ -52,6 +56,11 @@ namespace DIA_Project.Forms.User_Controlls
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
+        private void PointsTb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

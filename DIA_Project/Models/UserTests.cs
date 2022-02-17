@@ -24,6 +24,9 @@ namespace DIA_Project.Models
         public int Completed { get; set; } = 0;
 
         [Required]
+        public double Points { get; set; }
+
+        [Required]
         public int CorrectState { get; set; } = 0;
 
         public DateTime? FinishDate { get; set; }

@@ -69,13 +69,25 @@ namespace DIA_Project.Forms.TeacherForms
 
         private void MegnyitasBtn_Click(object sender, EventArgs e)
         {
-            string SelectedUserName = UsersTestsDGV.SelectedRows[0].Cells[0].Value.ToString();
-            List<Users> alluser = new List<Users>();
-            foreach (var item in UT)
+            if (new string[] { "Javításra vár!", "Kijavítva!" }.Contains(UsersTestsDGV.SelectedRows[0].Cells[2].Value.ToString()))
             {
-                alluser.Add(SQL.MySql().users.Single(x => x.Username == item.UserID));
+                string SelectedUserName = UsersTestsDGV.SelectedRows[0].Cells[0].Value.ToString();
+                List<Users> alluser = new List<Users>();
+                foreach (var item in UT)
+                {
+                    alluser.Add(SQL.MySql().users.Single(x => x.Username == item.UserID));
+                }
+                Program.TF.OpenChildForm(new TeacherTestWatchingForm(CurrentTeacher, alluser.Single(x => x.Name == SelectedUserName), CurrentTest));
             }
-            Program.TF.OpenChildForm(new TeacherTestWatchingForm(alluser.Single(x => x.Name == SelectedUserName), CurrentTest));
+            else
+            {
+                new ErrorMessageForm("Ez a dolgozat még nincs leadva!").Show();
+            }
+        }
+
+        private void VisszaBtn_Click(object sender, EventArgs e)
+        {
+            Program.TF.ImitateClick("DolgozatokBtn");
         }
     }
 }
