@@ -107,10 +107,11 @@ namespace DIA_Project.Forms.TeacherForms
                 {
                     ut.Points += double.Parse(item.GetPoints());
                 }
+                sql.users.Single(x => x.Username == CurrentUser.Username).Money += Convert.ToInt32(ut.Points);
                 sql.SaveChanges();
             }
             new SuccessMessageForm("Sikeresen kijavítottad a dolgozatot!").ShowDialog();
-            this.Close();
+            Program.TF.ImitateClick("HomeBtn");
         }
     }
 }

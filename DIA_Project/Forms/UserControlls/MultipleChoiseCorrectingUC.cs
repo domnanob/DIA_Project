@@ -73,6 +73,7 @@ namespace DIA_Project.Forms.User_Controlls
                     Enabled = false,
                 };
                 MissingAnsP.BackColor = Color.FromArgb(148, 33, 55);
+                PontTb.Text = PontTb.Text.Split("/")[0].ToString() + "/" + (double.Parse(PontTb.Text.Split("/")[1]) - oneAnswerPoint).ToString();
                 MissingAnsP.Controls.Add(MissingAns);
             }
             foreach (var item in UserAns)

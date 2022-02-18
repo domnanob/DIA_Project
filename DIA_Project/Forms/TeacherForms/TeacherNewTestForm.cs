@@ -33,8 +33,16 @@ namespace DIA_Project.Forms.TeacherForms
             TaskTypesCB.Items.Clear();
             using (SQL sql = SQL.MySql())
             {
-                CurrentTestID = sql.tests.Max(x => x.ID)+1;
-                CurrentTaskID = sql.tasks.Max(y => y.ID)+1;
+                try
+                {
+                    CurrentTestID = sql.tests.Max(x => x.ID) + 1;
+                    CurrentTaskID = sql.tasks.Max(y => y.ID) + 1;
+                }
+                catch (Exception ex)
+                {
+                    CurrentTestID = 1;
+                    CurrentTaskID = 1;
+                }
                 foreach (var item in sql.taskTypes)
                 {
                     TaskTypesCB.Items.Add(item.Name);
@@ -123,6 +131,15 @@ namespace DIA_Project.Forms.TeacherForms
             {
                 new ErrorMessageForm("Minden mező kitöltése kötelező!").ShowDialog();
                 return;
+            }
+            foreach (var item in this.HomePnl.Controls.OfType<MultipleChoiseUC>())
+            {
+                string EM;
+                if (!item.IsAllFieldFilled(out EM))
+                {
+                    new ErrorMessageForm(EM).ShowDialog();
+                    return;
+                }
             }
             using (SQL sql = SQL.MySql())
             {

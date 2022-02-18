@@ -24,6 +24,29 @@ namespace DIA_Project.Forms.User_Controlls
         {
             return int.Parse(PointsTb.Text);
         }
+        public bool IsAllFieldFilled(out string? ErrorMessage)
+        {
+            foreach (var item in GetRBUC())
+            {
+                if (string.IsNullOrEmpty(item.GetAnswer().Item1))
+                {
+                    ErrorMessage = "Nincs kitöltve minden válasz!";
+                    return false;
+                }
+            }
+            if (string.IsNullOrEmpty(TaskNameTb.Text))
+            {
+                ErrorMessage = "Nincs kitöltve minden kérdés!";
+                return false;
+            }
+            if (string.IsNullOrEmpty(PointsTb.Text))
+            {
+                ErrorMessage = "Nincs pontszám megadva egy kérdésre!";
+                return false;
+            }
+            ErrorMessage = string.Empty;
+            return true;
+        }
         public List<RadioButtonsUC> GetRBUC()
         {
             return this.panel2.Controls.OfType<RadioButtonsUC>().ToList();
