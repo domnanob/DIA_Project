@@ -1,5 +1,5 @@
 ﻿
-namespace DIA_Project.Forms
+namespace DIA_Project.Forms.CommonForms
 {
     partial class BejelentkezesForm
     {

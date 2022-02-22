@@ -22,7 +22,7 @@ namespace DIA_Project.Forms.UserForms
             CurrentUser = u;
         }
         Users CurrentUser = new Users();
-        private async void Panels_Paint(object sender, PaintEventArgs e)
+        private void Panels_Paint(object sender, PaintEventArgs e)
         {
             var Pnl = sender as Panel;
             Pnl.Region = Region.FromHrgn(BorderRadius.CreateRoundRectRgn(0, 0, Pnl.Width, Pnl.Height, 30, 30));

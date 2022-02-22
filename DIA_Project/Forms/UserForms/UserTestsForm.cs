@@ -63,7 +63,7 @@ namespace DIA_Project.Forms.UserForms
         }
         private void SubjectsCB_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (SubjectsCB.Items[SubjectsCB.SelectedIndex] == "Tantárgy")
+            if (SubjectsCB.Items[SubjectsCB.SelectedIndex] == SubjectsCB.Items[0])
             {
                 SelectedTests = SQL.MySql().tests.Where(x => TIDS.Contains(x.ID)).ToList();
                 if (ShowCorrectedCb.Checked && ShowInProgressCb.Checked)
@@ -80,7 +80,7 @@ namespace DIA_Project.Forms.UserForms
                 }
             }
             else {
-                Subjects s = SQL.MySql().subjects.Single(x => x.Name == SubjectsCB.Items[SubjectsCB.SelectedIndex]);
+                Subjects s = SQL.MySql().subjects.Single(x => x.Name == SubjectsCB.Items[SubjectsCB.SelectedIndex].ToString());
                 SelectedTests = tests.Where(x => x.SubjectID == s.ID).ToList();
                 if (ShowCorrectedCb.Checked && ShowInProgressCb.Checked)
                 {

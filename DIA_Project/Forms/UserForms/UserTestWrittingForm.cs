@@ -53,6 +53,7 @@ namespace DIA_Project.Forms.UserForms
                 Height = 115,
                 Dock = DockStyle.Top,
                 Name = "MultipleChoise" + ChoiseDb,
+                Padding = new Padding(10,0,0,0)
             };
             this.HomePnl.Height += 115;
             this.HomePnl.Controls.Add(MCTUC);

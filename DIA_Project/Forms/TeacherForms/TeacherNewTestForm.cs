@@ -38,7 +38,7 @@ namespace DIA_Project.Forms.TeacherForms
                     CurrentTestID = sql.tests.Max(x => x.ID) + 1;
                     CurrentTaskID = sql.tasks.Max(y => y.ID) + 1;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     CurrentTestID = 1;
                     CurrentTaskID = 1;
@@ -146,9 +146,9 @@ namespace DIA_Project.Forms.TeacherForms
                 Tests tst = new Tests()
                 {
                     ID = CurrentTestID,
-                    ClassID = sql.classes.Single(x => x.Name == ClassesCB.Items[ClassesCB.SelectedIndex]).ID,
+                    ClassID = sql.classes.Single(x => x.Name == ClassesCB.Items[ClassesCB.SelectedIndex].ToString()).ID,
                     Name = TestNameTb.Text,
-                    SubjectID = sql.subjects.Single(x => x.Name == SubjectsCB.Items[SubjectsCB.SelectedIndex]).ID,
+                    SubjectID = sql.subjects.Single(x => x.Name == SubjectsCB.Items[SubjectsCB.SelectedIndex].ToString()).ID,
                     MaxPoints = 0,
                     Locked = 0,
                     TeacherID = CurrentTeacher.Username,
@@ -185,7 +185,7 @@ namespace DIA_Project.Forms.TeacherForms
                     sql.SaveChanges();
                     CurrentTaskID++;
                 }
-                int cID = sql.classes.Single(x => x.Name == ClassesCB.Items[ClassesCB.SelectedIndex]).ID;
+                int cID = sql.classes.Single(x => x.Name == ClassesCB.Items[ClassesCB.SelectedIndex].ToString()).ID;
                 foreach (var item in sql.users)
                 {
                     if (item.ClassID == cID)

@@ -63,6 +63,7 @@ namespace DIA_Project.Forms.TeacherForms
             {
                 Dock = DockStyle.Top,
                 Name = "MultipleChoise" + ChoiseDb,
+                Padding = new Padding(10,0,0,0)
             };
             this.HomePnl.Height += MCTRC.Height;
             this.HomePnl.Controls.Add(MCTRC);

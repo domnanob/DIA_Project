@@ -69,16 +69,18 @@ namespace DIA_Project.Forms.TeacherForms
             this.NavP.Controls.Add(this.panel2);
             this.NavP.Dock = System.Windows.Forms.DockStyle.Left;
             this.NavP.Location = new System.Drawing.Point(0, 0);
+            this.NavP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NavP.Name = "NavP";
-            this.NavP.Size = new System.Drawing.Size(190, 580);
+            this.NavP.Size = new System.Drawing.Size(166, 435);
             this.NavP.TabIndex = 0;
             // 
             // NavArrowP
             // 
             this.NavArrowP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.NavArrowP.Location = new System.Drawing.Point(0, 195);
+            this.NavArrowP.Location = new System.Drawing.Point(0, 146);
+            this.NavArrowP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NavArrowP.Name = "NavArrowP";
-            this.NavArrowP.Size = new System.Drawing.Size(3, 100);
+            this.NavArrowP.Size = new System.Drawing.Size(3, 75);
             this.NavArrowP.TabIndex = 6;
             // 
             // InfoBtn
@@ -91,10 +93,11 @@ namespace DIA_Project.Forms.TeacherForms
             this.InfoBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.InfoBtn.Image = global::DIA_Project.Properties.Resources.info;
             this.InfoBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.InfoBtn.Location = new System.Drawing.Point(0, 324);
+            this.InfoBtn.Location = new System.Drawing.Point(0, 260);
+            this.InfoBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.InfoBtn.Name = "InfoBtn";
-            this.InfoBtn.Padding = new System.Windows.Forms.Padding(0, 0, 11, 0);
-            this.InfoBtn.Size = new System.Drawing.Size(190, 45);
+            this.InfoBtn.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.InfoBtn.Size = new System.Drawing.Size(166, 38);
             this.InfoBtn.TabIndex = 5;
             this.InfoBtn.Text = "Info";
             this.InfoBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -111,10 +114,11 @@ namespace DIA_Project.Forms.TeacherForms
             this.ClassesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.ClassesBtn.Image = global::DIA_Project.Properties.Resources.group;
             this.ClassesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ClassesBtn.Location = new System.Drawing.Point(0, 279);
+            this.ClassesBtn.Location = new System.Drawing.Point(0, 222);
+            this.ClassesBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ClassesBtn.Name = "ClassesBtn";
-            this.ClassesBtn.Padding = new System.Windows.Forms.Padding(0, 0, 12, 0);
-            this.ClassesBtn.Size = new System.Drawing.Size(190, 45);
+            this.ClassesBtn.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.ClassesBtn.Size = new System.Drawing.Size(166, 38);
             this.ClassesBtn.TabIndex = 4;
             this.ClassesBtn.Text = "Osztályok";
             this.ClassesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -131,10 +135,11 @@ namespace DIA_Project.Forms.TeacherForms
             this.LogoutBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.LogoutBtn.Image = global::DIA_Project.Properties.Resources.logout;
             this.LogoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LogoutBtn.Location = new System.Drawing.Point(0, 535);
+            this.LogoutBtn.Location = new System.Drawing.Point(0, 397);
+            this.LogoutBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LogoutBtn.Name = "LogoutBtn";
-            this.LogoutBtn.Padding = new System.Windows.Forms.Padding(0, 0, 12, 0);
-            this.LogoutBtn.Size = new System.Drawing.Size(190, 45);
+            this.LogoutBtn.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.LogoutBtn.Size = new System.Drawing.Size(166, 38);
             this.LogoutBtn.TabIndex = 4;
             this.LogoutBtn.Text = "Kijelentkezés";
             this.LogoutBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -151,10 +156,11 @@ namespace DIA_Project.Forms.TeacherForms
             this.ProfilBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.ProfilBtn.Image = global::DIA_Project.Properties.Resources.user;
             this.ProfilBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ProfilBtn.Location = new System.Drawing.Point(0, 234);
+            this.ProfilBtn.Location = new System.Drawing.Point(0, 184);
+            this.ProfilBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ProfilBtn.Name = "ProfilBtn";
-            this.ProfilBtn.Padding = new System.Windows.Forms.Padding(0, 0, 12, 0);
-            this.ProfilBtn.Size = new System.Drawing.Size(190, 45);
+            this.ProfilBtn.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.ProfilBtn.Size = new System.Drawing.Size(166, 38);
             this.ProfilBtn.TabIndex = 3;
             this.ProfilBtn.Text = "Profil";
             this.ProfilBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -171,10 +177,11 @@ namespace DIA_Project.Forms.TeacherForms
             this.DolgozatokBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.DolgozatokBtn.Image = global::DIA_Project.Properties.Resources.tests;
             this.DolgozatokBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DolgozatokBtn.Location = new System.Drawing.Point(0, 189);
+            this.DolgozatokBtn.Location = new System.Drawing.Point(0, 146);
+            this.DolgozatokBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DolgozatokBtn.Name = "DolgozatokBtn";
-            this.DolgozatokBtn.Padding = new System.Windows.Forms.Padding(0, 0, 9, 0);
-            this.DolgozatokBtn.Size = new System.Drawing.Size(190, 45);
+            this.DolgozatokBtn.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.DolgozatokBtn.Size = new System.Drawing.Size(166, 38);
             this.DolgozatokBtn.TabIndex = 2;
             this.DolgozatokBtn.Text = "Dolgozatok";
             this.DolgozatokBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -191,10 +198,11 @@ namespace DIA_Project.Forms.TeacherForms
             this.HomeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.HomeBtn.Image = global::DIA_Project.Properties.Resources.home;
             this.HomeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.HomeBtn.Location = new System.Drawing.Point(0, 144);
+            this.HomeBtn.Location = new System.Drawing.Point(0, 108);
+            this.HomeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.HomeBtn.Name = "HomeBtn";
-            this.HomeBtn.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.HomeBtn.Size = new System.Drawing.Size(190, 45);
+            this.HomeBtn.Padding = new System.Windows.Forms.Padding(0, 0, 9, 0);
+            this.HomeBtn.Size = new System.Drawing.Size(166, 38);
             this.HomeBtn.TabIndex = 1;
             this.HomeBtn.Text = "Home";
             this.HomeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -208,17 +216,19 @@ namespace DIA_Project.Forms.TeacherForms
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(190, 144);
+            this.panel2.Size = new System.Drawing.Size(166, 108);
             this.panel2.TabIndex = 0;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = global::DIA_Project.Properties.Resources.logo;
-            this.pictureBox3.Location = new System.Drawing.Point(27, 14);
+            this.pictureBox3.Location = new System.Drawing.Point(24, 10);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(132, 104);
+            this.pictureBox3.Size = new System.Drawing.Size(116, 78);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
@@ -227,9 +237,10 @@ namespace DIA_Project.Forms.TeacherForms
             // pictureBox2
             // 
             this.pictureBox2.Image = global::DIA_Project.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(27, 14);
+            this.pictureBox2.Location = new System.Drawing.Point(24, 10);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(132, 104);
+            this.pictureBox2.Size = new System.Drawing.Size(116, 78);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -237,9 +248,10 @@ namespace DIA_Project.Forms.TeacherForms
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DIA_Project.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 9);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(132, 104);
+            this.pictureBox1.Size = new System.Drawing.Size(116, 78);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -251,9 +263,10 @@ namespace DIA_Project.Forms.TeacherForms
             this.DesktopP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.DesktopP.Controls.Add(this.panel3);
             this.DesktopP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DesktopP.Location = new System.Drawing.Point(190, 0);
+            this.DesktopP.Location = new System.Drawing.Point(166, 0);
+            this.DesktopP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DesktopP.Name = "DesktopP";
-            this.DesktopP.Size = new System.Drawing.Size(760, 580);
+            this.DesktopP.Size = new System.Drawing.Size(665, 435);
             this.DesktopP.TabIndex = 5;
             // 
             // panel3
@@ -264,8 +277,9 @@ namespace DIA_Project.Forms.TeacherForms
             this.panel3.Controls.Add(this.MaximizeBtn);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(760, 32);
+            this.panel3.Size = new System.Drawing.Size(665, 24);
             this.panel3.TabIndex = 0;
             this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
             // 
@@ -275,9 +289,10 @@ namespace DIA_Project.Forms.TeacherForms
             this.ExitBtn.FlatAppearance.BorderSize = 0;
             this.ExitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitBtn.Image = global::DIA_Project.Properties.Resources.cancel;
-            this.ExitBtn.Location = new System.Drawing.Point(730, 0);
+            this.ExitBtn.Location = new System.Drawing.Point(639, 0);
+            this.ExitBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ExitBtn.Name = "ExitBtn";
-            this.ExitBtn.Size = new System.Drawing.Size(30, 30);
+            this.ExitBtn.Size = new System.Drawing.Size(26, 22);
             this.ExitBtn.TabIndex = 4;
             this.ExitBtn.UseVisualStyleBackColor = true;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
@@ -289,9 +304,10 @@ namespace DIA_Project.Forms.TeacherForms
             this.MinimizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MinimizeBtn.ForeColor = System.Drawing.SystemColors.Highlight;
             this.MinimizeBtn.Image = global::DIA_Project.Properties.Resources.minus;
-            this.MinimizeBtn.Location = new System.Drawing.Point(658, 0);
+            this.MinimizeBtn.Location = new System.Drawing.Point(576, 0);
+            this.MinimizeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimizeBtn.Name = "MinimizeBtn";
-            this.MinimizeBtn.Size = new System.Drawing.Size(30, 30);
+            this.MinimizeBtn.Size = new System.Drawing.Size(26, 22);
             this.MinimizeBtn.TabIndex = 6;
             this.MinimizeBtn.UseVisualStyleBackColor = true;
             this.MinimizeBtn.Click += new System.EventHandler(this.MinimizeBtn_Click);
@@ -302,23 +318,25 @@ namespace DIA_Project.Forms.TeacherForms
             this.MaximizeBtn.FlatAppearance.BorderSize = 0;
             this.MaximizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MaximizeBtn.Image = global::DIA_Project.Properties.Resources.maximize;
-            this.MaximizeBtn.Location = new System.Drawing.Point(694, 0);
+            this.MaximizeBtn.Location = new System.Drawing.Point(607, 0);
+            this.MaximizeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBtn.Name = "MaximizeBtn";
-            this.MaximizeBtn.Size = new System.Drawing.Size(30, 30);
+            this.MaximizeBtn.Size = new System.Drawing.Size(26, 22);
             this.MaximizeBtn.TabIndex = 5;
             this.MaximizeBtn.UseVisualStyleBackColor = true;
             this.MaximizeBtn.Click += new System.EventHandler(this.MaximizeBtn_Click);
             // 
             // TeacherHomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(950, 580);
+            this.ClientSize = new System.Drawing.Size(831, 435);
             this.Controls.Add(this.DesktopP);
             this.Controls.Add(this.NavP);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TeacherHomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TeacherHomeForm_FormClosed);

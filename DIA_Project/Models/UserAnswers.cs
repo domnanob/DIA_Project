@@ -23,6 +23,7 @@ namespace DIA_Project.Models
         [Required]
         public int TaskID { get; set; }
 
+#nullable enable
         public string? Answer { get; set; }
     }
 }

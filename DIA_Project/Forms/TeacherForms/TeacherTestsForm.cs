@@ -65,14 +65,14 @@ namespace DIA_Project.Forms.TeacherForms
         }
         private void ClassesCB_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (ClassesCB.Items[ClassesCB.SelectedIndex] == "None")
+            if (ClassesCB.Items[ClassesCB.SelectedIndex] == ClassesCB.Items[0])
             {
                 DGVLoad(tests);
                 return;
             }
             using (SQL sql = SQL.MySql())
             {
-                Classes c = sql.classes.Single(x => x.Name == ClassesCB.Items[ClassesCB.SelectedIndex]);
+                Classes c = sql.classes.Single(x => x.Name == ClassesCB.Items[ClassesCB.SelectedIndex].ToString());
                 SelectedTests = tests.Where(x => x.ClassID == c.ID).ToList();
                 DGVLoad(SelectedTests);
             }

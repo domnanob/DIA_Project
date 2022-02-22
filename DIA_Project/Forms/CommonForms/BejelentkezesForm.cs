@@ -8,11 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DIA_Project.Models;
-
 using DIA_Project.Lib;
 
 
-namespace DIA_Project.Forms
+namespace DIA_Project.Forms.CommonForms
 {
     public partial class BejelentkezesForm : Form
     {

@@ -21,7 +21,7 @@ namespace DIA_Project.Forms.UserForms
             ReLoad();
         }
         Users CurrentUser = new Users();
-        private async void ReLoad() 
+        private void ReLoad() //async
         {
             NameTb.Text = CurrentUser.Name;
             UserTB.Text = CurrentUser.Username;
@@ -84,7 +84,7 @@ namespace DIA_Project.Forms.UserForms
                     u.Name = NameTb.Text;
                     u.Username = UserTB.Text;
                     u.Email = EmailTB.Text;
-                    u.ClassID = sql.classes.Single(x => x.Name == ClassCB.Items[ClassCB.SelectedIndex]).ID;
+                    u.ClassID = sql.classes.Single(x => x.Name == ClassCB.Items[ClassCB.SelectedIndex].ToString()).ID;
                     CurrentUser = u;
                     sql.SaveChanges();
                     Program.HF.CurrentUser = u;
@@ -102,7 +102,7 @@ namespace DIA_Project.Forms.UserForms
                             u.Name = NameTb.Text;
                             u.Username = UserTB.Text;
                             u.Email = EmailTB.Text;
-                            u.ClassID = sql.classes.Single(x => x.Name == ClassCB.Items[ClassCB.SelectedIndex]).ID;
+                            u.ClassID = sql.classes.Single(x => x.Name == ClassCB.Items[ClassCB.SelectedIndex].ToString()).ID;
                             u.Password = SecurePasswordHasher.Hash(PasswordTB.Text);
                             CurrentUser = u;
                             sql.SaveChanges();

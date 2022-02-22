@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using DIA_Project.Forms;
 using DIA_Project.Forms.TeacherForms;
 using DIA_Project.Forms.UserForms;
+using DIA_Project.Forms.CommonForms;
 
 namespace DIA_Project
 { 

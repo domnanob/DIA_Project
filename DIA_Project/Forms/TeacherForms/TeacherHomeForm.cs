@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DIA_Project.Lib;
 using DIA_Project.Models;
-using DIA_Project.Forms;
+using DIA_Project.Forms.CommonForms;
 
 namespace DIA_Project.Forms.TeacherForms
 {
@@ -63,6 +63,7 @@ namespace DIA_Project.Forms.TeacherForms
                 {
                     DesktopP.BackgroundImage = childForm.BackgroundImage;
                 }
+
             }
         }
         private void ExitBtn_Click(object sender, EventArgs e)

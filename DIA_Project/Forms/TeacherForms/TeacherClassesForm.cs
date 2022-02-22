@@ -71,14 +71,14 @@ namespace DIA_Project.Forms.TeacherForms
         }
         private void ClassesCB_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (ClassesCB.Items[ClassesCB.SelectedIndex] == "None")
+            if (ClassesCB.Items[ClassesCB.SelectedIndex] == ClassesCB.Items[0])
             {
                 DGVLoad(purchases);
                 return;
             }
             using (SQL sql = SQL.MySql())
             {
-                Classes c = sql.classes.Single(a => a.Name == ClassesCB.Items[ClassesCB.SelectedIndex]);
+                Classes c = sql.classes.Single(a => a.Name == ClassesCB.Items[ClassesCB.SelectedIndex].ToString());
                 List<Users> SelectedUsers = sql.users.Where(x => x.ClassID == c.ID).ToList();
                 FilteredP.Clear();
                 foreach (var p in purchases)
@@ -98,7 +98,7 @@ namespace DIA_Project.Forms.TeacherForms
         private void NameTb_TextChanged(object sender, EventArgs e)
         {
             List<Purchases> lp = new List<Purchases>();
-            if (ClassesCB.Items[ClassesCB.SelectedIndex] == "None")
+            if (ClassesCB.Items[ClassesCB.SelectedIndex] == ClassesCB.Items[0])
             {
                 foreach (var item in purchases)
                 {

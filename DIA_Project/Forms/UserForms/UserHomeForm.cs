@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DIA_Project.Lib;
 using DIA_Project.Models;
+using DIA_Project.Forms.CommonForms;
 
 namespace DIA_Project.Forms.UserForms
 {
@@ -61,7 +62,18 @@ namespace DIA_Project.Forms.UserForms
                 else
                 {
                     DesktopP.BackgroundImage = childForm.BackgroundImage;
+                    if (childForm.GetType() == new UserTestWrittingForm(new Users(), new Tests()).GetType())
+                    {
+                        NavP.Enabled = false;
+                    }
+                    else {
+                        if (NavP.Enabled == false)
+                        {
+                            NavP.Enabled = true;
+                        }
+                    }
                 }
+                
             }
         }
         private void ExitBtn_Click(object sender, EventArgs e)

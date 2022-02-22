@@ -24,7 +24,7 @@ namespace DIA_Project.Forms.User_Controlls
         {
             return int.Parse(PointsTb.Text);
         }
-        public bool IsAllFieldFilled(out string? ErrorMessage)
+        public bool IsAllFieldFilled(out string ErrorMessage)
         {
             foreach (var item in GetRBUC())
             {

@@ -1,5 +1,5 @@
 ﻿
-namespace DIA_Project.Forms
+namespace DIA_Project.Forms.CommonForms
 {
     partial class DashBoardForm
     {
@@ -42,9 +42,9 @@ namespace DIA_Project.Forms
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(6, 200);
+            this.label1.Location = new System.Drawing.Point(5, 150);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(256, 31);
+            this.label1.Size = new System.Drawing.Size(213, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Üdvözöllek a DIA-ban!";
             // 
@@ -53,9 +53,10 @@ namespace DIA_Project.Forms
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::DIA_Project.Properties.Resources.world_globe;
-            this.pictureBox1.Location = new System.Drawing.Point(352, 131);
+            this.pictureBox1.Location = new System.Drawing.Point(308, 98);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(407, 343);
+            this.pictureBox1.Size = new System.Drawing.Size(356, 257);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -67,11 +68,11 @@ namespace DIA_Project.Forms
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(17, 240);
+            this.label2.Location = new System.Drawing.Point(15, 180);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(229, 60);
+            this.label2.Size = new System.Drawing.Size(178, 45);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Nálunk igazán megéri tanulni,\r\ntanulj, gyújtsd a pontjaid és\r\nzsebeld be az érték" +
+            this.label2.Text = "Nálunk igazán megéri tanulni,\r\ntanulj, gyűjtsd a pontjaid és\r\nzsebeld be az érték" +
     "es jutalmakat!\r\n";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -85,9 +86,10 @@ namespace DIA_Project.Forms
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(51, 315);
+            this.button1.Location = new System.Drawing.Point(45, 236);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 41);
+            this.button1.Size = new System.Drawing.Size(128, 31);
             this.button1.TabIndex = 3;
             this.button1.Text = "Vágjunk bele!";
             this.button1.UseVisualStyleBackColor = false;
@@ -95,12 +97,12 @@ namespace DIA_Project.Forms
             // 
             // DashBoardForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.BackgroundImage = global::DIA_Project.Properties.Resources.WinFormBg2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(760, 580);
+            this.ClientSize = new System.Drawing.Size(665, 435);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
@@ -109,6 +111,7 @@ namespace DIA_Project.Forms
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DashBoardForm";
             this.Text = "DashBoardForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
