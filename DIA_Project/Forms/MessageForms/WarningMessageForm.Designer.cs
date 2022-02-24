@@ -39,9 +39,10 @@ namespace DIA_Project.Forms
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DIA_Project.Properties.Resources.warning;
-            this.pictureBox1.Location = new System.Drawing.Point(34, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(30, 22);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox1.Size = new System.Drawing.Size(61, 52);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -50,24 +51,25 @@ namespace DIA_Project.Forms
             // 
             this.KerdesL.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.KerdesL.ForeColor = System.Drawing.Color.White;
-            this.KerdesL.Location = new System.Drawing.Point(110, 30);
+            this.KerdesL.Location = new System.Drawing.Point(96, 22);
             this.KerdesL.Name = "KerdesL";
-            this.KerdesL.Size = new System.Drawing.Size(397, 70);
+            this.KerdesL.Size = new System.Drawing.Size(347, 52);
             this.KerdesL.TabIndex = 1;
             this.KerdesL.Text = "Biztosan ki szeretnél jelentkezni?";
             this.KerdesL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // YesBtn
             // 
-            this.YesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.YesBtn.BackColor = System.Drawing.Color.Transparent;
             this.YesBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.YesBtn.FlatAppearance.BorderSize = 2;
             this.YesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.YesBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.YesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.YesBtn.Location = new System.Drawing.Point(402, 110);
+            this.YesBtn.Location = new System.Drawing.Point(352, 82);
+            this.YesBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.YesBtn.Name = "YesBtn";
-            this.YesBtn.Size = new System.Drawing.Size(105, 39);
+            this.YesBtn.Size = new System.Drawing.Size(92, 29);
             this.YesBtn.TabIndex = 2;
             this.YesBtn.Text = "Igen";
             this.YesBtn.UseVisualStyleBackColor = false;
@@ -80,9 +82,10 @@ namespace DIA_Project.Forms
             this.NoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NoBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.NoBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.NoBtn.Location = new System.Drawing.Point(291, 110);
+            this.NoBtn.Location = new System.Drawing.Point(255, 82);
+            this.NoBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NoBtn.Name = "NoBtn";
-            this.NoBtn.Size = new System.Drawing.Size(105, 39);
+            this.NoBtn.Size = new System.Drawing.Size(92, 29);
             this.NoBtn.TabIndex = 3;
             this.NoBtn.Text = "Nem";
             this.NoBtn.UseVisualStyleBackColor = false;
@@ -90,16 +93,17 @@ namespace DIA_Project.Forms
             // 
             // WarningMessageForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(543, 180);
+            this.ClientSize = new System.Drawing.Size(475, 135);
             this.Controls.Add(this.NoBtn);
             this.Controls.Add(this.YesBtn);
             this.Controls.Add(this.KerdesL);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "WarningMessageForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -22,23 +22,32 @@ namespace DIA_Project.Forms.CommonForms
         }
         private List<string> Ulist = new List<string>();
         private List<string> Tlist = new List<string>();
-        public Boolean IsLoggedIn = false;
         public Users CurrentUser = new Users();
         public Teachers CurrentTeacher = new Teachers();
+        public bool IsServerRunning = false;
+        public bool IsLoggedIn = false;
         private async Task _Load()
         {
             await Task.Run(() =>
             {
-                using (SQL sql = SQL.MySql())
+                try
                 {
-                    foreach (Users u in sql.users)
+                    using (SQL sql = SQL.MySql())
                     {
-                        Ulist.Add(u.Username);
+                        foreach (Users u in sql.users)
+                        {
+                            Ulist.Add(u.Username);
+                        }
+                        foreach (Teachers t in sql.teachers)
+                        {
+                            Tlist.Add(t.Username);
+                        }
                     }
-                    foreach (Teachers t in sql.teachers)
-                    {
-                        Tlist.Add(t.Username);
-                    }
+                    IsServerRunning = true;
+                }
+                catch (Exception)
+                {
+                    new ErrorMessageForm("Valami hiba történt!").ShowDialog();
                 }
             });
         }
@@ -94,7 +103,10 @@ namespace DIA_Project.Forms.CommonForms
         }
         private void BejelentkezesBtn_Click(object sender, EventArgs e)
         {
-            Bejelentkezes();
+            if (IsServerRunning)
+            {
+                Bejelentkezes();
+            }
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -127,7 +139,10 @@ namespace DIA_Project.Forms.CommonForms
         {
             if (Convert.ToInt32(e.KeyChar) == 13)
             {
-                Bejelentkezes();
+                if (IsServerRunning)
+                {
+                    Bejelentkezes();
+                }
             }
         }
     }

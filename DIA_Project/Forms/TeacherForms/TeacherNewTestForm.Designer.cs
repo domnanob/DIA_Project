@@ -40,12 +40,12 @@ namespace DIA_Project.Forms.TeacherForms
             this.TaskTypesCB = new System.Windows.Forms.ComboBox();
             this.HozzaadasBtn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.MegseBtn = new System.Windows.Forms.Button();
             this.FinishDTP = new System.Windows.Forms.DateTimePicker();
             this.StartDTP = new System.Windows.Forms.DateTimePicker();
             this.MentesBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.MegseBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -61,8 +61,9 @@ namespace DIA_Project.Forms.TeacherForms
             this.panel1.Controls.Add(this.TestNameTb);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(760, 81);
+            this.panel1.Size = new System.Drawing.Size(665, 61);
             this.panel1.TabIndex = 7;
             // 
             // ClassesCB
@@ -75,10 +76,11 @@ namespace DIA_Project.Forms.TeacherForms
             this.ClassesCB.FormattingEnabled = true;
             this.ClassesCB.Items.AddRange(new object[] {
             "Osztály"});
-            this.ClassesCB.Location = new System.Drawing.Point(623, 47);
+            this.ClassesCB.Location = new System.Drawing.Point(545, 35);
+            this.ClassesCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ClassesCB.Name = "ClassesCB";
-            this.ClassesCB.Size = new System.Drawing.Size(94, 28);
-            this.ClassesCB.TabIndex = 36;
+            this.ClassesCB.Size = new System.Drawing.Size(83, 23);
+            this.ClassesCB.TabIndex = 3;
             // 
             // SubjectsCB
             // 
@@ -90,17 +92,19 @@ namespace DIA_Project.Forms.TeacherForms
             this.SubjectsCB.FormattingEnabled = true;
             this.SubjectsCB.Items.AddRange(new object[] {
             "Tantárgy"});
-            this.SubjectsCB.Location = new System.Drawing.Point(479, 47);
+            this.SubjectsCB.Location = new System.Drawing.Point(419, 35);
+            this.SubjectsCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SubjectsCB.Name = "SubjectsCB";
-            this.SubjectsCB.Size = new System.Drawing.Size(138, 28);
-            this.SubjectsCB.TabIndex = 35;
+            this.SubjectsCB.Size = new System.Drawing.Size(121, 23);
+            this.SubjectsCB.TabIndex = 2;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(73, 74);
+            this.panel3.Location = new System.Drawing.Point(64, 56);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(400, 1);
+            this.panel3.Size = new System.Drawing.Size(350, 1);
             this.panel3.TabIndex = 2;
             // 
             // label1
@@ -108,9 +112,9 @@ namespace DIA_Project.Forms.TeacherForms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.label1.Location = new System.Drawing.Point(28, 50);
+            this.label1.Location = new System.Drawing.Point(24, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 20);
+            this.label1.Size = new System.Drawing.Size(31, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cím:";
             // 
@@ -119,20 +123,23 @@ namespace DIA_Project.Forms.TeacherForms
             this.TestNameTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.TestNameTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TestNameTb.ForeColor = System.Drawing.Color.White;
-            this.TestNameTb.Location = new System.Drawing.Point(73, 50);
+            this.TestNameTb.Location = new System.Drawing.Point(64, 38);
+            this.TestNameTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TestNameTb.Name = "TestNameTb";
             this.TestNameTb.PlaceholderText = "A dolgozat címe";
-            this.TestNameTb.Size = new System.Drawing.Size(400, 20);
-            this.TestNameTb.TabIndex = 0;
+            this.TestNameTb.Size = new System.Drawing.Size(350, 16);
+            this.TestNameTb.TabIndex = 1;
             // 
             // HomePnl
             // 
             this.HomePnl.BackColor = System.Drawing.Color.Transparent;
             this.HomePnl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.HomePnl.Location = new System.Drawing.Point(0, 81);
+            this.HomePnl.Location = new System.Drawing.Point(0, 61);
+            this.HomePnl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.HomePnl.Name = "HomePnl";
-            this.HomePnl.Size = new System.Drawing.Size(760, 10);
-            this.HomePnl.TabIndex = 9;
+            this.HomePnl.Size = new System.Drawing.Size(665, 8);
+            this.HomePnl.TabIndex = 5;
+            this.HomePnl.TabStop = true;
             // 
             // panel2
             // 
@@ -140,9 +147,10 @@ namespace DIA_Project.Forms.TeacherForms
             this.panel2.Controls.Add(this.TaskTypesCB);
             this.panel2.Controls.Add(this.HozzaadasBtn);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 91);
+            this.panel2.Location = new System.Drawing.Point(0, 69);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(760, 47);
+            this.panel2.Size = new System.Drawing.Size(665, 35);
             this.panel2.TabIndex = 10;
             // 
             // TaskTypesCB
@@ -154,10 +162,11 @@ namespace DIA_Project.Forms.TeacherForms
             this.TaskTypesCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaskTypesCB.ForeColor = System.Drawing.Color.White;
             this.TaskTypesCB.FormattingEnabled = true;
-            this.TaskTypesCB.Location = new System.Drawing.Point(404, 6);
+            this.TaskTypesCB.Location = new System.Drawing.Point(354, 4);
+            this.TaskTypesCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TaskTypesCB.Name = "TaskTypesCB";
-            this.TaskTypesCB.Size = new System.Drawing.Size(213, 28);
-            this.TaskTypesCB.TabIndex = 34;
+            this.TaskTypesCB.Size = new System.Drawing.Size(187, 23);
+            this.TaskTypesCB.TabIndex = 4;
             // 
             // HozzaadasBtn
             // 
@@ -166,10 +175,11 @@ namespace DIA_Project.Forms.TeacherForms
             this.HozzaadasBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HozzaadasBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.HozzaadasBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.HozzaadasBtn.Location = new System.Drawing.Point(623, 6);
+            this.HozzaadasBtn.Location = new System.Drawing.Point(545, 4);
+            this.HozzaadasBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.HozzaadasBtn.Name = "HozzaadasBtn";
-            this.HozzaadasBtn.Size = new System.Drawing.Size(94, 29);
-            this.HozzaadasBtn.TabIndex = 7;
+            this.HozzaadasBtn.Size = new System.Drawing.Size(82, 22);
+            this.HozzaadasBtn.TabIndex = 0;
             this.HozzaadasBtn.Text = "Hozzáadás";
             this.HozzaadasBtn.UseVisualStyleBackColor = true;
             this.HozzaadasBtn.Click += new System.EventHandler(this.HozzaadasBtn_Click);
@@ -184,10 +194,27 @@ namespace DIA_Project.Forms.TeacherForms
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 535);
+            this.panel4.Location = new System.Drawing.Point(0, 403);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(760, 42);
+            this.panel4.Size = new System.Drawing.Size(665, 32);
             this.panel4.TabIndex = 11;
+            // 
+            // MegseBtn
+            // 
+            this.MegseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.MegseBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.MegseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MegseBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MegseBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.MegseBtn.Location = new System.Drawing.Point(509, 4);
+            this.MegseBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MegseBtn.Name = "MegseBtn";
+            this.MegseBtn.Size = new System.Drawing.Size(69, 25);
+            this.MegseBtn.TabIndex = 8;
+            this.MegseBtn.Text = "Mégse";
+            this.MegseBtn.UseVisualStyleBackColor = true;
+            this.MegseBtn.Click += new System.EventHandler(this.MegseBtn_Click);
             // 
             // FinishDTP
             // 
@@ -198,10 +225,11 @@ namespace DIA_Project.Forms.TeacherForms
             this.FinishDTP.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.FinishDTP.Checked = false;
             this.FinishDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.FinishDTP.Location = new System.Drawing.Point(350, 12);
+            this.FinishDTP.Location = new System.Drawing.Point(324, 6);
+            this.FinishDTP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FinishDTP.Name = "FinishDTP";
-            this.FinishDTP.Size = new System.Drawing.Size(185, 27);
-            this.FinishDTP.TabIndex = 9;
+            this.FinishDTP.Size = new System.Drawing.Size(162, 23);
+            this.FinishDTP.TabIndex = 7;
             // 
             // StartDTP
             // 
@@ -211,10 +239,11 @@ namespace DIA_Project.Forms.TeacherForms
             this.StartDTP.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.StartDTP.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.StartDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.StartDTP.Location = new System.Drawing.Point(57, 12);
+            this.StartDTP.Location = new System.Drawing.Point(64, 6);
+            this.StartDTP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.StartDTP.Name = "StartDTP";
-            this.StartDTP.Size = new System.Drawing.Size(202, 27);
-            this.StartDTP.TabIndex = 9;
+            this.StartDTP.Size = new System.Drawing.Size(177, 23);
+            this.StartDTP.TabIndex = 6;
             // 
             // MentesBtn
             // 
@@ -224,10 +253,11 @@ namespace DIA_Project.Forms.TeacherForms
             this.MentesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MentesBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.MentesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.MentesBtn.Location = new System.Drawing.Point(642, 10);
+            this.MentesBtn.Location = new System.Drawing.Point(584, 4);
+            this.MentesBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MentesBtn.Name = "MentesBtn";
-            this.MentesBtn.Size = new System.Drawing.Size(79, 32);
-            this.MentesBtn.TabIndex = 8;
+            this.MentesBtn.Size = new System.Drawing.Size(69, 25);
+            this.MentesBtn.TabIndex = 9;
             this.MentesBtn.Text = "Mentés";
             this.MentesBtn.UseVisualStyleBackColor = false;
             this.MentesBtn.Click += new System.EventHandler(this.MentesBtn_Click);
@@ -237,9 +267,9 @@ namespace DIA_Project.Forms.TeacherForms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.label3.Location = new System.Drawing.Point(277, 14);
+            this.label3.Location = new System.Drawing.Point(259, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 20);
+            this.label3.Size = new System.Drawing.Size(59, 15);
             this.label3.TabIndex = 1;
             this.label3.Text = "Befejezés:";
             // 
@@ -248,36 +278,21 @@ namespace DIA_Project.Forms.TeacherForms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.label2.Location = new System.Drawing.Point(1, 14);
+            this.label2.Location = new System.Drawing.Point(8, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 20);
+            this.label2.Size = new System.Drawing.Size(47, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Kezdés:";
             // 
-            // MegseBtn
-            // 
-            this.MegseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.MegseBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.MegseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MegseBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.MegseBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.MegseBtn.Location = new System.Drawing.Point(557, 10);
-            this.MegseBtn.Name = "MegseBtn";
-            this.MegseBtn.Size = new System.Drawing.Size(79, 32);
-            this.MegseBtn.TabIndex = 10;
-            this.MegseBtn.Text = "Mégse";
-            this.MegseBtn.UseVisualStyleBackColor = true;
-            this.MegseBtn.Click += new System.EventHandler(this.MegseBtn_Click);
-            // 
             // TeacherNewTestForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.BackgroundImage = global::DIA_Project.Properties.Resources.WinFormBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(760, 580);
+            this.ClientSize = new System.Drawing.Size(665, 435);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.HomePnl);
@@ -285,6 +300,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TeacherNewTestForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TeacherTestsUsersForm_FormClosed);
             this.panel1.ResumeLayout(false);

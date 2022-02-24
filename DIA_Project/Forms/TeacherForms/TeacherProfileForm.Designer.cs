@@ -149,7 +149,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.MentesBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MentesBtn.Name = "MentesBtn";
             this.MentesBtn.Size = new System.Drawing.Size(92, 29);
-            this.MentesBtn.TabIndex = 32;
+            this.MentesBtn.TabIndex = 7;
             this.MentesBtn.Text = "Mentés";
             this.MentesBtn.UseVisualStyleBackColor = false;
             this.MentesBtn.Click += new System.EventHandler(this.MentesBtn_Click);
@@ -166,7 +166,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.MegseBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MegseBtn.Name = "MegseBtn";
             this.MegseBtn.Size = new System.Drawing.Size(92, 29);
-            this.MegseBtn.TabIndex = 31;
+            this.MegseBtn.TabIndex = 6;
             this.MegseBtn.Text = "Mégse";
             this.MegseBtn.UseVisualStyleBackColor = false;
             this.MegseBtn.Click += new System.EventHandler(this.MegseBtn_Click);
@@ -191,7 +191,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.EmailTB.Name = "EmailTB";
             this.EmailTB.PlaceholderText = "Email";
             this.EmailTB.Size = new System.Drawing.Size(369, 19);
-            this.EmailTB.TabIndex = 27;
+            this.EmailTB.TabIndex = 5;
             this.EmailTB.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);
             // 
             // panel6
@@ -214,7 +214,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.NameTb.Name = "NameTb";
             this.NameTb.PlaceholderText = "Név";
             this.NameTb.Size = new System.Drawing.Size(370, 19);
-            this.NameTb.TabIndex = 25;
+            this.NameTb.TabIndex = 1;
             this.NameTb.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);
             // 
             // panel5
@@ -239,7 +239,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.Password2TB.PasswordChar = '●';
             this.Password2TB.PlaceholderText = "Jelszó mégegyszer";
             this.Password2TB.Size = new System.Drawing.Size(369, 19);
-            this.Password2TB.TabIndex = 23;
+            this.Password2TB.TabIndex = 4;
             this.Password2TB.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);
             // 
             // panel3
@@ -263,7 +263,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.PasswordTB.PasswordChar = '●';
             this.PasswordTB.PlaceholderText = "Jelszó";
             this.PasswordTB.Size = new System.Drawing.Size(370, 19);
-            this.PasswordTB.TabIndex = 20;
+            this.PasswordTB.TabIndex = 3;
             this.PasswordTB.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);
             // 
             // panel4
@@ -287,7 +287,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.UserTB.Name = "UserTB";
             this.UserTB.PlaceholderText = "Felhasználónév";
             this.UserTB.Size = new System.Drawing.Size(370, 19);
-            this.UserTB.TabIndex = 19;
+            this.UserTB.TabIndex = 2;
             this.UserTB.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);
             // 
             // TeacherProfileForm

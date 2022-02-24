@@ -26,6 +26,7 @@ namespace DIA_Project.Forms.User_Controlls
         }
         public bool IsAllFieldFilled(out string ErrorMessage)
         {
+            bool IsCorrectExists = false;
             foreach (var item in GetRBUC())
             {
                 if (string.IsNullOrEmpty(item.GetAnswer().Item1))
@@ -33,6 +34,15 @@ namespace DIA_Project.Forms.User_Controlls
                     ErrorMessage = "Nincs kitöltve minden válasz!";
                     return false;
                 }
+                if (item.GetAnswer().Item2)
+                {
+                    IsCorrectExists = true;
+                }
+            }
+            if (IsCorrectExists == false)
+            {
+                ErrorMessage = "Egy kérdésnél legalább egy helyes választ is meg kell jelölni!";
+                return false;
             }
             if (string.IsNullOrEmpty(TaskNameTb.Text))
             {

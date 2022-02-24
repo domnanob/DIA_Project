@@ -33,25 +33,11 @@ namespace DIA_Project.Forms.TeacherForms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.UsersTestsDGV = new System.Windows.Forms.DataGridView();
             this.MegnyitasBtn = new System.Windows.Forms.Button();
             this.VisszaBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsersTestsDGV)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::DIA_Project.Properties.Resources.repair_tool;
-            this.pictureBox1.Location = new System.Drawing.Point(682, 503);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // UsersTestsDGV
             // 
@@ -62,7 +48,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.UsersTestsDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.UsersTestsDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.UsersTestsDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.UsersTestsDGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.UsersTestsDGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(70)))));
             this.UsersTestsDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.UsersTestsDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.UsersTestsDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -84,7 +70,8 @@ namespace DIA_Project.Forms.TeacherForms
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.UsersTestsDGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.UsersTestsDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.UsersTestsDGV.Location = new System.Drawing.Point(57, 140);
+            this.UsersTestsDGV.Location = new System.Drawing.Point(50, 105);
+            this.UsersTestsDGV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UsersTestsDGV.MultiSelect = false;
             this.UsersTestsDGV.Name = "UsersTestsDGV";
             this.UsersTestsDGV.ReadOnly = true;
@@ -101,8 +88,8 @@ namespace DIA_Project.Forms.TeacherForms
             this.UsersTestsDGV.RowHeadersWidth = 51;
             this.UsersTestsDGV.RowTemplate.Height = 29;
             this.UsersTestsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.UsersTestsDGV.Size = new System.Drawing.Size(642, 343);
-            this.UsersTestsDGV.TabIndex = 6;
+            this.UsersTestsDGV.Size = new System.Drawing.Size(562, 257);
+            this.UsersTestsDGV.TabIndex = 1;
             this.UsersTestsDGV.DataSourceChanged += new System.EventHandler(this.PurchasesDGV_DataSourceChanged);
             // 
             // MegnyitasBtn
@@ -113,10 +100,11 @@ namespace DIA_Project.Forms.TeacherForms
             this.MegnyitasBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MegnyitasBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.MegnyitasBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.MegnyitasBtn.Location = new System.Drawing.Point(594, 98);
+            this.MegnyitasBtn.Location = new System.Drawing.Point(520, 74);
+            this.MegnyitasBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MegnyitasBtn.Name = "MegnyitasBtn";
-            this.MegnyitasBtn.Size = new System.Drawing.Size(105, 36);
-            this.MegnyitasBtn.TabIndex = 10;
+            this.MegnyitasBtn.Size = new System.Drawing.Size(92, 27);
+            this.MegnyitasBtn.TabIndex = 3;
             this.MegnyitasBtn.Text = "Megnyitás";
             this.MegnyitasBtn.UseVisualStyleBackColor = false;
             this.MegnyitasBtn.Click += new System.EventHandler(this.MegnyitasBtn_Click);
@@ -129,41 +117,39 @@ namespace DIA_Project.Forms.TeacherForms
             this.VisszaBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.VisszaBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.VisszaBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.VisszaBtn.Location = new System.Drawing.Point(483, 98);
+            this.VisszaBtn.Location = new System.Drawing.Point(422, 74);
+            this.VisszaBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.VisszaBtn.Name = "VisszaBtn";
-            this.VisszaBtn.Size = new System.Drawing.Size(105, 37);
-            this.VisszaBtn.TabIndex = 33;
+            this.VisszaBtn.Size = new System.Drawing.Size(92, 28);
+            this.VisszaBtn.TabIndex = 2;
             this.VisszaBtn.Text = "Vissza";
             this.VisszaBtn.UseVisualStyleBackColor = false;
             this.VisszaBtn.Click += new System.EventHandler(this.VisszaBtn_Click);
             // 
             // TeacherTestsUsersForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.BackgroundImage = global::DIA_Project.Properties.Resources.WinFormBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(760, 580);
+            this.ClientSize = new System.Drawing.Size(665, 435);
             this.Controls.Add(this.VisszaBtn);
             this.Controls.Add(this.MegnyitasBtn);
             this.Controls.Add(this.UsersTestsDGV);
-            this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TeacherTestsUsersForm";
             this.Text = "InfoForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TeacherTestsUsersForm_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsersTestsDGV)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView UsersTestsDGV;
         private System.Windows.Forms.Button MegnyitasBtn;
         private System.Windows.Forms.Button VisszaBtn;

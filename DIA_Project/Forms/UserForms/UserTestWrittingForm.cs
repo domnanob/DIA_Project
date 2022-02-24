@@ -60,7 +60,11 @@ namespace DIA_Project.Forms.UserForms
             ChoiseDb++;
         }
         private void LoadingTasks() {
-            foreach (var item in CurrentTasks)
+            //Kérdések összekeverése
+            Random rng = new Random();
+            var RandomizedTasks = CurrentTasks.OrderBy(a => rng.Next()).ToList();
+
+            foreach (var item in RandomizedTasks)
             {
                 if (item.TypeID == 1)
                 {

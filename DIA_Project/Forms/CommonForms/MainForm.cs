@@ -12,9 +12,9 @@ using DIA_Project.Lib;
 
 namespace DIA_Project.Forms.CommonForms
 {
-    public partial class DashBoardForm : Form
+    public partial class MainForm : Form
     {
-        public DashBoardForm()
+        public MainForm()
         {
             InitializeComponent();
         }

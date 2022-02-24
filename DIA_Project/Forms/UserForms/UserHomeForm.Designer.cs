@@ -92,11 +92,11 @@ namespace DIA_Project.Forms.UserForms
             this.InfoBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.InfoBtn.Image = global::DIA_Project.Properties.Resources.info;
             this.InfoBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.InfoBtn.Location = new System.Drawing.Point(0, 260);
+            this.InfoBtn.Location = new System.Drawing.Point(0, 268);
             this.InfoBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.InfoBtn.Name = "InfoBtn";
             this.InfoBtn.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.InfoBtn.Size = new System.Drawing.Size(166, 38);
+            this.InfoBtn.Size = new System.Drawing.Size(166, 40);
             this.InfoBtn.TabIndex = 5;
             this.InfoBtn.Text = "Info";
             this.InfoBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -113,11 +113,11 @@ namespace DIA_Project.Forms.UserForms
             this.BoltBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.BoltBtn.Image = global::DIA_Project.Properties.Resources.cart;
             this.BoltBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BoltBtn.Location = new System.Drawing.Point(0, 222);
+            this.BoltBtn.Location = new System.Drawing.Point(0, 228);
             this.BoltBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BoltBtn.Name = "BoltBtn";
             this.BoltBtn.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.BoltBtn.Size = new System.Drawing.Size(166, 38);
+            this.BoltBtn.Size = new System.Drawing.Size(166, 40);
             this.BoltBtn.TabIndex = 4;
             this.BoltBtn.Text = "Bolt";
             this.BoltBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -134,12 +134,12 @@ namespace DIA_Project.Forms.UserForms
             this.LogoutBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.LogoutBtn.Image = global::DIA_Project.Properties.Resources.logout;
             this.LogoutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LogoutBtn.Location = new System.Drawing.Point(0, 397);
+            this.LogoutBtn.Location = new System.Drawing.Point(0, 395);
             this.LogoutBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LogoutBtn.Name = "LogoutBtn";
             this.LogoutBtn.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.LogoutBtn.Size = new System.Drawing.Size(166, 38);
-            this.LogoutBtn.TabIndex = 4;
+            this.LogoutBtn.Size = new System.Drawing.Size(166, 40);
+            this.LogoutBtn.TabIndex = 6;
             this.LogoutBtn.Text = "Kijelentkezés";
             this.LogoutBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.LogoutBtn.UseVisualStyleBackColor = true;
@@ -155,11 +155,11 @@ namespace DIA_Project.Forms.UserForms
             this.ProfilBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.ProfilBtn.Image = global::DIA_Project.Properties.Resources.user;
             this.ProfilBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ProfilBtn.Location = new System.Drawing.Point(0, 184);
+            this.ProfilBtn.Location = new System.Drawing.Point(0, 188);
             this.ProfilBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ProfilBtn.Name = "ProfilBtn";
             this.ProfilBtn.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.ProfilBtn.Size = new System.Drawing.Size(166, 38);
+            this.ProfilBtn.Size = new System.Drawing.Size(166, 40);
             this.ProfilBtn.TabIndex = 3;
             this.ProfilBtn.Text = "Profil";
             this.ProfilBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -176,11 +176,11 @@ namespace DIA_Project.Forms.UserForms
             this.DolgozatokBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.DolgozatokBtn.Image = global::DIA_Project.Properties.Resources.tests;
             this.DolgozatokBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DolgozatokBtn.Location = new System.Drawing.Point(0, 146);
+            this.DolgozatokBtn.Location = new System.Drawing.Point(0, 148);
             this.DolgozatokBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DolgozatokBtn.Name = "DolgozatokBtn";
             this.DolgozatokBtn.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
-            this.DolgozatokBtn.Size = new System.Drawing.Size(166, 38);
+            this.DolgozatokBtn.Size = new System.Drawing.Size(166, 40);
             this.DolgozatokBtn.TabIndex = 2;
             this.DolgozatokBtn.Text = "Dolgozatok";
             this.DolgozatokBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -201,7 +201,7 @@ namespace DIA_Project.Forms.UserForms
             this.HomeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.HomeBtn.Name = "HomeBtn";
             this.HomeBtn.Padding = new System.Windows.Forms.Padding(0, 0, 9, 0);
-            this.HomeBtn.Size = new System.Drawing.Size(166, 38);
+            this.HomeBtn.Size = new System.Drawing.Size(166, 40);
             this.HomeBtn.TabIndex = 1;
             this.HomeBtn.Text = "Home";
             this.HomeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -258,7 +258,7 @@ namespace DIA_Project.Forms.UserForms
             // DesktopP
             // 
             this.DesktopP.AutoScroll = true;
-            this.DesktopP.BackgroundImage = global::DIA_Project.Properties.Resources.WinFormBg2;
+            this.DesktopP.BackgroundImage = global::DIA_Project.Properties.Resources.WinFormBg2D;
             this.DesktopP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.DesktopP.Controls.Add(this.panel3);
             this.DesktopP.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -266,7 +266,7 @@ namespace DIA_Project.Forms.UserForms
             this.DesktopP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DesktopP.Name = "DesktopP";
             this.DesktopP.Size = new System.Drawing.Size(665, 435);
-            this.DesktopP.TabIndex = 5;
+            this.DesktopP.TabIndex = 7;
             // 
             // panel3
             // 
@@ -292,7 +292,7 @@ namespace DIA_Project.Forms.UserForms
             this.ExitBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(26, 22);
-            this.ExitBtn.TabIndex = 7;
+            this.ExitBtn.TabIndex = 8;
             this.ExitBtn.UseVisualStyleBackColor = true;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
@@ -307,7 +307,7 @@ namespace DIA_Project.Forms.UserForms
             this.MinimizeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimizeBtn.Name = "MinimizeBtn";
             this.MinimizeBtn.Size = new System.Drawing.Size(26, 22);
-            this.MinimizeBtn.TabIndex = 9;
+            this.MinimizeBtn.TabIndex = 10;
             this.MinimizeBtn.UseVisualStyleBackColor = true;
             this.MinimizeBtn.Click += new System.EventHandler(this.MinimizeBtn_Click);
             // 
@@ -321,7 +321,7 @@ namespace DIA_Project.Forms.UserForms
             this.MaximizeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBtn.Name = "MaximizeBtn";
             this.MaximizeBtn.Size = new System.Drawing.Size(26, 22);
-            this.MaximizeBtn.TabIndex = 8;
+            this.MaximizeBtn.TabIndex = 9;
             this.MaximizeBtn.UseVisualStyleBackColor = true;
             this.MaximizeBtn.Click += new System.EventHandler(this.MaximizeBtn_Click);
             // 

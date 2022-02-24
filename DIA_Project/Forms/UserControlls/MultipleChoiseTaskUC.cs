@@ -26,7 +26,12 @@ namespace DIA_Project.Forms.User_Controlls
         private List<Answers> CurrentAnswers = new List<Answers>();
         private void LoadAnswers() 
         {
-            foreach (var item in CurrentAnswers)
+            //Válaszok összekeverése
+            Random rng = new Random();
+            var RandomizedAnswers = CurrentAnswers.OrderBy(a => rng.Next()).ToList();
+
+            //Válaszok betöltése
+            foreach (var item in RandomizedAnswers)
             {
                 CheckBox CB = new CheckBox()
                 {

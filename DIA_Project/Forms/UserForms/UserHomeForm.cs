@@ -36,16 +36,15 @@ namespace DIA_Project.Forms.UserForms
         }
         private Button CurrentNavBtn = new Button();
         public Users CurrentUser = new Users();
-        private Form currentChildForm = null;
+        private Form OldChildForm = null;
         public void OpenChildForm(Form childForm)
         {
-            if (currentChildForm != childForm)
+            if (OldChildForm != childForm)
             {
-                if (currentChildForm != null)
+                if (OldChildForm != null)
                 {
-                    currentChildForm.Close();
+                    OldChildForm.Close();
                 }
-                currentChildForm = childForm;
                 childForm.FormBorderStyle = FormBorderStyle.None;
                 childForm.TopLevel = false;
                 childForm.Dock = DockStyle.Fill;
@@ -55,25 +54,33 @@ namespace DIA_Project.Forms.UserForms
 
                 childForm.BringToFront();
                 childForm.Show();
-                if (childForm.GetType() == new DashBoardForm().GetType())
+                if (childForm.GetType() == new MainForm().GetType())
                 {
+                    //A főmenünek külön háttérképe van a felső panel miatt
                     DesktopP.BackgroundImage = Properties.Resources.WinFormBg2D;
+                    //Dolgozatírás utáni korlátozások feloldása
+                    if (NavP.Enabled == false)
+                    {
+                        NavP.Enabled = true;
+                        panel3.Enabled = true;
+                    }
                 }
                 else
                 {
-                    DesktopP.BackgroundImage = childForm.BackgroundImage;
+                    //Felveszi az adott oldal háttérképét
+                    if (OldChildForm.GetType() == new MainForm().GetType())
+                    {
+                        DesktopP.BackgroundImage = childForm.BackgroundImage;
+                    }
+                    //Dolgozatírás közbeni korlátozások
                     if (childForm.GetType() == new UserTestWrittingForm(new Users(), new Tests()).GetType())
                     {
-                        NavP.Enabled = false;
-                    }
-                    else {
-                        if (NavP.Enabled == false)
-                        {
-                            NavP.Enabled = true;
-                        }
+                        NavP.Enabled = false; //Navigációs menü tiltása
+                        panel3.Enabled = false; //Kilépés és tálcázás tiltása
                     }
                 }
-                
+                OldChildForm = childForm;
+
             }
         }
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -124,7 +131,7 @@ namespace DIA_Project.Forms.UserForms
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new DashBoardForm());
+            OpenChildForm(new MainForm());
         }
 
         public void NavButtons_Click(object sender, EventArgs e)
@@ -133,13 +140,13 @@ namespace DIA_Project.Forms.UserForms
             NavArrowP.Height = btn.Height;
             NavArrowP.Top = btn.Top;
             NavArrowP.Left = btn.Left;
-            btn.BackColor = Color.FromArgb(46, 51, 73);
             CurrentNavBtn.BackColor = Color.FromArgb(24, 30, 54);
+            btn.BackColor = Color.FromArgb(46, 51, 73);
             CurrentNavBtn = btn;
             switch (btn.Name)
             {
                 case "HomeBtn":
-                    OpenChildForm(new DashBoardForm());
+                    OpenChildForm(new MainForm());
                     break;
                 case "DolgozatokBtn":
                     OpenChildForm(new UserTestsForm(CurrentUser));

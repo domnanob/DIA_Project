@@ -1,7 +1,7 @@
 ﻿
 namespace DIA_Project.Forms.CommonForms
 {
-    partial class DashBoardForm
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -94,6 +94,8 @@ namespace DIA_Project.Forms.CommonForms
             this.button1.Text = "Vágjunk bele!";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Paint += new System.Windows.Forms.PaintEventHandler(this.button1_Paint);
+            this.button1.Region = System.Drawing.Region.FromHrgn(DIA_Project.Lib.BorderRadius.CreateRoundRectRgn(0, 0, this.button1.Width, this.button1.Height, 10, 10));
+
             // 
             // DashBoardForm
             // 

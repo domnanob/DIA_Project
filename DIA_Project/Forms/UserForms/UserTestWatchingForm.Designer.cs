@@ -29,37 +29,25 @@ namespace DIA_Project.Forms.UserForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.HomePnl = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DNameL = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.VisszaBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::DIA_Project.Properties.Resources.repair_tool;
-            this.pictureBox1.Location = new System.Drawing.Point(717, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // HomePnl
             // 
             this.HomePnl.BackColor = System.Drawing.Color.Transparent;
             this.HomePnl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.HomePnl.Location = new System.Drawing.Point(0, 54);
+            this.HomePnl.Location = new System.Drawing.Point(0, 40);
+            this.HomePnl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.HomePnl.Name = "HomePnl";
-            this.HomePnl.Size = new System.Drawing.Size(760, 10);
-            this.HomePnl.TabIndex = 11;
+            this.HomePnl.Size = new System.Drawing.Size(665, 8);
+            this.HomePnl.TabIndex = 1;
+            this.HomePnl.TabStop = true;
             // 
             // panel1
             // 
@@ -67,8 +55,9 @@ namespace DIA_Project.Forms.UserForms
             this.panel1.Controls.Add(this.DNameL);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(760, 54);
+            this.panel1.Size = new System.Drawing.Size(665, 40);
             this.panel1.TabIndex = 10;
             // 
             // DNameL
@@ -78,7 +67,7 @@ namespace DIA_Project.Forms.UserForms
             this.DNameL.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.DNameL.Location = new System.Drawing.Point(3, 0);
             this.DNameL.Name = "DNameL";
-            this.DNameL.Size = new System.Drawing.Size(754, 51);
+            this.DNameL.Size = new System.Drawing.Size(660, 38);
             this.DNameL.TabIndex = 0;
             this.DNameL.Text = "Dolgozat Neve";
             this.DNameL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -87,11 +76,11 @@ namespace DIA_Project.Forms.UserForms
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.VisszaBtn);
-            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 537);
+            this.panel2.Location = new System.Drawing.Point(0, 403);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(760, 43);
+            this.panel2.Size = new System.Drawing.Size(665, 32);
             this.panel2.TabIndex = 12;
             // 
             // VisszaBtn
@@ -102,34 +91,36 @@ namespace DIA_Project.Forms.UserForms
             this.VisszaBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.VisszaBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.VisszaBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.VisszaBtn.Location = new System.Drawing.Point(606, 3);
+            this.VisszaBtn.Location = new System.Drawing.Point(561, 3);
+            this.VisszaBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.VisszaBtn.Name = "VisszaBtn";
-            this.VisszaBtn.Size = new System.Drawing.Size(105, 36);
-            this.VisszaBtn.TabIndex = 10;
+            this.VisszaBtn.Size = new System.Drawing.Size(92, 25);
+            this.VisszaBtn.TabIndex = 2;
             this.VisszaBtn.Text = "Vissza";
             this.VisszaBtn.UseVisualStyleBackColor = false;
             this.VisszaBtn.Click += new System.EventHandler(this.VisszaBtn_Click);
+            //this.VisszaBtn.Region = System.Drawing.Region.FromHrgn(DIA_Project.Lib.BorderRadius.CreateRoundRectRgn(0, 0, this.VisszaBtn.Width, this.VisszaBtn.Height, 5, 5));
             // 
             // UserTestWatchingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.BackgroundImage = global::DIA_Project.Properties.Resources.WinFormBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(760, 580);
+            this.ClientSize = new System.Drawing.Size(665, 435);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.HomePnl);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserTestWatchingForm";
             this.Text = "InfoForm";
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TeacherTestsForm_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -137,8 +128,6 @@ namespace DIA_Project.Forms.UserForms
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel HomePnl;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label DNameL;

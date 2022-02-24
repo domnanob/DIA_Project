@@ -40,8 +40,9 @@
             this.panel1.Controls.Add(this.TaskNameL);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(760, 57);
+            this.panel1.Size = new System.Drawing.Size(665, 43);
             this.panel1.TabIndex = 0;
             // 
             // TaskNameL
@@ -51,7 +52,7 @@
             this.TaskNameL.ForeColor = System.Drawing.Color.White;
             this.TaskNameL.Location = new System.Drawing.Point(0, 0);
             this.TaskNameL.Name = "TaskNameL";
-            this.TaskNameL.Size = new System.Drawing.Size(760, 57);
+            this.TaskNameL.Size = new System.Drawing.Size(665, 43);
             this.TaskNameL.TabIndex = 0;
             this.TaskNameL.Text = "Choose the right option/options from the following answers!";
             this.TaskNameL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -59,20 +60,23 @@
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 57);
+            this.panel2.Location = new System.Drawing.Point(0, 43);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(760, 62);
-            this.panel2.TabIndex = 3;
+            this.panel2.Size = new System.Drawing.Size(665, 46);
+            this.panel2.TabIndex = 1;
+            this.panel2.TabStop = true;
             // 
             // MultipleChoiseTaskUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MultipleChoiseTaskUC";
-            this.Size = new System.Drawing.Size(760, 119);
+            this.Size = new System.Drawing.Size(665, 89);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

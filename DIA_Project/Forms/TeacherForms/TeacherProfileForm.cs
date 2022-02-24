@@ -94,10 +94,10 @@ namespace DIA_Project.Forms.TeacherForms
                             t.Name = NameTb.Text;
                             t.Username = UserTB.Text;
                             t.Email = EmailTB.Text;
-                            CurrentTeacher = t;
-                            sql.SaveChanges();
-                            Program.TF.CurrentTeacher = t;
                             t.Password = SecurePasswordHasher.Hash(PasswordTB.Text);
+                            sql.SaveChanges();
+                            CurrentTeacher = t;
+                            Program.TF.CurrentTeacher = t;
                             new SuccessMessageForm("Sikeres mentés!").ShowDialog();
                             this.ReLoad();
                         }

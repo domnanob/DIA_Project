@@ -33,26 +33,12 @@ namespace DIA_Project.Forms.TeacherForms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TestsDGV = new System.Windows.Forms.DataGridView();
             this.ClassesCB = new System.Windows.Forms.ComboBox();
             this.NewTestBtn = new System.Windows.Forms.Button();
             this.MegnyitasBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestsDGV)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::DIA_Project.Properties.Resources.repair_tool;
-            this.pictureBox1.Location = new System.Drawing.Point(684, 504);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // TestsDGV
             // 
@@ -63,7 +49,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.TestsDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.TestsDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.TestsDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.TestsDGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.TestsDGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(70)))));
             this.TestsDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TestsDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -84,7 +70,8 @@ namespace DIA_Project.Forms.TeacherForms
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.TestsDGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.TestsDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.TestsDGV.Location = new System.Drawing.Point(57, 140);
+            this.TestsDGV.Location = new System.Drawing.Point(50, 105);
+            this.TestsDGV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TestsDGV.MultiSelect = false;
             this.TestsDGV.Name = "TestsDGV";
             this.TestsDGV.ReadOnly = true;
@@ -100,13 +87,13 @@ namespace DIA_Project.Forms.TeacherForms
             this.TestsDGV.RowHeadersWidth = 51;
             this.TestsDGV.RowTemplate.Height = 29;
             this.TestsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TestsDGV.Size = new System.Drawing.Size(642, 343);
-            this.TestsDGV.TabIndex = 6;
+            this.TestsDGV.Size = new System.Drawing.Size(562, 257);
+            this.TestsDGV.TabIndex = 2;
             this.TestsDGV.DataSourceChanged += new System.EventHandler(this.PurchasesDGV_DataSourceChanged);
             // 
             // ClassesCB
             // 
-            this.ClassesCB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.ClassesCB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(70)))));
             this.ClassesCB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClassesCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ClassesCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -114,10 +101,11 @@ namespace DIA_Project.Forms.TeacherForms
             this.ClassesCB.FormattingEnabled = true;
             this.ClassesCB.Items.AddRange(new object[] {
             "None"});
-            this.ClassesCB.Location = new System.Drawing.Point(59, 93);
+            this.ClassesCB.Location = new System.Drawing.Point(52, 70);
+            this.ClassesCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ClassesCB.Name = "ClassesCB";
-            this.ClassesCB.Size = new System.Drawing.Size(214, 28);
-            this.ClassesCB.TabIndex = 8;
+            this.ClassesCB.Size = new System.Drawing.Size(188, 23);
+            this.ClassesCB.TabIndex = 1;
             // 
             // NewTestBtn
             // 
@@ -127,10 +115,11 @@ namespace DIA_Project.Forms.TeacherForms
             this.NewTestBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NewTestBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.NewTestBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.NewTestBtn.Location = new System.Drawing.Point(594, 88);
+            this.NewTestBtn.Location = new System.Drawing.Point(520, 66);
+            this.NewTestBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NewTestBtn.Name = "NewTestBtn";
-            this.NewTestBtn.Size = new System.Drawing.Size(105, 36);
-            this.NewTestBtn.TabIndex = 9;
+            this.NewTestBtn.Size = new System.Drawing.Size(92, 27);
+            this.NewTestBtn.TabIndex = 4;
             this.NewTestBtn.Text = "Új";
             this.NewTestBtn.UseVisualStyleBackColor = false;
             this.NewTestBtn.Click += new System.EventHandler(this.NewTestBtn_Click);
@@ -143,42 +132,40 @@ namespace DIA_Project.Forms.TeacherForms
             this.MegnyitasBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MegnyitasBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.MegnyitasBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.MegnyitasBtn.Location = new System.Drawing.Point(483, 88);
+            this.MegnyitasBtn.Location = new System.Drawing.Point(423, 66);
+            this.MegnyitasBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MegnyitasBtn.Name = "MegnyitasBtn";
-            this.MegnyitasBtn.Size = new System.Drawing.Size(105, 36);
-            this.MegnyitasBtn.TabIndex = 9;
+            this.MegnyitasBtn.Size = new System.Drawing.Size(92, 27);
+            this.MegnyitasBtn.TabIndex = 3;
             this.MegnyitasBtn.Text = "Megnyitás";
             this.MegnyitasBtn.UseVisualStyleBackColor = false;
             this.MegnyitasBtn.Click += new System.EventHandler(this.MegnyitasBtn_Click);
             // 
             // TeacherTestsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.BackgroundImage = global::DIA_Project.Properties.Resources.WinFormBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(760, 580);
+            this.ClientSize = new System.Drawing.Size(665, 435);
             this.Controls.Add(this.MegnyitasBtn);
             this.Controls.Add(this.NewTestBtn);
             this.Controls.Add(this.ClassesCB);
             this.Controls.Add(this.TestsDGV);
-            this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TeacherTestsForm";
             this.Text = "InfoForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TeacherTestsForm_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestsDGV)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView TestsDGV;
         private System.Windows.Forms.ComboBox ClassesCB;
         private System.Windows.Forms.Button NewTestBtn;
