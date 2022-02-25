@@ -133,8 +133,15 @@ namespace DIA_Project.Forms.UserForms
                     wmf.ShowDialog();
                     if (wmf.DialogResult == DialogResult.Yes)
                     {
-                        new SuccessMessageForm("Sok sikert!").Show();
-                        Program.HF.OpenChildForm(new UserTestWrittingForm(CurrentUser, t));
+                        if (CheatDetector.DetectBrowser())
+                        {
+                            new ErrorMessageForm("A dolgozatíráshoz be kell zárnod a böngészőt!").ShowDialog();
+                        }
+                        else
+                        {
+                            new SuccessMessageForm("Sok sikert!").Show();
+                            Program.HF.OpenChildForm(new UserTestWrittingForm(CurrentUser, t));
+                        }
                     }
                 }
                 else {

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DIA_Project.Models;
 using DIA_Project.Lib;
 using DIA_Project.Forms.User_Controlls;
+using System.Threading;
 
 namespace DIA_Project.Forms.UserForms
 {
@@ -23,12 +24,14 @@ namespace DIA_Project.Forms.UserForms
             DNameL.Text = t.Name;
             LoadingDataSources();
             LoadingTasks();
+            //_Anticheat();
         }
         private Users CurrentUser = new Users();
         private Tests CurrentTest = new Tests();
         private List<Tasks> CurrentTasks = new List<Tasks>();
         private List<Answers> CurrentAnswers = new List<Answers>();
         private int ChoiseDb = 0;
+        private bool done = false;
         private void LoadingDataSources() {
             using (SQL sql = SQL.MySql())
             {
@@ -44,6 +47,24 @@ namespace DIA_Project.Forms.UserForms
                         }
                     }
                 }
+            }
+        }
+        private async Task _Anticheat()
+        {
+            while (true)
+            {
+                await Task.Run(() =>
+                {
+                    if (CheatDetector.DetectBrowser())
+                    {
+                        new WarningMessageForm("Browser Detected!").ShowDialog();
+                    }
+                });
+                if (done)
+                {
+                    break;
+                }
+                await Task.Delay(5000);
             }
         }
         private void NewMultipleChoiseTask(Tasks t) 
@@ -75,6 +96,7 @@ namespace DIA_Project.Forms.UserForms
 
         private void TeacherTestsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            //_Anticheat().Dispose();
             GC.Collect();
         }
 
@@ -101,6 +123,8 @@ namespace DIA_Project.Forms.UserForms
                 }
                 sql.SaveChanges();
                 new SuccessMessageForm("Sikeresen leadtad a dolgozatot!").ShowDialog();
+                done = true;
+                //_Anticheat().Wait();
                 Program.HF.ImitateClick("HomeBtn");
             }
         }

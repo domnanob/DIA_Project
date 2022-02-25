@@ -12,11 +12,11 @@ using DIA_Project.Lib;
 using DIA_Project.Models;
 using DIA_Project.Forms.CommonForms;
 
-namespace DIA_Project.Forms.UserForms
+namespace DIA_Project.Forms.AdminForms
 {
-    public partial class UserHomeForm : Form
+    public partial class AdminHomeForm : Form
     {
-        public UserHomeForm(Users CU)
+        public AdminHomeForm(Users CU)
         {
             InitializeComponent();
             CurrentUser = CU;
@@ -58,12 +58,6 @@ namespace DIA_Project.Forms.UserForms
                 {
                     //A főmenünek külön háttérképe van a felső panel miatt
                     DesktopP.BackgroundImage = Properties.Resources.WinFormBg2D;
-                    //Dolgozatírás utáni korlátozások feloldása
-                    if (NavP.Enabled == false)
-                    {
-                        NavP.Enabled = true;
-                        panel3.Enabled = true;
-                    }
                 }
                 else
                 {
@@ -71,12 +65,6 @@ namespace DIA_Project.Forms.UserForms
                     if (OldChildForm.GetType() == typeof(MainForm))
                     {
                         DesktopP.BackgroundImage = childForm.BackgroundImage;
-                    }
-                    //Dolgozatírás közbeni korlátozások
-                    if (childForm.GetType() == typeof(UserTestWrittingForm))
-                    {
-                        NavP.Enabled = false; //Navigációs menü tiltása
-                        panel3.Enabled = false; //Kilépés és tálcázás tiltása
                     }
                 }
                 OldChildForm = childForm;
@@ -148,17 +136,11 @@ namespace DIA_Project.Forms.UserForms
                 case "HomeBtn":
                     OpenChildForm(new MainForm());
                     break;
-                case "DolgozatokBtn":
-                    OpenChildForm(new UserTestsForm(CurrentUser));
+                case "UsersBtn":
+                    OpenChildForm(new AdminUsersForm(CurrentUser));
                     break;
-                case "ProfilBtn":
-                    OpenChildForm(new UserProfileForm(CurrentUser));
-                    break;
-                case "BoltBtn":
-                    OpenChildForm(new UserBoltForm(CurrentUser)) ;
-                    break;
-                case "InfoBtn":
-                    OpenChildForm(new InfoForm());
+                case "TeachersBtn":
+                    //OpenChildForm(new UserProfileForm(CurrentUser));
                     break;
                 default:
                     break;
