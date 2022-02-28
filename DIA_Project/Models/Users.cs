@@ -33,6 +33,6 @@ namespace DIA_Project.Models
         public string Email { get; set; }
 
         [Required]
-        public int RoleID { get; set; }
+        public int RoleID { get; set; } = 3;
     }
 }

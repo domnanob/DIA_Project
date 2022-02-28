@@ -35,7 +35,10 @@ namespace DIA_Project.Forms
             this.BackBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ClassesCB = new System.Windows.Forms.ComboBox();
+            this.CopyPb = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CopyPb)).BeginInit();
             this.SuspendLayout();
             // 
             // GenerateBtn
@@ -84,11 +87,12 @@ namespace DIA_Project.Forms
             // 
             // BackBtn
             // 
-            this.BackBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.BackBtn.FlatAppearance.BorderSize = 0;
+            this.BackBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.BackBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.BackBtn.FlatAppearance.BorderSize = 2;
             this.BackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BackBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.BackBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.BackBtn.Location = new System.Drawing.Point(12, 117);
             this.BackBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackBtn.Name = "BackBtn";
@@ -124,6 +128,28 @@ namespace DIA_Project.Forms
             this.ClassesCB.Size = new System.Drawing.Size(92, 23);
             this.ClassesCB.TabIndex = 7;
             // 
+            // CopyPb
+            // 
+            this.CopyPb.Image = global::DIA_Project.Properties.Resources.copy;
+            this.CopyPb.Location = new System.Drawing.Point(234, 117);
+            this.CopyPb.Name = "CopyPb";
+            this.CopyPb.Size = new System.Drawing.Size(29, 29);
+            this.CopyPb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CopyPb.TabIndex = 8;
+            this.CopyPb.TabStop = false;
+            this.CopyPb.Click += new System.EventHandler(this.CopyPb_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.label1.Location = new System.Drawing.Point(174, 124);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 15);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Másolva!";
+            this.label1.Visible = false;
+            // 
             // SelectClassMessageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -131,6 +157,8 @@ namespace DIA_Project.Forms
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(471, 157);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.CopyPb);
             this.Controls.Add(this.ClassesCB);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BackBtn);
@@ -143,9 +171,10 @@ namespace DIA_Project.Forms
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MessageBoxForm";
-            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CopyPb)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -156,5 +185,7 @@ namespace DIA_Project.Forms
         private System.Windows.Forms.Button BackBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox ClassesCB;
+        private System.Windows.Forms.PictureBox CopyPb;
+        private System.Windows.Forms.Label label1;
     }
 }

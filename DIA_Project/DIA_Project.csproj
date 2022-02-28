@@ -31,6 +31,12 @@
     <Compile Update="Forms\AdminForms\AdminUserPurchasesForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\CommonForms\BejelentkezesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\MessageForms\RegistrationTokenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\MessageForms\SelectClassMessageForm.cs">
       <SubType>Form</SubType>
     </Compile>

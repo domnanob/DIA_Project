@@ -119,7 +119,7 @@ namespace DIA_Project.Forms.AdminForms
                         Program.AF.ImitateClick("UsersBtn");
                     }
                     else {
-                        new ErrorMessageForm("A jelszónak tartalmaznia kell legalább 1 nagybetűt és egy számot!").ShowDialog();
+                        new ErrorMessageForm("A jelszónak tartalmaznia kell legalább egy nagybetűt és egy számot!").ShowDialog();
                     }
                 }
                 else {

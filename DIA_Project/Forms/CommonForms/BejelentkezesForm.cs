@@ -24,6 +24,7 @@ namespace DIA_Project.Forms.CommonForms
         private List<string> Tlist = new List<string>();
         public Users CurrentUser = new Users();
         public Teachers CurrentTeacher = new Teachers();
+        public RegistrationTokens CurrentToken = new RegistrationTokens();
         public bool IsServerRunning = false;
         public bool IsLoggedIn = false;
         private async Task _Load()
@@ -34,6 +35,8 @@ namespace DIA_Project.Forms.CommonForms
                 {
                     using (SQL sql = SQL.MySql())
                     {
+                        Ulist.Clear();
+                        Tlist.Clear();
                         foreach (Users u in sql.users)
                         {
                             Ulist.Add(u.Username);
@@ -143,6 +146,32 @@ namespace DIA_Project.Forms.CommonForms
                 {
                     Bejelentkezes();
                 }
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            if (JelszoTB.PasswordChar == '●')
+            {
+                pictureBox4.Image = Properties.Resources.visible;
+                JelszoTB.PasswordChar = '\0';
+            }
+            else {
+                pictureBox4.Image = Properties.Resources.visibility;
+                JelszoTB.PasswordChar = '●';
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RegistrationTokenForm RTF = new RegistrationTokenForm();
+            RTF.ShowDialog();
+            if (RTF.DialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+                new RegistrationForm(CurrentToken).ShowDialog();
+                this.Show();
+                _ = _Load();
             }
         }
     }

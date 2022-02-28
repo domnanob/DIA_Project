@@ -80,5 +80,11 @@ namespace DIA_Project.Forms
         {
             this.Close();
         }
+
+        private void CopyPb_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(TokenL.Text);
+            label1.Visible = true;
+        }
     }
 }
