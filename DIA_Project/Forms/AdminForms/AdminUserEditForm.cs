@@ -138,5 +138,9 @@ namespace DIA_Project.Forms.AdminForms
             GC.Collect();
         }
 
+        private void PurchasesBtn_Click(object sender, EventArgs e)
+        {
+            Program.AF.OpenChildForm(new AdminUserPurchasesForm(CurrentUser));
+        }
     }
 }

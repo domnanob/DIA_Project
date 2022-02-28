@@ -46,6 +46,8 @@ namespace DIA_Project.Forms.TeacherForms
             this.MentesBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.IsInternetAllowedCb = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -76,7 +78,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.ClassesCB.FormattingEnabled = true;
             this.ClassesCB.Items.AddRange(new object[] {
             "Osztály"});
-            this.ClassesCB.Location = new System.Drawing.Point(545, 35);
+            this.ClassesCB.Location = new System.Drawing.Point(545, 34);
             this.ClassesCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ClassesCB.Name = "ClassesCB";
             this.ClassesCB.Size = new System.Drawing.Size(83, 23);
@@ -92,7 +94,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.SubjectsCB.FormattingEnabled = true;
             this.SubjectsCB.Items.AddRange(new object[] {
             "Tantárgy"});
-            this.SubjectsCB.Location = new System.Drawing.Point(419, 35);
+            this.SubjectsCB.Location = new System.Drawing.Point(419, 34);
             this.SubjectsCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SubjectsCB.Name = "SubjectsCB";
             this.SubjectsCB.Size = new System.Drawing.Size(121, 23);
@@ -101,7 +103,7 @@ namespace DIA_Project.Forms.TeacherForms
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(64, 56);
+            this.panel3.Location = new System.Drawing.Point(64, 55);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(350, 1);
@@ -112,7 +114,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.label1.Location = new System.Drawing.Point(24, 38);
+            this.label1.Location = new System.Drawing.Point(24, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 15);
             this.label1.TabIndex = 1;
@@ -123,7 +125,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.TestNameTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.TestNameTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TestNameTb.ForeColor = System.Drawing.Color.White;
-            this.TestNameTb.Location = new System.Drawing.Point(64, 38);
+            this.TestNameTb.Location = new System.Drawing.Point(64, 37);
             this.TestNameTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TestNameTb.Name = "TestNameTb";
             this.TestNameTb.PlaceholderText = "A dolgozat címe";
@@ -187,10 +189,12 @@ namespace DIA_Project.Forms.TeacherForms
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Controls.Add(this.IsInternetAllowedCb);
             this.panel4.Controls.Add(this.MegseBtn);
             this.panel4.Controls.Add(this.FinishDTP);
             this.panel4.Controls.Add(this.StartDTP);
             this.panel4.Controls.Add(this.MentesBtn);
+            this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -225,10 +229,10 @@ namespace DIA_Project.Forms.TeacherForms
             this.FinishDTP.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.FinishDTP.Checked = false;
             this.FinishDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.FinishDTP.Location = new System.Drawing.Point(324, 6);
+            this.FinishDTP.Location = new System.Drawing.Point(218, 4);
             this.FinishDTP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FinishDTP.Name = "FinishDTP";
-            this.FinishDTP.Size = new System.Drawing.Size(162, 23);
+            this.FinishDTP.Size = new System.Drawing.Size(80, 23);
             this.FinishDTP.TabIndex = 7;
             // 
             // StartDTP
@@ -239,10 +243,10 @@ namespace DIA_Project.Forms.TeacherForms
             this.StartDTP.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.StartDTP.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.StartDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.StartDTP.Location = new System.Drawing.Point(64, 6);
+            this.StartDTP.Location = new System.Drawing.Point(66, 4);
             this.StartDTP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.StartDTP.Name = "StartDTP";
-            this.StartDTP.Size = new System.Drawing.Size(177, 23);
+            this.StartDTP.Size = new System.Drawing.Size(81, 23);
             this.StartDTP.TabIndex = 6;
             // 
             // MentesBtn
@@ -267,7 +271,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.label3.Location = new System.Drawing.Point(259, 10);
+            this.label3.Location = new System.Drawing.Point(153, 8);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 15);
             this.label3.TabIndex = 1;
@@ -278,11 +282,31 @@ namespace DIA_Project.Forms.TeacherForms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.label2.Location = new System.Drawing.Point(8, 10);
+            this.label2.Location = new System.Drawing.Point(8, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Kezdés:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.label4.Location = new System.Drawing.Point(304, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(132, 15);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Internet engedélyezése:";
+            // 
+            // IsInternetAllowedCb
+            // 
+            this.IsInternetAllowedCb.AutoSize = true;
+            this.IsInternetAllowedCb.Location = new System.Drawing.Point(442, 9);
+            this.IsInternetAllowedCb.Name = "IsInternetAllowedCb";
+            this.IsInternetAllowedCb.Size = new System.Drawing.Size(15, 14);
+            this.IsInternetAllowedCb.TabIndex = 10;
+            this.IsInternetAllowedCb.UseVisualStyleBackColor = true;
             // 
             // TeacherNewTestForm
             // 
@@ -330,5 +354,7 @@ namespace DIA_Project.Forms.TeacherForms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button MegseBtn;
+        private System.Windows.Forms.CheckBox IsInternetAllowedCb;
+        private System.Windows.Forms.Label label4;
     }
 }

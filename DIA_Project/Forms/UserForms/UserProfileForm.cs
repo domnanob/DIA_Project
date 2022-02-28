@@ -131,5 +131,9 @@ namespace DIA_Project.Forms.UserForms
             GC.Collect();
         }
 
+        private void PurchasesBtn_Click(object sender, EventArgs e)
+        {
+            Program.HF.OpenChildForm(new UserPurchasesForm(CurrentUser));
+        }
     }
 }

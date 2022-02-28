@@ -49,6 +49,7 @@ namespace DIA_Project.Forms.UserForms
             this.PasswordTB = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.UserTB = new System.Windows.Forms.TextBox();
+            this.PurchasesBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -131,6 +132,7 @@ namespace DIA_Project.Forms.UserForms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.PurchasesBtn);
             this.panel2.Controls.Add(this.ClassCB);
             this.panel2.Controls.Add(this.MentesBtn);
             this.panel2.Controls.Add(this.MegseBtn);
@@ -183,7 +185,6 @@ namespace DIA_Project.Forms.UserForms
             this.MentesBtn.Text = "Mentés";
             this.MentesBtn.UseVisualStyleBackColor = false;
             this.MentesBtn.Click += new System.EventHandler(this.MentesBtn_Click);
-            //this.MentesBtn.Region = System.Drawing.Region.FromHrgn(DIA_Project.Lib.BorderRadius.CreateRoundRectRgn(0, 0, this.MentesBtn.Width, this.MentesBtn.Height, 5, 5));
             // 
             // MegseBtn
             // 
@@ -201,8 +202,6 @@ namespace DIA_Project.Forms.UserForms
             this.MegseBtn.Text = "Mégse";
             this.MegseBtn.UseVisualStyleBackColor = false;
             this.MegseBtn.Click += new System.EventHandler(this.MegseBtn_Click);
-            //this.MegseBtn.Region = System.Drawing.Region.FromHrgn(DIA_Project.Lib.BorderRadius.CreateRoundRectRgn(0, 0, this.MegseBtn.Width, this.MegseBtn.Height, 5, 5));
-
             // 
             // panel7
             // 
@@ -324,6 +323,23 @@ namespace DIA_Project.Forms.UserForms
             this.UserTB.TabIndex = 2;
             this.UserTB.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);
             // 
+            // PurchasesBtn
+            // 
+            this.PurchasesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.PurchasesBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.PurchasesBtn.FlatAppearance.BorderSize = 2;
+            this.PurchasesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PurchasesBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.PurchasesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.PurchasesBtn.Location = new System.Drawing.Point(19, 366);
+            this.PurchasesBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PurchasesBtn.Name = "PurchasesBtn";
+            this.PurchasesBtn.Size = new System.Drawing.Size(122, 29);
+            this.PurchasesBtn.TabIndex = 34;
+            this.PurchasesBtn.Text = "Vásárolt elemek";
+            this.PurchasesBtn.UseVisualStyleBackColor = false;
+            this.PurchasesBtn.Click += new System.EventHandler(this.PurchasesBtn_Click);
+            // 
             // UserProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -376,5 +392,6 @@ namespace DIA_Project.Forms.UserForms
         private System.Windows.Forms.Button MentesBtn;
         private System.Windows.Forms.Button MegseBtn;
         private System.Windows.Forms.ComboBox ClassCB;
+        private System.Windows.Forms.Button PurchasesBtn;
     }
 }

@@ -129,15 +129,28 @@ namespace DIA_Project.Forms.UserForms
             {
                 if (t.StartDate <= DateTime.Now)
                 {
-                    WarningMessageForm wmf = new WarningMessageForm("Biztos készen állsz a dolgozatra?");
-                    wmf.ShowDialog();
-                    if (wmf.DialogResult == DialogResult.Yes)
+                    if (t.InternetAllowed == 0)
                     {
-                        if (CheatDetector.DetectBrowser())
+                        WarningMessageForm wmf = new WarningMessageForm("Biztos készen állsz a dolgozatra? \n" +
+                        "Bármely csalás a dolgozat azonnali leadását eredményezi!");
+                        wmf.ShowDialog();
+                        if (wmf.DialogResult == DialogResult.Yes)
                         {
-                            new ErrorMessageForm("A dolgozatíráshoz be kell zárnod a böngészőt!").ShowDialog();
+                            if (CheatDetector.DetectBrowser())
+                            {
+                                new ErrorMessageForm("A dolgozatíráshoz be kell zárnod a böngészőt!").ShowDialog();
+                            }
+                            else
+                            {
+                                new SuccessMessageForm("Sok sikert!").Show();
+                                Program.HF.OpenChildForm(new UserTestWrittingForm(CurrentUser, t));
+                            }
                         }
-                        else
+                    }
+                    else {
+                        WarningMessageForm wmf = new WarningMessageForm("Biztos készen állsz a dolgozatra?");
+                        wmf.ShowDialog();
+                        if (wmf.DialogResult == DialogResult.Yes)
                         {
                             new SuccessMessageForm("Sok sikert!").Show();
                             Program.HF.OpenChildForm(new UserTestWrittingForm(CurrentUser, t));

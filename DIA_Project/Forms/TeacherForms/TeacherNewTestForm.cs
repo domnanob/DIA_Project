@@ -154,6 +154,7 @@ namespace DIA_Project.Forms.TeacherForms
                     TeacherID = CurrentTeacher.Username,
                     StartDate = StartDTP.Value,
                     FinishDate = FinishDTP.Value,
+                    InternetAllowed = (IsInternetAllowedCb.Checked) ? 1 : 0
                 };
                 sql.tests.Add(tst);
                 sql.SaveChanges();

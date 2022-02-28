@@ -36,6 +36,7 @@ namespace DIA_Project
         public DbSet<Positions> positions { get; set; }
         public DbSet<Purchases> purchases { get; set; }
         public DbSet<UserTests> userTests { get; set; }
+        public DbSet<RegistrationTokens> registrationTokens { get; set; }
 
     }
 }

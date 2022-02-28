@@ -39,10 +39,10 @@ namespace DIA_Project.Forms
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DIA_Project.Properties.Resources.warning;
-            this.pictureBox1.Location = new System.Drawing.Point(30, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 22);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(61, 52);
+            this.pictureBox1.Size = new System.Drawing.Size(61, 80);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -51,9 +51,9 @@ namespace DIA_Project.Forms
             // 
             this.KerdesL.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.KerdesL.ForeColor = System.Drawing.Color.White;
-            this.KerdesL.Location = new System.Drawing.Point(96, 22);
+            this.KerdesL.Location = new System.Drawing.Point(79, 22);
             this.KerdesL.Name = "KerdesL";
-            this.KerdesL.Size = new System.Drawing.Size(347, 52);
+            this.KerdesL.Size = new System.Drawing.Size(384, 80);
             this.KerdesL.TabIndex = 1;
             this.KerdesL.Text = "Biztosan ki szeretnél jelentkezni?";
             this.KerdesL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -66,7 +66,7 @@ namespace DIA_Project.Forms
             this.YesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.YesBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.YesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.YesBtn.Location = new System.Drawing.Point(352, 82);
+            this.YesBtn.Location = new System.Drawing.Point(356, 104);
             this.YesBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.YesBtn.Name = "YesBtn";
             this.YesBtn.Size = new System.Drawing.Size(92, 29);
@@ -82,7 +82,7 @@ namespace DIA_Project.Forms
             this.NoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NoBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.NoBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.NoBtn.Location = new System.Drawing.Point(255, 82);
+            this.NoBtn.Location = new System.Drawing.Point(258, 104);
             this.NoBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NoBtn.Name = "NoBtn";
             this.NoBtn.Size = new System.Drawing.Size(92, 29);
@@ -97,7 +97,7 @@ namespace DIA_Project.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(475, 135);
+            this.ClientSize = new System.Drawing.Size(471, 157);
             this.Controls.Add(this.NoBtn);
             this.Controls.Add(this.YesBtn);
             this.Controls.Add(this.KerdesL);

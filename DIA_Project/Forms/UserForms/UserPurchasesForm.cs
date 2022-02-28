@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using DIA_Project.Models;
+using DIA_Project.Lib;
+
+namespace DIA_Project.Forms.UserForms
+{
+    public partial class UserPurchasesForm : Form
+    {
+        public UserPurchasesForm(Users u)
+        {
+            InitializeComponent();
+            CurrentUser = u;
+            LoadingDataSources();
+        }
+        private Users CurrentUser = new Users();
+        public void LoadingDataSources() {
+            using (SQL sql = SQL.MySql())
+            {
+                Purchases p = sql.purchases.Single(x => x.UserID == CurrentUser.Username);
+                JavlTb.Text = IsPurchased(p.JavL);
+                HaziFTb.Text = IsPurchased(p.HaziF);
+                KesesITb.Text = IsPurchased(p.KesesI);
+                JelesTb.Text = IsPurchased(p.Jeles);
+            }
+            
+        }
+        private string IsPurchased(int i)
+        {
+            if (i == 1)
+            {
+                return "Van!";
+            }
+            return "Nincs!";
+        }
+        private void TeacherTestsUsersForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
+        }
+
+
+        private void VisszaBtn_Click(object sender, EventArgs e)
+        {
+            Program.HF.OpenChildForm(new UserProfileForm(CurrentUser));
+        }
+    }
+}

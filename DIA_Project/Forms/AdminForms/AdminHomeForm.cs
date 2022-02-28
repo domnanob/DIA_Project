@@ -137,7 +137,7 @@ namespace DIA_Project.Forms.AdminForms
                     OpenChildForm(new MainForm());
                     break;
                 case "UsersBtn":
-                    OpenChildForm(new AdminUsersForm(CurrentUser));
+                    OpenChildForm(new AdminUsersForm());
                     break;
                 case "TeachersBtn":
                     //OpenChildForm(new UserProfileForm(CurrentUser));

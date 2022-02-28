@@ -20,14 +20,11 @@ namespace DIA_Project.Models
         [Required]
         public string Name { get; set; }
 
-        [Required]
         public int Enable { get; set; } = 1;
 
-        [Required]
         public DateTime LastLogon { get; set; } = DateTime.Now;
 
-        [Required]
-        public int Money { get; set; }
+        public int Money { get; set; } = 0;
 
         [Required]
         public int ClassID { get; set; }

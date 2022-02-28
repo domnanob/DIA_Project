@@ -24,14 +24,33 @@ namespace DIA_Project.Forms.UserForms
             DNameL.Text = t.Name;
             LoadingDataSources();
             LoadingTasks();
-            //_Anticheat();
+            if (t.InternetAllowed == 0)
+            {
+                idozito.Tick += Idozito_Tick;
+                idozito.Interval = 1000;
+                idozito.Start();
+                _Anticheat();
+            }
         }
+
+        private void Idozito_Tick(object sender, EventArgs e)
+        {
+            if (isCheating)
+            {
+                LeadasBtn_Click(this.LeadasBtn, EventArgs.Empty);
+                idozito.Stop();
+            }
+        }
+
         private Users CurrentUser = new Users();
         private Tests CurrentTest = new Tests();
         private List<Tasks> CurrentTasks = new List<Tasks>();
         private List<Answers> CurrentAnswers = new List<Answers>();
         private int ChoiseDb = 0;
+        private bool isCheating = false;
         private bool done = false;
+        private System.Windows.Forms.Timer idozito = new System.Windows.Forms.Timer();
+
         private void LoadingDataSources() {
             using (SQL sql = SQL.MySql())
             {
@@ -49,23 +68,26 @@ namespace DIA_Project.Forms.UserForms
                 }
             }
         }
-        private async Task _Anticheat()
+        private void _Anticheat()
         {
-            while (true)
+            Task.Run(async() =>
             {
-                await Task.Run(() =>
+                while (!done)
                 {
                     if (CheatDetector.DetectBrowser())
                     {
-                        new WarningMessageForm("Browser Detected!").ShowDialog();
+                        new ErrorMessageForm("Böngésző használata nem engedélyezett dolgozatírás közben! \n" +
+                            "A dolgozat a jelenlegi állapotában leadásra került!").ShowDialog();
+                        isCheating = true;
+                        done = true;
+                        break;
                     }
-                });
-                if (done)
-                {
-                    break;
+                    if (!done)
+                    {
+                        await Task.Delay(5000);
+                    }
                 }
-                await Task.Delay(5000);
-            }
+            });
         }
         private void NewMultipleChoiseTask(Tasks t) 
         {
@@ -96,7 +118,6 @@ namespace DIA_Project.Forms.UserForms
 
         private void TeacherTestsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //_Anticheat().Dispose();
             GC.Collect();
         }
 
@@ -123,9 +144,7 @@ namespace DIA_Project.Forms.UserForms
                 }
                 sql.SaveChanges();
                 new SuccessMessageForm("Sikeresen leadtad a dolgozatot!").ShowDialog();
-                done = true;
-                //_Anticheat().Wait();
-                Program.HF.ImitateClick("HomeBtn");
+                Program.HF.ImitateClick("HomeBtn"); 
             }
         }
     }

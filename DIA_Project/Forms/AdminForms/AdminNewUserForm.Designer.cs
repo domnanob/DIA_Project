@@ -1,7 +1,7 @@
 ﻿
 namespace DIA_Project.Forms.AdminForms
 {
-    partial class AdminUserEditForm
+    partial class AdminNewUserForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,17 +30,13 @@ namespace DIA_Project.Forms.AdminForms
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.PurchasesBtn = new System.Windows.Forms.Button();
-            this.EnabledCb = new System.Windows.Forms.CheckBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.MoneyTb = new System.Windows.Forms.TextBox();
+            this.NewUserCodeBtn = new System.Windows.Forms.Button();
             this.ClassCB = new System.Windows.Forms.ComboBox();
             this.MentesBtn = new System.Windows.Forms.Button();
             this.MegseBtn = new System.Windows.Forms.Button();
@@ -55,7 +51,6 @@ namespace DIA_Project.Forms.AdminForms
             this.panel4 = new System.Windows.Forms.Panel();
             this.UserTB = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -67,7 +62,6 @@ namespace DIA_Project.Forms.AdminForms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pictureBox6);
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.pictureBox4);
@@ -80,20 +74,10 @@ namespace DIA_Project.Forms.AdminForms
             this.panel1.Size = new System.Drawing.Size(56, 435);
             this.panel1.TabIndex = 3;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::DIA_Project.Properties.Resources.coins;
-            this.pictureBox1.Location = new System.Drawing.Point(23, 238);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(28, 24);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
-            // 
             // pictureBox6
             // 
             this.pictureBox6.Image = global::DIA_Project.Properties.Resources.group;
-            this.pictureBox6.Location = new System.Drawing.Point(23, 318);
+            this.pictureBox6.Location = new System.Drawing.Point(23, 294);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(28, 24);
@@ -104,7 +88,7 @@ namespace DIA_Project.Forms.AdminForms
             // pictureBox5
             // 
             this.pictureBox5.Image = global::DIA_Project.Properties.Resources.email;
-            this.pictureBox5.Location = new System.Drawing.Point(23, 282);
+            this.pictureBox5.Location = new System.Drawing.Point(23, 258);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 15);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(28, 24);
@@ -148,10 +132,7 @@ namespace DIA_Project.Forms.AdminForms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.PurchasesBtn);
-            this.panel2.Controls.Add(this.EnabledCb);
-            this.panel2.Controls.Add(this.panel8);
-            this.panel2.Controls.Add(this.MoneyTb);
+            this.panel2.Controls.Add(this.NewUserCodeBtn);
             this.panel2.Controls.Add(this.ClassCB);
             this.panel2.Controls.Add(this.MentesBtn);
             this.panel2.Controls.Add(this.MegseBtn);
@@ -172,57 +153,22 @@ namespace DIA_Project.Forms.AdminForms
             this.panel2.Size = new System.Drawing.Size(609, 435);
             this.panel2.TabIndex = 4;
             // 
-            // PurchasesBtn
+            // NewUserCodeBtn
             // 
-            this.PurchasesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.PurchasesBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.PurchasesBtn.FlatAppearance.BorderSize = 2;
-            this.PurchasesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PurchasesBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.PurchasesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.PurchasesBtn.Location = new System.Drawing.Point(19, 366);
-            this.PurchasesBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PurchasesBtn.Name = "PurchasesBtn";
-            this.PurchasesBtn.Size = new System.Drawing.Size(122, 29);
-            this.PurchasesBtn.TabIndex = 37;
-            this.PurchasesBtn.Text = "Vásárolt elemek";
-            this.PurchasesBtn.UseVisualStyleBackColor = false;
-            this.PurchasesBtn.Click += new System.EventHandler(this.PurchasesBtn_Click);
-            // 
-            // EnabledCb
-            // 
-            this.EnabledCb.AutoSize = true;
-            this.EnabledCb.ForeColor = System.Drawing.Color.White;
-            this.EnabledCb.Location = new System.Drawing.Point(163, 372);
-            this.EnabledCb.Name = "EnabledCb";
-            this.EnabledCb.Size = new System.Drawing.Size(53, 19);
-            this.EnabledCb.TabIndex = 36;
-            this.EnabledCb.Text = "Aktív";
-            this.EnabledCb.UseVisualStyleBackColor = true;
-            this.EnabledCb.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.Location = new System.Drawing.Point(18, 261);
-            this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(369, 1);
-            this.panel8.TabIndex = 35;
-            // 
-            // MoneyTb
-            // 
-            this.MoneyTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.MoneyTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.MoneyTb.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MoneyTb.ForeColor = System.Drawing.Color.White;
-            this.MoneyTb.Location = new System.Drawing.Point(18, 240);
-            this.MoneyTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MoneyTb.Name = "MoneyTb";
-            this.MoneyTb.PlaceholderText = "Pont";
-            this.MoneyTb.Size = new System.Drawing.Size(368, 19);
-            this.MoneyTb.TabIndex = 34;
-            this.MoneyTb.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);
+            this.NewUserCodeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.NewUserCodeBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.NewUserCodeBtn.FlatAppearance.BorderSize = 2;
+            this.NewUserCodeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewUserCodeBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NewUserCodeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.NewUserCodeBtn.Location = new System.Drawing.Point(19, 366);
+            this.NewUserCodeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.NewUserCodeBtn.Name = "NewUserCodeBtn";
+            this.NewUserCodeBtn.Size = new System.Drawing.Size(146, 29);
+            this.NewUserCodeBtn.TabIndex = 34;
+            this.NewUserCodeBtn.Text = "Regisztráció kóddal";
+            this.NewUserCodeBtn.UseVisualStyleBackColor = false;
+            this.NewUserCodeBtn.Click += new System.EventHandler(this.NewUserCodeBtn_Click);
             // 
             // ClassCB
             // 
@@ -232,7 +178,9 @@ namespace DIA_Project.Forms.AdminForms
             this.ClassCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ClassCB.ForeColor = System.Drawing.Color.White;
             this.ClassCB.FormattingEnabled = true;
-            this.ClassCB.Location = new System.Drawing.Point(19, 315);
+            this.ClassCB.Items.AddRange(new object[] {
+            "Osztály"});
+            this.ClassCB.Location = new System.Drawing.Point(19, 293);
             this.ClassCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ClassCB.Name = "ClassCB";
             this.ClassCB.Size = new System.Drawing.Size(368, 23);
@@ -269,14 +217,14 @@ namespace DIA_Project.Forms.AdminForms
             this.MegseBtn.Name = "MegseBtn";
             this.MegseBtn.Size = new System.Drawing.Size(92, 29);
             this.MegseBtn.TabIndex = 6;
-            this.MegseBtn.Text = "Vissza";
+            this.MegseBtn.Text = "Mégse";
             this.MegseBtn.UseVisualStyleBackColor = false;
             this.MegseBtn.Click += new System.EventHandler(this.MegseBtn_Click);
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Location = new System.Drawing.Point(18, 305);
+            this.panel7.Location = new System.Drawing.Point(18, 283);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(369, 1);
@@ -288,7 +236,7 @@ namespace DIA_Project.Forms.AdminForms
             this.EmailTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EmailTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EmailTB.ForeColor = System.Drawing.Color.White;
-            this.EmailTB.Location = new System.Drawing.Point(18, 283);
+            this.EmailTB.Location = new System.Drawing.Point(18, 261);
             this.EmailTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmailTB.Name = "EmailTB";
             this.EmailTB.PlaceholderText = "Email";
@@ -381,19 +329,17 @@ namespace DIA_Project.Forms.AdminForms
             // 
             this.UserTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.UserTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.UserTB.Enabled = false;
             this.UserTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UserTB.ForeColor = System.Drawing.Color.White;
             this.UserTB.Location = new System.Drawing.Point(18, 116);
             this.UserTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UserTB.Name = "UserTB";
             this.UserTB.PlaceholderText = "Felhasználónév";
-            this.UserTB.ReadOnly = true;
             this.UserTB.Size = new System.Drawing.Size(368, 19);
             this.UserTB.TabIndex = 2;
             this.UserTB.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);
             // 
-            // AdminUserEditForm
+            // AdminNewUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -408,12 +354,11 @@ namespace DIA_Project.Forms.AdminForms
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "AdminUserEditForm";
+            this.Name = "AdminNewUserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProfileForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProfileForm_FormClosed);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -446,10 +391,6 @@ namespace DIA_Project.Forms.AdminForms
         private System.Windows.Forms.Button MentesBtn;
         private System.Windows.Forms.Button MegseBtn;
         private System.Windows.Forms.ComboBox ClassCB;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox MoneyTb;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.CheckBox EnabledCb;
-        private System.Windows.Forms.Button PurchasesBtn;
+        private System.Windows.Forms.Button NewUserCodeBtn;
     }
 }

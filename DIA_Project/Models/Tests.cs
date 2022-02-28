@@ -38,7 +38,7 @@ namespace DIA_Project.Models
         [Required]
         public DateTime StartDate { get; set; }
 
-
+        public int InternetAllowed { get; set; }
 
     }
 }

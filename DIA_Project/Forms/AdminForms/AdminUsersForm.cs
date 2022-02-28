@@ -14,15 +14,13 @@ namespace DIA_Project.Forms.AdminForms
 {
     public partial class AdminUsersForm : Form
     {
-        public AdminUsersForm(Users u)
+        public AdminUsersForm()
         {
             InitializeComponent();
-            CurrentUser = u;
             ReLoad();
             ClassesCB.SelectedItem = "Osztályok";
             this.ClassesCB.SelectedValueChanged += new System.EventHandler(this.ClassesCB_SelectedValueChanged);
         }
-        private Users CurrentUser = new Users();
         private List<Classes> classes = new List<Classes>();
         private List<Users> users = new List<Users>();
         private List<Users> FilteredUsers = new List<Users>();
@@ -122,6 +120,11 @@ namespace DIA_Project.Forms.AdminForms
             string SelectedUsername = PurchasesDGV.SelectedRows[0].Cells[0].Value.ToString();
             Users u = SQL.MySql().users.Single(x => x.Username == SelectedUsername);
             Program.AF.OpenChildForm(new AdminUserEditForm(u));
+        }
+
+        private void NewTestBtn_Click(object sender, EventArgs e)
+        {
+            Program.AF.OpenChildForm(new AdminNewUserForm());
         }
     }
 }
