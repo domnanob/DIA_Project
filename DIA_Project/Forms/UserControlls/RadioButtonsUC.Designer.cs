@@ -40,9 +40,10 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Enabled = false;
-            this.radioButton1.Location = new System.Drawing.Point(100, 17);
+            this.radioButton1.Location = new System.Drawing.Point(88, 13);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(17, 16);
+            this.radioButton1.Size = new System.Drawing.Size(14, 13);
             this.radioButton1.TabIndex = 0;
             this.radioButton1.TabStop = true;
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -52,18 +53,21 @@
             this.AnswerTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.AnswerTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AnswerTB.ForeColor = System.Drawing.Color.White;
-            this.AnswerTB.Location = new System.Drawing.Point(133, 15);
+            this.AnswerTB.Location = new System.Drawing.Point(116, 11);
+            this.AnswerTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AnswerTB.Name = "AnswerTB";
             this.AnswerTB.PlaceholderText = "Válasz";
-            this.AnswerTB.Size = new System.Drawing.Size(400, 20);
+            this.AnswerTB.Size = new System.Drawing.Size(350, 16);
             this.AnswerTB.TabIndex = 1;
             // 
             // CorrectCb
             // 
             this.CorrectCb.AutoSize = true;
-            this.CorrectCb.Location = new System.Drawing.Point(549, 17);
+            this.CorrectCb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CorrectCb.Location = new System.Drawing.Point(480, 13);
+            this.CorrectCb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CorrectCb.Name = "CorrectCb";
-            this.CorrectCb.Size = new System.Drawing.Size(75, 24);
+            this.CorrectCb.Size = new System.Drawing.Size(61, 19);
             this.CorrectCb.TabIndex = 2;
             this.CorrectCb.Text = "Helyes";
             this.CorrectCb.UseVisualStyleBackColor = true;
@@ -71,17 +75,20 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(133, 40);
+            this.panel1.Location = new System.Drawing.Point(116, 30);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(402, 1);
+            this.panel1.Size = new System.Drawing.Size(352, 1);
             this.panel1.TabIndex = 3;
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::DIA_Project.Properties.Resources.close;
-            this.pictureBox1.Location = new System.Drawing.Point(644, 17);
+            this.pictureBox1.Location = new System.Drawing.Point(564, 13);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.Size = new System.Drawing.Size(21, 18);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -89,7 +96,7 @@
             // 
             // RadioButtonsUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pictureBox1);
@@ -98,8 +105,9 @@
             this.Controls.Add(this.AnswerTB);
             this.Controls.Add(this.radioButton1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "RadioButtonsUC";
-            this.Size = new System.Drawing.Size(760, 55);
+            this.Size = new System.Drawing.Size(665, 41);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

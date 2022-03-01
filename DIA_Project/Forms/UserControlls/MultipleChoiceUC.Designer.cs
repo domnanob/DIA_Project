@@ -1,6 +1,6 @@
 ﻿namespace DIA_Project.Forms.User_Controlls
 {
-    partial class MultipleChoiseUC
+    partial class MultipleChoiceUC
     {
         /// <summary> 
         /// Required designer variable.
@@ -71,6 +71,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::DIA_Project.Properties.Resources.close;
             this.pictureBox1.Location = new System.Drawing.Point(637, 10);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -106,6 +107,7 @@
             // HozzaadasBtn
             // 
             this.HozzaadasBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.HozzaadasBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HozzaadasBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.HozzaadasBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HozzaadasBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);

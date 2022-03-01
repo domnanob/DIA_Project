@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DIA_Project.Forms.User_Controlls
 {
-    public partial class MultipleChoiseUC : UserControl
+    public partial class MultipleChoiceUC : UserControl
     {
-        public MultipleChoiseUC()
+        public MultipleChoiceUC()
         {
             InitializeComponent();
         }

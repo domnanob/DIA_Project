@@ -100,6 +100,7 @@ namespace DIA_Project.Forms.TeacherForms
             // VisszaBtn
             // 
             this.VisszaBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.VisszaBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.VisszaBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.VisszaBtn.FlatAppearance.BorderSize = 2;
             this.VisszaBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -117,6 +118,7 @@ namespace DIA_Project.Forms.TeacherForms
             // MentesBtn
             // 
             this.MentesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.MentesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MentesBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.MentesBtn.FlatAppearance.BorderSize = 2;
             this.MentesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

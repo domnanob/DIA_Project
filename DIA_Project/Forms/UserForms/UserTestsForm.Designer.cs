@@ -110,6 +110,7 @@
             // MegnyitasBtn
             // 
             this.MegnyitasBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.MegnyitasBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MegnyitasBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.MegnyitasBtn.FlatAppearance.BorderSize = 2;
             this.MegnyitasBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -123,7 +124,6 @@
             this.MegnyitasBtn.Text = "Megnyitás";
             this.MegnyitasBtn.UseVisualStyleBackColor = false;
             this.MegnyitasBtn.Click += new System.EventHandler(this.MegnyitasBtn_Click);
-            //this.MegnyitasBtn.Region = System.Drawing.Region.FromHrgn(DIA_Project.Lib.BorderRadius.CreateRoundRectRgn(0, 0, this.MegnyitasBtn.Width, this.MegnyitasBtn.Height, 5, 5));
             // 
             // ShowCorrectedCb
             // 
@@ -131,6 +131,7 @@
             this.ShowCorrectedCb.BackColor = System.Drawing.Color.Transparent;
             this.ShowCorrectedCb.Checked = true;
             this.ShowCorrectedCb.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ShowCorrectedCb.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ShowCorrectedCb.Location = new System.Drawing.Point(244, 73);
             this.ShowCorrectedCb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ShowCorrectedCb.Name = "ShowCorrectedCb";
@@ -146,6 +147,7 @@
             this.ShowInProgressCb.BackColor = System.Drawing.Color.Transparent;
             this.ShowInProgressCb.Checked = true;
             this.ShowInProgressCb.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ShowInProgressCb.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ShowInProgressCb.Location = new System.Drawing.Point(342, 73);
             this.ShowInProgressCb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ShowInProgressCb.Name = "ShowInProgressCb";

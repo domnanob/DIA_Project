@@ -111,6 +111,7 @@ namespace DIA_Project.Forms.AdminForms
             // DeleteBtn
             // 
             this.DeleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.DeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DeleteBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.DeleteBtn.FlatAppearance.BorderSize = 2;
             this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -128,6 +129,7 @@ namespace DIA_Project.Forms.AdminForms
             // NewTokenBtn
             // 
             this.NewTokenBtn.BackColor = System.Drawing.Color.Transparent;
+            this.NewTokenBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.NewTokenBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.NewTokenBtn.FlatAppearance.BorderSize = 2;
             this.NewTokenBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -145,6 +147,7 @@ namespace DIA_Project.Forms.AdminForms
             // BackBtn
             // 
             this.BackBtn.BackColor = System.Drawing.Color.Transparent;
+            this.BackBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BackBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.BackBtn.FlatAppearance.BorderSize = 2;
             this.BackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

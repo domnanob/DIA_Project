@@ -40,14 +40,14 @@ namespace DIA_Project.Forms.TeacherForms
             this.TaskTypesCB = new System.Windows.Forms.ComboBox();
             this.HozzaadasBtn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.IsInternetAllowedCb = new System.Windows.Forms.CheckBox();
             this.MegseBtn = new System.Windows.Forms.Button();
             this.FinishDTP = new System.Windows.Forms.DateTimePicker();
             this.StartDTP = new System.Windows.Forms.DateTimePicker();
             this.MentesBtn = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.IsInternetAllowedCb = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -173,6 +173,7 @@ namespace DIA_Project.Forms.TeacherForms
             // HozzaadasBtn
             // 
             this.HozzaadasBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.HozzaadasBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HozzaadasBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.HozzaadasBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HozzaadasBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -204,9 +205,20 @@ namespace DIA_Project.Forms.TeacherForms
             this.panel4.Size = new System.Drawing.Size(665, 32);
             this.panel4.TabIndex = 11;
             // 
+            // IsInternetAllowedCb
+            // 
+            this.IsInternetAllowedCb.AutoSize = true;
+            this.IsInternetAllowedCb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IsInternetAllowedCb.Location = new System.Drawing.Point(442, 9);
+            this.IsInternetAllowedCb.Name = "IsInternetAllowedCb";
+            this.IsInternetAllowedCb.Size = new System.Drawing.Size(15, 14);
+            this.IsInternetAllowedCb.TabIndex = 10;
+            this.IsInternetAllowedCb.UseVisualStyleBackColor = true;
+            // 
             // MegseBtn
             // 
             this.MegseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.MegseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MegseBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.MegseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MegseBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -253,6 +265,7 @@ namespace DIA_Project.Forms.TeacherForms
             // 
             this.MentesBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.MentesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.MentesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MentesBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.MentesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MentesBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -265,6 +278,17 @@ namespace DIA_Project.Forms.TeacherForms
             this.MentesBtn.Text = "Mentés";
             this.MentesBtn.UseVisualStyleBackColor = false;
             this.MentesBtn.Click += new System.EventHandler(this.MentesBtn_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.label4.Location = new System.Drawing.Point(304, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(132, 15);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Internet engedélyezése:";
             // 
             // label3
             // 
@@ -287,26 +311,6 @@ namespace DIA_Project.Forms.TeacherForms
             this.label2.Size = new System.Drawing.Size(47, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Kezdés:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.label4.Location = new System.Drawing.Point(304, 8);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 15);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Internet engedélyezése:";
-            // 
-            // IsInternetAllowedCb
-            // 
-            this.IsInternetAllowedCb.AutoSize = true;
-            this.IsInternetAllowedCb.Location = new System.Drawing.Point(442, 9);
-            this.IsInternetAllowedCb.Name = "IsInternetAllowedCb";
-            this.IsInternetAllowedCb.Size = new System.Drawing.Size(15, 14);
-            this.IsInternetAllowedCb.TabIndex = 10;
-            this.IsInternetAllowedCb.UseVisualStyleBackColor = true;
             // 
             // TeacherNewTestForm
             // 

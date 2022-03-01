@@ -1,6 +1,6 @@
 ﻿namespace DIA_Project.Forms.User_Controlls
 {
-    partial class MultipleChoiseCorrectingUC
+    partial class MultipleChoiceResultUC
     {
         /// <summary> 
         /// Required designer variable.
@@ -36,14 +36,9 @@
             this.ChoosenTitlePnl = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.ChoosenAnsPnl = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.PontTb = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.CorrectTitlePnl.SuspendLayout();
             this.ChoosenTitlePnl.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -116,7 +111,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(760, 20);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Válasz:";
+            this.label2.Text = "Te válaszaid:";
             // 
             // ChoosenAnsPnl
             // 
@@ -126,56 +121,21 @@
             this.ChoosenAnsPnl.Size = new System.Drawing.Size(760, 5);
             this.ChoosenAnsPnl.TabIndex = 6;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.PontTb);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 108);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(760, 27);
-            this.panel2.TabIndex = 7;
-            // 
-            // PontTb
-            // 
-            this.PontTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.PontTb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.PontTb.Location = new System.Drawing.Point(3, 3);
-            this.PontTb.Name = "PontTb";
-            this.PontTb.Size = new System.Drawing.Size(74, 20);
-            this.PontTb.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::DIA_Project.Properties.Resources.check_lists;
-            this.pictureBox1.Location = new System.Drawing.Point(80, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(27, 23);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
-            // 
-            // MultipleChoiseCorrectingUC
+            // MultipleChoiseResultUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.ChoosenAnsPnl);
             this.Controls.Add(this.ChoosenTitlePnl);
             this.Controls.Add(this.CorrectAnsPnl);
             this.Controls.Add(this.CorrectTitlePnl);
             this.Controls.Add(this.panel1);
-            this.Name = "MultipleChoiseCorrectingUC";
-            this.Size = new System.Drawing.Size(760, 135);
+            this.Name = "MultipleChoiseResultUC";
+            this.Size = new System.Drawing.Size(760, 120);
             this.panel1.ResumeLayout(false);
             this.CorrectTitlePnl.ResumeLayout(false);
             this.ChoosenTitlePnl.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -190,8 +150,5 @@
         private System.Windows.Forms.Panel ChoosenAnsPnl;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox PontTb;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

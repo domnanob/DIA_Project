@@ -35,6 +35,8 @@ namespace DIA_Project.Forms.TeacherForms
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MentesBtn = new System.Windows.Forms.Button();
             this.MegseBtn = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -53,6 +55,8 @@ namespace DIA_Project.Forms.TeacherForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -118,6 +122,8 @@ namespace DIA_Project.Forms.TeacherForms
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.pictureBox6);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.MentesBtn);
             this.panel2.Controls.Add(this.MegseBtn);
             this.panel2.Controls.Add(this.panel7);
@@ -137,9 +143,34 @@ namespace DIA_Project.Forms.TeacherForms
             this.panel2.Size = new System.Drawing.Size(609, 435);
             this.panel2.TabIndex = 4;
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.Image = global::DIA_Project.Properties.Resources.visibility;
+            this.pictureBox6.Location = new System.Drawing.Point(371, 207);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 29;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::DIA_Project.Properties.Resources.visibility;
+            this.pictureBox1.Location = new System.Drawing.Point(372, 168);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // MentesBtn
             // 
             this.MentesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.MentesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MentesBtn.Enabled = false;
             this.MentesBtn.FlatAppearance.BorderSize = 0;
             this.MentesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -157,6 +188,7 @@ namespace DIA_Project.Forms.TeacherForms
             // MegseBtn
             // 
             this.MegseBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.MegseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MegseBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.MegseBtn.FlatAppearance.BorderSize = 2;
             this.MegseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -316,6 +348,8 @@ namespace DIA_Project.Forms.TeacherForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -339,5 +373,7 @@ namespace DIA_Project.Forms.TeacherForms
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button MentesBtn;
         private System.Windows.Forms.Button MegseBtn;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

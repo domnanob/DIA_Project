@@ -36,6 +36,8 @@ namespace DIA_Project.Forms.UserForms
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PurchasesBtn = new System.Windows.Forms.Button();
             this.ClassCB = new System.Windows.Forms.ComboBox();
             this.MentesBtn = new System.Windows.Forms.Button();
@@ -57,6 +59,8 @@ namespace DIA_Project.Forms.UserForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -132,6 +136,8 @@ namespace DIA_Project.Forms.UserForms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.pictureBox7);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.PurchasesBtn);
             this.panel2.Controls.Add(this.ClassCB);
             this.panel2.Controls.Add(this.MentesBtn);
@@ -153,9 +159,34 @@ namespace DIA_Project.Forms.UserForms
             this.panel2.Size = new System.Drawing.Size(609, 435);
             this.panel2.TabIndex = 4;
             // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox7.Image = global::DIA_Project.Properties.Resources.visibility;
+            this.pictureBox7.Location = new System.Drawing.Point(369, 197);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 35;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::DIA_Project.Properties.Resources.visibility;
+            this.pictureBox1.Location = new System.Drawing.Point(369, 159);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 35;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // PurchasesBtn
             // 
             this.PurchasesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.PurchasesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PurchasesBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.PurchasesBtn.FlatAppearance.BorderSize = 2;
             this.PurchasesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -189,6 +220,7 @@ namespace DIA_Project.Forms.UserForms
             // MentesBtn
             // 
             this.MentesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.MentesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MentesBtn.Enabled = false;
             this.MentesBtn.FlatAppearance.BorderSize = 0;
             this.MentesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -206,6 +238,7 @@ namespace DIA_Project.Forms.UserForms
             // MegseBtn
             // 
             this.MegseBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.MegseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MegseBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.MegseBtn.FlatAppearance.BorderSize = 2;
             this.MegseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -367,6 +400,8 @@ namespace DIA_Project.Forms.UserForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -393,5 +428,7 @@ namespace DIA_Project.Forms.UserForms
         private System.Windows.Forms.Button MegseBtn;
         private System.Windows.Forms.ComboBox ClassCB;
         private System.Windows.Forms.Button PurchasesBtn;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

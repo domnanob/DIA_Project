@@ -1,6 +1,6 @@
 ﻿namespace DIA_Project.Forms.User_Controlls
 {
-    partial class MultipleChoiseTaskUC
+    partial class MultipleChoiceTaskUC
     {
         /// <summary> 
         /// Required designer variable.

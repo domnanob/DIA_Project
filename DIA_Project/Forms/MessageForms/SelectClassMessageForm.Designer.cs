@@ -44,6 +44,7 @@ namespace DIA_Project.Forms
             // GenerateBtn
             // 
             this.GenerateBtn.BackColor = System.Drawing.Color.Transparent;
+            this.GenerateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GenerateBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.GenerateBtn.FlatAppearance.BorderSize = 2;
             this.GenerateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -61,6 +62,7 @@ namespace DIA_Project.Forms
             // SaveBtn
             // 
             this.SaveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.SaveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SaveBtn.FlatAppearance.BorderSize = 0;
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -88,6 +90,7 @@ namespace DIA_Project.Forms
             // BackBtn
             // 
             this.BackBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.BackBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BackBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.BackBtn.FlatAppearance.BorderSize = 2;
             this.BackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -130,6 +133,7 @@ namespace DIA_Project.Forms
             // 
             // CopyPb
             // 
+            this.CopyPb.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CopyPb.Image = global::DIA_Project.Properties.Resources.copy;
             this.CopyPb.Location = new System.Drawing.Point(234, 117);
             this.CopyPb.Name = "CopyPb";

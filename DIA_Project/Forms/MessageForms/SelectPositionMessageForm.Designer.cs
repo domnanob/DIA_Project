@@ -63,6 +63,7 @@ namespace DIA_Project.Forms
             // CancelBtn
             // 
             this.CancelBtn.BackColor = System.Drawing.Color.Transparent;
+            this.CancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CancelBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.CancelBtn.FlatAppearance.BorderSize = 2;
             this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -80,6 +81,7 @@ namespace DIA_Project.Forms
             // OKBtn
             // 
             this.OKBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.OKBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OKBtn.FlatAppearance.BorderSize = 0;
             this.OKBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OKBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);

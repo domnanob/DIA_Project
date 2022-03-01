@@ -59,7 +59,7 @@ namespace DIA_Project.Forms.TeacherForms
         }
         private void NewMultipleChoiseTask(Tasks t) 
         {
-            MultipleChoiseCorrectingUC MCTRC = new MultipleChoiseCorrectingUC(t, CurrentAns.Where(x => x.TaskID == t.ID).ToList(), UserAns.Where(y => y.TaskID == t.ID).ToList())
+            MultipleChoiceCorrectingUC MCTRC = new MultipleChoiceCorrectingUC(t, CurrentAns.Where(x => x.TaskID == t.ID).ToList(), UserAns.Where(y => y.TaskID == t.ID).ToList())
             {
                 Dock = DockStyle.Top,
                 Name = "MultipleChoise" + ChoiseDb,
@@ -91,7 +91,7 @@ namespace DIA_Project.Forms.TeacherForms
 
         private void MentesBtn_Click(object sender, EventArgs e)
         {
-            foreach (var item in HomePnl.Controls.OfType<MultipleChoiseCorrectingUC>().ToList())
+            foreach (var item in HomePnl.Controls.OfType<MultipleChoiceCorrectingUC>().ToList())
             {
                 if (!item.isCorrected())
                 {
@@ -104,7 +104,7 @@ namespace DIA_Project.Forms.TeacherForms
                 UserTests ut = sql.userTests.Single(x => x.TestID == CurrentTest.ID && x.UserID == CurrentUser.Username);
                 ut.CorrectState = 1;
                 ut.Points = 0;
-                foreach (var item in HomePnl.Controls.OfType<MultipleChoiseCorrectingUC>().ToList())
+                foreach (var item in HomePnl.Controls.OfType<MultipleChoiceCorrectingUC>().ToList())
                 {
                     ut.Points += double.Parse(item.GetPoints());
                 }

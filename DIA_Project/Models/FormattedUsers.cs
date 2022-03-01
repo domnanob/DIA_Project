@@ -17,7 +17,7 @@ namespace DIA_Project.Models
         public string Email { get; set; }
 
         public FormattedUsers(Users u)
-        { 
+        {
             Username = u.Username;
             Name = u.Name;
             Enabled = (u.Enable == 1) ? "Aktív" : "Tiltott";
@@ -26,6 +26,5 @@ namespace DIA_Project.Models
             Class = SQL.MySql().classes.Single(x => x.ID == u.ClassID).Name;
             Email = u.Email;
         }
-
     }
 }

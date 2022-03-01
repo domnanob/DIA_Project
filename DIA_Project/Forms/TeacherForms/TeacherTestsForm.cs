@@ -83,10 +83,11 @@ namespace DIA_Project.Forms.TeacherForms
             
             if (dgv.Columns.Count > 0)
             {
-                dgv.Columns[0].HeaderText = "Dolgozat";
-                dgv.Columns[1].HeaderText = "Tantárgy";
-                dgv.Columns[2].HeaderText = "Osztály";
-                dgv.Columns[3].HeaderText = "Határidő";
+                dgv.Columns[0].Visible = false; 
+                dgv.Columns[1].HeaderText = "Dolgozat";
+                dgv.Columns[2].HeaderText = "Tantárgy";
+                dgv.Columns[3].HeaderText = "Osztály";
+                dgv.Columns[4].HeaderText = "Határidő";
             }
         }
         private void PurchasesDGV_DataSourceChanged(object sender, EventArgs e)
@@ -101,8 +102,8 @@ namespace DIA_Project.Forms.TeacherForms
 
         private void MegnyitasBtn_Click(object sender, EventArgs e)
         {
-            string SelectedTestName = TestsDGV.SelectedRows[0].Cells[0].Value.ToString();
-            Tests t = SQL.MySql().tests.Single(x => x.Name == SelectedTestName);
+            string SelectedTestID = TestsDGV.SelectedRows[0].Cells[0].Value.ToString();
+            Tests t = SQL.MySql().tests.Single(x => x.ID == int.Parse(SelectedTestID));
             Program.TF.OpenChildForm(new TeacherTestsUsersForm(CurrentTeacher, t));
         }
 

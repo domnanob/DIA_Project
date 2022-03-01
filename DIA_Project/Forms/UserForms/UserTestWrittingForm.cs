@@ -91,14 +91,13 @@ namespace DIA_Project.Forms.UserForms
         }
         private void NewMultipleChoiseTask(Tasks t) 
         {
-            MultipleChoiseTaskUC MCTUC = new MultipleChoiseTaskUC(t, CurrentAnswers.Where(x => x.TaskID == t.ID).ToList())
+            MultipleChoiceTaskUC MCTUC = new MultipleChoiceTaskUC(t, CurrentAnswers.Where(x => x.TaskID == t.ID).ToList())
             {
-                Height = 115,
                 Dock = DockStyle.Top,
                 Name = "MultipleChoise" + ChoiseDb,
                 Padding = new Padding(10,0,0,0)
             };
-            this.HomePnl.Height += 115;
+            this.HomePnl.Height += MCTUC.Height;
             this.HomePnl.Controls.Add(MCTUC);
             ChoiseDb++;
         }
@@ -129,7 +128,7 @@ namespace DIA_Project.Forms.UserForms
                 UT.Completed = 1;
                 UT.FinishDate = DateTime.Now;
                 sql.SaveChanges();
-                foreach (var item in HomePnl.Controls.OfType<MultipleChoiseTaskUC>().ToList())
+                foreach (var item in HomePnl.Controls.OfType<MultipleChoiceTaskUC>().ToList())
                 {
                     foreach (var ans in item.GetAnswers())
                     {

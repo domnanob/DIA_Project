@@ -67,6 +67,7 @@ namespace DIA_Project.Forms.CommonForms
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.panel1.Controls.Add(this.MinimizeBtn);
             this.panel1.Controls.Add(this.ExitBtn);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -164,6 +165,7 @@ namespace DIA_Project.Forms.CommonForms
             // BejelentkezesBtn
             // 
             this.BejelentkezesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.BejelentkezesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BejelentkezesBtn.FlatAppearance.BorderSize = 0;
             this.BejelentkezesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BejelentkezesBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -180,6 +182,7 @@ namespace DIA_Project.Forms.CommonForms
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.button1.FlatAppearance.BorderSize = 3;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -245,7 +248,7 @@ namespace DIA_Project.Forms.CommonForms
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BejelentkezesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Bejelentkezés";
+            this.Text = "0";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BejelentkezesForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);

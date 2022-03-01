@@ -37,6 +37,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.panel6 = new System.Windows.Forms.Panel();
             this.NameTb = new System.Windows.Forms.TextBox();
             this.ClassesCB = new System.Windows.Forms.ComboBox();
+            this.EditBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PurchasesDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,6 +131,23 @@ namespace DIA_Project.Forms.TeacherForms
             this.ClassesCB.Size = new System.Drawing.Size(188, 23);
             this.ClassesCB.TabIndex = 1;
             // 
+            // EditBtn
+            // 
+            this.EditBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.EditBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.EditBtn.FlatAppearance.BorderSize = 0;
+            this.EditBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EditBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.EditBtn.Location = new System.Drawing.Point(516, 365);
+            this.EditBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.EditBtn.Name = "EditBtn";
+            this.EditBtn.Size = new System.Drawing.Size(92, 29);
+            this.EditBtn.TabIndex = 29;
+            this.EditBtn.Text = "Szerkesztés";
+            this.EditBtn.UseVisualStyleBackColor = false;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
+            // 
             // TeacherClassesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -138,6 +156,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.BackgroundImage = global::DIA_Project.Properties.Resources.WinFormBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(665, 435);
+            this.Controls.Add(this.EditBtn);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.NameTb);
             this.Controls.Add(this.ClassesCB);
@@ -160,5 +179,6 @@ namespace DIA_Project.Forms.TeacherForms
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox NameTb;
         private System.Windows.Forms.ComboBox ClassesCB;
+        private System.Windows.Forms.Button EditBtn;
     }
 }

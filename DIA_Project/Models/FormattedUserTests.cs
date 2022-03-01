@@ -8,6 +8,7 @@ namespace DIA_Project.Models
 {
     public class FormattedUserTests
     {
+        public string UserID { get; set; }
         public string UserName { get; private set; }
 
         public string FinishDate { get; private set; }
@@ -16,6 +17,7 @@ namespace DIA_Project.Models
 
         public FormattedUserTests(UserTests ut)
         {
+            UserID = ut.UserID;
             UserName = SQL.MySql().users.Single(x => x.Username == ut.UserID).Name;
             FinishDate = (ut.FinishDate==null)? "-" : ut.FinishDate.ToString();
             if (ut.CorrectState == 1)

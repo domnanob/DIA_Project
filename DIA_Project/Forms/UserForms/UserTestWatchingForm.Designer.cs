@@ -86,6 +86,7 @@ namespace DIA_Project.Forms.UserForms
             // VisszaBtn
             // 
             this.VisszaBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.VisszaBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.VisszaBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.VisszaBtn.FlatAppearance.BorderSize = 2;
             this.VisszaBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -99,7 +100,6 @@ namespace DIA_Project.Forms.UserForms
             this.VisszaBtn.Text = "Vissza";
             this.VisszaBtn.UseVisualStyleBackColor = false;
             this.VisszaBtn.Click += new System.EventHandler(this.VisszaBtn_Click);
-            //this.VisszaBtn.Region = System.Drawing.Region.FromHrgn(DIA_Project.Lib.BorderRadius.CreateRoundRectRgn(0, 0, this.VisszaBtn.Width, this.VisszaBtn.Height, 5, 5));
             // 
             // UserTestWatchingForm
             // 

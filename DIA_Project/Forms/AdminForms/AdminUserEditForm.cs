@@ -145,5 +145,33 @@ namespace DIA_Project.Forms.AdminForms
         {
             MentesBtn.Enabled = true;
         }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            if (PasswordTB.PasswordChar == '●')
+            {
+                pictureBox7.Image = Properties.Resources.visible;
+                PasswordTB.PasswordChar = '\0';
+            }
+            else
+            {
+                pictureBox7.Image = Properties.Resources.visibility;
+                PasswordTB.PasswordChar = '●';
+            }
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            if (Password2TB.PasswordChar == '●')
+            {
+                pictureBox8.Image = Properties.Resources.visible;
+                Password2TB.PasswordChar = '\0';
+            }
+            else
+            {
+                pictureBox8.Image = Properties.Resources.visibility;
+                Password2TB.PasswordChar = '●';
+            }
+        }
     }
 }

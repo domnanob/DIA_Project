@@ -175,6 +175,7 @@ namespace DIA_Project.Forms.CommonForms
             // RegisztracioBtn
             // 
             this.RegisztracioBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.RegisztracioBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RegisztracioBtn.FlatAppearance.BorderSize = 0;
             this.RegisztracioBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegisztracioBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -262,6 +263,7 @@ namespace DIA_Project.Forms.CommonForms
             // VisszaBtn
             // 
             this.VisszaBtn.BackColor = System.Drawing.Color.Transparent;
+            this.VisszaBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.VisszaBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.VisszaBtn.FlatAppearance.BorderSize = 3;
             this.VisszaBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

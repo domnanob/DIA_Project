@@ -61,6 +61,7 @@ namespace DIA_Project.Forms
             // YesBtn
             // 
             this.YesBtn.BackColor = System.Drawing.Color.Transparent;
+            this.YesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.YesBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.YesBtn.FlatAppearance.BorderSize = 2;
             this.YesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -78,6 +79,7 @@ namespace DIA_Project.Forms
             // NoBtn
             // 
             this.NoBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.NoBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.NoBtn.FlatAppearance.BorderSize = 0;
             this.NoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NoBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);

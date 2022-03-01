@@ -45,7 +45,10 @@ namespace DIA_Project.Forms.AdminForms
             PurchasesDGV.DataSource = null;
             foreach (var item in u)
             {
-                FU.Add(new FormattedUsers(item));
+                if (item.RoleID != 1)
+                {
+                    FU.Add(new FormattedUsers(item));
+                }
             }
             PurchasesDGV.DataSource = FU;
             return;

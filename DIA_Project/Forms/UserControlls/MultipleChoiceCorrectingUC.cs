@@ -11,9 +11,9 @@ using DIA_Project.Models;
 
 namespace DIA_Project.Forms.User_Controlls
 {
-    public partial class MultipleChoiseCorrectingUC : UserControl
+    public partial class MultipleChoiceCorrectingUC : UserControl
     {
-        public MultipleChoiseCorrectingUC(Tasks t, List<Answers> ca,List<Answers> ua)
+        public MultipleChoiceCorrectingUC(Tasks t, List<Answers> ca,List<Answers> ua)
         {
             InitializeComponent();
             CurrentTask = t;

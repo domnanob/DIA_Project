@@ -156,6 +156,7 @@ namespace DIA_Project.Forms.AdminForms
             // NewUserCodeBtn
             // 
             this.NewUserCodeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.NewUserCodeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.NewUserCodeBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.NewUserCodeBtn.FlatAppearance.BorderSize = 2;
             this.NewUserCodeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -190,6 +191,7 @@ namespace DIA_Project.Forms.AdminForms
             // MentesBtn
             // 
             this.MentesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.MentesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MentesBtn.Enabled = false;
             this.MentesBtn.FlatAppearance.BorderSize = 0;
             this.MentesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -207,6 +209,7 @@ namespace DIA_Project.Forms.AdminForms
             // MegseBtn
             // 
             this.MegseBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.MegseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MegseBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.MegseBtn.FlatAppearance.BorderSize = 2;
             this.MegseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

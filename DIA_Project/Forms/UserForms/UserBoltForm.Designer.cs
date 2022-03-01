@@ -109,10 +109,12 @@ namespace DIA_Project.Forms.UserForms
             this.Panel1.TabIndex = 1;
             this.Panel1.TabStop = true;
             this.Panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Panels_MouseClick);
-            this.Panel1.Region = System.Drawing.Region.FromHrgn(DIA_Project.Lib.BorderRadius.CreateRoundRectRgn(0, 0, this.Panel1.Width, this.Panel1.Height, 25, 25));
+            this.Panel1.Region = System.Drawing.Region.FromHrgn(DIA_Project.Lib.BorderRadius.CreateRoundRectRgn(0, 0, this.Panel1.Width, this.Panel1.Height, 10, 10));
+
             // 
             // Info1Pb
             // 
+            this.Info1Pb.Cursor = System.Windows.Forms.Cursors.Help;
             this.Info1Pb.Image = global::DIA_Project.Properties.Resources.info__2_B;
             this.Info1Pb.Location = new System.Drawing.Point(10, 10);
             this.Info1Pb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -173,10 +175,12 @@ namespace DIA_Project.Forms.UserForms
             this.Panel2.TabIndex = 2;
             this.Panel2.TabStop = true;
             this.Panel2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Panels_MouseClick);
-            this.Panel2.Region = System.Drawing.Region.FromHrgn(DIA_Project.Lib.BorderRadius.CreateRoundRectRgn(0, 0, this.Panel2.Width, this.Panel2.Height, 25, 25));
+            this.Panel2.Region = System.Drawing.Region.FromHrgn(DIA_Project.Lib.BorderRadius.CreateRoundRectRgn(0, 0, this.Panel2.Width, this.Panel2.Height, 10, 10));
+
             // 
             // Info2Pb
             // 
+            this.Info2Pb.Cursor = System.Windows.Forms.Cursors.Help;
             this.Info2Pb.Image = global::DIA_Project.Properties.Resources.info__2_B;
             this.Info2Pb.Location = new System.Drawing.Point(11, 10);
             this.Info2Pb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -237,10 +241,12 @@ namespace DIA_Project.Forms.UserForms
             this.Panel3.TabIndex = 3;
             this.Panel3.TabStop = true;
             this.Panel3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Panels_MouseClick);
-            this.Panel3.Region = System.Drawing.Region.FromHrgn(DIA_Project.Lib.BorderRadius.CreateRoundRectRgn(0, 0, this.Panel3.Width, this.Panel3.Height, 25, 25));
+            this.Panel3.Region = System.Drawing.Region.FromHrgn(DIA_Project.Lib.BorderRadius.CreateRoundRectRgn(0, 0, this.Panel3.Width, this.Panel3.Height, 10, 10));
+
             // 
             // Info3Pb
             // 
+            this.Info3Pb.Cursor = System.Windows.Forms.Cursors.Help;
             this.Info3Pb.Image = global::DIA_Project.Properties.Resources.info__2_B;
             this.Info3Pb.Location = new System.Drawing.Point(10, 10);
             this.Info3Pb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -301,10 +307,12 @@ namespace DIA_Project.Forms.UserForms
             this.Panel4.TabIndex = 4;
             this.Panel4.TabStop = true;
             this.Panel4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Panels_MouseClick);
-            this.Panel4.Region = System.Drawing.Region.FromHrgn(DIA_Project.Lib.BorderRadius.CreateRoundRectRgn(0, 0, this.Panel4.Width, this.Panel4.Height, 25, 25));
+            this.Panel4.Region = System.Drawing.Region.FromHrgn(DIA_Project.Lib.BorderRadius.CreateRoundRectRgn(0, 0, this.Panel4.Width, this.Panel4.Height, 10, 10));
+
             // 
             // Info4Pb
             // 
+            this.Info4Pb.Cursor = System.Windows.Forms.Cursors.Help;
             this.Info4Pb.Image = global::DIA_Project.Properties.Resources.info__2_B;
             this.Info4Pb.Location = new System.Drawing.Point(10, 9);
             this.Info4Pb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -356,7 +364,7 @@ namespace DIA_Project.Forms.UserForms
             this.InfoL.Name = "InfoL";
             this.InfoL.Size = new System.Drawing.Size(604, 38);
             this.InfoL.TabIndex = 16;
-            this.InfoL.Text = "Info: Az i-betüre kattintva tudhatsz meg többet az egyes lehetőségekről!";
+            this.InfoL.Text = "Info: Ha az egeret az i-betűre viszed, többet tudhatsz meg arról az elemről!";
             // 
             // UserBoltForm
             // 

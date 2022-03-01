@@ -11,9 +11,9 @@ using DIA_Project.Models;
 
 namespace DIA_Project.Forms.User_Controlls
 {
-    public partial class MultipleChoiseTaskUC : UserControl
+    public partial class MultipleChoiceTaskUC : UserControl
     {
-        public MultipleChoiseTaskUC(Tasks t, List<Answers> a)
+        public MultipleChoiceTaskUC(Tasks t, List<Answers> a)
         {
             InitializeComponent();
             CurrentTask = t;

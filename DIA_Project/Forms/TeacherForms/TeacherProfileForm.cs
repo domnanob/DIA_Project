@@ -121,5 +121,33 @@ namespace DIA_Project.Forms.TeacherForms
         {
             GC.Collect();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (PasswordTB.PasswordChar == '●')
+            {
+                pictureBox1.Image = Properties.Resources.visible;
+                PasswordTB.PasswordChar = '\0';
+            }
+            else
+            {
+                pictureBox1.Image = Properties.Resources.visibility;
+                PasswordTB.PasswordChar = '●';
+            }
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            if (Password2TB.PasswordChar == '●')
+            {
+                pictureBox6.Image = Properties.Resources.visible;
+                Password2TB.PasswordChar = '\0';
+            }
+            else
+            {
+                pictureBox6.Image = Properties.Resources.visibility;
+                Password2TB.PasswordChar = '●';
+            }
+        }
     }
 }

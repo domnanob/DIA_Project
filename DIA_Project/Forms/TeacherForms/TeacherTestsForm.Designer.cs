@@ -110,6 +110,7 @@ namespace DIA_Project.Forms.TeacherForms
             // NewTestBtn
             // 
             this.NewTestBtn.BackColor = System.Drawing.Color.Transparent;
+            this.NewTestBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.NewTestBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.NewTestBtn.FlatAppearance.BorderSize = 2;
             this.NewTestBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -127,6 +128,7 @@ namespace DIA_Project.Forms.TeacherForms
             // MegnyitasBtn
             // 
             this.MegnyitasBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.MegnyitasBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MegnyitasBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.MegnyitasBtn.FlatAppearance.BorderSize = 2;
             this.MegnyitasBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

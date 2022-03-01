@@ -47,9 +47,10 @@ namespace DIA_Project.Forms.TeacherForms
             
             if (dgv.Columns.Count > 0)
             {
-                dgv.Columns[0].HeaderText = "Diák";
-                dgv.Columns[1].HeaderText = "Leadási idő";
-                dgv.Columns[2].HeaderText = "Állapot";
+                dgv.Columns[0].Visible = false;
+                dgv.Columns[1].HeaderText = "Diák";
+                dgv.Columns[2].HeaderText = "Leadási idő";
+                dgv.Columns[3].HeaderText = "Állapot";
             }
         }
         private void PurchasesDGV_DataSourceChanged(object sender, EventArgs e)
@@ -69,15 +70,15 @@ namespace DIA_Project.Forms.TeacherForms
 
         private void MegnyitasBtn_Click(object sender, EventArgs e)
         {
-            if (new string[] { "Javításra vár!", "Kijavítva!" }.Contains(UsersTestsDGV.SelectedRows[0].Cells[2].Value.ToString()))
+            if (new string[] { "Javításra vár!", "Kijavítva!" }.Contains(UsersTestsDGV.SelectedRows[0].Cells[3].Value.ToString()))
             {
-                string SelectedUserName = UsersTestsDGV.SelectedRows[0].Cells[0].Value.ToString();
+                string SelectedUsername = UsersTestsDGV.SelectedRows[0].Cells[0].Value.ToString();
                 List<Users> alluser = new List<Users>();
                 foreach (var item in UT)
                 {
                     alluser.Add(SQL.MySql().users.Single(x => x.Username == item.UserID));
                 }
-                Program.TF.OpenChildForm(new TeacherTestWatchingForm(CurrentTeacher, alluser.Single(x => x.Name == SelectedUserName), CurrentTest));
+                Program.TF.OpenChildForm(new TeacherTestWatchingForm(CurrentTeacher, alluser.Single(x => x.Username == SelectedUsername), CurrentTest));
             }
             else
             {

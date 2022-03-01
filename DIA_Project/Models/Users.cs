@@ -26,8 +26,7 @@ namespace DIA_Project.Models
 
         public int Money { get; set; } = 0;
 
-        [Required]
-        public int ClassID { get; set; }
+        public int? ClassID { get; set; }
 
         [Required]
         public string Email { get; set; }

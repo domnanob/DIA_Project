@@ -87,7 +87,7 @@ namespace DIA_Project.Forms.TeacherForms
         {
             if (TaskTypesCB.SelectedIndex == 0)
             {
-                MultipleChoiseUC MCUC = new MultipleChoiseUC()
+                MultipleChoiceUC MCUC = new MultipleChoiceUC()
                 {
                     Height = 115,
                     Dock = DockStyle.Top,
@@ -103,7 +103,7 @@ namespace DIA_Project.Forms.TeacherForms
         }
         private void multipleChoiseuc_SizeChanged(object sender, EventArgs e)
         {
-            MultipleChoiseUC Current = sender as MultipleChoiseUC;
+            MultipleChoiceUC Current = sender as MultipleChoiceUC;
             if (Current.Height > MCUL.Single(x => x.Item1 == Current.Name).Item2)
             {
                 this.HomePnl.Height += 55;
@@ -120,7 +120,7 @@ namespace DIA_Project.Forms.TeacherForms
 
         private void multipleChoiseuc_BackColorChanged(object sender, EventArgs e)
         {
-            MultipleChoiseUC Current = sender as MultipleChoiseUC;
+            MultipleChoiceUC Current = sender as MultipleChoiceUC;
             this.HomePnl.Controls.Remove(Current);
             this.HomePnl.Height -= MCUL.Single(x => x.Item1 == Current.Name).Item2;
             MCUL.Remove(MCUL.Single(x => x.Item1 == Current.Name));
@@ -132,7 +132,7 @@ namespace DIA_Project.Forms.TeacherForms
                 new ErrorMessageForm("Minden mező kitöltése kötelező!").ShowDialog();
                 return;
             }
-            foreach (var item in this.HomePnl.Controls.OfType<MultipleChoiseUC>())
+            foreach (var item in this.HomePnl.Controls.OfType<MultipleChoiceUC>())
             {
                 string EM;
                 if (!item.IsAllFieldFilled(out EM))
@@ -159,7 +159,7 @@ namespace DIA_Project.Forms.TeacherForms
                 sql.tests.Add(tst);
                 sql.SaveChanges();
                 int CurrentMaxPoint = 0;
-                foreach (var item in this.HomePnl.Controls.OfType<MultipleChoiseUC>()) //Végigmegy az összes Feladaton
+                foreach (var item in this.HomePnl.Controls.OfType<MultipleChoiceUC>()) //Végigmegy az összes Feladaton
                 {
                     Tasks tsk = new Tasks() {
                         ID = CurrentTaskID,

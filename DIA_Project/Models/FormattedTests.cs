@@ -8,6 +8,7 @@ namespace DIA_Project.Models
 {
     public class FormattedTests
     {
+        public int TestID { get; private set; }
         public string TestName { get; private set; }
         public string Subject { get; private set; }
         public string Class { get; private set; }
@@ -17,6 +18,7 @@ namespace DIA_Project.Models
         {
             using (SQL sql = SQL.MySql())
             {
+                TestID = t.ID;
                 TestName = t.Name;
                 Subject = sql.subjects.Single(x => x.ID == t.SubjectID).Name;
                 Class = sql.classes.Single(x => x.ID == t.ClassID).Name;

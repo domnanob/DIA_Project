@@ -103,11 +103,12 @@ namespace DIA_Project.Forms.UserForms
             
             if (dgv.Columns.Count > 0)
             {
-                dgv.Columns[0].HeaderText = "Dolgozat";
-                dgv.Columns[1].HeaderText = "Tantárgy";
-                dgv.Columns[2].HeaderText = "Határidő";
-                dgv.Columns[3].HeaderText = "Pont";
-                dgv.Columns[4].HeaderText = "Állapot";
+                dgv.Columns[0].Visible = false;
+                dgv.Columns[1].HeaderText = "Dolgozat";
+                dgv.Columns[2].HeaderText = "Tantárgy";
+                dgv.Columns[3].HeaderText = "Határidő";
+                dgv.Columns[4].HeaderText = "Pont";
+                dgv.Columns[5].HeaderText = "Állapot";
             }
         }
         private void PurchasesDGV_DataSourceChanged(object sender, EventArgs e)
@@ -122,8 +123,8 @@ namespace DIA_Project.Forms.UserForms
 
         private void MegnyitasBtn_Click(object sender, EventArgs e)
         {
-            string SelectedTestName = TestsDGV.SelectedRows[0].Cells[0].Value.ToString();
-            Tests t = SQL.MySql().tests.Single(x => x.Name == SelectedTestName);
+            string SelectedTestID = TestsDGV.SelectedRows[0].Cells[0].Value.ToString();
+            Tests t = SQL.MySql().tests.Single(x => x.ID == int.Parse(SelectedTestID));
             UserTests ut = SQL.MySql().userTests.Single(x => x.TestID == t.ID && x.UserID == CurrentUser.Username);
             if (ut.Completed == 0)
             {

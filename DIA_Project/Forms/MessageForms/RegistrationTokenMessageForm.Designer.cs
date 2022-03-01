@@ -63,6 +63,7 @@ namespace DIA_Project.Forms
             // CancelBtn
             // 
             this.CancelBtn.BackColor = System.Drawing.Color.Transparent;
+            this.CancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CancelBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.CancelBtn.FlatAppearance.BorderSize = 2;
             this.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -102,6 +103,7 @@ namespace DIA_Project.Forms
             // OKBtn
             // 
             this.OKBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.OKBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OKBtn.FlatAppearance.BorderSize = 0;
             this.OKBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OKBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -115,7 +117,7 @@ namespace DIA_Project.Forms
             this.OKBtn.UseVisualStyleBackColor = false;
             this.OKBtn.Click += new System.EventHandler(this.OKBtn_Click);
             // 
-            // RegistrationTokenForm
+            // RegistrationTokenMessageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -130,7 +132,7 @@ namespace DIA_Project.Forms
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "RegistrationTokenForm";
+            this.Name = "RegistrationTokenMessageForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MessageBoxForm";

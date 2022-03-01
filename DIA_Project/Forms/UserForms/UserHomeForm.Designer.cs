@@ -274,6 +274,7 @@ namespace DIA_Project.Forms.UserForms
             this.panel3.Controls.Add(this.ExitBtn);
             this.panel3.Controls.Add(this.MinimizeBtn);
             this.panel3.Controls.Add(this.MaximizeBtn);
+            this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

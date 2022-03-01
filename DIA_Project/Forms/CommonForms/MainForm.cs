@@ -24,5 +24,21 @@ namespace DIA_Project.Forms.CommonForms
             button1.Region = Region.FromHrgn(BorderRadius.CreateRoundRectRgn(0, 0, button1.Width,
             button1.Height, 10, 10));
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Program.HF != null)
+            {
+                Program.HF.ImitateClick("InfoBtn");
+            }
+            else if (Program.AF != null)
+            {
+                Program.AF.ImitateClick("InfoBtn");
+            }
+            else if (Program.TF != null)
+            {
+                Program.TF.ImitateClick("InfoBtn");
+            }
+        }
     }
 }

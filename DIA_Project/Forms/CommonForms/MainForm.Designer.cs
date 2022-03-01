@@ -86,18 +86,17 @@ namespace DIA_Project.Forms.CommonForms
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(45, 236);
+            this.button1.Location = new System.Drawing.Point(40, 236);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 31);
+            this.button1.Size = new System.Drawing.Size(139, 31);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Vágjunk bele!";
+            this.button1.Text = "További tudnivalók!";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.Paint += new System.Windows.Forms.PaintEventHandler(this.button1_Paint);
-            this.button1.Region = System.Drawing.Region.FromHrgn(DIA_Project.Lib.BorderRadius.CreateRoundRectRgn(0, 0, this.button1.Width, this.button1.Height, 10, 10));
-
             // 
-            // DashBoardForm
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -114,7 +113,7 @@ namespace DIA_Project.Forms.CommonForms
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "DashBoardForm";
+            this.Name = "MainForm";
             this.Text = "DashBoardForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

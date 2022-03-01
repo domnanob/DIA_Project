@@ -126,11 +126,12 @@ namespace DIA_Project.Forms.TeacherForms
         {
             if (dgv.Columns.Count > 0)
             {
-                dgv.Columns[0].HeaderText = "Diák";
-                dgv.Columns[1].HeaderText = "Javítási lehetőség";
-                dgv.Columns[2].HeaderText = "Házifeladat Felmentés";
-                dgv.Columns[3].HeaderText = "Késés Igazolás";
-                dgv.Columns[4].HeaderText = "Jeles érdemjegy";
+                dgv.Columns[0].Visible = false;
+                dgv.Columns[1].HeaderText = "Diák";
+                dgv.Columns[2].HeaderText = "Javítási lehetőség";
+                dgv.Columns[3].HeaderText = "Házifeladat Felmentés";
+                dgv.Columns[4].HeaderText = "Késés Igazolás";
+                dgv.Columns[5].HeaderText = "Jeles érdemjegy";
                 //dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(24, 30, 54);
             }
         }
@@ -142,6 +143,20 @@ namespace DIA_Project.Forms.TeacherForms
         private void ClassesForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             GC.Collect();
+        }
+        private int ReFormat(string s) {
+            if (s == "Van")
+            {
+                return 1;
+            }
+            else {
+                return 0;
+            }
+        }
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            string SelectedUsername = PurchasesDGV.SelectedRows[0].Cells[0].Value.ToString();
+            Program.TF.OpenChildForm(new TeacherUserPurchasesForm(SQL.MySql().users.Single(x =>x.Username == SelectedUsername)));
         }
     }
 }

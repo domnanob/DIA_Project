@@ -37,6 +37,8 @@ namespace DIA_Project.Forms.AdminForms
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.PurchasesBtn = new System.Windows.Forms.Button();
             this.EnabledCb = new System.Windows.Forms.CheckBox();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -62,6 +64,8 @@ namespace DIA_Project.Forms.AdminForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -148,6 +152,8 @@ namespace DIA_Project.Forms.AdminForms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.pictureBox8);
+            this.panel2.Controls.Add(this.pictureBox7);
             this.panel2.Controls.Add(this.PurchasesBtn);
             this.panel2.Controls.Add(this.EnabledCb);
             this.panel2.Controls.Add(this.panel8);
@@ -172,9 +178,34 @@ namespace DIA_Project.Forms.AdminForms
             this.panel2.Size = new System.Drawing.Size(609, 435);
             this.panel2.TabIndex = 4;
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox8.Image = global::DIA_Project.Properties.Resources.visibility;
+            this.pictureBox8.Location = new System.Drawing.Point(368, 196);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 38;
+            this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox7.Image = global::DIA_Project.Properties.Resources.visibility;
+            this.pictureBox7.Location = new System.Drawing.Point(368, 159);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 38;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
             // PurchasesBtn
             // 
             this.PurchasesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.PurchasesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PurchasesBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.PurchasesBtn.FlatAppearance.BorderSize = 2;
             this.PurchasesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -192,6 +223,7 @@ namespace DIA_Project.Forms.AdminForms
             // EnabledCb
             // 
             this.EnabledCb.AutoSize = true;
+            this.EnabledCb.Cursor = System.Windows.Forms.Cursors.Hand;
             this.EnabledCb.ForeColor = System.Drawing.Color.White;
             this.EnabledCb.Location = new System.Drawing.Point(163, 372);
             this.EnabledCb.Name = "EnabledCb";
@@ -243,6 +275,7 @@ namespace DIA_Project.Forms.AdminForms
             // MentesBtn
             // 
             this.MentesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.MentesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MentesBtn.Enabled = false;
             this.MentesBtn.FlatAppearance.BorderSize = 0;
             this.MentesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -260,6 +293,7 @@ namespace DIA_Project.Forms.AdminForms
             // MegseBtn
             // 
             this.MegseBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.MegseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MegseBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             this.MegseBtn.FlatAppearance.BorderSize = 2;
             this.MegseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -422,6 +456,8 @@ namespace DIA_Project.Forms.AdminForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -452,5 +488,7 @@ namespace DIA_Project.Forms.AdminForms
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox EnabledCb;
         private System.Windows.Forms.Button PurchasesBtn;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }

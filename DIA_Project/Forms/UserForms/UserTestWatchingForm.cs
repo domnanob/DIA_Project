@@ -54,7 +54,7 @@ namespace DIA_Project.Forms.UserForms
         }
         private void NewMultipleChoiseTask(Tasks t) 
         {
-            MultipleChoiseResultUC MCTRC = new MultipleChoiseResultUC(t, CurrentAns.Where(x => x.TaskID == t.ID).ToList(), UserAns.Where(y => y.TaskID == t.ID).ToList())
+            MultipleChoiceResultUC MCTRC = new MultipleChoiceResultUC(t, CurrentAns.Where(x => x.TaskID == t.ID).ToList(), UserAns.Where(y => y.TaskID == t.ID).ToList())
             {
                 Dock = DockStyle.Top,
                 Name = "MultipleChoise" + ChoiseDb,

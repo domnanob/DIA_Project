@@ -9,6 +9,7 @@ namespace DIA_Project.Models
 {
     public class FormattedPurchases
     {
+        public string UserID { get; private set; }
         public string userName { get; private set; }
         public string Javl { get; private set; }
         public string HaziF { get; private set; }
@@ -16,6 +17,7 @@ namespace DIA_Project.Models
         public string Jeles { get; private set; }
         public FormattedPurchases(Purchases p)
         {
+            UserID = p.UserID;
             userName = SQL.MySql().users.Single(x => x.Username == p.UserID).Name;
             Javl = (Convert.ToBoolean(p.JavL)) ? "Van" : "Nincs";
             HaziF = (Convert.ToBoolean(p.HaziF)) ? "Van" : "Nincs";
