@@ -1,44 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using DIA_Project.Lib;
 using DIA_Project.Models;
-using DIA_Project.Lib;
+using System;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace DIA_Project.Forms.AdminForms
 {
-    public partial class AdminUserEditForm : Form
+    public partial class AdminTeacherEditForm : Form
     {
-        public AdminUserEditForm(Users u)
+        public AdminTeacherEditForm(Teachers t)
         {
             InitializeComponent();
-            CurrentUser = u;
+            CurrentTeacher= t;
             ReLoad();
         }
-        Users CurrentUser = new Users();
+        Teachers CurrentTeacher = new Teachers();
         private void ReLoad() //async
         {
-            NameTb.Text = CurrentUser.Name;
-            UserTB.Text = CurrentUser.Username;
-            EmailTB.Text = CurrentUser.Email;
+            NameTb.Text = CurrentTeacher.Name;
+            UserTB.Text = CurrentTeacher.Username;
+            EmailTB.Text = CurrentTeacher.Email;
             PasswordTB.Text = string.Empty;
             Password2TB.Text = string.Empty;
-            EnabledCb.Checked = (CurrentUser.Enable == 1)? true : false;
-            MoneyTb.Text = CurrentUser.Money + " Pont";
-            ClassCB.Items.Clear();
-            using (SQL sql = SQL.MySql())
-            {
-                foreach (Classes c in sql.classes)
-                {
-                    ClassCB.Items.Add(c.Name);
-                }
-                ClassCB.SelectedItem = sql.classes.Single(x => x.ID == CurrentUser.ClassID).Name;
-            }
+            EnabledCb.Checked = (CurrentTeacher.Enable == 1)? true : false;
             MentesBtn.Enabled = false;
         }
         private bool JelszoEllenoriz(TextBox t1)
@@ -71,10 +55,6 @@ namespace DIA_Project.Forms.AdminForms
                 Password2TB.Enabled = false;
             }
         }
-        private void ClassCB_TextChanged(object sender, EventArgs e)
-        {
-            MentesBtn.Enabled = true;
-        }
 
         private void MentesBtn_Click(object sender, EventArgs e)
         {
@@ -82,18 +62,16 @@ namespace DIA_Project.Forms.AdminForms
             {
                 using (SQL sql = SQL.MySql())
                 {
-                    Users u = sql.users.Single(x => x.Username == CurrentUser.Username);
-                    u.Name = NameTb.Text;
-                    u.Username = UserTB.Text;
-                    u.Email = EmailTB.Text;
-                    u.ClassID = sql.classes.Single(x => x.Name == ClassCB.Items[ClassCB.SelectedIndex].ToString()).ID;
-                    u.Enable = (EnabledCb.Checked)? 1 : 0;
-                    u.Money = int.Parse(MoneyTb.Text.Replace(" Pont", ""));
-                    CurrentUser = u;
+                    Teachers t = sql.teachers.Single(x => x.Username == CurrentTeacher.Username);
+                    t.Name = NameTb.Text;
+                    t.Username = UserTB.Text;
+                    t.Email = EmailTB.Text;
+                    t.Enable = (EnabledCb.Checked)? 1 : 0;
+                    CurrentTeacher = t;
                     sql.SaveChanges();
                 }
                 new SuccessMessageForm("Sikeres mentés!").ShowDialog();
-                Program.AF.ImitateClick("UsersBtn");
+                Program.AF.ImitateClick("TeachersBtn");
             }
             else {
                 if (PasswordTB.Text.Equals(Password2TB.Text))
@@ -102,19 +80,17 @@ namespace DIA_Project.Forms.AdminForms
                     {
                         using (SQL sql = SQL.MySql())
                         {
-                            Users u = sql.users.Single(x => x.Username == CurrentUser.Username);
-                            u.Name = NameTb.Text;
-                            u.Username = UserTB.Text;
-                            u.Email = EmailTB.Text;
-                            u.ClassID = sql.classes.Single(x => x.Name == ClassCB.Items[ClassCB.SelectedIndex].ToString()).ID;
-                            u.Password = SecurePasswordHasher.Hash(PasswordTB.Text);
-                            u.Enable = (EnabledCb.Checked) ? 1 : 0;
-                            u.Money = int.Parse(MoneyTb.Text.Replace(" Pont", ""));
-                            CurrentUser = u;
+                            Teachers t = sql.teachers.Single(x => x.Username == CurrentTeacher.Username);
+                            t.Name = NameTb.Text;
+                            t.Username = UserTB.Text;
+                            t.Email = EmailTB.Text;
+                            t.Password = SecurePasswordHasher.Hash(PasswordTB.Text);
+                            t.Enable = (EnabledCb.Checked) ? 1 : 0;
+                            CurrentTeacher = t;
                             sql.SaveChanges();
                         }
                         new SuccessMessageForm("Sikeres mentés!").ShowDialog();
-                        Program.AF.ImitateClick("UsersBtn");
+                        Program.AF.ImitateClick("TeachersBtn");
                     }
                     else {
                         new ErrorMessageForm("A jelszónak tartalmaznia kell legalább egy nagybetűt és egy számot!").ShowDialog();
@@ -128,7 +104,7 @@ namespace DIA_Project.Forms.AdminForms
 
         private void MegseBtn_Click(object sender, EventArgs e)
         {
-            Program.AF.ImitateClick("UsersBtn");
+            Program.AF.ImitateClick("TeachersBtn");
         }
 
         private void ProfileForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -136,12 +112,13 @@ namespace DIA_Project.Forms.AdminForms
             GC.Collect();
         }
 
-        private void PurchasesBtn_Click(object sender, EventArgs e)
+
+        private void PositionBtn_Click(object sender, EventArgs e)
         {
-            Program.AF.OpenChildForm(new AdminUserPurchasesForm(CurrentUser));
+            Program.AF.OpenChildForm(new AdminTeacherPositionsForm(CurrentTeacher));
         }
 
-        private void EnabledCb_CheckStateChanged(object sender, EventArgs e)
+        private void EnabledCb_CheckedChanged(object sender, EventArgs e)
         {
             MentesBtn.Enabled = true;
         }

@@ -164,14 +164,14 @@ namespace DIA_Project.Forms.CommonForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            RegistrationTokenForm RTF = new RegistrationTokenForm();
+            RegistrationTokenMessageForm RTF = new RegistrationTokenMessageForm();
             RTF.ShowDialog();
             if (RTF.DialogResult == DialogResult.Yes)
             {
                 this.Hide();
                 new RegistrationForm(CurrentToken).ShowDialog();
                 this.Show();
-                _ = _Load();
+                _Load().GetAwaiter();
             }
         }
     }

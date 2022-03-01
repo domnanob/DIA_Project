@@ -239,7 +239,7 @@ namespace DIA_Project.Forms.CommonForms
             // 
             // NevTb
             // 
-            this.NevTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(65)))), ((int)(((byte)(113)))));
+            this.NevTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(99)))));
             this.NevTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NevTb.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NevTb.ForeColor = System.Drawing.Color.White;
@@ -278,7 +278,7 @@ namespace DIA_Project.Forms.CommonForms
             // 
             // EmailTb
             // 
-            this.EmailTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(63)))), ((int)(((byte)(108)))));
+            this.EmailTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(57)))), ((int)(((byte)(95)))));
             this.EmailTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EmailTb.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EmailTb.ForeColor = System.Drawing.Color.White;
@@ -335,7 +335,7 @@ namespace DIA_Project.Forms.CommonForms
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
-            // BejelentkezesForm
+            // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -366,7 +366,7 @@ namespace DIA_Project.Forms.CommonForms
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "BejelentkezesForm";
+            this.Name = "RegistrationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bejelentkezés";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BejelentkezesForm_FormClosed);

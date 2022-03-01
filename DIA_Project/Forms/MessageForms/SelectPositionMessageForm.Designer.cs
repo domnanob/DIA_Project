@@ -1,7 +1,7 @@
 ﻿
 namespace DIA_Project.Forms
 {
-    partial class RegistrationTokenForm
+    partial class SelectPositionMessageForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,9 +32,9 @@ namespace DIA_Project.Forms
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.KerdesL = new System.Windows.Forms.Label();
             this.CancelBtn = new System.Windows.Forms.Button();
-            this.TokenTb = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.OKBtn = new System.Windows.Forms.Button();
+            this.ClassesCB = new System.Windows.Forms.ComboBox();
+            this.SubjectCb = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,9 +55,9 @@ namespace DIA_Project.Forms
             this.KerdesL.ForeColor = System.Drawing.Color.White;
             this.KerdesL.Location = new System.Drawing.Point(92, 22);
             this.KerdesL.Name = "KerdesL";
-            this.KerdesL.Size = new System.Drawing.Size(356, 42);
+            this.KerdesL.Size = new System.Drawing.Size(356, 27);
             this.KerdesL.TabIndex = 1;
-            this.KerdesL.Text = "Adja meg a regisztrációhoz szükséges 6 karakteres kódot!";
+            this.KerdesL.Text = "Válassz osztályt és a tantárgyat!";
             this.KerdesL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CancelBtn
@@ -77,28 +77,6 @@ namespace DIA_Project.Forms
             this.CancelBtn.UseVisualStyleBackColor = false;
             this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
-            // TokenTb
-            // 
-            this.TokenTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.TokenTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TokenTb.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TokenTb.ForeColor = System.Drawing.Color.White;
-            this.TokenTb.Location = new System.Drawing.Point(92, 67);
-            this.TokenTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TokenTb.Name = "TokenTb";
-            this.TokenTb.PlaceholderText = "ABC-123";
-            this.TokenTb.Size = new System.Drawing.Size(356, 19);
-            this.TokenTb.TabIndex = 10;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(92, 89);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(356, 1);
-            this.panel2.TabIndex = 11;
-            // 
             // OKBtn
             // 
             this.OKBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
@@ -115,29 +93,60 @@ namespace DIA_Project.Forms
             this.OKBtn.UseVisualStyleBackColor = false;
             this.OKBtn.Click += new System.EventHandler(this.OKBtn_Click);
             // 
-            // RegistrationTokenForm
+            // ClassesCB
+            // 
+            this.ClassesCB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(70)))));
+            this.ClassesCB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ClassesCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ClassesCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClassesCB.ForeColor = System.Drawing.Color.White;
+            this.ClassesCB.FormattingEnabled = true;
+            this.ClassesCB.Items.AddRange(new object[] {
+            "Osztály"});
+            this.ClassesCB.Location = new System.Drawing.Point(92, 60);
+            this.ClassesCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ClassesCB.Name = "ClassesCB";
+            this.ClassesCB.Size = new System.Drawing.Size(139, 23);
+            this.ClassesCB.TabIndex = 13;
+            // 
+            // SubjectCb
+            // 
+            this.SubjectCb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(70)))));
+            this.SubjectCb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SubjectCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SubjectCb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SubjectCb.ForeColor = System.Drawing.Color.White;
+            this.SubjectCb.FormattingEnabled = true;
+            this.SubjectCb.Items.AddRange(new object[] {
+            "Tantárgy"});
+            this.SubjectCb.Location = new System.Drawing.Point(237, 60);
+            this.SubjectCb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SubjectCb.Name = "SubjectCb";
+            this.SubjectCb.Size = new System.Drawing.Size(139, 23);
+            this.SubjectCb.TabIndex = 14;
+            // 
+            // SelectPositionMessageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(471, 157);
+            this.Controls.Add(this.SubjectCb);
+            this.Controls.Add(this.ClassesCB);
             this.Controls.Add(this.OKBtn);
-            this.Controls.Add(this.TokenTb);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.KerdesL);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "RegistrationTokenForm";
+            this.Name = "SelectPositionMessageForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MessageBoxForm";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -146,8 +155,8 @@ namespace DIA_Project.Forms
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label KerdesL;
         private System.Windows.Forms.Button CancelBtn;
-        private System.Windows.Forms.TextBox TokenTb;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button OKBtn;
+        private System.Windows.Forms.ComboBox ClassesCB;
+        private System.Windows.Forms.ComboBox SubjectCb;
     }
 }

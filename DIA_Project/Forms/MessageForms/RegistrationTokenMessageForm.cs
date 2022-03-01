@@ -12,9 +12,9 @@ using DIA_Project.Models;
 
 namespace DIA_Project.Forms
 {
-    public partial class RegistrationTokenForm : Form
+    public partial class RegistrationTokenMessageForm : Form
     {
-        public RegistrationTokenForm()
+        public RegistrationTokenMessageForm()
         {
             InitializeComponent();
             LoadingDataSources();

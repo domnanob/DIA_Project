@@ -212,7 +212,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.NameTb.Location = new System.Drawing.Point(19, 89);
             this.NameTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NameTb.Name = "NameTb";
-            this.NameTb.PlaceholderText = "Név";
+            this.NameTb.PlaceholderText = "Teljes Név";
             this.NameTb.Size = new System.Drawing.Size(370, 19);
             this.NameTb.TabIndex = 1;
             this.NameTb.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);

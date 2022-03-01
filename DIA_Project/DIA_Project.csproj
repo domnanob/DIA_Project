@@ -19,6 +19,18 @@
     <Compile Update="Forms\AdminForms\AdminNewUserCodesForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\AdminForms\AdminNewTeacherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\AdminForms\AdminTeacherPositionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\AdminForms\AdminTeachersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\AdminForms\AdminTeacherEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\AdminForms\AdminUsersForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -34,7 +46,10 @@
     <Compile Update="Forms\CommonForms\BejelentkezesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\MessageForms\RegistrationTokenForm.cs">
+    <Compile Update="Forms\MessageForms\SelectPositionMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\MessageForms\RegistrationTokenMessageForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\MessageForms\SelectClassMessageForm.cs">
