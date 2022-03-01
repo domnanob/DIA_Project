@@ -61,7 +61,7 @@ namespace DIA_Project.Forms.CommonForms
                 {
                     Users u = sql.users.Single(a => a.Username == FelhTB.Text);
                     bool result = SecurePasswordHasher.Verify(JelszoTB.Text, u.Password);
-                    if (result)
+                    if (result && u.Enable == 1)
                     {
                         u.LastLogon = DateTime.Now;
                         sql.SaveChanges();
@@ -71,7 +71,7 @@ namespace DIA_Project.Forms.CommonForms
                     }
                     else
                     {
-                        MessageBox.Show("Hibás felhasználónév vagy jelszó!", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        new ErrorMessageForm("Hibás felhasználónév vagy jelszó!").ShowDialog();
                         JelszoTB.Text = string.Empty;
                     }                    
                 }
@@ -82,7 +82,7 @@ namespace DIA_Project.Forms.CommonForms
                 {
                     Teachers t = sql.teachers.Single(a => a.Username == FelhTB.Text);
                     bool result = SecurePasswordHasher.Verify(JelszoTB.Text, t.Password);
-                    if (result)
+                    if (result && t.Enable == 1)
                     {
                         t.LastLogon = DateTime.Now;
                         sql.SaveChanges();
@@ -92,15 +92,14 @@ namespace DIA_Project.Forms.CommonForms
                     }
                     else
                     {
-                        MessageBox.Show("Hibás felhasználónév vagy jelszó!", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        new ErrorMessageForm("Hibás felhasználónév vagy jelszó!").ShowDialog();
                         JelszoTB.Text = string.Empty;
                     }
                 }
-
             }
             else
             {
-                MessageBox.Show("Hibás felhasználónév vagy jelszó!", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                new ErrorMessageForm("Hibás felhasználónév vagy jelszó!").ShowDialog();
                 JelszoTB.Text = string.Empty;
             }
         }

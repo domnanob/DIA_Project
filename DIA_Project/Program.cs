@@ -27,11 +27,14 @@ namespace DIA_Project
                 {
                     if (BF.CurrentUser.RoleID == 1)
                     {
+
                         AF = new AdminHomeForm(BF.CurrentUser);
                         AF.ShowDialog();
+
                     }
                     else
                     {
+
                         HF = new UserHomeForm(BF.CurrentUser);
                         HF.ShowDialog();
                     }
