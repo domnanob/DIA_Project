@@ -12,6 +12,16 @@ namespace DIA_Project.Forms.AdminForms
         public AdminNewTeacherForm()
         {
             InitializeComponent();
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             ReLoad();
         }
         private List<string> TeacherUsernames = new List<string>();
@@ -70,7 +80,7 @@ namespace DIA_Project.Forms.AdminForms
                         {
                             using (SQL sql = SQL.MySql())
                             {
-                                Teachers t = new Teachers()
+                                Teacher t = new Teacher()
                                 {
                                     Username = UserTB.Text,
                                     Name = NameTb.Text,
@@ -80,7 +90,7 @@ namespace DIA_Project.Forms.AdminForms
                                 };
                                 sql.teachers.Add(t);
                                 sql.SaveChanges();
-                                new SuccessMessageForm("Sikeres mentés!").ShowDialog();
+                                new SuccessMessageForm("Sikeres mentés! Válasz neki munkakört!").ShowDialog();
                                 Program.AF.OpenChildForm(new AdminTeachersForm());
                             }
                         }

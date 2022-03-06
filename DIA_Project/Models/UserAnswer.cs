@@ -8,21 +8,20 @@ using System.Threading.Tasks;
 
 namespace DIA_Project.Models
 {
-    [Table("purchases")]
-    public class Purchases
+    [Table("useranswer")]
+    public class UserAnswer
     {
         [Key]
         public int ID { get; set; }
 
         [Required]
-        public string UserID { get; set; }
+        public int UserTestID { get; set; }
+        
+        [Required]
+        public int AnswerID { get; set; }
 
-        public int JavL { get; set; }
+        [Required]
+        public int TaskID { get; set; }
 
-        public int HaziF { get; set; }
-
-        public int KesesI { get; set; }
-
-        public int Jeles { get; set; }
     }
 }

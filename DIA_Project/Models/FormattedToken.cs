@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace DIA_Project.Models
 {
-    public class FormattedTokens
+    public class FormattedToken
     {
         public string Token { get; set; }
 
         public string Class { get; set; }
 
-        public FormattedTokens(RegistrationTokens t)
+        public FormattedToken(RegistrationToken t)
         { 
             Token = t.Token;
             Class = SQL.MySql().classes.Single(x => x.ID == t.ClassID).Name;

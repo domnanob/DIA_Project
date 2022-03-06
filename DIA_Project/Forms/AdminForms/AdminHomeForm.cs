@@ -16,10 +16,19 @@ namespace DIA_Project.Forms.AdminForms
 {
     public partial class AdminHomeForm : Form
     {
-        public AdminHomeForm(Users CU)
+        public AdminHomeForm(User CU)
         {
             InitializeComponent();
             CurrentUser = CU;
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
 
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -35,7 +44,7 @@ namespace DIA_Project.Forms.AdminForms
             NavButtons_Click(this.HomeBtn, EventArgs.Empty);
         }
         private Button CurrentNavBtn = new Button();
-        public Users CurrentUser = new Users();
+        public User CurrentUser = new User();
         private Form OldChildForm = null;
         public void OpenChildForm(Form childForm)
         {
@@ -43,17 +52,13 @@ namespace DIA_Project.Forms.AdminForms
             {
                 if (OldChildForm != null)
                 {
+                    OldChildForm.Dispose();
                     OldChildForm.Close();
                 }
                 childForm.FormBorderStyle = FormBorderStyle.None;
                 childForm.TopLevel = false;
                 childForm.Dock = DockStyle.Fill;
 
-                DesktopP.Controls.Add(childForm);
-                DesktopP.Tag = childForm;
-
-                childForm.BringToFront();
-                childForm.Show();
                 if (childForm.GetType() == new MainForm().GetType())
                 {
                     //A főmenünek külön háttérképe van a felső panel miatt
@@ -67,8 +72,13 @@ namespace DIA_Project.Forms.AdminForms
                         DesktopP.BackgroundImage = childForm.BackgroundImage;
                     }
                 }
-                OldChildForm = childForm;
+                DesktopP.Controls.Add(childForm);
+                DesktopP.Tag = childForm;
 
+                childForm.BringToFront();
+                childForm.Show();
+                OldChildForm = childForm;
+                childForm.Visible = true;
             }
         }
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -81,16 +91,6 @@ namespace DIA_Project.Forms.AdminForms
             }
         }
 
-        private void MaximizeBtn_Click(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-            {
-                WindowState = FormWindowState.Maximized;
-            }
-            else {
-                WindowState = FormWindowState.Normal;
-            }
-        }
 
         private void MinimizeBtn_Click(object sender, EventArgs e)
         {
@@ -134,17 +134,21 @@ namespace DIA_Project.Forms.AdminForms
             switch (btn.Name)
             {
                 case "HomeBtn":
-                    OpenChildForm(new MainForm());
+                    OpenChildForm(new MainForm() { Visible = false });
                     break;
                 case "UsersBtn":
-                    OpenChildForm(new AdminUsersForm());
+                    OpenChildForm(new AdminUsersForm() { Visible = false });
                     break;
                 case "TeachersBtn":
-                    OpenChildForm(new AdminTeachersForm());
+                    OpenChildForm(new AdminTeachersForm() { Visible = false });
+                    break;
+                case "InfoBtn":
+                    OpenChildForm(new InfoForm() { Visible = false });
                     break;
                 default:
                     break;
             }
+
         }
         public void ImitateClick(string ButtonName) {
             NavButtons_Click(NavP.Controls.OfType<Button>().ToList().Single(x => x.Name == ButtonName), EventArgs.Empty);

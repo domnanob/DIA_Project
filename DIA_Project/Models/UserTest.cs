@@ -8,26 +8,29 @@ using System.Threading.Tasks;
 
 namespace DIA_Project.Models
 {
-    [Table("teachers")]
-    public class Teachers
+    [Table("usertests")]
+    public class UserTest
     {
         [Key]
-        public string Username { get; set; }
+        public int ID { get; set; }
+        
+        [Required]
+        public string UserID { get; set; }
 
         [Required]
-        public string Password { get; set; }
+        public int TestID { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public int Completed { get; set; } = 0;
 
         [Required]
-        public int Enable { get; set; } = 1;
+        public double Points { get; set; }
 
         [Required]
-        public string Email { get; set; }
+        public int CorrectState { get; set; } = 0;
 
-        [Required]
-        public DateTime LastLogon { get; set; } = DateTime.Now;
+        public DateTime? FinishDate { get; set; }
+
 
     }
 }

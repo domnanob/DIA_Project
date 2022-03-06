@@ -15,13 +15,23 @@ namespace DIA_Project.Forms.CommonForms
 {
     public partial class RegistrationForm : Form
     {
-        public RegistrationForm(RegistrationTokens r)
+        public RegistrationForm(RegistrationToken r)
         {
             InitializeComponent();
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             _Load().GetAwaiter();
             CurrentToken = r;
         }
-        private RegistrationTokens CurrentToken = new RegistrationTokens();
+        private RegistrationToken CurrentToken = new RegistrationToken();
         private List<string> Ulist = new List<string>();
         private List<string> Tlist = new List<string>();
         private async Task _Load()
@@ -32,11 +42,11 @@ namespace DIA_Project.Forms.CommonForms
                 {
                     using (SQL sql = SQL.MySql())
                     {
-                        foreach (Users u in sql.users)
+                        foreach (User u in sql.users)
                         {
                             Ulist.Add(u.Username);
                         }
-                        foreach (Teachers t in sql.teachers)
+                        foreach (Teacher t in sql.teachers)
                         {
                             Tlist.Add(t.Username);
                         }
@@ -74,7 +84,7 @@ namespace DIA_Project.Forms.CommonForms
                     {
                         using (SQL sql = SQL.MySql())
                         {
-                            Users u = new Users() {
+                            User u = new User() {
                                 Username = FelhTB.Text,
                                 Password = SecurePasswordHasher.Hash(JelszoTB.Text),
                                 Email = EmailTb.Text,
@@ -84,7 +94,7 @@ namespace DIA_Project.Forms.CommonForms
                             sql.users.Add(u);
                             sql.SaveChanges();
 
-                            Purchases p = new Purchases()
+                            Purchase p = new Purchase()
                             {
                                 UserID = FelhTB.Text,
                             };

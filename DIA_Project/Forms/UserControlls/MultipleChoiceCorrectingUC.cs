@@ -13,7 +13,7 @@ namespace DIA_Project.Forms.User_Controlls
 {
     public partial class MultipleChoiceCorrectingUC : UserControl
     {
-        public MultipleChoiceCorrectingUC(Tasks t, List<Answers> ca,List<Answers> ua)
+        public MultipleChoiceCorrectingUC(Models.Tasks t, List<Answers> ca,List<Answers> ua)
         {
             InitializeComponent();
             CurrentTask = t;
@@ -28,7 +28,7 @@ namespace DIA_Project.Forms.User_Controlls
         private int panelDb = 0;
         private double oneAnswerPoint = 0;
         private bool Locked = false;
-        public Tasks CurrentTask = new Tasks();
+        public Models.Tasks CurrentTask = new Models.Tasks();
         private List<Answers> CorrectAns = new List<Answers>();
         private List<Answers> UserAns = new List<Answers>();
         private void LoadAnswers() 

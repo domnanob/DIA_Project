@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DIA_Project.Models
 {
-    public class FormattedPurchases
+    public class FormattedPurchase
     {
         public string UserID { get; private set; }
         public string userName { get; private set; }
@@ -15,7 +15,7 @@ namespace DIA_Project.Models
         public string HaziF { get; private set; }
         public string KesesI { get; private set; }
         public string Jeles { get; private set; }
-        public FormattedPurchases(Purchases p)
+        public FormattedPurchase(Purchase p)
         {
             UserID = p.UserID;
             userName = SQL.MySql().users.Single(x => x.Username == p.UserID).Name;

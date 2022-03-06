@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace DIA_Project.Models
 {
     [Table("tests")]
-    public class Tests
+    public class Test
     {
         [Key]
         public int ID { get; set; }

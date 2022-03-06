@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DIA_Project.Models
 {
-    public class FormattedTests
+    public class FormattedTest
     {
         public int TestID { get; private set; }
         public string TestName { get; private set; }
@@ -14,7 +14,7 @@ namespace DIA_Project.Models
         public string Class { get; private set; }
         public DateTime ExpireDate { get; private set; }
 
-        public FormattedTests(Tests t)
+        public FormattedTest(Test t)
         {
             using (SQL sql = SQL.MySql())
             {

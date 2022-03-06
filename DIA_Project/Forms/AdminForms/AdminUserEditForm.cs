@@ -14,13 +14,23 @@ namespace DIA_Project.Forms.AdminForms
 {
     public partial class AdminUserEditForm : Form
     {
-        public AdminUserEditForm(Users u)
+        public AdminUserEditForm(User u)
         {
             InitializeComponent();
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             CurrentUser = u;
             ReLoad();
         }
-        Users CurrentUser = new Users();
+        User CurrentUser = new User();
         private void ReLoad() //async
         {
             NameTb.Text = CurrentUser.Name;
@@ -82,7 +92,7 @@ namespace DIA_Project.Forms.AdminForms
             {
                 using (SQL sql = SQL.MySql())
                 {
-                    Users u = sql.users.Single(x => x.Username == CurrentUser.Username);
+                    User u = sql.users.Single(x => x.Username == CurrentUser.Username);
                     u.Name = NameTb.Text;
                     u.Username = UserTB.Text;
                     u.Email = EmailTB.Text;
@@ -102,7 +112,7 @@ namespace DIA_Project.Forms.AdminForms
                     {
                         using (SQL sql = SQL.MySql())
                         {
-                            Users u = sql.users.Single(x => x.Username == CurrentUser.Username);
+                            User u = sql.users.Single(x => x.Username == CurrentUser.Username);
                             u.Name = NameTb.Text;
                             u.Username = UserTB.Text;
                             u.Email = EmailTB.Text;

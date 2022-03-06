@@ -1,7 +1,7 @@
 ﻿
 namespace DIA_Project.Forms.UserForms
 {
-    partial class UserBoltForm
+    partial class UserStoreForm
     {
         /// <summary>
         /// Required designer variable.

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DIA_Project.Models
 {
-    public class FormattedUserTests
+    public class FormattedUserTest
     {
         public string UserID { get; set; }
         public string UserName { get; private set; }
@@ -15,11 +15,15 @@ namespace DIA_Project.Models
         
         public string State { get; private set; }
 
-        public FormattedUserTests(UserTests ut)
+        public FormattedUserTest(UserTest ut)
         {
             UserID = ut.UserID;
             UserName = SQL.MySql().users.Single(x => x.Username == ut.UserID).Name;
             FinishDate = (ut.FinishDate==null)? "-" : ut.FinishDate.ToString();
+            if (ut.FinishDate > SQL.MySql().tests.Single(x => x.ID == ut.TestID).FinishDate)
+            {
+                FinishDate += " (Késve)";
+            }
             if (ut.CorrectState == 1)
             {
                 State = "Kijavítva!";

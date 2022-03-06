@@ -12,16 +12,26 @@ using DIA_Project.Lib;
 
 namespace DIA_Project.Forms.UserForms
 {
-    public partial class UserBoltForm : Form
+    public partial class UserStoreForm : Form
     {
-        public UserBoltForm(Users u)
+        public UserStoreForm(User u)
         {
-            this.Visible = false;
             InitializeComponent();
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+            this.DoubleBuffered = true;
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
             PontL.Text = u.Money + "";
             CurrentUser = u;
         }
-        Users CurrentUser = new Users();
+        User CurrentUser = new User();
         private void Panels_Paint(object sender, PaintEventArgs e)
         {
             //Már nem szükséges a kerekítés, mert a UserBoltForm.Designer.cs-ben lett a keret kerekítve! Ezáltal már az InitializeComopents lekerekíti ami gyorsabb
@@ -82,45 +92,98 @@ namespace DIA_Project.Forms.UserForms
         {
             int price = 0;
             string item = string.Empty;
+            int itemNumber = 0;
+            bool IsErrorOccured = false;
+            Purchase p = SQL.MySql().purchases.Single(x => x.UserID == CurrentUser.Username);
             switch (Pnl.Name)
             {
-                case "Panel1":
+                case "Panel1": //JavL
                     price = int.Parse(Panel1PriceL.Text);
                     item = Panel1Text.Text + "-et";
+                    itemNumber = 1;
+                    if (p.JavL == 1)
+                    {
+                        IsErrorOccured = true;
+                    } 
                     break;
-                case "Panel2":
+                case "Panel2": //HaziF
                     price = int.Parse(Panel2PriceL.Text);
                     item = Panel2Text.Text + "-t";
+                    itemNumber = 2;
+                    if (p.HaziF == 1)
+                    {
+                        IsErrorOccured = true;
+                    } 
+                    p.HaziF = 1;
                     break;
-                case "Panel3":
+                case "Panel3": //KesesI
                     price = int.Parse(Panel3PriceL.Text);
                     item = Panel3Text.Text + "-t";
+                    itemNumber = 3;
+                    if (p.KesesI == 1)
+                    {
+                        IsErrorOccured = true;
+                    } 
                     break;
-                case "Panel4":
+                case "Panel4": //Jeles
                     price = int.Parse(Panel4PriceL.Text);
                     item = Panel4Text.Text + "-et";
+                    itemNumber = 4;
+                    if (p.Jeles == 1)
+                    {
+                        IsErrorOccured = true;
+                    } 
                     break;
                 default:
                     break;
+            }
+            if (IsErrorOccured)
+            {
+                new ErrorMessageForm("Ilyen elemet már vásároltál, előbb használd el!").Show();
+                return;
             }
             WarningMessageForm WMF = new WarningMessageForm("Biztosan meg szeretnéd vásárolni a(z) " + item + " " + price + " áron?");
             WMF.ShowDialog();
             if (WMF.DialogResult == DialogResult.Yes)
             {
-                using (SQL sql = SQL.MySql())
+                Buying(price, itemNumber);
+            }
+        }
+        private void Buying(int price, int item)
+        {
+            using (SQL sql = SQL.MySql())
+            {
+                User u = sql.users.Single(a => a.Username == CurrentUser.Username);
+                Purchase p = sql.purchases.Single(x => x.UserID == CurrentUser.Username);
+                if (u.Money - price >= 0)
                 {
-                    Users u = sql.users.Single(a => a.Username == CurrentUser.Username);
-                    if (u.Money - price >= 0)
+                    switch (item)
                     {
-                        u.Money = u.Money - price;
-                        PontL.Text = u.Money + string.Empty;
-                        sql.SaveChanges();
+                        case 1:
+                            p.JavL = 1;
+                            break;
+                        case 2:
+                            p.HaziF = 1;
+                            break;
+                        case 3:
+                            p.KesesI = 1;
+                            break;
+                        case 4:
+                            p.Jeles = 1;
+                            break;
+                        default:
+                            break;
                     }
-                    else
-                    {
-                        ErrorMessageForm EMF = new ErrorMessageForm("Sajnos nincs elég pénzed!");
-                        EMF.ShowDialog();
-                    }
+                    u.Money = u.Money - price;
+                    sql.SaveChanges();
+                    Program.HF.CurrentUser = u;
+                    new SuccessMessageForm("Sikeres vásárlás!").ShowDialog();
+                    Program.HF.ImitateClick("BoltBtn");
+                }
+                else
+                {
+                    ErrorMessageForm EMF = new ErrorMessageForm("Sajnos nincs elég pénzed!");
+                    EMF.ShowDialog();
                 }
             }
         }

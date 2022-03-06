@@ -14,16 +14,26 @@ namespace DIA_Project.Forms.AdminForms
 {
     public partial class AdminTeacherPositionsForm : Form
     {
-        public AdminTeacherPositionsForm(Teachers t)
+        public AdminTeacherPositionsForm(Teacher t)
         {
             InitializeComponent();
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             CurrentTeacher = t;
             TeacherNameTb.Text += " " + t.Name;
             ReLoad();
         }
-        private Teachers CurrentTeacher = new Teachers();
-        private List<Positions> CurrentPositions = new List<Positions>();
-        private List<FormattedPositions> FP = new List<FormattedPositions>();
+        private Teacher CurrentTeacher = new Teacher();
+        private List<Position> CurrentPositions = new List<Position>();
+        private List<FormattedPosition> FP = new List<FormattedPosition>();
         public void ReLoad() {
             using (SQL sql = SQL.MySql())
             {
@@ -31,13 +41,13 @@ namespace DIA_Project.Forms.AdminForms
                 DGVLoad(CurrentPositions);
             }
         }
-        void DGVLoad(List<Positions> p)
+        void DGVLoad(List<Position> p)
         {
             FP.Clear();
             PositionsDGV.DataSource = null;
             foreach (var item in p)
             {
-                FP.Add(new FormattedPositions(item));
+                FP.Add(new FormattedPosition(item));
             }
             PositionsDGV.DataSource = FP;
             return;
@@ -77,9 +87,9 @@ namespace DIA_Project.Forms.AdminForms
                 {
                     string SelectedClassName = PositionsDGV.SelectedRows[0].Cells[1].Value.ToString();
                     string SelectedSubjectName = PositionsDGV.SelectedRows[0].Cells[2].Value.ToString();
-                    List<Positions> p = sql.positions.Where(x => x.TeacherID == CurrentTeacher.Username).ToList();
-                    List<Positions> p2 = p.Where(x => x.ClassID == sql.classes.Single(x => x.Name == SelectedClassName).ID).ToList();
-                    Positions selectedPosition = p2.Single(x => x.SubjectID == sql.subjects.Single(x => x.Name == SelectedSubjectName).ID);
+                    List<Position> p = sql.positions.Where(x => x.TeacherID == CurrentTeacher.Username).ToList();
+                    List<Position> p2 = p.Where(x => x.ClassID == sql.classes.Single(x => x.Name == SelectedClassName).ID).ToList();
+                    Position selectedPosition = p2.Single(x => x.SubjectID == sql.subjects.Single(x => x.Name == SelectedSubjectName).ID);
                     sql.positions.Remove(selectedPosition);
                     sql.SaveChanges();
                     new SuccessMessageForm("Sikeresen törölted ezt a pozíciót!").ShowDialog();

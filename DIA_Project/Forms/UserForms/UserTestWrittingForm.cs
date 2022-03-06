@@ -16,9 +16,19 @@ namespace DIA_Project.Forms.UserForms
 {
     public partial class UserTestWrittingForm : Form
     {
-        public UserTestWrittingForm(Users u, Tests t)
+        public UserTestWrittingForm(User u, Test t)
         {
             InitializeComponent();
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
             CurrentUser = u;
             CurrentTest = t;
             DNameL.Text = t.Name;
@@ -32,19 +42,9 @@ namespace DIA_Project.Forms.UserForms
                 _Anticheat();
             }
         }
-
-        private void Idozito_Tick(object sender, EventArgs e)
-        {
-            if (isCheating)
-            {
-                LeadasBtn_Click(this.LeadasBtn, EventArgs.Empty);
-                idozito.Stop();
-            }
-        }
-
-        private Users CurrentUser = new Users();
-        private Tests CurrentTest = new Tests();
-        private List<Tasks> CurrentTasks = new List<Tasks>();
+        private User CurrentUser = new User();
+        private Test CurrentTest = new Test();
+        private List<Models.Tasks> CurrentTasks = new List<Models.Tasks>();
         private List<Answers> CurrentAnswers = new List<Answers>();
         private int ChoiseDb = 0;
         private bool isCheating = false;
@@ -68,28 +68,36 @@ namespace DIA_Project.Forms.UserForms
                 }
             }
         }
+        private void Idozito_Tick(object sender, EventArgs e)
+        {
+            if (isCheating)
+            {
+                idozito.Stop();
+                LeadasBtn_Click(this.LeadasBtn, EventArgs.Empty);
+            }
+        }
         private void _Anticheat()
         {
-            Task.Run(async() =>
+            System.Threading.Tasks.Task.Run(async() =>
             {
                 while (!done)
                 {
                     if (CheatDetector.DetectBrowser())
                     {
                         new ErrorMessageForm("Böngésző használata nem engedélyezett dolgozatírás közben! \n" +
-                            "A dolgozat a jelenlegi állapotában leadásra került!").ShowDialog();
+                            "A dolgozat a jelenlegi állapotában leadásra került!").Show();
                         isCheating = true;
                         done = true;
                         break;
                     }
                     if (!done)
                     {
-                        await Task.Delay(5000);
+                        await System.Threading.Tasks.Task.Delay(5000);
                     }
                 }
             });
         }
-        private void NewMultipleChoiseTask(Tasks t) 
+        private void NewMultipleChoiseTask(Models.Tasks t) 
         {
             MultipleChoiceTaskUC MCTUC = new MultipleChoiceTaskUC(t, CurrentAnswers.Where(x => x.TaskID == t.ID).ToList())
             {
@@ -124,7 +132,7 @@ namespace DIA_Project.Forms.UserForms
         {
             using (SQL sql = SQL.MySql())
             {
-                UserTests UT = sql.userTests.Single(x => x.TestID == CurrentTest.ID && x.UserID == CurrentUser.Username);
+                UserTest UT = sql.userTests.Single(x => x.TestID == CurrentTest.ID && x.UserID == CurrentUser.Username);
                 UT.Completed = 1;
                 UT.FinishDate = DateTime.Now;
                 sql.SaveChanges();
@@ -132,7 +140,7 @@ namespace DIA_Project.Forms.UserForms
                 {
                     foreach (var ans in item.GetAnswers())
                     {
-                        UserAnswers UA = new UserAnswers()
+                        UserAnswer UA = new UserAnswer()
                         {
                             UserTestID = UT.ID,
                             TaskID = item.CurrentTask.ID,

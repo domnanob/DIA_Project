@@ -8,13 +8,23 @@ namespace DIA_Project.Forms.AdminForms
 {
     public partial class AdminTeacherEditForm : Form
     {
-        public AdminTeacherEditForm(Teachers t)
+        public AdminTeacherEditForm(Teacher t)
         {
             InitializeComponent();
-            CurrentTeacher= t;
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
+            CurrentTeacher = t;
             ReLoad();
         }
-        Teachers CurrentTeacher = new Teachers();
+        Teacher CurrentTeacher = new Teacher();
         private void ReLoad() //async
         {
             NameTb.Text = CurrentTeacher.Name;
@@ -62,7 +72,7 @@ namespace DIA_Project.Forms.AdminForms
             {
                 using (SQL sql = SQL.MySql())
                 {
-                    Teachers t = sql.teachers.Single(x => x.Username == CurrentTeacher.Username);
+                    Teacher t = sql.teachers.Single(x => x.Username == CurrentTeacher.Username);
                     t.Name = NameTb.Text;
                     t.Username = UserTB.Text;
                     t.Email = EmailTB.Text;
@@ -80,7 +90,7 @@ namespace DIA_Project.Forms.AdminForms
                     {
                         using (SQL sql = SQL.MySql())
                         {
-                            Teachers t = sql.teachers.Single(x => x.Username == CurrentTeacher.Username);
+                            Teacher t = sql.teachers.Single(x => x.Username == CurrentTeacher.Username);
                             t.Name = NameTb.Text;
                             t.Username = UserTB.Text;
                             t.Email = EmailTB.Text;

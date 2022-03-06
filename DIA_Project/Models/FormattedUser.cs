@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DIA_Project.Models
 {
-    public class FormattedUsers
+    public class FormattedUser
     {
         public string Username { get; set; }
         public string Name { get; set; }
@@ -16,7 +16,7 @@ namespace DIA_Project.Models
         public string Class { get; set; }
         public string Email { get; set; }
 
-        public FormattedUsers(Users u)
+        public FormattedUser(User u)
         {
             Username = u.Username;
             Name = u.Name;

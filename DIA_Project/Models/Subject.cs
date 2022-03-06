@@ -8,22 +8,14 @@ using System.Threading.Tasks;
 
 namespace DIA_Project.Models
 {
-    [Table("useranswer")]
-    public class UserAnswers
+    [Table("subjects")]
+    public class Subject
     {
         [Key]
         public int ID { get; set; }
 
         [Required]
-        public int UserTestID { get; set; }
-        
-        [Required]
-        public int AnswerID { get; set; }
+        public string Name { get; set; }
 
-        [Required]
-        public int TaskID { get; set; }
-
-#nullable enable
-        public string? Answer { get; set; }
     }
 }

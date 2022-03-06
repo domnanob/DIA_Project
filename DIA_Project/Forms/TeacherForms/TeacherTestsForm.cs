@@ -14,19 +14,29 @@ namespace DIA_Project.Forms.TeacherForms
 {
     public partial class TeacherTestsForm : Form
     {
-        public TeacherTestsForm(Teachers t)
+        public TeacherTestsForm(Teacher t)
         {
             InitializeComponent();
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             CurrentTeacher = t;
             LoadingDataSources();
             ClassesCB.SelectedItem = "None";
             this.ClassesCB.SelectedValueChanged += new System.EventHandler(this.ClassesCB_SelectedValueChanged);
         }
-        private Teachers CurrentTeacher = new Teachers();
-        private List<Tests> tests = new List<Tests>();
-        private List<Tests> SelectedTests = new List<Tests>();
-        private List<Positions> positions = new List<Positions>();
-        private List<FormattedTests> FTL = new List<FormattedTests>();
+        private Teacher CurrentTeacher = new Teacher();
+        private List<Test> tests = new List<Test>();
+        private List<Test> SelectedTests = new List<Test>();
+        private List<Position> positions = new List<Position>();
+        private List<FormattedTest> FTL = new List<FormattedTest>();
         public void LoadingDataSources() {
             positions.Clear();
             using (SQL sql = SQL.MySql())
@@ -52,13 +62,13 @@ namespace DIA_Project.Forms.TeacherForms
                 DGVLoad(tests);
             }
         }
-        void DGVLoad(List<Tests> t)
+        void DGVLoad(List<Test> t)
         {
             FTL.Clear();
             TestsDGV.DataSource = null;
             foreach (var item in t)
             {
-                FTL.Add(new FormattedTests(item));
+                FTL.Add(new FormattedTest(item));
             }
             TestsDGV.DataSource = FTL;
             return;
@@ -103,7 +113,7 @@ namespace DIA_Project.Forms.TeacherForms
         private void MegnyitasBtn_Click(object sender, EventArgs e)
         {
             string SelectedTestID = TestsDGV.SelectedRows[0].Cells[0].Value.ToString();
-            Tests t = SQL.MySql().tests.Single(x => x.ID == int.Parse(SelectedTestID));
+            Test t = SQL.MySql().tests.Single(x => x.ID == int.Parse(SelectedTestID));
             Program.TF.OpenChildForm(new TeacherTestsUsersForm(CurrentTeacher, t));
         }
 

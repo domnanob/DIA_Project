@@ -17,14 +17,24 @@ namespace DIA_Project.Forms.AdminForms
         public AdminUsersForm()
         {
             InitializeComponent();
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             ReLoad();
             ClassesCB.SelectedItem = "Osztályok";
             this.ClassesCB.SelectedValueChanged += new System.EventHandler(this.ClassesCB_SelectedValueChanged);
         }
         private List<Classes> classes = new List<Classes>();
-        private List<Users> users = new List<Users>();
-        private List<Users> FilteredUsers = new List<Users>();
-        private List<FormattedUsers> FU = new List<FormattedUsers>();
+        private List<User> users = new List<User>();
+        private List<User> FilteredUsers = new List<User>();
+        private List<FormattedUser> FU = new List<FormattedUser>();
         public void ReLoad() {
             classes.Clear();
             users.Clear();
@@ -39,7 +49,7 @@ namespace DIA_Project.Forms.AdminForms
                 DGVLoad(users);
             }
         }
-        void DGVLoad(List<Users> u)
+        void DGVLoad(List<User> u)
         {
             FU.Clear();
             PurchasesDGV.DataSource = null;
@@ -47,7 +57,7 @@ namespace DIA_Project.Forms.AdminForms
             {
                 if (item.RoleID != 1)
                 {
-                    FU.Add(new FormattedUsers(item));
+                    FU.Add(new FormattedUser(item));
                 }
             }
             PurchasesDGV.DataSource = FU;
@@ -70,7 +80,7 @@ namespace DIA_Project.Forms.AdminForms
 
         private void NameTb_TextChanged(object sender, EventArgs e)
         {
-            List<Users> u = new List<Users>();
+            List<User> u = new List<User>();
             if (ClassesCB.Items[ClassesCB.SelectedIndex] == ClassesCB.Items[0])
             {
                 foreach (var item in users)
@@ -121,7 +131,7 @@ namespace DIA_Project.Forms.AdminForms
         private void EditBtn_Click(object sender, EventArgs e)
         {
             string SelectedUsername = PurchasesDGV.SelectedRows[0].Cells[0].Value.ToString();
-            Users u = SQL.MySql().users.Single(x => x.Username == SelectedUsername);
+            User u = SQL.MySql().users.Single(x => x.Username == SelectedUsername);
             Program.AF.OpenChildForm(new AdminUserEditForm(u));
         }
 

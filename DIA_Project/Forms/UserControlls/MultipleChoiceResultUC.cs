@@ -13,7 +13,7 @@ namespace DIA_Project.Forms.User_Controlls
 {
     public partial class MultipleChoiceResultUC : UserControl
     {
-        public MultipleChoiceResultUC(Tasks t, List<Answers> ca,List<Answers> ua)
+        public MultipleChoiceResultUC(Models.Tasks t, List<Answers> ca,List<Answers> ua)
         {
             InitializeComponent();
             CurrentTask = t;
@@ -24,7 +24,7 @@ namespace DIA_Project.Forms.User_Controlls
         }
         private int ansDb = 0;
         private int panelDb = 0;
-        public Tasks CurrentTask = new Tasks();
+        public Models.Tasks CurrentTask = new Models.Tasks();
         private List<Answers> CorrectAns = new List<Answers>();
         private List<Answers> UserAns = new List<Answers>();
         private void LoadAnswers() 

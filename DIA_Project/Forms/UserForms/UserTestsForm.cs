@@ -14,18 +14,28 @@ namespace DIA_Project.Forms.UserForms
 {
     public partial class UserTestsForm : Form
     {
-        public UserTestsForm(Users u)
+        public UserTestsForm(User u)
         {
             InitializeComponent();
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
             CurrentUser = u;
             LoadingDataSources();
             SubjectsCB.SelectedItem = "Tantárgy";
             SubjectsCB.SelectedValueChanged += new EventHandler(SubjectsCB_SelectedValueChanged);
         }
-        private Users CurrentUser = new Users();
-        private List<Tests> tests = new List<Tests>();
-        private List<Tests> SelectedTests = new List<Tests>();
-        private List<FormattedTestsForUsers> FTL = new List<FormattedTestsForUsers>();
+        private User CurrentUser = new User();
+        private List<Test> tests = new List<Test>();
+        private List<Test> SelectedTests = new List<Test>();
+        private List<FormattedTestsForUser> FTL = new List<FormattedTestsForUser>();
         private List<int> TIDS = new List<int>();
         public void LoadingDataSources() {
             using (SQL sql = SQL.MySql())
@@ -50,13 +60,13 @@ namespace DIA_Project.Forms.UserForms
                 DGVLoad(tests);
             }
         }
-        void DGVLoad(List<Tests> t)
+        void DGVLoad(List<Test> t)
         {
             FTL.Clear();
             TestsDGV.DataSource = null;
             foreach (var item in t)
             {
-                FTL.Add(new FormattedTestsForUsers(item,CurrentUser));
+                FTL.Add(new FormattedTestsForUser(item,CurrentUser));
             }
             TestsDGV.DataSource = FTL;
             return;
@@ -80,7 +90,7 @@ namespace DIA_Project.Forms.UserForms
                 }
             }
             else {
-                Subjects s = SQL.MySql().subjects.Single(x => x.Name == SubjectsCB.Items[SubjectsCB.SelectedIndex].ToString());
+                Subject s = SQL.MySql().subjects.Single(x => x.Name == SubjectsCB.Items[SubjectsCB.SelectedIndex].ToString());
                 SelectedTests = tests.Where(x => x.SubjectID == s.ID).ToList();
                 if (ShowCorrectedCb.Checked && ShowInProgressCb.Checked)
                 {
@@ -124,8 +134,8 @@ namespace DIA_Project.Forms.UserForms
         private void MegnyitasBtn_Click(object sender, EventArgs e)
         {
             string SelectedTestID = TestsDGV.SelectedRows[0].Cells[0].Value.ToString();
-            Tests t = SQL.MySql().tests.Single(x => x.ID == int.Parse(SelectedTestID));
-            UserTests ut = SQL.MySql().userTests.Single(x => x.TestID == t.ID && x.UserID == CurrentUser.Username);
+            Test t = SQL.MySql().tests.Single(x => x.ID == int.Parse(SelectedTestID));
+            UserTest ut = SQL.MySql().userTests.Single(x => x.TestID == t.ID && x.UserID == CurrentUser.Username);
             if (ut.Completed == 0)
             {
                 if (t.StartDate <= DateTime.Now)
@@ -182,10 +192,10 @@ namespace DIA_Project.Forms.UserForms
             }
             else 
             {
-                List<Tests> GarbageItems = new List<Tests>();
+                List<Test> GarbageItems = new List<Test>();
                 foreach (var item in SelectedTests)
                 {
-                    UserTests ut = SQL.MySql().userTests.Single(x => x.TestID == item.ID && x.UserID == CurrentUser.Username);
+                    UserTest ut = SQL.MySql().userTests.Single(x => x.TestID == item.ID && x.UserID == CurrentUser.Username);
                     if (ut.CorrectState == 1)
                     {
                         GarbageItems.Add(item);
@@ -207,10 +217,10 @@ namespace DIA_Project.Forms.UserForms
             }
             else
             {
-                List<Tests> GarbageItems = new List<Tests>();
+                List<Test> GarbageItems = new List<Test>();
                 foreach (var item in SelectedTests)
                 {
-                    UserTests ut = SQL.MySql().userTests.Single(x => x.TestID == item.ID && x.UserID == CurrentUser.Username);
+                    UserTest ut = SQL.MySql().userTests.Single(x => x.TestID == item.ID && x.UserID == CurrentUser.Username);
                     if (ut.CorrectState == 0 && ut.Completed == 1)
                     {
                         GarbageItems.Add(item);

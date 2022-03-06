@@ -16,9 +16,19 @@ namespace DIA_Project.Forms.TeacherForms
 {
     public partial class TeacherHomeForm : Form
     {
-        public TeacherHomeForm(Teachers CT)
+        public TeacherHomeForm(Teacher CT)
         {
             InitializeComponent();
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
@@ -34,14 +44,16 @@ namespace DIA_Project.Forms.TeacherForms
             NavButtons_Click(this.HomeBtn, EventArgs.Empty);
         }
         private Button CurrentNavBtn = new Button();
-        public Teachers CurrentTeacher = new Teachers();
+        public Teacher CurrentTeacher = new Teacher();
         private Form OldChildForm = null;
         public void OpenChildForm(Form childForm)
         {
+            this.SuspendLayout();
             if (OldChildForm != childForm)
             {
                 if (OldChildForm != null)
                 {
+                    OldChildForm.Dispose();
                     OldChildForm.Close();
                 }
 
@@ -49,11 +61,6 @@ namespace DIA_Project.Forms.TeacherForms
                 childForm.TopLevel = false;
                 childForm.Dock = DockStyle.Fill;
 
-                DesktopP.Controls.Add(childForm);
-                DesktopP.Tag = childForm;
-
-                childForm.BringToFront();
-                childForm.Show();
                 if (childForm.GetType() == new MainForm().GetType())
                 {
                     //A főmenünek külön háttérképe van a felső panel miatt
@@ -67,8 +74,15 @@ namespace DIA_Project.Forms.TeacherForms
                         DesktopP.BackgroundImage = childForm.BackgroundImage;
                     }
                 }
-                OldChildForm = childForm;
+                DesktopP.Controls.Add(childForm);
+                DesktopP.Tag = childForm;
 
+                childForm.BringToFront();
+                childForm.Show();
+
+                OldChildForm = childForm;
+                this.ResumeLayout(false);
+                childForm.Visible = true;
             }
         }
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -78,17 +92,6 @@ namespace DIA_Project.Forms.TeacherForms
             if (WMF.DialogResult == DialogResult.Yes)
             {
                 Application.Exit();
-            }
-        }
-
-        private void MaximizeBtn_Click(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-            {
-                WindowState = FormWindowState.Maximized;
-            }
-            else {
-                WindowState = FormWindowState.Normal;
             }
         }
 
@@ -137,13 +140,13 @@ namespace DIA_Project.Forms.TeacherForms
                     OpenChildForm(new MainForm());
                     break;
                 case "DolgozatokBtn":
-                    OpenChildForm(new TeacherTestsForm(CurrentTeacher));
+                    OpenChildForm(new TeacherTestsForm(CurrentTeacher) { Visible = false });
                     break;
                 case "ProfilBtn":
-                    OpenChildForm(new TeacherProfileForm(CurrentTeacher));
+                    OpenChildForm(new TeacherProfileForm(CurrentTeacher) { Visible = false });
                     break;
                 case "ClassesBtn":
-                    OpenChildForm(new TeacherClassesForm(CurrentTeacher));
+                    OpenChildForm(new TeacherClassesForm(CurrentTeacher) { Visible = false });
                     break;
                 case "InfoBtn":
                     OpenChildForm(new InfoForm());

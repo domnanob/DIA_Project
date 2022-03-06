@@ -14,20 +14,30 @@ namespace DIA_Project.Forms.TeacherForms
 {
     public partial class TeacherClassesForm : Form
     {
-        public TeacherClassesForm(Teachers t)
+        public TeacherClassesForm(Teacher t)
         {
             InitializeComponent();
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             CurrentTeacher = t;
             ReLoad();
             ClassesCB.SelectedItem = "None";
             this.ClassesCB.SelectedValueChanged += new System.EventHandler(this.ClassesCB_SelectedValueChanged);
         }
-        private Teachers CurrentTeacher = new Teachers();
+        private Teacher CurrentTeacher = new Teacher();
         private List<Classes> classes = new List<Classes>();
-        private List<Positions> positions = new List<Positions>();
-        private List<Purchases> purchases = new List<Purchases>();
-        private List<Purchases> FilteredP = new List<Purchases>();
-        private List<FormattedPurchases> FPL = new List<FormattedPurchases>();
+        private List<Position> positions = new List<Position>();
+        private List<Purchase> purchases = new List<Purchase>();
+        private List<Purchase> FilteredP = new List<Purchase>();
+        private List<FormattedPurchase> FPL = new List<FormattedPurchase>();
         public void ReLoad() {
             classes.Clear();
             positions.Clear();
@@ -58,13 +68,13 @@ namespace DIA_Project.Forms.TeacherForms
                 DGVLoad(purchases);
             }
         }
-        void DGVLoad(List<Purchases> l)
+        void DGVLoad(List<Purchase> l)
         {
             FPL.Clear();
             PurchasesDGV.DataSource = null;
             foreach (var item in l)
             {
-                FPL.Add(new FormattedPurchases(item));
+                FPL.Add(new FormattedPurchase(item));
             }
             PurchasesDGV.DataSource = FPL;
             return;
@@ -79,7 +89,7 @@ namespace DIA_Project.Forms.TeacherForms
             using (SQL sql = SQL.MySql())
             {
                 Classes c = sql.classes.Single(a => a.Name == ClassesCB.Items[ClassesCB.SelectedIndex].ToString());
-                List<Users> SelectedUsers = sql.users.Where(x => x.ClassID == c.ID).ToList();
+                List<User> SelectedUsers = sql.users.Where(x => x.ClassID == c.ID).ToList();
                 FilteredP.Clear();
                 foreach (var p in purchases)
                 {
@@ -97,7 +107,7 @@ namespace DIA_Project.Forms.TeacherForms
 
         private void NameTb_TextChanged(object sender, EventArgs e)
         {
-            List<Purchases> lp = new List<Purchases>();
+            List<Purchase> lp = new List<Purchase>();
             if (ClassesCB.Items[ClassesCB.SelectedIndex] == ClassesCB.Items[0])
             {
                 foreach (var item in purchases)

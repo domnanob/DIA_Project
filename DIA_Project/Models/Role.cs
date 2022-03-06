@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace DIA_Project.Models
 {
     [Table("Roles")]
-    public class Roles
+    public class Role
     {
         [Key]
         public int ID { get; set; }

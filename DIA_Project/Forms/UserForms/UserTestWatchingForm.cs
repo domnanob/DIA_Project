@@ -15,18 +15,33 @@ namespace DIA_Project.Forms.UserForms
 {
     public partial class UserTestWatchingForm : Form
     {
-        public UserTestWatchingForm(Users u, Tests t)
+        public UserTestWatchingForm(User u, Test t)
         {
             InitializeComponent();
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
             CurrentUser = u;
             CurrentTest = t;
             DNameL.Text = t.Name;
+
+            this.SuspendLayout();
+
             LoadingDataSources();
             LoadingTasks();
+
+            this.ResumeLayout(false);
         }
-        private Users CurrentUser = new Users();
-        private Tests CurrentTest = new Tests();
-        private List<Tasks> CurrentTasks = new List<Tasks>();
+        private User CurrentUser = new User();
+        private Test CurrentTest = new Test();
+        private List<Models.Tasks> CurrentTasks = new List<Models.Tasks>();
         private List<Answers> CurrentAns = new List<Answers>();
         private List<Answers> UserAns = new List<Answers>();
         private int ChoiseDb = 0;
@@ -52,7 +67,7 @@ namespace DIA_Project.Forms.UserForms
                 }
             }
         }
-        private void NewMultipleChoiseTask(Tasks t) 
+        private void NewMultipleChoiseTask(Models.Tasks t) 
         {
             MultipleChoiceResultUC MCTRC = new MultipleChoiceResultUC(t, CurrentAns.Where(x => x.TaskID == t.ID).ToList(), UserAns.Where(y => y.TaskID == t.ID).ToList())
             {

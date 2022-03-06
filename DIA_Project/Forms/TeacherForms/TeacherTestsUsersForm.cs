@@ -14,17 +14,27 @@ namespace DIA_Project.Forms.TeacherForms
 {
     public partial class TeacherTestsUsersForm : Form
     {
-        public TeacherTestsUsersForm(Teachers t, Tests e)
+        public TeacherTestsUsersForm(Teacher t, Test e)
         {
             InitializeComponent();
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             CurrentTeacher = t;
             CurrentTest = e;
             LoadingDataSources();
         }
-        private Teachers CurrentTeacher = new Teachers();
-        private Tests CurrentTest = new Tests();
-        private List<UserTests> UT = new List<UserTests>();
-        private List<FormattedUserTests> FUT = new List<FormattedUserTests>();
+        private Teacher CurrentTeacher = new Teacher();
+        private Test CurrentTest = new Test();
+        private List<UserTest> UT = new List<UserTest>();
+        private List<FormattedUserTest> FUT = new List<FormattedUserTest>();
         public void LoadingDataSources() {
             using (SQL sql = SQL.MySql())
             {
@@ -32,11 +42,11 @@ namespace DIA_Project.Forms.TeacherForms
             }
             DGVLoad(UT);
         }
-        void DGVLoad(List<UserTests> ut)
+        void DGVLoad(List<UserTest> ut)
         {
             foreach (var item in ut)
             {
-                FUT.Add(new FormattedUserTests(item));
+                FUT.Add(new FormattedUserTest(item));
             }
             UsersTestsDGV.DataSource = FUT;
             return;
@@ -73,7 +83,7 @@ namespace DIA_Project.Forms.TeacherForms
             if (new string[] { "Javításra vár!", "Kijavítva!" }.Contains(UsersTestsDGV.SelectedRows[0].Cells[3].Value.ToString()))
             {
                 string SelectedUsername = UsersTestsDGV.SelectedRows[0].Cells[0].Value.ToString();
-                List<Users> alluser = new List<Users>();
+                List<User> alluser = new List<User>();
                 foreach (var item in UT)
                 {
                     alluser.Add(SQL.MySql().users.Single(x => x.Username == item.UserID));

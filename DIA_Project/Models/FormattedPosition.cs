@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DIA_Project.Models
 {
-    public class FormattedPositions
+    public class FormattedPosition
     {
         public string Class { get; set; }
         public string Subject { get; set; }
 
-        public FormattedPositions(Positions p)
+        public FormattedPosition(Position p)
         {
             SQL sql = SQL.MySql();
             Class = sql.classes.Single(x => x.ID == p.ClassID).Name;

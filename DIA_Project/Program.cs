@@ -17,9 +17,9 @@ namespace DIA_Project
         public static AdminHomeForm AF;
         public static UserHomeForm HF;
         public static TeacherHomeForm TF;
-        public static BejelentkezesForm BF;
+        public static LoginForm BF;
         public static void FormLoader() {
-            BF = new BejelentkezesForm();
+            BF = new LoginForm();
             BF.ShowDialog();
             if (BF.IsLoggedIn)
             {

@@ -17,9 +17,19 @@ namespace DIA_Project.Forms
         public RegistrationTokenMessageForm()
         {
             InitializeComponent();
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             LoadingDataSources();
         }
-        private List<RegistrationTokens> registrationTokens = new List<RegistrationTokens>();
+        private List<RegistrationToken> registrationTokens = new List<RegistrationToken>();
         private void LoadingDataSources() {
             using (SQL sql = SQL.MySql())
             {

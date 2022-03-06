@@ -14,14 +14,26 @@ namespace DIA_Project.Forms.UserForms
 {
     public partial class UserProfileForm : Form
     {
-        public UserProfileForm(Users u)
+        public UserProfileForm(User u)
         {
             InitializeComponent();
             CurrentUser = u;
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            this.SuspendLayout();
             ReLoad();
+            this.ResumeLayout(false);
         }
-        Users CurrentUser = new Users();
-        private void ReLoad() //async
+        User CurrentUser = new User();
+        private void ReLoad() 
         {
             NameTb.Text = CurrentUser.Name;
             UserTB.Text = CurrentUser.Username;
@@ -80,7 +92,7 @@ namespace DIA_Project.Forms.UserForms
             {
                 using (SQL sql = SQL.MySql())
                 {
-                    Users u = sql.users.Single(x => x.Username == CurrentUser.Username);
+                    User u = sql.users.Single(x => x.Username == CurrentUser.Username);
                     u.Name = NameTb.Text;
                     u.Username = UserTB.Text;
                     u.Email = EmailTB.Text;
@@ -98,7 +110,7 @@ namespace DIA_Project.Forms.UserForms
                     {
                         using (SQL sql = SQL.MySql())
                         {
-                            Users u = sql.users.Single(x => x.Username == CurrentUser.Username);
+                            User u = sql.users.Single(x => x.Username == CurrentUser.Username);
                             u.Name = NameTb.Text;
                             u.Username = UserTB.Text;
                             u.Email = EmailTB.Text;

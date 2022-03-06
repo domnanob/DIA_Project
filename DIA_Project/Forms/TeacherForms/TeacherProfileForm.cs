@@ -14,14 +14,29 @@ namespace DIA_Project.Forms.TeacherForms
 {
     public partial class TeacherProfileForm : Form
     {
-        public TeacherProfileForm(Teachers t)
+        public TeacherProfileForm(Teacher t)
         {
             InitializeComponent();
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             CurrentTeacher = t;
+
+            this.SuspendLayout();
+
             ReLoad();
-            
+
+            this.ResumeLayout(false);
+
         }
-        Teachers CurrentTeacher = new Teachers();
+        Teacher CurrentTeacher = new Teacher();
         private void ReLoad() 
         {
             NameTb.Text = CurrentTeacher.Name;
@@ -72,7 +87,7 @@ namespace DIA_Project.Forms.TeacherForms
             {
                 using (SQL sql = SQL.MySql())
                 {
-                    Teachers t = sql.teachers.Single(x => x.Username == CurrentTeacher.Username);
+                    Teacher t = sql.teachers.Single(x => x.Username == CurrentTeacher.Username);
                     t.Name = NameTb.Text;
                     t.Username = UserTB.Text;
                     t.Email = EmailTB.Text;
@@ -90,7 +105,7 @@ namespace DIA_Project.Forms.TeacherForms
                     {
                         using (SQL sql = SQL.MySql())
                         {
-                            Teachers t = sql.teachers.Single(x => x.Username == CurrentTeacher.Username);
+                            Teacher t = sql.teachers.Single(x => x.Username == CurrentTeacher.Username);
                             t.Name = NameTb.Text;
                             t.Username = UserTB.Text;
                             t.Email = EmailTB.Text;

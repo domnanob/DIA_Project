@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DIA_Project.Models;
+using DIA_Project.Lib;
 
 namespace DIA_Project.Forms
 {
@@ -16,6 +17,16 @@ namespace DIA_Project.Forms
         public SelectClassMessageForm()
         {
             InitializeComponent();
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             ClassesCB.SelectedItem = "Osztályok";
             ReLoad();
         }
@@ -62,7 +73,7 @@ namespace DIA_Project.Forms
             {
                 using (SQL sql = SQL.MySql())
                 {
-                    RegistrationTokens r = new RegistrationTokens() {
+                    RegistrationToken r = new RegistrationToken() {
                         Token = TokenL.Text,
                         ClassID = sql.classes.Single(x => x.Name == ClassesCB.Items[ClassesCB.SelectedIndex].ToString()).ID
                     };

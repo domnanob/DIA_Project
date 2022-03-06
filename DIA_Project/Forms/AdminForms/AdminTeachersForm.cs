@@ -17,10 +17,20 @@ namespace DIA_Project.Forms.AdminForms
         public AdminTeachersForm()
         {
             InitializeComponent();
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             ReLoad();
         }
-        private List<Teachers> teachers = new List<Teachers>();
-        private List<FormattedTeachers> FT = new List<FormattedTeachers>();
+        private List<Teacher> teachers = new List<Teacher>();
+        private List<FormattedTeacher> FT = new List<FormattedTeacher>();
         public void ReLoad() {
             teachers.Clear();
             using (SQL sql = SQL.MySql())
@@ -29,13 +39,13 @@ namespace DIA_Project.Forms.AdminForms
                 DGVLoad(teachers);
             }
         }
-        void DGVLoad(List<Teachers> t)
+        void DGVLoad(List<Teacher> t)
         {
             FT.Clear();
             TeachersDGV.DataSource = null;
             foreach (var item in t)
             {
-                FT.Add(new FormattedTeachers(item));
+                FT.Add(new FormattedTeacher(item));
             }
             TeachersDGV.DataSource = FT;
             return;
@@ -43,7 +53,7 @@ namespace DIA_Project.Forms.AdminForms
 
         private void NameTb_TextChanged(object sender, EventArgs e)
         {
-            List<Teachers> u = new List<Teachers>();
+            List<Teacher> u = new List<Teacher>();
             foreach (var item in teachers)
             {
                 if (item.Name.ToLower().Contains(NameTb.Text.ToLower()))
@@ -79,7 +89,7 @@ namespace DIA_Project.Forms.AdminForms
         private void EditBtn_Click(object sender, EventArgs e)
         {
             string SelectedUsername = TeachersDGV.SelectedRows[0].Cells[0].Value.ToString();
-            Teachers t = SQL.MySql().teachers.Single(x => x.Username == SelectedUsername);
+            Teacher t = SQL.MySql().teachers.Single(x => x.Username == SelectedUsername);
             Program.AF.OpenChildForm(new AdminTeacherEditForm(t));
         }
 

@@ -14,14 +14,24 @@ namespace DIA_Project.Forms
 {
     public partial class SelectPositionMessageForm : Form
     {
-        public SelectPositionMessageForm(Teachers t)
+        public SelectPositionMessageForm(Teacher t)
         {
             InitializeComponent();
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             LoadingDataSources();
             CurrentTeacher = t;
 
         }
-        private Teachers CurrentTeacher = new Teachers();
+        private Teacher CurrentTeacher = new Teacher();
         private void LoadingDataSources() {
             using (SQL sql = SQL.MySql())
             {
@@ -46,7 +56,7 @@ namespace DIA_Project.Forms
                 {
                     int classID = sql.classes.Single(x => x.Name == ClassesCB.Items[ClassesCB.SelectedIndex].ToString()).ID;
                     int subjectID = sql.subjects.Single(x => x.Name == SubjectCb.Items[SubjectCb.SelectedIndex].ToString()).ID;
-                    Positions tp = null;
+                    Position tp = null;
                     try
                     {
                         tp = sql.positions.Single(x => x.TeacherID == CurrentTeacher.Username && x.ClassID == classID && x.SubjectID == subjectID);
@@ -55,7 +65,7 @@ namespace DIA_Project.Forms
                     }
                     catch
                     {
-                        Positions p = new Positions()
+                        Position p = new Position()
                         {
                             ClassID = classID,
                             SubjectID = subjectID,

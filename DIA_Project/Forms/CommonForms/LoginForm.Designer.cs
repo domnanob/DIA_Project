@@ -1,7 +1,7 @@
 ﻿
 namespace DIA_Project.Forms.CommonForms
 {
-    partial class BejelentkezesForm
+    partial class LoginForm
     {
         /// <summary>
         ///  Required designer variable.

@@ -8,16 +8,22 @@ using System.Threading.Tasks;
 
 namespace DIA_Project.Models
 {
-    [Table("registrationtokens")]
-    public class RegistrationTokens
+    [Table("positions")]
+    public class Position
     {
         [Key]
         public int ID { get; set; }
 
         [Required]
-        public string Token { get; set; }
+        public string TeacherID { get; set; }
 
         [Required]
         public int ClassID { get; set; }
+
+        [Required]
+        public int SubjectID { get; set; }
+
+
+
     }
 }

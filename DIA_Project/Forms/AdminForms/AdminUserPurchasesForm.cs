@@ -14,17 +14,27 @@ namespace DIA_Project.Forms.AdminForms
 {
     public partial class AdminUserPurchasesForm : Form
     {
-        public AdminUserPurchasesForm(Users u)
+        public AdminUserPurchasesForm(User u)
         {
             InitializeComponent();
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             CurrentUser = u;
             LoadingDataSources();
         }
-        private Users CurrentUser = new Users();
+        private User CurrentUser = new User();
         public void LoadingDataSources() {
             using (SQL sql = SQL.MySql())
             {
-                Purchases p = sql.purchases.Single(x => x.UserID == CurrentUser.Username);
+                Purchase p = sql.purchases.Single(x => x.UserID == CurrentUser.Username);
                 JavLCb.SelectedIndex = p.JavL;
                 HaziFCb.SelectedIndex = p.HaziF;
                 KesesICb.SelectedIndex = p.KesesI;
@@ -47,7 +57,7 @@ namespace DIA_Project.Forms.AdminForms
         {
             using (SQL sql = SQL.MySql())
             {
-                Purchases p = sql.purchases.Single(x => x.UserID == CurrentUser.Username);
+                Purchase p = sql.purchases.Single(x => x.UserID == CurrentUser.Username);
                 p.JavL = JavLCb.SelectedIndex;
                 p.HaziF = HaziFCb.SelectedIndex;
                 p.KesesI = KesesICb.SelectedIndex;

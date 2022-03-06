@@ -13,18 +13,28 @@ using DIA_Project.Lib;
 
 namespace DIA_Project.Forms.CommonForms
 {
-    public partial class BejelentkezesForm : Form
+    public partial class LoginForm : Form
     {
-        public BejelentkezesForm()
+        public LoginForm()
         {
             InitializeComponent();
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
             _Load().GetAwaiter();
         }
         private List<string> Ulist = new List<string>();
         private List<string> Tlist = new List<string>();
-        public Users CurrentUser = new Users();
-        public Teachers CurrentTeacher = new Teachers();
-        public RegistrationTokens CurrentToken = new RegistrationTokens();
+        public User CurrentUser = new User();
+        public Teacher CurrentTeacher = new Teacher();
+        public RegistrationToken CurrentToken = new RegistrationToken();
         public bool IsServerRunning = false;
         public bool IsLoggedIn = false;
         private async Task _Load()
@@ -37,11 +47,11 @@ namespace DIA_Project.Forms.CommonForms
                     {
                         Ulist.Clear();
                         Tlist.Clear();
-                        foreach (Users u in sql.users)
+                        foreach (User u in sql.users)
                         {
                             Ulist.Add(u.Username);
                         }
-                        foreach (Teachers t in sql.teachers)
+                        foreach (Teacher t in sql.teachers)
                         {
                             Tlist.Add(t.Username);
                         }
@@ -59,7 +69,7 @@ namespace DIA_Project.Forms.CommonForms
             {
                 using (SQL sql = SQL.MySql())
                 {
-                    Users u = sql.users.Single(a => a.Username == FelhTB.Text);
+                    User u = sql.users.Single(a => a.Username == FelhTB.Text);
                     bool result = SecurePasswordHasher.Verify(JelszoTB.Text, u.Password);
                     if (result && u.Enable == 1)
                     {
@@ -80,7 +90,7 @@ namespace DIA_Project.Forms.CommonForms
             {
                 using (SQL sql = SQL.MySql())
                 {
-                    Teachers t = sql.teachers.Single(a => a.Username == FelhTB.Text);
+                    Teacher t = sql.teachers.Single(a => a.Username == FelhTB.Text);
                     bool result = SecurePasswordHasher.Verify(JelszoTB.Text, t.Password);
                     if (result && t.Enable == 1)
                     {

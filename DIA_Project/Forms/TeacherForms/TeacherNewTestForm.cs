@@ -15,9 +15,19 @@ namespace DIA_Project.Forms.TeacherForms
 {
     public partial class TeacherNewTestForm : Form
     {
-        public TeacherNewTestForm(Teachers t, List<Positions> p)
+        public TeacherNewTestForm(Teacher t, List<Position> p)
         {
             InitializeComponent();
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             CurrentTeacher = t;
             CurrentPositions = p;
             LoadResources();
@@ -25,9 +35,9 @@ namespace DIA_Project.Forms.TeacherForms
         private int ChoiseDB = 0;
         private int CurrentTestID = 0;
         private int CurrentTaskID = 0;
-        private Teachers CurrentTeacher = new Teachers();
-        private List<Positions> CurrentPositions = new List<Positions>();
-        private List<UserTests> UT = new List<UserTests>();
+        private Teacher CurrentTeacher = new Teacher();
+        private List<Position> CurrentPositions = new List<Position>();
+        private List<UserTest> UT = new List<UserTest>();
         private List<Tuple<string,int>> MCUL = new List<Tuple<string,int>>();
         void LoadResources() {
             TaskTypesCB.Items.Clear();
@@ -85,6 +95,7 @@ namespace DIA_Project.Forms.TeacherForms
 
         private void HozzaadasBtn_Click(object sender, EventArgs e)
         {
+            this.SuspendLayout();
             if (TaskTypesCB.SelectedIndex == 0)
             {
                 MultipleChoiceUC MCUC = new MultipleChoiceUC()
@@ -99,6 +110,7 @@ namespace DIA_Project.Forms.TeacherForms
                 this.HomePnl.Height += 115;
                 this.HomePnl.Controls.Add(MCUC);
                 ChoiseDB++;
+                this.ResumeLayout(false);
             }
         }
         private void multipleChoiseuc_SizeChanged(object sender, EventArgs e)
@@ -143,7 +155,7 @@ namespace DIA_Project.Forms.TeacherForms
             }
             using (SQL sql = SQL.MySql())
             {
-                Tests tst = new Tests()
+                Test tst = new Test()
                 {
                     ID = CurrentTestID,
                     ClassID = sql.classes.Single(x => x.Name == ClassesCB.Items[ClassesCB.SelectedIndex].ToString()).ID,
@@ -161,7 +173,7 @@ namespace DIA_Project.Forms.TeacherForms
                 int CurrentMaxPoint = 0;
                 foreach (var item in this.HomePnl.Controls.OfType<MultipleChoiceUC>()) //Végigmegy az összes Feladaton
                 {
-                    Tasks tsk = new Tasks() {
+                    Models.Tasks tsk = new Models.Tasks() {
                         ID = CurrentTaskID,
                         TestID = CurrentTestID,
                         Task = item.GetTaskName(),
@@ -191,7 +203,7 @@ namespace DIA_Project.Forms.TeacherForms
                 {
                     if (item.ClassID == cID)
                     {
-                        UserTests UT = new UserTests() {
+                        UserTest UT = new UserTest() {
                             UserID = item.Username,
                             TestID = CurrentTestID,
                             Completed = 0,                            

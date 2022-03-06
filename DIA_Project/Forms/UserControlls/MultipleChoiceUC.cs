@@ -27,8 +27,18 @@ namespace DIA_Project.Forms.User_Controlls
         public bool IsAllFieldFilled(out string ErrorMessage)
         {
             bool IsCorrectExists = false;
+            List<string> Answers = new List<string>();
             foreach (var item in GetRBUC())
             {
+                if (Answers.Contains(item.GetAnswer().Item1))
+                {
+                    ErrorMessage = "Nem lehet két azonos válasz ugyanarra a kérdésre!";
+                    return false;
+                }
+                else
+                {
+                    Answers.Add(item.GetAnswer().Item1);
+                }
                 if (string.IsNullOrEmpty(item.GetAnswer().Item1))
                 {
                     ErrorMessage = "Nincs kitöltve minden válasz!";

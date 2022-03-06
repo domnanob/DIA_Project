@@ -17,14 +17,24 @@ namespace DIA_Project.Forms.AdminForms
         public AdminNewUserCodesForm()
         {
             InitializeComponent();
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             ReLoad();
             ClassesCB.SelectedItem = "Osztályok";
             this.ClassesCB.SelectedValueChanged += new System.EventHandler(this.ClassesCB_SelectedValueChanged);
         }
         private List<Classes> classes = new List<Classes>();
-        private List<RegistrationTokens> tokens = new List<RegistrationTokens>();
-        private List<RegistrationTokens> FilteredTokens = new List<RegistrationTokens>();
-        private List<FormattedTokens> FT = new List<FormattedTokens>();
+        private List<RegistrationToken> tokens = new List<RegistrationToken>();
+        private List<RegistrationToken> FilteredTokens = new List<RegistrationToken>();
+        private List<FormattedToken> FT = new List<FormattedToken>();
         public void ReLoad() {
             classes.Clear();
             tokens.Clear();
@@ -39,13 +49,13 @@ namespace DIA_Project.Forms.AdminForms
                 DGVLoad(tokens);
             }
         }
-        void DGVLoad(List<RegistrationTokens> t)
+        void DGVLoad(List<RegistrationToken> t)
         {
             FT.Clear();
             TokensDGV.DataSource = null;
             foreach (var item in t)
             {
-                FT.Add(new FormattedTokens(item));
+                FT.Add(new FormattedToken(item));
             }
             TokensDGV.DataSource = FT;
             return;
@@ -102,7 +112,7 @@ namespace DIA_Project.Forms.AdminForms
             string SelectedToken = TokensDGV.SelectedRows[0].Cells[0].Value.ToString();
             using (SQL sql = SQL.MySql())
             {
-                RegistrationTokens r = sql.registrationTokens.Single(x => x.Token == SelectedToken);
+                RegistrationToken r = sql.registrationTokens.Single(x => x.Token == SelectedToken);
                 sql.registrationTokens.Remove(r);
                 sql.SaveChanges();
                 ReLoad();

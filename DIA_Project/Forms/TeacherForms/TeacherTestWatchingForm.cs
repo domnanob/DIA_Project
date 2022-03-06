@@ -15,9 +15,19 @@ namespace DIA_Project.Forms.TeacherForms
 {
     public partial class TeacherTestWatchingForm : Form
     {
-        public TeacherTestWatchingForm(Teachers tea, Users u, Tests t)
+        public TeacherTestWatchingForm(Teacher tea, User u, Test t)
         {
             InitializeComponent();
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             CurrentUser = u;
             CurrentTeacher = tea;
             CurrentTest = t;
@@ -25,13 +35,17 @@ namespace DIA_Project.Forms.TeacherForms
             DNameL.Text = t.Name;
             UserNameTb.Text = u.Name;
 
+            this.SuspendLayout();
+
             LoadingDataSources();
             LoadingTasks();
+
+            this.ResumeLayout(false);
         }
-        private Teachers CurrentTeacher = new Teachers();
-        private Users CurrentUser = new Users();
-        private Tests CurrentTest = new Tests();
-        private List<Tasks> CurrentTasks = new List<Tasks>();
+        private Teacher CurrentTeacher = new Teacher();
+        private User CurrentUser = new User();
+        private Test CurrentTest = new Test();
+        private List<Models.Tasks> CurrentTasks = new List<Models.Tasks>();
         private List<Answers> CurrentAns = new List<Answers>();
         private List<Answers> UserAns = new List<Answers>();
         private int ChoiseDb = 0;
@@ -57,7 +71,7 @@ namespace DIA_Project.Forms.TeacherForms
                 }
             }
         }
-        private void NewMultipleChoiseTask(Tasks t) 
+        private void NewMultipleChoiseTask(Models.Tasks t) 
         {
             MultipleChoiceCorrectingUC MCTRC = new MultipleChoiceCorrectingUC(t, CurrentAns.Where(x => x.TaskID == t.ID).ToList(), UserAns.Where(y => y.TaskID == t.ID).ToList())
             {
@@ -101,7 +115,7 @@ namespace DIA_Project.Forms.TeacherForms
             }
             using (SQL sql = SQL.MySql())
             {
-                UserTests ut = sql.userTests.Single(x => x.TestID == CurrentTest.ID && x.UserID == CurrentUser.Username);
+                UserTest ut = sql.userTests.Single(x => x.TestID == CurrentTest.ID && x.UserID == CurrentUser.Username);
                 ut.CorrectState = 1;
                 ut.Points = 0;
                 foreach (var item in HomePnl.Controls.OfType<MultipleChoiceCorrectingUC>().ToList())

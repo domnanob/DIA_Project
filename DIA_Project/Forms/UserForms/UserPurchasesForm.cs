@@ -14,17 +14,27 @@ namespace DIA_Project.Forms.UserForms
 {
     public partial class UserPurchasesForm : Form
     {
-        public UserPurchasesForm(Users u)
+        public UserPurchasesForm(User u)
         {
             InitializeComponent();
             CurrentUser = u;
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
             LoadingDataSources();
         }
-        private Users CurrentUser = new Users();
+        private User CurrentUser = new User();
         public void LoadingDataSources() {
             using (SQL sql = SQL.MySql())
             {
-                Purchases p = sql.purchases.Single(x => x.UserID == CurrentUser.Username);
+                Purchase p = sql.purchases.Single(x => x.UserID == CurrentUser.Username);
                 JavlTb.Text = IsPurchased(p.JavL);
                 HaziFTb.Text = IsPurchased(p.HaziF);
                 KesesITb.Text = IsPurchased(p.KesesI);

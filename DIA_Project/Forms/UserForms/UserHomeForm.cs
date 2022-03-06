@@ -16,10 +16,19 @@ namespace DIA_Project.Forms.UserForms
 {
     public partial class UserHomeForm : Form
     {
-        public UserHomeForm(Users CU)
+        public UserHomeForm(User CU)
         {
             InitializeComponent();
             CurrentUser = CU;
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
+            int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
 
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -35,10 +44,11 @@ namespace DIA_Project.Forms.UserForms
             NavButtons_Click(this.HomeBtn, EventArgs.Empty);
         }
         private Button CurrentNavBtn = new Button();
-        public Users CurrentUser = new Users();
+        public User CurrentUser = new User();
         private Form OldChildForm = null;
         public void OpenChildForm(Form childForm)
         {
+            this.SuspendLayout();
             if (OldChildForm != childForm)
             {
                 if (OldChildForm != null)
@@ -80,7 +90,7 @@ namespace DIA_Project.Forms.UserForms
                     }
                 }
                 OldChildForm = childForm;
-
+                this.ResumeLayout(false);
             }
         }
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -90,17 +100,6 @@ namespace DIA_Project.Forms.UserForms
             if (WMF.DialogResult == DialogResult.Yes)
             {
                 Application.Exit();
-            }
-        }
-
-        private void MaximizeBtn_Click(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-            {
-                WindowState = FormWindowState.Maximized;
-            }
-            else {
-                WindowState = FormWindowState.Normal;
             }
         }
 
@@ -146,7 +145,7 @@ namespace DIA_Project.Forms.UserForms
             switch (btn.Name)
             {
                 case "HomeBtn":
-                    OpenChildForm(new MainForm());
+                    OpenChildForm(new MainForm() { Visible = false });
                     break;
                 case "DolgozatokBtn":
                     OpenChildForm(new UserTestsForm(CurrentUser));
@@ -155,7 +154,7 @@ namespace DIA_Project.Forms.UserForms
                     OpenChildForm(new UserProfileForm(CurrentUser));
                     break;
                 case "BoltBtn":
-                    OpenChildForm(new UserBoltForm(CurrentUser)) ;
+                    OpenChildForm(new UserStoreForm(CurrentUser)) ;
                     break;
                 case "InfoBtn":
                     OpenChildForm(new InfoForm());

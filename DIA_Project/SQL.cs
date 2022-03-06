@@ -23,20 +23,20 @@ namespace DIA_Project
         {
 
         }
-        public DbSet<Users> users { get; set; }
-        public DbSet<UserAnswers> userAnswers { get; set; }
-        public DbSet<Tests> tests { get; set; }
-        public DbSet<TaskTypes> taskTypes { get; set; }
-        public DbSet<Tasks> tasks { get; set; }
-        public DbSet<Roles> roles { get; set; }
+        public DbSet<User> users { get; set; }
+        public DbSet<UserAnswer> userAnswers { get; set; }
+        public DbSet<Test> tests { get; set; }
+        public DbSet<TaskType> taskTypes { get; set; }
+        public DbSet<Models.Tasks> tasks { get; set; }
+        public DbSet<Role> roles { get; set; }
         public DbSet<Classes> classes { get; set; }
         public DbSet<Answers> answers { get; set; }
-        public DbSet<Teachers> teachers { get; set; }
-        public DbSet<Subjects> subjects { get; set; }
-        public DbSet<Positions> positions { get; set; }
-        public DbSet<Purchases> purchases { get; set; }
-        public DbSet<UserTests> userTests { get; set; }
-        public DbSet<RegistrationTokens> registrationTokens { get; set; }
+        public DbSet<Teacher> teachers { get; set; }
+        public DbSet<Subject> subjects { get; set; }
+        public DbSet<Position> positions { get; set; }
+        public DbSet<Purchase> purchases { get; set; }
+        public DbSet<UserTest> userTests { get; set; }
+        public DbSet<RegistrationToken> registrationTokens { get; set; }
 
     }
 }
