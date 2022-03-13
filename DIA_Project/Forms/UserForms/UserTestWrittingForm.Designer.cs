@@ -40,7 +40,6 @@ namespace DIA_Project.Forms.UserForms
             // 
             // HomePnl
             // 
-            this.HomePnl.AutoScroll = true;
             this.HomePnl.BackColor = System.Drawing.Color.Transparent;
             this.HomePnl.Dock = System.Windows.Forms.DockStyle.Top;
             this.HomePnl.Location = new System.Drawing.Point(0, 40);
@@ -106,6 +105,7 @@ namespace DIA_Project.Forms.UserForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.BackgroundImage = global::DIA_Project.Properties.Resources.WinFormBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

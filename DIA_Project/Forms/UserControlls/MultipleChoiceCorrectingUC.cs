@@ -16,6 +16,7 @@ namespace DIA_Project.Forms.User_Controlls
         public MultipleChoiceCorrectingUC(Models.Tasks t, List<Answers> ca,List<Answers> ua)
         {
             InitializeComponent();
+            this.SuspendLayout();
             CurrentTask = t;
             CorrectAns = ca;
             oneAnswerPoint = t.Points / CorrectAns.Count;
@@ -23,6 +24,7 @@ namespace DIA_Project.Forms.User_Controlls
             TaskNameL.Text = t.Task;
             PontTb.Text = t.Points+"/"+ t.Points;
             LoadAnswers();
+            this.ResumeLayout(false);
         }
         private int ansDb = 0;
         private int panelDb = 0;
@@ -114,18 +116,6 @@ namespace DIA_Project.Forms.User_Controlls
                 UserAnswerP.Controls.Add(UserAnswerCB);
             }
         }
-        public List<Answers> GetAnswers() { 
-            List<CheckBox> Cbs = CorrectTitlePnl.Controls.OfType<CheckBox>().ToList();
-            List<Answers> ChoosenAns = new List<Answers>();
-            foreach (var item in Cbs)
-            {
-                if (item.Checked)
-                {
-                    ChoosenAns.Add(SQL.MySql().answers.Single(x => x.Answer == item.Text));
-                }
-            }
-            return ChoosenAns;
-        }
         public string GetPoints() {
             return PontTb.Text.Split('/')[1];
         }
@@ -154,6 +144,15 @@ namespace DIA_Project.Forms.User_Controlls
                 pictureBox1.Image = Properties.Resources.cancel;
                 PontTb.Enabled = false;
                 Locked = true;
+            }
+        }
+
+        private void PontTb_TextChanged(object sender, EventArgs e)
+        {
+            if (int.Parse(PontTb.Text.Split('/')[1]) < 0)
+            {
+                string s = PontTb.Text.Split('/')[0];
+                PontTb.Text = s + "/" + "0";
             }
         }
     }

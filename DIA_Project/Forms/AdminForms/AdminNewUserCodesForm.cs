@@ -103,7 +103,7 @@ namespace DIA_Project.Forms.AdminForms
 
         private void NewTokenBtn_Click(object sender, EventArgs e)
         {
-            new SelectClassMessageForm().ShowDialog();
+            new TokenGeneratorMessageForm().ShowDialog();
             ReLoad();
         }
 

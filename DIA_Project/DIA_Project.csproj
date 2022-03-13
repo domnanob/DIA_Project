@@ -4,7 +4,12 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="logo.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Material.Icons" Version="1.0.68" />
@@ -13,6 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Forms\AdminForms\AdminSubjectsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\AdminForms\AdminHomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -31,6 +39,9 @@
     <Compile Update="Forms\AdminForms\AdminTeacherEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\AdminForms\AdminClassesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\AdminForms\AdminUsersForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -46,13 +57,19 @@
     <Compile Update="Forms\CommonForms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\MessageForms\SubjectNameMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\MessageForms\ClassNameMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\MessageForms\SelectPositionMessageForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\MessageForms\RegistrationTokenMessageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\MessageForms\SelectClassMessageForm.cs">
+    <Compile Update="Forms\MessageForms\TokenGeneratorMessageForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\TeacherForms\TeacherUserPurchasesForm.cs">

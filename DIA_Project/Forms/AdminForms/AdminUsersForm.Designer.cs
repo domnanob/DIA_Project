@@ -92,6 +92,7 @@ namespace DIA_Project.Forms.AdminForms
             this.PurchasesDGV.Size = new System.Drawing.Size(564, 257);
             this.PurchasesDGV.TabIndex = 3;
             this.PurchasesDGV.DataSourceChanged += new System.EventHandler(this.PurchasesDGV_DataSourceChanged);
+            this.PurchasesDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PurchasesDGV_CellDoubleClick);
             // 
             // panel6
             // 

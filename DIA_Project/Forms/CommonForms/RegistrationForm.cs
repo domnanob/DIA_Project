@@ -42,14 +42,8 @@ namespace DIA_Project.Forms.CommonForms
                 {
                     using (SQL sql = SQL.MySql())
                     {
-                        foreach (User u in sql.users)
-                        {
-                            Ulist.Add(u.Username);
-                        }
-                        foreach (Teacher t in sql.teachers)
-                        {
-                            Tlist.Add(t.Username);
-                        }
+                        Ulist = sql.users.Select(x => x.Username).ToList();
+                        Tlist = sql.teachers.Select(x => x.Username).ToList();
                     }
                 }
                 catch (Exception)
@@ -171,7 +165,7 @@ namespace DIA_Project.Forms.CommonForms
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            if (JelszoTB.PasswordChar == '●')
+            if (JelszoIsmTb.PasswordChar == '●')
             {
                 pictureBox7.Image = Properties.Resources.visible;
                 JelszoIsmTb.PasswordChar = '\0';

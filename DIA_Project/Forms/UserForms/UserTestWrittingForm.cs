@@ -72,13 +72,14 @@ namespace DIA_Project.Forms.UserForms
         {
             if (isCheating)
             {
-                idozito.Stop();
                 LeadasBtn_Click(this.LeadasBtn, EventArgs.Empty);
+                isCheating = false;
+                idozito.Stop();
             }
         }
         private void _Anticheat()
         {
-            System.Threading.Tasks.Task.Run(async() =>
+            Task.Run(async() =>
             {
                 while (!done)
                 {
@@ -92,7 +93,7 @@ namespace DIA_Project.Forms.UserForms
                     }
                     if (!done)
                     {
-                        await System.Threading.Tasks.Task.Delay(5000);
+                        await Task.Delay(5000);
                     }
                 }
             });
@@ -150,6 +151,8 @@ namespace DIA_Project.Forms.UserForms
                     }
                 }
                 sql.SaveChanges();
+                idozito.Stop();
+                done = true;
                 new SuccessMessageForm("Sikeresen leadtad a dolgozatot!").ShowDialog();
                 Program.HF.ImitateClick("HomeBtn"); 
             }

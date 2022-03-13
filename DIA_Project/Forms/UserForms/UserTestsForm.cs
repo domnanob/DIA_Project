@@ -45,10 +45,7 @@ namespace DIA_Project.Forms.UserForms
                     SubjectsCB.Items.Add(item.Name);
                 }
                 tests.Clear();
-                foreach (var item in sql.userTests.Where(x => x.UserID == CurrentUser.Username).ToList())
-                {
-                    TIDS.Add(item.TestID);
-                }
+                TIDS = sql.userTests.Where(x => x.UserID == CurrentUser.Username).Select(x => x.TestID).ToList();
                 foreach (var item in sql.tests)
                 {
                     if (TIDS.Contains(item.ID))
@@ -133,54 +130,64 @@ namespace DIA_Project.Forms.UserForms
 
         private void MegnyitasBtn_Click(object sender, EventArgs e)
         {
-            string SelectedTestID = TestsDGV.SelectedRows[0].Cells[0].Value.ToString();
-            Test t = SQL.MySql().tests.Single(x => x.ID == int.Parse(SelectedTestID));
-            UserTest ut = SQL.MySql().userTests.Single(x => x.TestID == t.ID && x.UserID == CurrentUser.Username);
-            if (ut.Completed == 0)
+            if (TestsDGV.SelectedRows.Count > 0)
             {
-                if (t.StartDate <= DateTime.Now)
+                string SelectedTestID = TestsDGV.SelectedRows[0].Cells[0].Value.ToString();
+                Test t = SQL.MySql().tests.Single(x => x.ID == int.Parse(SelectedTestID));
+                UserTest ut = SQL.MySql().userTests.Single(x => x.TestID == t.ID && x.UserID == CurrentUser.Username);
+                if (ut.Completed == 0)
                 {
-                    if (t.InternetAllowed == 0)
+                    if (t.StartDate <= DateTime.Now)
                     {
-                        WarningMessageForm wmf = new WarningMessageForm("Biztos készen állsz a dolgozatra? \n" +
-                        "Bármely csalás a dolgozat azonnali leadását eredményezi!");
-                        wmf.ShowDialog();
-                        if (wmf.DialogResult == DialogResult.Yes)
+                        if (t.InternetAllowed == 0)
                         {
-                            if (CheatDetector.DetectBrowser())
+                            WarningMessageForm wmf = new WarningMessageForm("Biztos készen állsz a dolgozatra? \n" +
+                            "Bármely csalás a dolgozat azonnali leadását eredményezi!");
+                            wmf.ShowDialog();
+                            if (wmf.DialogResult == DialogResult.Yes)
                             {
-                                new ErrorMessageForm("A dolgozatíráshoz be kell zárnod a böngészőt!").ShowDialog();
+                                if (CheatDetector.DetectBrowser())
+                                {
+                                    new ErrorMessageForm("A dolgozatíráshoz be kell zárnod a böngészőt!").ShowDialog();
+                                }
+                                else
+                                {
+                                    new SuccessMessageForm("Sok sikert!").Show();
+                                    Program.HF.OpenChildForm(new UserTestWrittingForm(CurrentUser, t));
+                                }
                             }
-                            else
+                        }
+                        else
+                        {
+                            WarningMessageForm wmf = new WarningMessageForm("Biztos készen állsz a dolgozatra?");
+                            wmf.ShowDialog();
+                            if (wmf.DialogResult == DialogResult.Yes)
                             {
                                 new SuccessMessageForm("Sok sikert!").Show();
                                 Program.HF.OpenChildForm(new UserTestWrittingForm(CurrentUser, t));
                             }
                         }
                     }
-                    else {
-                        WarningMessageForm wmf = new WarningMessageForm("Biztos készen állsz a dolgozatra?");
-                        wmf.ShowDialog();
-                        if (wmf.DialogResult == DialogResult.Yes)
-                        {
-                            new SuccessMessageForm("Sok sikert!").Show();
-                            Program.HF.OpenChildForm(new UserTestWrittingForm(CurrentUser, t));
-                        }
+                    else
+                    {
+                        new ErrorMessageForm("Ezt a dolgozatot majd ekkor írhatod meg: " + t.StartDate).Show();
                     }
                 }
-                else {
-                    new ErrorMessageForm("Ezt a dolgozatot majd ekkor írhatod meg: "+t.StartDate).Show();
+                else
+                {
+                    if (ut.CorrectState == 1)
+                    {
+                        Program.HF.OpenChildForm(new UserTestWatchingForm(CurrentUser, t));
+                    }
+                    else
+                    {
+                        new ErrorMessageForm("Ez a dolgozat még javítás alatt van!").Show();
+                    }
                 }
             }
             else
             {
-                if (ut.CorrectState == 1)
-                {
-                    Program.HF.OpenChildForm(new UserTestWatchingForm(CurrentUser, t));
-                }
-                else {
-                    new ErrorMessageForm("Ez a dolgozat még javítás alatt van!").Show();
-                }
+                new ErrorMessageForm("Nem választottál dolgozatot!").Show();
             }
         }
 
@@ -232,6 +239,11 @@ namespace DIA_Project.Forms.UserForms
                 }
                 DGVLoad(SelectedTests);
             }
+        }
+
+        private void TestsDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MegnyitasBtn_Click(sender, e);
         }
     }
 }

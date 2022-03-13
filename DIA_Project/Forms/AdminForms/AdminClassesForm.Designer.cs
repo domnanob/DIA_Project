@@ -1,7 +1,7 @@
 ﻿
 namespace DIA_Project.Forms.AdminForms
 {
-    partial class AdminTeachersForm
+    partial class AdminClassesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,35 +33,33 @@ namespace DIA_Project.Forms.AdminForms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.TeachersDGV = new System.Windows.Forms.DataGridView();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.NameTb = new System.Windows.Forms.TextBox();
+            this.ClassesDGV = new System.Windows.Forms.DataGridView();
             this.EditBtn = new System.Windows.Forms.Button();
-            this.NewTeacherBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.TeachersDGV)).BeginInit();
+            this.NewTestBtn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.ClassesDGV)).BeginInit();
             this.SuspendLayout();
             // 
-            // TeachersDGV
+            // ClassesDGV
             // 
-            this.TeachersDGV.AllowUserToAddRows = false;
-            this.TeachersDGV.AllowUserToDeleteRows = false;
+            this.ClassesDGV.AllowUserToAddRows = false;
+            this.ClassesDGV.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            this.TeachersDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.TeachersDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.TeachersDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.TeachersDGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(70)))));
-            this.TeachersDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TeachersDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ClassesDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.ClassesDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ClassesDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.ClassesDGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(70)))));
+            this.ClassesDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ClassesDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TeachersDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.TeachersDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ClassesDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.ClassesDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -69,13 +67,13 @@ namespace DIA_Project.Forms.AdminForms
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TeachersDGV.DefaultCellStyle = dataGridViewCellStyle3;
-            this.TeachersDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.TeachersDGV.Location = new System.Drawing.Point(44, 104);
-            this.TeachersDGV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TeachersDGV.MultiSelect = false;
-            this.TeachersDGV.Name = "TeachersDGV";
-            this.TeachersDGV.ReadOnly = true;
+            this.ClassesDGV.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ClassesDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.ClassesDGV.Location = new System.Drawing.Point(44, 104);
+            this.ClassesDGV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ClassesDGV.MultiSelect = false;
+            this.ClassesDGV.Name = "ClassesDGV";
+            this.ClassesDGV.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -83,38 +81,15 @@ namespace DIA_Project.Forms.AdminForms
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TeachersDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.TeachersDGV.RowHeadersVisible = false;
-            this.TeachersDGV.RowHeadersWidth = 51;
-            this.TeachersDGV.RowTemplate.Height = 29;
-            this.TeachersDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TeachersDGV.Size = new System.Drawing.Size(564, 257);
-            this.TeachersDGV.TabIndex = 3;
-            this.TeachersDGV.DataSourceChanged += new System.EventHandler(this.PurchasesDGV_DataSourceChanged);
-            this.TeachersDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TeachersDGV_CellDoubleClick);
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Location = new System.Drawing.Point(43, 94);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(170, 1);
-            this.panel6.TabIndex = 28;
-            // 
-            // NameTb
-            // 
-            this.NameTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.NameTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.NameTb.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NameTb.ForeColor = System.Drawing.Color.White;
-            this.NameTb.Location = new System.Drawing.Point(44, 72);
-            this.NameTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.NameTb.Name = "NameTb";
-            this.NameTb.PlaceholderText = "Tanár neve";
-            this.NameTb.Size = new System.Drawing.Size(169, 19);
-            this.NameTb.TabIndex = 2;
-            this.NameTb.TextChanged += new System.EventHandler(this.NameTb_TextChanged);
+            this.ClassesDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.ClassesDGV.RowHeadersVisible = false;
+            this.ClassesDGV.RowHeadersWidth = 51;
+            this.ClassesDGV.RowTemplate.Height = 29;
+            this.ClassesDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ClassesDGV.Size = new System.Drawing.Size(564, 257);
+            this.ClassesDGV.TabIndex = 3;
+            this.ClassesDGV.DataSourceChanged += new System.EventHandler(this.PurchasesDGV_DataSourceChanged);
+            this.ClassesDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PurchasesDGV_CellDoubleClick);
             // 
             // EditBtn
             // 
@@ -134,25 +109,25 @@ namespace DIA_Project.Forms.AdminForms
             this.EditBtn.UseVisualStyleBackColor = false;
             this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
-            // NewTeacherBtn
+            // NewTestBtn
             // 
-            this.NewTeacherBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.NewTeacherBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.NewTeacherBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.NewTeacherBtn.FlatAppearance.BorderSize = 2;
-            this.NewTeacherBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NewTeacherBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NewTeacherBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.NewTeacherBtn.Location = new System.Drawing.Point(516, 365);
-            this.NewTeacherBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.NewTeacherBtn.Name = "NewTeacherBtn";
-            this.NewTeacherBtn.Size = new System.Drawing.Size(92, 27);
-            this.NewTeacherBtn.TabIndex = 30;
-            this.NewTeacherBtn.Text = "Új";
-            this.NewTeacherBtn.UseVisualStyleBackColor = false;
-            this.NewTeacherBtn.Click += new System.EventHandler(this.NewTeacherBtn_Click);
+            this.NewTestBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.NewTestBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NewTestBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.NewTestBtn.FlatAppearance.BorderSize = 2;
+            this.NewTestBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewTestBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NewTestBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.NewTestBtn.Location = new System.Drawing.Point(516, 365);
+            this.NewTestBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.NewTestBtn.Name = "NewTestBtn";
+            this.NewTestBtn.Size = new System.Drawing.Size(92, 27);
+            this.NewTestBtn.TabIndex = 30;
+            this.NewTestBtn.Text = "Új";
+            this.NewTestBtn.UseVisualStyleBackColor = false;
+            this.NewTestBtn.Click += new System.EventHandler(this.NewTestBtn_Click);
             // 
-            // AdminTeachersForm
+            // AdminClassesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -161,28 +136,23 @@ namespace DIA_Project.Forms.AdminForms
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(665, 435);
             this.Controls.Add(this.EditBtn);
-            this.Controls.Add(this.NewTeacherBtn);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.NameTb);
-            this.Controls.Add(this.TeachersDGV);
+            this.Controls.Add(this.NewTestBtn);
+            this.Controls.Add(this.ClassesDGV);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "AdminTeachersForm";
+            this.Name = "AdminClassesForm";
             this.Text = "InfoForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClassesForm_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.TeachersDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClassesDGV)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView TeachersDGV;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox NameTb;
+        private System.Windows.Forms.DataGridView ClassesDGV;
         private System.Windows.Forms.Button EditBtn;
-        private System.Windows.Forms.Button NewTeacherBtn;
+        private System.Windows.Forms.Button NewTestBtn;
     }
 }

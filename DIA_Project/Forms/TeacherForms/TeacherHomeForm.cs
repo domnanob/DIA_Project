@@ -20,10 +20,10 @@ namespace DIA_Project.Forms.TeacherForms
         {
             InitializeComponent();
 
+            //Teljesítmény javítás
             int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
             style |= NativeWinAPI.WS_EX_COMPOSITED;
             NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
-
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             SetStyle(ControlStyles.DoubleBuffer, true);
@@ -48,7 +48,6 @@ namespace DIA_Project.Forms.TeacherForms
         private Form OldChildForm = null;
         public void OpenChildForm(Form childForm)
         {
-            this.SuspendLayout();
             if (OldChildForm != childForm)
             {
                 if (OldChildForm != null)
@@ -81,8 +80,6 @@ namespace DIA_Project.Forms.TeacherForms
                 childForm.Show();
 
                 OldChildForm = childForm;
-                this.ResumeLayout(false);
-                childForm.Visible = true;
             }
         }
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -122,7 +119,7 @@ namespace DIA_Project.Forms.TeacherForms
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new MainForm());
+            ImitateClick("HomeBtn");
         }
 
         private void NavButtons_Click(object sender, EventArgs e)
@@ -140,13 +137,13 @@ namespace DIA_Project.Forms.TeacherForms
                     OpenChildForm(new MainForm());
                     break;
                 case "DolgozatokBtn":
-                    OpenChildForm(new TeacherTestsForm(CurrentTeacher) { Visible = false });
+                    OpenChildForm(new TeacherTestsForm(CurrentTeacher));
                     break;
                 case "ProfilBtn":
-                    OpenChildForm(new TeacherProfileForm(CurrentTeacher) { Visible = false });
+                    OpenChildForm(new TeacherProfileForm(CurrentTeacher));
                     break;
                 case "ClassesBtn":
-                    OpenChildForm(new TeacherClassesForm(CurrentTeacher) { Visible = false });
+                    OpenChildForm(new TeacherClassesForm(CurrentTeacher));
                     break;
                 case "InfoBtn":
                     OpenChildForm(new InfoForm());

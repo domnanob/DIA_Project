@@ -88,14 +88,26 @@ namespace DIA_Project.Forms.AdminForms
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            string SelectedUsername = TeachersDGV.SelectedRows[0].Cells[0].Value.ToString();
-            Teacher t = SQL.MySql().teachers.Single(x => x.Username == SelectedUsername);
-            Program.AF.OpenChildForm(new AdminTeacherEditForm(t));
+            if (TeachersDGV.SelectedRows.Count > 0)
+            {
+                string SelectedUsername = TeachersDGV.SelectedRows[0].Cells[0].Value.ToString();
+                Teacher t = SQL.MySql().teachers.Single(x => x.Username == SelectedUsername);
+                Program.AF.OpenChildForm(new AdminTeacherEditForm(t));
+            }
+            else
+            {
+                new ErrorMessageForm("Nem választottál tanárt!").Show();
+            }
         }
 
         private void NewTeacherBtn_Click(object sender, EventArgs e)
         {
             Program.AF.OpenChildForm(new AdminNewTeacherForm());
+        }
+
+        private void TeachersDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EditBtn_Click(sender, e);
         }
     }
 }

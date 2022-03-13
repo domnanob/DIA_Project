@@ -30,7 +30,8 @@ namespace DIA_Project.Forms.AdminForms
         private void InitializeComponent()
         {
             this.NavP = new System.Windows.Forms.Panel();
-            this.InfoBtn = new System.Windows.Forms.Button();
+            this.SubjectsBtn = new System.Windows.Forms.Button();
+            this.ClassesBtn = new System.Windows.Forms.Button();
             this.NavArrowP = new System.Windows.Forms.Panel();
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.TeachersBtn = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@ namespace DIA_Project.Forms.AdminForms
             this.panel3 = new System.Windows.Forms.Panel();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.MinimizeBtn = new System.Windows.Forms.Button();
+            this.InfoBtn = new System.Windows.Forms.Button();
             this.NavP.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -57,6 +59,8 @@ namespace DIA_Project.Forms.AdminForms
             // 
             this.NavP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.NavP.Controls.Add(this.InfoBtn);
+            this.NavP.Controls.Add(this.SubjectsBtn);
+            this.NavP.Controls.Add(this.ClassesBtn);
             this.NavP.Controls.Add(this.NavArrowP);
             this.NavP.Controls.Add(this.LogoutBtn);
             this.NavP.Controls.Add(this.TeachersBtn);
@@ -70,26 +74,47 @@ namespace DIA_Project.Forms.AdminForms
             this.NavP.Size = new System.Drawing.Size(166, 435);
             this.NavP.TabIndex = 0;
             // 
-            // InfoBtn
+            // SubjectsBtn
             // 
-            this.InfoBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.InfoBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.InfoBtn.FlatAppearance.BorderSize = 0;
-            this.InfoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.InfoBtn.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.InfoBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.InfoBtn.Image = global::DIA_Project.Properties.Resources.info;
-            this.InfoBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.InfoBtn.Location = new System.Drawing.Point(0, 228);
-            this.InfoBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.InfoBtn.Name = "InfoBtn";
-            this.InfoBtn.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.InfoBtn.Size = new System.Drawing.Size(166, 40);
-            this.InfoBtn.TabIndex = 7;
-            this.InfoBtn.Text = "Info";
-            this.InfoBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.InfoBtn.UseVisualStyleBackColor = true;
-            this.InfoBtn.Click += new System.EventHandler(this.NavButtons_Click);
+            this.SubjectsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SubjectsBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SubjectsBtn.FlatAppearance.BorderSize = 0;
+            this.SubjectsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SubjectsBtn.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SubjectsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.SubjectsBtn.Image = global::DIA_Project.Properties.Resources.group;
+            this.SubjectsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SubjectsBtn.Location = new System.Drawing.Point(0, 268);
+            this.SubjectsBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SubjectsBtn.Name = "SubjectsBtn";
+            this.SubjectsBtn.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.SubjectsBtn.Size = new System.Drawing.Size(166, 40);
+            this.SubjectsBtn.TabIndex = 8;
+            this.SubjectsBtn.Text = "Tantárgyak";
+            this.SubjectsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.SubjectsBtn.UseVisualStyleBackColor = true;
+            this.SubjectsBtn.Click += new System.EventHandler(this.NavButtons_Click);
+            // 
+            // ClassesBtn
+            // 
+            this.ClassesBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ClassesBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ClassesBtn.FlatAppearance.BorderSize = 0;
+            this.ClassesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClassesBtn.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ClassesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.ClassesBtn.Image = global::DIA_Project.Properties.Resources.group;
+            this.ClassesBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ClassesBtn.Location = new System.Drawing.Point(0, 228);
+            this.ClassesBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ClassesBtn.Name = "ClassesBtn";
+            this.ClassesBtn.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.ClassesBtn.Size = new System.Drawing.Size(166, 40);
+            this.ClassesBtn.TabIndex = 7;
+            this.ClassesBtn.Text = "Osztályok";
+            this.ClassesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ClassesBtn.UseVisualStyleBackColor = true;
+            this.ClassesBtn.Click += new System.EventHandler(this.NavButtons_Click);
             // 
             // NavArrowP
             // 
@@ -249,7 +274,7 @@ namespace DIA_Project.Forms.AdminForms
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.ExitBtn);
             this.panel3.Controls.Add(this.MinimizeBtn);
-            this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -286,6 +311,27 @@ namespace DIA_Project.Forms.AdminForms
             this.MinimizeBtn.TabIndex = 10;
             this.MinimizeBtn.UseVisualStyleBackColor = true;
             this.MinimizeBtn.Click += new System.EventHandler(this.MinimizeBtn_Click);
+            // 
+            // InfoBtn
+            // 
+            this.InfoBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.InfoBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.InfoBtn.FlatAppearance.BorderSize = 0;
+            this.InfoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.InfoBtn.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.InfoBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
+            this.InfoBtn.Image = global::DIA_Project.Properties.Resources.info;
+            this.InfoBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.InfoBtn.Location = new System.Drawing.Point(0, 308);
+            this.InfoBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.InfoBtn.Name = "InfoBtn";
+            this.InfoBtn.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.InfoBtn.Size = new System.Drawing.Size(166, 40);
+            this.InfoBtn.TabIndex = 9;
+            this.InfoBtn.Text = "Info";
+            this.InfoBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.InfoBtn.UseVisualStyleBackColor = true;
+            this.InfoBtn.Click += new System.EventHandler(this.NavButtons_Click);
             // 
             // AdminHomeForm
             // 
@@ -328,6 +374,8 @@ namespace DIA_Project.Forms.AdminForms
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.Button MinimizeBtn;
+        private System.Windows.Forms.Button ClassesBtn;
+        private System.Windows.Forms.Button SubjectsBtn;
         private System.Windows.Forms.Button InfoBtn;
     }
 }

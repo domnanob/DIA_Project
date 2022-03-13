@@ -28,9 +28,7 @@ namespace DIA_Project.Forms.UserForms
             style |= NativeWinAPI.WS_EX_COMPOSITED;
             NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
 
-            this.SuspendLayout();
             ReLoad();
-            this.ResumeLayout(false);
         }
         User CurrentUser = new User();
         private void ReLoad() 
@@ -38,17 +36,8 @@ namespace DIA_Project.Forms.UserForms
             NameTb.Text = CurrentUser.Name;
             UserTB.Text = CurrentUser.Username;
             EmailTB.Text = CurrentUser.Email;
-            PasswordTB.Text = string.Empty;
-            Password2TB.Text = string.Empty;
-            ClassCB.Items.Clear();
-            using (SQL sql = SQL.MySql())
-            {
-                foreach (Classes c in sql.classes)
-                {
-                    ClassCB.Items.Add(c.Name);
-                }
-                ClassCB.SelectedItem = sql.classes.Single(x => x.ID == CurrentUser.ClassID).Name;
-            }
+            ClassCB.DataSource = SQL.MySql().classes.Select(x => x.Name).ToList();
+            ClassCB.SelectedItem = SQL.MySql().classes.Single(x => x.ID == CurrentUser.ClassID).Name;
             MentesBtn.Enabled = false;
         }
         private bool JelszoEllenoriz(TextBox t1)

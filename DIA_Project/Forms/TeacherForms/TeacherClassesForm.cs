@@ -34,26 +34,17 @@ namespace DIA_Project.Forms.TeacherForms
         }
         private Teacher CurrentTeacher = new Teacher();
         private List<Classes> classes = new List<Classes>();
-        private List<Position> positions = new List<Position>();
         private List<Purchase> purchases = new List<Purchase>();
         private List<Purchase> FilteredP = new List<Purchase>();
         private List<FormattedPurchase> FPL = new List<FormattedPurchase>();
         public void ReLoad() {
             classes.Clear();
-            positions.Clear();
             using (SQL sql = SQL.MySql())
             {
-                foreach (var item in sql.positions)
-                {
-                    positions.Add(item);
-                }
-                foreach (var item in sql.purchases)
-                {
-                    purchases.Add(item);
-                }
+                List<int> currentClassIDs = new List<int>();
                 foreach (var item in sql.classes.OrderBy(x => x.Name))
                 {
-                    foreach (var p in positions)
+                    foreach (var p in SQL.MySql().positions)
                     {
                         if (p.TeacherID == CurrentTeacher.Username && p.ClassID == item.ID)
                         {
@@ -61,8 +52,16 @@ namespace DIA_Project.Forms.TeacherForms
                             {
                                 ClassesCB.Items.Add(item.Name);
                                 classes.Add(item);
+                                currentClassIDs.Add(item.ID);
                             }
                         }
+                    }
+                }
+                foreach (var item in sql.purchases)
+                {
+                    if (currentClassIDs.Contains((int)SQL.MySql().users.Single(x => x.Username == item.UserID).ClassID))
+                    {
+                        purchases.Add(item);
                     }
                 }
                 DGVLoad(purchases);
@@ -154,19 +153,22 @@ namespace DIA_Project.Forms.TeacherForms
         {
             GC.Collect();
         }
-        private int ReFormat(string s) {
-            if (s == "Van")
-            {
-                return 1;
-            }
-            else {
-                return 0;
-            }
-        }
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            string SelectedUsername = PurchasesDGV.SelectedRows[0].Cells[0].Value.ToString();
-            Program.TF.OpenChildForm(new TeacherUserPurchasesForm(SQL.MySql().users.Single(x =>x.Username == SelectedUsername)));
+            if (PurchasesDGV.SelectedRows.Count > 0)
+            {
+                string SelectedUsername = PurchasesDGV.SelectedRows[0].Cells[0].Value.ToString();
+                Program.TF.OpenChildForm(new TeacherUserPurchasesForm(SQL.MySql().users.Single(x => x.Username == SelectedUsername)));
+            }
+            else
+            {
+                new ErrorMessageForm("Nem választottál Diákot!").Show();
+            }
+        }
+
+        private void PurchasesDGV_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EditBtn_Click(sender, e);
         }
     }
 }

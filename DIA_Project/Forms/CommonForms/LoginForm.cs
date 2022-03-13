@@ -45,16 +45,8 @@ namespace DIA_Project.Forms.CommonForms
                 {
                     using (SQL sql = SQL.MySql())
                     {
-                        Ulist.Clear();
-                        Tlist.Clear();
-                        foreach (User u in sql.users)
-                        {
-                            Ulist.Add(u.Username);
-                        }
-                        foreach (Teacher t in sql.teachers)
-                        {
-                            Tlist.Add(t.Username);
-                        }
+                        Ulist = sql.users.Select(x => x.Username).ToList();
+                        Tlist = sql.teachers.Select(x => x.Username).ToList();
                     }
                     IsServerRunning = true;
                 }

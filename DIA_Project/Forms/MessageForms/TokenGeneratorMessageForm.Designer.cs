@@ -1,7 +1,7 @@
 ﻿
 namespace DIA_Project.Forms
 {
-    partial class SelectClassMessageForm
+    partial class TokenGeneratorMessageForm
     {
         /// <summary>
         /// Required designer variable.

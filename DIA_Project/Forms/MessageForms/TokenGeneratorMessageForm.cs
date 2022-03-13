@@ -12,9 +12,9 @@ using DIA_Project.Lib;
 
 namespace DIA_Project.Forms
 {
-    public partial class SelectClassMessageForm : Form
+    public partial class TokenGeneratorMessageForm : Form
     {
-        public SelectClassMessageForm()
+        public TokenGeneratorMessageForm()
         {
             InitializeComponent();
 
@@ -27,21 +27,16 @@ namespace DIA_Project.Forms
             SetStyle(ControlStyles.DoubleBuffer, true);
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
 
-            ClassesCB.SelectedItem = "Osztályok";
             ReLoad();
         }
         private string alphabet = "abcdefghijklmnopqrstuvwxyz";
-        private List<Classes> classes = new List<Classes>();
+        private List<string> Tokens = new List<string>();
         public void ReLoad()
         {
-            classes.Clear();
             using (SQL sql = SQL.MySql())
             {
-                classes = sql.classes.ToList();
-                foreach (var item in classes)
-                {
-                    ClassesCB.Items.Add(item.Name);
-                }
+                ClassesCB.DataSource = sql.classes.Select(x => x.Name).ToList();
+                Tokens = sql.registrationTokens.Select(x => x.Token).ToList();
             }
         }
         private string RandomDigits()
@@ -64,16 +59,20 @@ namespace DIA_Project.Forms
         }
         private void GenerateBtn_Click(object sender, EventArgs e)
         { 
-                TokenL.Text = RandomDigits()+"-"+RandomDigits();
+            while (!Tokens.Contains(TokenL.Text))
+            {
+                TokenL.Text = RandomDigits() + "-" + RandomDigits();
+            }
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            if (ClassesCB.SelectedIndex != 0)
+            if (!Tokens.Contains(TokenL.Text))
             {
                 using (SQL sql = SQL.MySql())
                 {
-                    RegistrationToken r = new RegistrationToken() {
+                    RegistrationToken r = new RegistrationToken()
+                    {
                         Token = TokenL.Text,
                         ClassID = sql.classes.Single(x => x.Name == ClassesCB.Items[ClassesCB.SelectedIndex].ToString()).ID
                     };
@@ -83,7 +82,7 @@ namespace DIA_Project.Forms
                 }
             }
             else {
-                new ErrorMessageForm("Válassz osztályt!");
+                new ErrorMessageForm("Hibás kód, generálj újat!").Show();
             }
         }
 

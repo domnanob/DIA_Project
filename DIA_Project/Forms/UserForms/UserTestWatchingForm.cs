@@ -32,12 +32,8 @@ namespace DIA_Project.Forms.UserForms
             CurrentTest = t;
             DNameL.Text = t.Name;
 
-            this.SuspendLayout();
-
             LoadingDataSources();
             LoadingTasks();
-
-            this.ResumeLayout(false);
         }
         private User CurrentUser = new User();
         private Test CurrentTest = new Test();

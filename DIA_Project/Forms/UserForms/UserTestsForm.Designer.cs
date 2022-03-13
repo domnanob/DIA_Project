@@ -90,6 +90,7 @@
             this.TestsDGV.Size = new System.Drawing.Size(562, 286);
             this.TestsDGV.TabIndex = 4;
             this.TestsDGV.DataSourceChanged += new System.EventHandler(this.PurchasesDGV_DataSourceChanged);
+            this.TestsDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TestsDGV_CellDoubleClick);
             // 
             // SubjectsCB
             // 

@@ -78,7 +78,6 @@ namespace DIA_Project.Forms.AdminForms
                 childForm.BringToFront();
                 childForm.Show();
                 OldChildForm = childForm;
-                childForm.Visible = true;
             }
         }
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -119,7 +118,7 @@ namespace DIA_Project.Forms.AdminForms
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new MainForm());
+            ImitateClick("HomeBtn");
         }
 
         public void NavButtons_Click(object sender, EventArgs e)
@@ -134,16 +133,22 @@ namespace DIA_Project.Forms.AdminForms
             switch (btn.Name)
             {
                 case "HomeBtn":
-                    OpenChildForm(new MainForm() { Visible = false });
+                    OpenChildForm(new MainForm());
                     break;
                 case "UsersBtn":
-                    OpenChildForm(new AdminUsersForm() { Visible = false });
+                    OpenChildForm(new AdminUsersForm());
                     break;
                 case "TeachersBtn":
-                    OpenChildForm(new AdminTeachersForm() { Visible = false });
+                    OpenChildForm(new AdminTeachersForm());
+                    break;
+                case "ClassesBtn":
+                    OpenChildForm(new AdminClassesForm());
+                    break;
+                case "SubjectsBtn":
+                    OpenChildForm(new AdminSubjectsForm());
                     break;
                 case "InfoBtn":
-                    OpenChildForm(new InfoForm() { Visible = false });
+                    OpenChildForm(new InfoForm());
                     break;
                 default:
                     break;

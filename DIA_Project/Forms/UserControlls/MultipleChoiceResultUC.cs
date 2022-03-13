@@ -20,7 +20,9 @@ namespace DIA_Project.Forms.User_Controlls
             CorrectAns = ca;
             UserAns = ua;
             TaskNameL.Text = t.Task;
+            this.SuspendLayout();
             LoadAnswers();
+            this.ResumeLayout(false);
         }
         private int ansDb = 0;
         private int panelDb = 0;

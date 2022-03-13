@@ -95,22 +95,19 @@ namespace DIA_Project.Forms.TeacherForms
 
         private void HozzaadasBtn_Click(object sender, EventArgs e)
         {
-            this.SuspendLayout();
             if (TaskTypesCB.SelectedIndex == 0)
             {
                 MultipleChoiceUC MCUC = new MultipleChoiceUC()
                 {
-                    Height = 115,
                     Dock = DockStyle.Top,
                     Name = "MultipleChoise"+ChoiseDB,
                 };
                 MCUL.Add(Tuple.Create(MCUC.Name,MCUC.Height));
                 MCUC.SizeChanged += new System.EventHandler(this.multipleChoiseuc_SizeChanged);
                 MCUC.BackColorChanged += new System.EventHandler(this.multipleChoiseuc_BackColorChanged);
-                this.HomePnl.Height += 115;
+                this.HomePnl.Height += MCUC.Height;
                 this.HomePnl.Controls.Add(MCUC);
                 ChoiseDB++;
-                this.ResumeLayout(false);
             }
         }
         private void multipleChoiseuc_SizeChanged(object sender, EventArgs e)
@@ -142,6 +139,11 @@ namespace DIA_Project.Forms.TeacherForms
             if (SubjectsCB.SelectedIndex == 0 || ClassesCB.SelectedIndex == 0 || StartDTP.Value >= FinishDTP.Value || string.IsNullOrEmpty(TestNameTb.Text))
             {
                 new ErrorMessageForm("Minden mező kitöltése kötelező!").ShowDialog();
+                return;
+            }
+            if (this.HomePnl.Controls.OfType<MultipleChoiceUC>().ToList().Count == 0)
+            {
+                new ErrorMessageForm("Nincs feladat hozzáadva!").ShowDialog();
                 return;
             }
             foreach (var item in this.HomePnl.Controls.OfType<MultipleChoiceUC>())

@@ -130,14 +130,26 @@ namespace DIA_Project.Forms.AdminForms
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            string SelectedUsername = PurchasesDGV.SelectedRows[0].Cells[0].Value.ToString();
-            User u = SQL.MySql().users.Single(x => x.Username == SelectedUsername);
-            Program.AF.OpenChildForm(new AdminUserEditForm(u));
+            if (PurchasesDGV.SelectedRows.Count > 0)
+            {
+                string SelectedUsername = PurchasesDGV.SelectedRows[0].Cells[0].Value.ToString();
+                User u = SQL.MySql().users.Single(x => x.Username == SelectedUsername);
+                Program.AF.OpenChildForm(new AdminUserEditForm(u));
+            }
+            else
+            {
+                new ErrorMessageForm("Nem választottál diákot!").Show();
+            }
         }
 
         private void NewTestBtn_Click(object sender, EventArgs e)
         {
             Program.AF.OpenChildForm(new AdminNewUserForm());
+        }
+
+        private void PurchasesDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EditBtn_Click(sender, e);
         }
     }
 }

@@ -243,10 +243,11 @@ namespace DIA_Project.Forms.TeacherForms
             this.FinishDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.FinishDTP.Location = new System.Drawing.Point(218, 4);
             this.FinishDTP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.FinishDTP.MinDate = new System.DateTime(2022, 3, 12, 11, 26, 15, 877);
             this.FinishDTP.Name = "FinishDTP";
             this.FinishDTP.Size = new System.Drawing.Size(80, 23);
             this.FinishDTP.TabIndex = 7;
-            this.FinishDTP.MinDate = System.DateTime.Now;
+            this.FinishDTP.Value = new System.DateTime(2022, 3, 12, 11, 26, 15, 877);
             // 
             // StartDTP
             // 
@@ -258,10 +259,11 @@ namespace DIA_Project.Forms.TeacherForms
             this.StartDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.StartDTP.Location = new System.Drawing.Point(66, 4);
             this.StartDTP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.StartDTP.MinDate = new System.DateTime(2022, 3, 12, 11, 26, 15, 879);
             this.StartDTP.Name = "StartDTP";
             this.StartDTP.Size = new System.Drawing.Size(81, 23);
             this.StartDTP.TabIndex = 6;
-            this.StartDTP.MinDate = System.DateTime.Now;
+            this.StartDTP.Value = new System.DateTime(2022, 3, 12, 11, 26, 15, 879);
             // 
             // MentesBtn
             // 

@@ -91,6 +91,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.UsersTestsDGV.Size = new System.Drawing.Size(562, 257);
             this.UsersTestsDGV.TabIndex = 1;
             this.UsersTestsDGV.DataSourceChanged += new System.EventHandler(this.PurchasesDGV_DataSourceChanged);
+            this.UsersTestsDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsersTestsDGV_CellDoubleClick);
             // 
             // MegnyitasBtn
             // 

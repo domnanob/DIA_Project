@@ -35,12 +35,8 @@ namespace DIA_Project.Forms.TeacherForms
             DNameL.Text = t.Name;
             UserNameTb.Text = u.Name;
 
-            this.SuspendLayout();
-
             LoadingDataSources();
             LoadingTasks();
-
-            this.ResumeLayout(false);
         }
         private Teacher CurrentTeacher = new Teacher();
         private User CurrentUser = new User();

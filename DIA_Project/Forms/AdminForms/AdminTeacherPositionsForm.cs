@@ -81,20 +81,27 @@ namespace DIA_Project.Forms.AdminForms
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            if (new WarningMessageForm("Biztosan törölni szeretnéd ezt a pozíciót?").ShowDialog() == DialogResult.Yes)
+            if (PositionsDGV.SelectedRows.Count > 0)
             {
-                using (SQL sql = SQL.MySql())
+                if (new WarningMessageForm("Biztosan törölni szeretnéd ezt a pozíciót?").ShowDialog() == DialogResult.Yes)
                 {
-                    string SelectedClassName = PositionsDGV.SelectedRows[0].Cells[1].Value.ToString();
-                    string SelectedSubjectName = PositionsDGV.SelectedRows[0].Cells[2].Value.ToString();
-                    List<Position> p = sql.positions.Where(x => x.TeacherID == CurrentTeacher.Username).ToList();
-                    List<Position> p2 = p.Where(x => x.ClassID == sql.classes.Single(x => x.Name == SelectedClassName).ID).ToList();
-                    Position selectedPosition = p2.Single(x => x.SubjectID == sql.subjects.Single(x => x.Name == SelectedSubjectName).ID);
-                    sql.positions.Remove(selectedPosition);
-                    sql.SaveChanges();
-                    new SuccessMessageForm("Sikeresen törölted ezt a pozíciót!").ShowDialog();
-                    ReLoad();
+                    using (SQL sql = SQL.MySql())
+                    {
+                        string SelectedClassName = PositionsDGV.SelectedRows[0].Cells[1].Value.ToString();
+                        string SelectedSubjectName = PositionsDGV.SelectedRows[0].Cells[2].Value.ToString();
+                        List<Position> p = sql.positions.Where(x => x.TeacherID == CurrentTeacher.Username).ToList();
+                        List<Position> p2 = p.Where(x => x.ClassID == sql.classes.Single(x => x.Name == SelectedClassName).ID).ToList();
+                        Position selectedPosition = p2.Single(x => x.SubjectID == sql.subjects.Single(x => x.Name == SelectedSubjectName).ID);
+                        sql.positions.Remove(selectedPosition);
+                        sql.SaveChanges();
+                        new SuccessMessageForm("Sikeresen törölted ezt a pozíciót!").ShowDialog();
+                        ReLoad();
+                    }
                 }
+            }
+            else
+            {
+                new ErrorMessageForm("Nem választottál pozíciót!").Show();
             }
         }
 

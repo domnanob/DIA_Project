@@ -80,25 +80,37 @@ namespace DIA_Project.Forms.TeacherForms
 
         private void MegnyitasBtn_Click(object sender, EventArgs e)
         {
-            if (new string[] { "Javításra vár!", "Kijavítva!" }.Contains(UsersTestsDGV.SelectedRows[0].Cells[3].Value.ToString()))
+            if (UsersTestsDGV.SelectedRows.Count > 0)
             {
-                string SelectedUsername = UsersTestsDGV.SelectedRows[0].Cells[0].Value.ToString();
-                List<User> alluser = new List<User>();
-                foreach (var item in UT)
+                if (new string[] { "Javításra vár!", "Kijavítva!" }.Contains(UsersTestsDGV.SelectedRows[0].Cells[3].Value.ToString()))
                 {
-                    alluser.Add(SQL.MySql().users.Single(x => x.Username == item.UserID));
+                    string SelectedUsername = UsersTestsDGV.SelectedRows[0].Cells[0].Value.ToString();
+                    List<User> alluser = new List<User>();
+                    foreach (var item in UT)
+                    {
+                        alluser.Add(SQL.MySql().users.Single(x => x.Username == item.UserID));
+                    }
+                    Program.TF.OpenChildForm(new TeacherTestWatchingForm(CurrentTeacher, alluser.Single(x => x.Username == SelectedUsername), CurrentTest));
                 }
-                Program.TF.OpenChildForm(new TeacherTestWatchingForm(CurrentTeacher, alluser.Single(x => x.Username == SelectedUsername), CurrentTest));
+                else
+                {
+                    new ErrorMessageForm("Ez a dolgozat még nincs leadva!").Show();
+                }
             }
             else
             {
-                new ErrorMessageForm("Ez a dolgozat még nincs leadva!").Show();
+                new ErrorMessageForm("Nem választottál dolgozatot!").Show();
             }
         }
 
         private void VisszaBtn_Click(object sender, EventArgs e)
         {
             Program.TF.ImitateClick("DolgozatokBtn");
+        }
+
+        private void UsersTestsDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MegnyitasBtn_Click(sender, e);
         }
     }
 }

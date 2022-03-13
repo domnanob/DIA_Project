@@ -112,15 +112,26 @@ namespace DIA_Project.Forms.TeacherForms
 
         private void MegnyitasBtn_Click(object sender, EventArgs e)
         {
-            string SelectedTestID = TestsDGV.SelectedRows[0].Cells[0].Value.ToString();
-            Test t = SQL.MySql().tests.Single(x => x.ID == int.Parse(SelectedTestID));
-            Program.TF.OpenChildForm(new TeacherTestsUsersForm(CurrentTeacher, t));
+            if (TestsDGV.SelectedRows.Count > 0)
+            {
+                string SelectedTestID = TestsDGV.SelectedRows[0].Cells[0].Value.ToString();
+                Test t = SQL.MySql().tests.Single(x => x.ID == int.Parse(SelectedTestID));
+                Program.TF.OpenChildForm(new TeacherTestsUsersForm(CurrentTeacher, t));
+            }
+            else {
+                new ErrorMessageForm("Nem választottál dolgozatot!").Show();
+            }
         }
 
         private void NewTestBtn_Click(object sender, EventArgs e)
         {
             Program.TF.OpenChildForm(new TeacherNewTestForm(CurrentTeacher, positions));
             this.Close();
+        }
+
+        private void TestsDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MegnyitasBtn_Click(sender, e);
         }
     }
 }

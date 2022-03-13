@@ -52,8 +52,9 @@
             this.panel1.Controls.Add(this.TaskNameL);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(760, 57);
+            this.panel1.Size = new System.Drawing.Size(665, 43);
             this.panel1.TabIndex = 0;
             // 
             // TaskNameL
@@ -63,7 +64,7 @@
             this.TaskNameL.ForeColor = System.Drawing.Color.White;
             this.TaskNameL.Location = new System.Drawing.Point(0, 0);
             this.TaskNameL.Name = "TaskNameL";
-            this.TaskNameL.Size = new System.Drawing.Size(760, 57);
+            this.TaskNameL.Size = new System.Drawing.Size(665, 43);
             this.TaskNameL.TabIndex = 0;
             this.TaskNameL.Text = "Choose the right option/options from the following answers!";
             this.TaskNameL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -73,9 +74,10 @@
             this.CorrectTitlePnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(150)))), ((int)(((byte)(56)))));
             this.CorrectTitlePnl.Controls.Add(this.label1);
             this.CorrectTitlePnl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.CorrectTitlePnl.Location = new System.Drawing.Point(0, 57);
+            this.CorrectTitlePnl.Location = new System.Drawing.Point(0, 43);
+            this.CorrectTitlePnl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CorrectTitlePnl.Name = "CorrectTitlePnl";
-            this.CorrectTitlePnl.Size = new System.Drawing.Size(760, 20);
+            this.CorrectTitlePnl.Size = new System.Drawing.Size(665, 15);
             this.CorrectTitlePnl.TabIndex = 3;
             // 
             // label1
@@ -85,7 +87,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(760, 20);
+            this.label1.Size = new System.Drawing.Size(665, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Helyes válaszok:";
             // 
@@ -93,9 +95,10 @@
             // 
             this.CorrectAnsPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(150)))), ((int)(((byte)(56)))));
             this.CorrectAnsPnl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.CorrectAnsPnl.Location = new System.Drawing.Point(0, 77);
+            this.CorrectAnsPnl.Location = new System.Drawing.Point(0, 58);
+            this.CorrectAnsPnl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CorrectAnsPnl.Name = "CorrectAnsPnl";
-            this.CorrectAnsPnl.Size = new System.Drawing.Size(760, 5);
+            this.CorrectAnsPnl.Size = new System.Drawing.Size(665, 4);
             this.CorrectAnsPnl.TabIndex = 4;
             // 
             // ChoosenTitlePnl
@@ -104,9 +107,10 @@
             this.ChoosenTitlePnl.Dock = System.Windows.Forms.DockStyle.Top;
             this.ChoosenTitlePnl.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ChoosenTitlePnl.ForeColor = System.Drawing.Color.White;
-            this.ChoosenTitlePnl.Location = new System.Drawing.Point(0, 82);
+            this.ChoosenTitlePnl.Location = new System.Drawing.Point(0, 62);
+            this.ChoosenTitlePnl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ChoosenTitlePnl.Name = "ChoosenTitlePnl";
-            this.ChoosenTitlePnl.Size = new System.Drawing.Size(760, 20);
+            this.ChoosenTitlePnl.Size = new System.Drawing.Size(665, 15);
             this.ChoosenTitlePnl.TabIndex = 5;
             // 
             // label2
@@ -114,16 +118,17 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(760, 20);
+            this.label2.Size = new System.Drawing.Size(665, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "Válasz:";
             // 
             // ChoosenAnsPnl
             // 
             this.ChoosenAnsPnl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ChoosenAnsPnl.Location = new System.Drawing.Point(0, 102);
+            this.ChoosenAnsPnl.Location = new System.Drawing.Point(0, 77);
+            this.ChoosenAnsPnl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ChoosenAnsPnl.Name = "ChoosenAnsPnl";
-            this.ChoosenAnsPnl.Size = new System.Drawing.Size(760, 5);
+            this.ChoosenAnsPnl.Size = new System.Drawing.Size(665, 4);
             this.ChoosenAnsPnl.TabIndex = 6;
             // 
             // panel2
@@ -131,35 +136,39 @@
             this.panel2.Controls.Add(this.PontTb);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 108);
+            this.panel2.Location = new System.Drawing.Point(0, 81);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(760, 27);
+            this.panel2.Size = new System.Drawing.Size(665, 20);
             this.panel2.TabIndex = 7;
             // 
             // PontTb
             // 
             this.PontTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PontTb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(232)))));
-            this.PontTb.Location = new System.Drawing.Point(3, 3);
+            this.PontTb.Location = new System.Drawing.Point(3, 2);
+            this.PontTb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PontTb.Name = "PontTb";
-            this.PontTb.Size = new System.Drawing.Size(74, 20);
+            this.PontTb.Size = new System.Drawing.Size(65, 16);
             this.PontTb.TabIndex = 1;
+            this.PontTb.TextChanged += new System.EventHandler(this.PontTb_TextChanged);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::DIA_Project.Properties.Resources.check_lists;
-            this.pictureBox1.Location = new System.Drawing.Point(80, 1);
+            this.pictureBox1.Location = new System.Drawing.Point(70, 1);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(27, 23);
+            this.pictureBox1.Size = new System.Drawing.Size(24, 17);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
-            // MultipleChoiseCorrectingUC
+            // MultipleChoiceCorrectingUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panel2);
@@ -168,8 +177,9 @@
             this.Controls.Add(this.CorrectAnsPnl);
             this.Controls.Add(this.CorrectTitlePnl);
             this.Controls.Add(this.panel1);
-            this.Name = "MultipleChoiseCorrectingUC";
-            this.Size = new System.Drawing.Size(760, 135);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "MultipleChoiceCorrectingUC";
+            this.Size = new System.Drawing.Size(665, 101);
             this.panel1.ResumeLayout(false);
             this.CorrectTitlePnl.ResumeLayout(false);
             this.ChoosenTitlePnl.ResumeLayout(false);

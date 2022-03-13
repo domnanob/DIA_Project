@@ -32,12 +32,6 @@ namespace DIA_Project.Forms.UserForms
             CurrentUser = u;
         }
         User CurrentUser = new User();
-        private void Panels_Paint(object sender, PaintEventArgs e)
-        {
-            //Már nem szükséges a kerekítés, mert a UserBoltForm.Designer.cs-ben lett a keret kerekítve! Ezáltal már az InitializeComopents lekerekíti ami gyorsabb
-            /*var Pnl = sender as Panel;
-            Pnl.Region = Region.FromHrgn(BorderRadius.CreateRoundRectRgn(0, 0, Pnl.Width, Pnl.Height, 30, 30));*/
-        }
 
         private void InfoPb_Enter(object sender, EventArgs e)
         {

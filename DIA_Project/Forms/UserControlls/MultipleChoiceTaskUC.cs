@@ -19,7 +19,9 @@ namespace DIA_Project.Forms.User_Controlls
             CurrentTask = t;
             CurrentAnswers = a;
             TaskNameL.Text = t.Task;
+            this.SuspendLayout();
             LoadAnswers();
+            this.ResumeLayout(false);
         }
         private int ansDb = 0;
         public Models.Tasks CurrentTask = new Models.Tasks();

@@ -21,11 +21,11 @@ namespace DIA_Project.Forms.UserForms
             InitializeComponent();
             CurrentUser = CU;
 
+            //Teljesítmény javítás
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             SetStyle(ControlStyles.DoubleBuffer, true);
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
-
             int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
             style |= NativeWinAPI.WS_EX_COMPOSITED;
             NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
@@ -48,7 +48,6 @@ namespace DIA_Project.Forms.UserForms
         private Form OldChildForm = null;
         public void OpenChildForm(Form childForm)
         {
-            this.SuspendLayout();
             if (OldChildForm != childForm)
             {
                 if (OldChildForm != null)
@@ -89,8 +88,12 @@ namespace DIA_Project.Forms.UserForms
                         panel3.Enabled = false; //Kilépés és tálcázás tiltása
                     }
                 }
+                DesktopP.Controls.Add(childForm);
+                DesktopP.Tag = childForm;
+
+                childForm.BringToFront();
+                childForm.Show();
                 OldChildForm = childForm;
-                this.ResumeLayout(false);
             }
         }
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -130,7 +133,7 @@ namespace DIA_Project.Forms.UserForms
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new MainForm());
+            ImitateClick("HomeBtn");
         }
 
         public void NavButtons_Click(object sender, EventArgs e)
@@ -145,7 +148,7 @@ namespace DIA_Project.Forms.UserForms
             switch (btn.Name)
             {
                 case "HomeBtn":
-                    OpenChildForm(new MainForm() { Visible = false });
+                    OpenChildForm(new MainForm());
                     break;
                 case "DolgozatokBtn":
                     OpenChildForm(new UserTestsForm(CurrentUser));

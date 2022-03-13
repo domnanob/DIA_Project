@@ -90,6 +90,7 @@ namespace DIA_Project.Forms.TeacherForms
             this.TestsDGV.Size = new System.Drawing.Size(562, 257);
             this.TestsDGV.TabIndex = 2;
             this.TestsDGV.DataSourceChanged += new System.EventHandler(this.PurchasesDGV_DataSourceChanged);
+            this.TestsDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TestsDGV_CellDoubleClick);
             // 
             // ClassesCB
             // 
