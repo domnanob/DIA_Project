@@ -116,7 +116,14 @@ namespace DIA_Project.Forms.TeacherForms
                 ut.Points = 0;
                 foreach (var item in HomePnl.Controls.OfType<MultipleChoiceCorrectingUC>().ToList())
                 {
-                    ut.Points += double.Parse(item.GetPoints());
+                    try {
+                        double p = double.Parse(item.GetPoints());
+                        ut.Points += p;
+                    }
+                    catch {
+                        new ErrorMessageForm("Hibás pontozás!").ShowDialog();
+                        return;
+                    }
                 }
                 sql.users.Single(x => x.Username == CurrentUser.Username).Money += Convert.ToInt32(ut.Points);
                 sql.SaveChanges();

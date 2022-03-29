@@ -19,20 +19,17 @@ namespace DIA_Project.Forms.AdminForms
         public AdminHomeForm(User CU)
         {
             InitializeComponent();
+            this.Text = "DIA admin";
             CurrentUser = CU;
+            
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
 
             int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);
             style |= NativeWinAPI.WS_EX_COMPOSITED;
             NativeWinAPI.SetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE, style);
 
-            SetStyle(ControlStyles.UserPaint, true);
-            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-            SetStyle(ControlStyles.DoubleBuffer, true);
-            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
-
             this.Text = string.Empty;
             this.ControlBox = false;
-            this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.FormBorderStyle = FormBorderStyle.None;
             this.SetStyle(ControlStyles.ResizeRedraw, true);
@@ -54,6 +51,7 @@ namespace DIA_Project.Forms.AdminForms
                 {
                     OldChildForm.Dispose();
                     OldChildForm.Close();
+                    GC.Collect();
                 }
                 childForm.FormBorderStyle = FormBorderStyle.None;
                 childForm.TopLevel = false;

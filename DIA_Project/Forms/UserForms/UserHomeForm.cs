@@ -19,6 +19,7 @@ namespace DIA_Project.Forms.UserForms
         public UserHomeForm(User CU)
         {
             InitializeComponent();
+            this.Text = "DIA";
             CurrentUser = CU;
 
             //Teljesítmény javítás

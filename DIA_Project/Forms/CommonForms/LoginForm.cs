@@ -18,6 +18,7 @@ namespace DIA_Project.Forms.CommonForms
         public LoginForm()
         {
             InitializeComponent();
+            this.Text = "Bejelentkezés";
 
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);

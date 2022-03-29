@@ -19,6 +19,7 @@ namespace DIA_Project.Forms.TeacherForms
         public TeacherHomeForm(Teacher CT)
         {
             InitializeComponent();
+            this.Text = "DIA";
 
             //Teljesítmény javítás
             int style = NativeWinAPI.GetWindowLong(this.Handle, NativeWinAPI.GWL_EXSTYLE);

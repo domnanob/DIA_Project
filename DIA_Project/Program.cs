@@ -13,7 +13,7 @@ namespace DIA_Project
 { 
     static class Program
     {
-        public static string ConnectionString = "Server=localhost;Database=szakdoga;Uid=root;";
+        public static string ConnectionString = "Server=localhost;Database=dia_db;Uid=root;";
         public static AdminHomeForm AF;
         public static UserHomeForm HF;
         public static TeacherHomeForm TF;

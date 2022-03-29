@@ -30,7 +30,7 @@ namespace DIA_Project.Forms.TeacherForms
 
             CurrentTeacher = t;
             CurrentPositions = p;
-            LoadResources();
+            LoadingDataSources();
         }
         private int ChoiseDB = 0;
         private int CurrentTestID = 0;
@@ -39,7 +39,7 @@ namespace DIA_Project.Forms.TeacherForms
         private List<Position> CurrentPositions = new List<Position>();
         private List<UserTest> UT = new List<UserTest>();
         private List<Tuple<string,int>> MCUL = new List<Tuple<string,int>>();
-        void LoadResources() {
+        void LoadingDataSources() {
             TaskTypesCB.Items.Clear();
             using (SQL sql = SQL.MySql())
             {

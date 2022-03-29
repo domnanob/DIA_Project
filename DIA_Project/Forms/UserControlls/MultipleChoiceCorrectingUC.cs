@@ -22,13 +22,14 @@ namespace DIA_Project.Forms.User_Controlls
             oneAnswerPoint = t.Points / CorrectAns.Count;
             UserAns = ua;
             TaskNameL.Text = t.Task;
-            PontTb.Text = t.Points+"/"+ t.Points;
+            PontTb.Text = t.Points+"/";
             LoadAnswers();
             this.ResumeLayout(false);
         }
         private int ansDb = 0;
         private int panelDb = 0;
         private double oneAnswerPoint = 0;
+        private double points = 0;
         private bool Locked = false;
         public Models.Tasks CurrentTask = new Models.Tasks();
         private List<Answers> CorrectAns = new List<Answers>();
@@ -75,7 +76,7 @@ namespace DIA_Project.Forms.User_Controlls
                     Enabled = false,
                 };
                 MissingAnsP.BackColor = Color.FromArgb(148, 33, 55);
-                PontTb.Text = PontTb.Text.Split("/")[0].ToString() + "/" + (double.Parse(PontTb.Text.Split("/")[1]) - oneAnswerPoint).ToString();
+                //PontTb.Text = PontTb.Text.Split("/")[0].ToString() + "/" + (double.Parse(PontTb.Text.Split("/")[1]) - oneAnswerPoint).ToString();
                 MissingAnsP.Controls.Add(MissingAns);
             }
             foreach (var item in UserAns)
@@ -104,20 +105,28 @@ namespace DIA_Project.Forms.User_Controlls
                     {
                         UserAnswerP.BackColor = Color.FromArgb(28, 150, 56);
                         UserAnswerCB.Checked = true;
+                        points += oneAnswerPoint;
                         //PontTb.Text = PontTb.Text.Split("/")[0].ToString() + "/" + (double.Parse(PontTb.Text.Split("/")[1]) + oneAnswerPoint).ToString();
                         break;
                     }
                     else
                     { 
                         UserAnswerP.BackColor = Color.FromArgb(148, 33, 55);
-                        PontTb.Text = PontTb.Text.Split("/")[0].ToString() + "/" + (double.Parse(PontTb.Text.Split("/")[1]) - oneAnswerPoint).ToString();
+                        //PontTb.Text = PontTb.Text.Split("/")[0].ToString() + "/" + (double.Parse(PontTb.Text.Split("/")[1]) - oneAnswerPoint).ToString();
                     }
                 }
                 UserAnswerP.Controls.Add(UserAnswerCB);
             }
+            PontTb.Text = PontTb.Text + points.ToString();
         }
         public string GetPoints() {
-            return PontTb.Text.Split('/')[1];
+            try
+            {
+                return PontTb.Text.Split('/')[1];
+            }
+            catch {
+                return "Hibás Pontozás!";
+            }
         }
         public bool isCorrected() {
             if (PontTb.Enabled)
@@ -129,31 +138,42 @@ namespace DIA_Project.Forms.User_Controlls
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(PontTb.Text.Split('/')[1]))
+            try
             {
-                PontTb.Text += "0";
+                double.Parse(PontTb.Text.Split('/')[1]);
+                if (string.IsNullOrEmpty(PontTb.Text.Split('/')[1]))
+                {
+                    PontTb.Text += "0";
+                }
+                if (Locked)
+                {
+                    pictureBox1.Image = Properties.Resources.check_lists;
+                    PontTb.Enabled = true;
+                    Locked = false;
+                }
+                else
+                {
+                    pictureBox1.Image = Properties.Resources.cancel;
+                    PontTb.Enabled = false;
+                    Locked = true;
+                }
             }
-            if (Locked)
+            catch
             {
-                pictureBox1.Image = Properties.Resources.check_lists;
-                PontTb.Enabled = true;
-                Locked = false;
-            }
-            else 
-            {
-                pictureBox1.Image = Properties.Resources.cancel;
-                PontTb.Enabled = false;
-                Locked = true;
+                new ErrorMessageForm("Hibás pontozás!").Show();
             }
         }
 
         private void PontTb_TextChanged(object sender, EventArgs e)
         {
-            if (int.Parse(PontTb.Text.Split('/')[1]) < 0)
+            try
             {
-                string s = PontTb.Text.Split('/')[0];
-                PontTb.Text = s + "/" + "0";
-            }
+                if (int.Parse(PontTb.Text.Split('/')[1]) < 0)
+                {
+                    string s = PontTb.Text.Split('/')[0];
+                    PontTb.Text = s + "/" + "0";
+                }
+            } catch { }
         }
     }
 }
