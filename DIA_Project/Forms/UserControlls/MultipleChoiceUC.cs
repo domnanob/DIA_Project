@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DIA_Project.Forms.User_Controlls
@@ -78,7 +74,8 @@ namespace DIA_Project.Forms.User_Controlls
         };
         private void HozzaadasBtn_Click(object sender, EventArgs e)
         {
-            RBUC = new RadioButtonsUC() {
+            RBUC = new RadioButtonsUC()
+            {
                 Height = 55,
                 Dock = DockStyle.Top
             };

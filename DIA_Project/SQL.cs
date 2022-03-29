@@ -1,10 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DIA_Project.Models;
+﻿using DIA_Project.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DIA_Project
 {
@@ -15,7 +10,7 @@ namespace DIA_Project
 
         public static SQL MySql()
         {
-            var options = new DbContextOptionsBuilder().UseMySql(SQL.ConnectionString,ServerVersion.AutoDetect(ConnectionString)).Options;
+            var options = new DbContextOptionsBuilder().UseMySql(SQL.ConnectionString, ServerVersion.AutoDetect(ConnectionString)).Options;
             return new SQL(options);
         }
 

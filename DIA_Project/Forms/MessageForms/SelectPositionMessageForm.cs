@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DIA_Project.Lib;
+﻿using DIA_Project.Lib;
 using DIA_Project.Models;
+using System;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace DIA_Project.Forms
 {
@@ -32,7 +27,8 @@ namespace DIA_Project.Forms
 
         }
         private Teacher CurrentTeacher = new Teacher();
-        private void LoadingDataSources() {
+        private void LoadingDataSources()
+        {
             using (SQL sql = SQL.MySql())
             {
                 foreach (var item in sql.classes.OrderBy(x => x.Name).ToList())
@@ -78,7 +74,8 @@ namespace DIA_Project.Forms
                     }
                 }
             }
-            else {
+            else
+            {
                 new ErrorMessageForm("Minden mezőt ki kell tölteni!").ShowDialog();
             }
         }

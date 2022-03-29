@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using DIA_Project.Lib;
 using DIA_Project.Models;
-using DIA_Project.Lib;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace DIA_Project.Forms.AdminForms
 {
@@ -35,7 +31,8 @@ namespace DIA_Project.Forms.AdminForms
         private List<User> users = new List<User>();
         private List<User> FilteredUsers = new List<User>();
         private List<FormattedUser> FU = new List<FormattedUser>();
-        public void ReLoad() {
+        public void ReLoad()
+        {
             classes.Clear();
             users.Clear();
             using (SQL sql = SQL.MySql())
@@ -91,7 +88,7 @@ namespace DIA_Project.Forms.AdminForms
                     }
                 }
             }
-            else 
+            else
             {
                 foreach (var item in FilteredUsers)
                 {

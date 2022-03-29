@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace DIA_Project.Models
 {
@@ -12,14 +8,14 @@ namespace DIA_Project.Models
         public string UserName { get; private set; }
 
         public string FinishDate { get; private set; }
-        
+
         public string State { get; private set; }
 
         public FormattedUserTest(UserTest ut)
         {
             UserID = ut.UserID;
             UserName = SQL.MySql().users.Single(x => x.Username == ut.UserID).Name;
-            FinishDate = (ut.FinishDate==null)? "-" : ut.FinishDate.ToString();
+            FinishDate = (ut.FinishDate == null) ? "-" : ut.FinishDate.ToString();
             if (ut.FinishDate > SQL.MySql().tests.Single(x => x.ID == ut.TestID).FinishDate)
             {
                 FinishDate += " (Késve)";
@@ -28,12 +24,14 @@ namespace DIA_Project.Models
             {
                 State = "Kijavítva!";
             }
-            else {
+            else
+            {
                 if (ut.Completed == 1)
                 {
                     State = "Javításra vár!";
                 }
-                else {
+                else
+                {
                     State = "Hiányzik!";
                 }
             }

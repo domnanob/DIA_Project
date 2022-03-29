@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using DIA_Project.Lib;
 using DIA_Project.Models;
-using DIA_Project.Lib;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace DIA_Project.Forms.TeacherForms
 {
@@ -37,7 +33,8 @@ namespace DIA_Project.Forms.TeacherForms
         private List<Purchase> purchases = new List<Purchase>();
         private List<Purchase> FilteredP = new List<Purchase>();
         private List<FormattedPurchase> FPL = new List<FormattedPurchase>();
-        public void ReLoad() {
+        public void ReLoad()
+        {
             classes.Clear();
             using (SQL sql = SQL.MySql())
             {
@@ -117,7 +114,7 @@ namespace DIA_Project.Forms.TeacherForms
                     }
                 }
             }
-            else 
+            else
             {
                 foreach (var item in FilteredP)
                 {

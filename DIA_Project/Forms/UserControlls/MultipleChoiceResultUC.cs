@@ -1,19 +1,14 @@
-﻿using System;
+﻿using DIA_Project.Models;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DIA_Project.Models;
 
 namespace DIA_Project.Forms.User_Controlls
 {
     public partial class MultipleChoiceResultUC : UserControl
     {
-        public MultipleChoiceResultUC(Models.Tasks t, List<Answers> ca,List<Answers> ua)
+        public MultipleChoiceResultUC(Models.Tasks t, List<Answers> ca, List<Answers> ua)
         {
             InitializeComponent();
             CurrentTask = t;
@@ -29,7 +24,7 @@ namespace DIA_Project.Forms.User_Controlls
         public Models.Tasks CurrentTask = new Models.Tasks();
         private List<Answers> CorrectAns = new List<Answers>();
         private List<Answers> UserAns = new List<Answers>();
-        private void LoadAnswers() 
+        private void LoadAnswers()
         {
             foreach (var item in CorrectAns)
             {
@@ -77,8 +72,9 @@ namespace DIA_Project.Forms.User_Controlls
             {
                 this.Height += 30;
                 ChoosenAnsPnl.Height += 30;
-                Panel UserAnswerP = new Panel() {
-                    Name = "panel"+panelDb,
+                Panel UserAnswerP = new Panel()
+                {
+                    Name = "panel" + panelDb,
                     Dock = DockStyle.Top,
                     Height = 30,
                 };
@@ -102,14 +98,15 @@ namespace DIA_Project.Forms.User_Controlls
                         break;
                     }
                     else
-                    { 
+                    {
                         UserAnswerP.BackColor = Color.FromArgb(148, 33, 55);
                     }
                 }
                 UserAnswerP.Controls.Add(UserAnswerCB);
             }
         }
-        public List<Answers> GetAnswers() { 
+        public List<Answers> GetAnswers()
+        {
             List<CheckBox> Cbs = CorrectTitlePnl.Controls.OfType<CheckBox>().ToList();
             List<Answers> ChoosenAns = new List<Answers>();
             foreach (var item in Cbs)

@@ -25,14 +25,14 @@ namespace DIA_Project.Forms.AdminForms
             ReLoad();
         }
         Teacher CurrentTeacher = new Teacher();
-        private void ReLoad() //async
+        private void ReLoad()
         {
             NameTb.Text = CurrentTeacher.Name;
             UserTB.Text = CurrentTeacher.Username;
             EmailTB.Text = CurrentTeacher.Email;
             PasswordTB.Text = string.Empty;
             Password2TB.Text = string.Empty;
-            EnabledCb.Checked = (CurrentTeacher.Enable == 1)? true : false;
+            EnabledCb.Checked = (CurrentTeacher.Enable == 1) ? true : false;
             MentesBtn.Enabled = false;
         }
         private bool JelszoEllenoriz(TextBox t1)
@@ -76,14 +76,15 @@ namespace DIA_Project.Forms.AdminForms
                     t.Name = NameTb.Text;
                     t.Username = UserTB.Text;
                     t.Email = EmailTB.Text;
-                    t.Enable = (EnabledCb.Checked)? 1 : 0;
+                    t.Enable = (EnabledCb.Checked) ? 1 : 0;
                     CurrentTeacher = t;
                     sql.SaveChanges();
                 }
                 new SuccessMessageForm("Sikeres mentés!").ShowDialog();
                 Program.AF.ImitateClick("TeachersBtn");
             }
-            else {
+            else
+            {
                 if (PasswordTB.Text.Equals(Password2TB.Text))
                 {
                     if (JelszoEllenoriz(PasswordTB))
@@ -102,11 +103,13 @@ namespace DIA_Project.Forms.AdminForms
                         new SuccessMessageForm("Sikeres mentés!").ShowDialog();
                         Program.AF.ImitateClick("TeachersBtn");
                     }
-                    else {
+                    else
+                    {
                         new ErrorMessageForm("A jelszónak tartalmaznia kell legalább egy nagybetűt és egy számot!").ShowDialog();
                     }
                 }
-                else {
+                else
+                {
                     new ErrorMessageForm("A két jelszó nem egyezik!").ShowDialog();
                 }
             }

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DIA_Project.Models
 {
@@ -22,7 +19,7 @@ namespace DIA_Project.Models
                 TestName = t.Name;
                 Subject = sql.subjects.Single(x => x.ID == t.SubjectID).Name;
                 ExpireDate = t.FinishDate;
-                Score = t.MaxPoints+"/";
+                Score = t.MaxPoints + "/";
                 UserTest ut = sql.userTests.Single(x => x.UserID == u.Username && x.TestID == t.ID);
                 if (ut.Completed == 1)
                 {
@@ -37,7 +34,7 @@ namespace DIA_Project.Models
                         Score += "?";
                     }
                 }
-                else 
+                else
                 {
                     State = "Nincs leadva!";
                     Score += "-";

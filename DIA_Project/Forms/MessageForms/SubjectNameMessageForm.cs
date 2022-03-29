@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DIA_Project.Lib;
+﻿using DIA_Project.Lib;
 using DIA_Project.Models;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace DIA_Project.Forms
 {
@@ -36,7 +32,8 @@ namespace DIA_Project.Forms
         bool editMode = false;
         Subject oldSubject = null;
         List<string> SubjectNames = new List<string>();
-        private void LoadingDataSources() {
+        private void LoadingDataSources()
+        {
             using (SQL sql = SQL.MySql())
             {
                 SubjectNames = sql.subjects.Select(x => x.Name).ToList();
@@ -70,7 +67,7 @@ namespace DIA_Project.Forms
                         }
                     }
                 }
-                else 
+                else
                 {
                     new ErrorMessageForm("A mező kitöltése kötelező!").Show();
                 }

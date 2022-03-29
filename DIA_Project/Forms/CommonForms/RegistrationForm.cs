@@ -1,14 +1,11 @@
-﻿using System;
+﻿using DIA_Project.Lib;
+using DIA_Project.Models;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DIA_Project.Models;
-using DIA_Project.Lib;
 
 
 namespace DIA_Project.Forms.CommonForms
@@ -69,7 +66,8 @@ namespace DIA_Project.Forms.CommonForms
             }
             return false;
         }
-        private void Regisztracio() {
+        private void Regisztracio()
+        {
             if (!(Ulist.Contains(FelhTB.Text) || Tlist.Contains(FelhTB.Text)))
             {
                 if (JelszoTB.Text.Equals(JelszoIsmTb.Text))
@@ -78,7 +76,8 @@ namespace DIA_Project.Forms.CommonForms
                     {
                         using (SQL sql = SQL.MySql())
                         {
-                            User u = new User() {
+                            User u = new User()
+                            {
                                 Username = FelhTB.Text,
                                 Password = SecurePasswordHasher.Hash(JelszoTB.Text),
                                 Email = EmailTb.Text,
@@ -98,11 +97,13 @@ namespace DIA_Project.Forms.CommonForms
                             this.Close();
                         }
                     }
-                    else {
+                    else
+                    {
                         new ErrorMessageForm("A jelszónak tartalmaznia kell legalább egy nagybetűt és egy számot!").ShowDialog();
                     }
                 }
-                else {
+                else
+                {
                     new ErrorMessageForm("A két jelszó nem egyezik!").ShowDialog();
                 }
             }
@@ -146,7 +147,8 @@ namespace DIA_Project.Forms.CommonForms
                 pictureBox4.Image = Properties.Resources.visible;
                 JelszoTB.PasswordChar = '\0';
             }
-            else {
+            else
+            {
                 pictureBox4.Image = Properties.Resources.visibility;
                 JelszoTB.PasswordChar = '●';
             }
@@ -158,7 +160,8 @@ namespace DIA_Project.Forms.CommonForms
             {
                 Regisztracio();
             }
-            else {
+            else
+            {
                 new ErrorMessageForm("Nem töltöttél ki minden mezőt!").ShowDialog();
             }
         }

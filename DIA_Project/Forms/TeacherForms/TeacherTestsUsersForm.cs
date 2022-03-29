@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using DIA_Project.Lib;
 using DIA_Project.Models;
-using DIA_Project.Lib;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace DIA_Project.Forms.TeacherForms
 {
@@ -35,7 +31,8 @@ namespace DIA_Project.Forms.TeacherForms
         private Test CurrentTest = new Test();
         private List<UserTest> UT = new List<UserTest>();
         private List<FormattedUserTest> FUT = new List<FormattedUserTest>();
-        public void LoadingDataSources() {
+        public void LoadingDataSources()
+        {
             using (SQL sql = SQL.MySql())
             {
                 UT = sql.userTests.Where(x => x.TestID == CurrentTest.ID).ToList();
@@ -54,7 +51,7 @@ namespace DIA_Project.Forms.TeacherForms
 
         private void DataGridHeaderChange(DataGridView dgv)
         {
-            
+
             if (dgv.Columns.Count > 0)
             {
                 dgv.Columns[0].Visible = false;

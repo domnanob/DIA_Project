@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using DIA_Project.Lib;
 using DIA_Project.Models;
-using DIA_Project.Lib;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace DIA_Project.Forms
 {
@@ -58,7 +54,7 @@ namespace DIA_Project.Forms
             return token;
         }
         private void GenerateBtn_Click(object sender, EventArgs e)
-        { 
+        {
             while (!Tokens.Contains(TokenL.Text))
             {
                 TokenL.Text = RandomDigits() + "-" + RandomDigits();
@@ -81,7 +77,8 @@ namespace DIA_Project.Forms
                     this.Close();
                 }
             }
-            else {
+            else
+            {
                 new ErrorMessageForm("Hibás kód, generálj újat!").Show();
             }
         }

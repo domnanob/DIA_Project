@@ -1,19 +1,14 @@
-﻿using System;
+﻿using DIA_Project.Models;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DIA_Project.Models;
 
 namespace DIA_Project.Forms.User_Controlls
 {
     public partial class MultipleChoiceCorrectingUC : UserControl
     {
-        public MultipleChoiceCorrectingUC(Models.Tasks t, List<Answers> ca,List<Answers> ua)
+        public MultipleChoiceCorrectingUC(Models.Tasks t, List<Answers> ca, List<Answers> ua)
         {
             InitializeComponent();
             this.SuspendLayout();
@@ -22,7 +17,7 @@ namespace DIA_Project.Forms.User_Controlls
             oneAnswerPoint = t.Points / CorrectAns.Count;
             UserAns = ua;
             TaskNameL.Text = t.Task;
-            PontTb.Text = t.Points+"/";
+            PontTb.Text = t.Points + "/";
             LoadAnswers();
             this.ResumeLayout(false);
         }
@@ -34,7 +29,7 @@ namespace DIA_Project.Forms.User_Controlls
         public Models.Tasks CurrentTask = new Models.Tasks();
         private List<Answers> CorrectAns = new List<Answers>();
         private List<Answers> UserAns = new List<Answers>();
-        private void LoadAnswers() 
+        private void LoadAnswers()
         {
             foreach (var item in CorrectAns)
             {
@@ -83,8 +78,9 @@ namespace DIA_Project.Forms.User_Controlls
             {
                 this.Height += 30;
                 ChoosenAnsPnl.Height += 30;
-                Panel UserAnswerP = new Panel() {
-                    Name = "panel"+panelDb,
+                Panel UserAnswerP = new Panel()
+                {
+                    Name = "panel" + panelDb,
                     Dock = DockStyle.Top,
                     Height = 30,
                 };
@@ -110,7 +106,7 @@ namespace DIA_Project.Forms.User_Controlls
                         break;
                     }
                     else
-                    { 
+                    {
                         UserAnswerP.BackColor = Color.FromArgb(148, 33, 55);
                         //PontTb.Text = PontTb.Text.Split("/")[0].ToString() + "/" + (double.Parse(PontTb.Text.Split("/")[1]) - oneAnswerPoint).ToString();
                     }
@@ -119,16 +115,19 @@ namespace DIA_Project.Forms.User_Controlls
             }
             PontTb.Text = PontTb.Text + points.ToString();
         }
-        public string GetPoints() {
+        public string GetPoints()
+        {
             try
             {
                 return PontTb.Text.Split('/')[1];
             }
-            catch {
+            catch
+            {
                 return "Hibás Pontozás!";
             }
         }
-        public bool isCorrected() {
+        public bool isCorrected()
+        {
             if (PontTb.Enabled)
             {
                 return false;
@@ -173,7 +172,8 @@ namespace DIA_Project.Forms.User_Controlls
                     string s = PontTb.Text.Split('/')[0];
                     PontTb.Text = s + "/" + "0";
                 }
-            } catch { }
+            }
+            catch { }
         }
     }
 }

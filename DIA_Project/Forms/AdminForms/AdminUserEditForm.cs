@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using DIA_Project.Lib;
 using DIA_Project.Models;
-using DIA_Project.Lib;
+using System;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace DIA_Project.Forms.AdminForms
 {
@@ -38,7 +32,7 @@ namespace DIA_Project.Forms.AdminForms
             EmailTB.Text = CurrentUser.Email;
             PasswordTB.Text = string.Empty;
             Password2TB.Text = string.Empty;
-            EnabledCb.Checked = (CurrentUser.Enable == 1)? true : false;
+            EnabledCb.Checked = (CurrentUser.Enable == 1) ? true : false;
             MoneyTb.Text = CurrentUser.Money + " Pont";
             ClassCB.Items.Clear();
             using (SQL sql = SQL.MySql())
@@ -97,7 +91,7 @@ namespace DIA_Project.Forms.AdminForms
                     u.Username = UserTB.Text;
                     u.Email = EmailTB.Text;
                     u.ClassID = sql.classes.Single(x => x.Name == ClassCB.Items[ClassCB.SelectedIndex].ToString()).ID;
-                    u.Enable = (EnabledCb.Checked)? 1 : 0;
+                    u.Enable = (EnabledCb.Checked) ? 1 : 0;
                     u.Money = int.Parse(MoneyTb.Text.Replace(" Pont", ""));
                     CurrentUser = u;
                     sql.SaveChanges();
@@ -105,7 +99,8 @@ namespace DIA_Project.Forms.AdminForms
                 new SuccessMessageForm("Sikeres mentés!").ShowDialog();
                 Program.AF.ImitateClick("UsersBtn");
             }
-            else {
+            else
+            {
                 if (PasswordTB.Text.Equals(Password2TB.Text))
                 {
                     if (JelszoEllenoriz(PasswordTB))
@@ -126,11 +121,13 @@ namespace DIA_Project.Forms.AdminForms
                         new SuccessMessageForm("Sikeres mentés!").ShowDialog();
                         Program.AF.ImitateClick("UsersBtn");
                     }
-                    else {
+                    else
+                    {
                         new ErrorMessageForm("A jelszónak tartalmaznia kell legalább egy nagybetűt és egy számot!").ShowDialog();
                     }
                 }
-                else {
+                else
+                {
                     new ErrorMessageForm("A két jelszó nem egyezik!").ShowDialog();
                 }
             }

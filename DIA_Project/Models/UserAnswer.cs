@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DIA_Project.Models
 {
@@ -16,7 +11,7 @@ namespace DIA_Project.Models
 
         [Required]
         public int UserTestID { get; set; }
-        
+
         [Required]
         public int AnswerID { get; set; }
 

@@ -2,7 +2,6 @@
 using DIA_Project.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace DIA_Project.Forms.AdminForms
@@ -66,7 +65,8 @@ namespace DIA_Project.Forms.AdminForms
                 new ErrorMessageForm("Tölts mi minden mezőt!").ShowDialog();
                 return;
             }
-            else {
+            else
+            {
                 if (PasswordTB.Text.Equals(Password2TB.Text))
                 {
                     if (JelszoEllenoriz(PasswordTB))
@@ -89,17 +89,20 @@ namespace DIA_Project.Forms.AdminForms
                                 Program.AF.OpenChildForm(new AdminTeachersForm());
                             }
                         }
-                        else {
+                        else
+                        {
                             new ErrorMessageForm("Ez a felhasználónév már foglalt!").ShowDialog();
                             return;
                         }
                     }
-                    else {
+                    else
+                    {
                         new ErrorMessageForm("A jelszónak tartalmaznia kell legalább egy nagybetűt és egy számot!").ShowDialog();
                         return;
                     }
                 }
-                else {
+                else
+                {
                     new ErrorMessageForm("A két jelszó nem egyezik!").ShowDialog();
                     return;
                 }

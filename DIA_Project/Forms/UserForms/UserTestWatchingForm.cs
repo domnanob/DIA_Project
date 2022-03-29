@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DIA_Project.Models;
+﻿using DIA_Project.Forms.User_Controlls;
 using DIA_Project.Lib;
-using DIA_Project.Forms.User_Controlls;
+using DIA_Project.Models;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace DIA_Project.Forms.UserForms
 {
@@ -41,7 +37,8 @@ namespace DIA_Project.Forms.UserForms
         private List<Answers> CurrentAns = new List<Answers>();
         private List<Answers> UserAns = new List<Answers>();
         private int ChoiseDb = 0;
-        private void LoadingDataSources() {
+        private void LoadingDataSources()
+        {
             using (SQL sql = SQL.MySql())
             {
                 CurrentTasks = sql.tasks.Where(x => x.TestID == CurrentTest.ID).ToList();
@@ -49,7 +46,7 @@ namespace DIA_Project.Forms.UserForms
                 {
                     foreach (var item2 in CurrentTasks)
                     {
-                        if (item.TaskID == item2.ID && item.Correct==1)
+                        if (item.TaskID == item2.ID && item.Correct == 1)
                         {
                             CurrentAns.Add(item);
                             break;
@@ -63,20 +60,21 @@ namespace DIA_Project.Forms.UserForms
                 }
             }
         }
-        private void NewMultipleChoiseTask(Models.Tasks t) 
+        private void NewMultipleChoiseTask(Models.Tasks t)
         {
             MultipleChoiceResultUC MCTRC = new MultipleChoiceResultUC(t, CurrentAns.Where(x => x.TaskID == t.ID).ToList(), UserAns.Where(y => y.TaskID == t.ID).ToList())
             {
                 Dock = DockStyle.Top,
                 Name = "MultipleChoise" + ChoiseDb,
                 Enabled = false,
-                Padding = new Padding(10,0,0,0),
+                Padding = new Padding(10, 0, 0, 0),
             };
             this.HomePnl.Height += MCTRC.Height;
             this.HomePnl.Controls.Add(MCTRC);
             ChoiseDb++;
         }
-        private void LoadingTasks() {
+        private void LoadingTasks()
+        {
             foreach (var item in CurrentTasks)
             {
                 if (item.TypeID == 1)

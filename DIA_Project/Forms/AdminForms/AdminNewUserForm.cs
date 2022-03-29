@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using DIA_Project.Lib;
 using DIA_Project.Models;
-using DIA_Project.Lib;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace DIA_Project.Forms.AdminForms
 {
@@ -112,26 +107,31 @@ namespace DIA_Project.Forms.AdminForms
                                     Program.AF.OpenChildForm(new AdminUsersForm());
                                 }
                             }
-                            else {
+                            else
+                            {
                                 new ErrorMessageForm("Ez a felhasználónév már foglalt!").ShowDialog();
                             }
                         }
-                        else {
+                        else
+                        {
                             new ErrorMessageForm("Kérlek tölts ki minden mezőt!").ShowDialog();
                         }
                     }
-                    else {
+                    else
+                    {
                         new ErrorMessageForm("Válassz osztályt!").ShowDialog();
                     }
                 }
-                else {
+                else
+                {
                     new ErrorMessageForm("A jelszónak tartalmaznia kell legalább 1 nagybetűt és egy számot!").ShowDialog();
                 }
             }
-            else {
+            else
+            {
                 new ErrorMessageForm("A két jelszó nem egyezik!").ShowDialog();
             }
-            
+
         }
 
         private void MegseBtn_Click(object sender, EventArgs e)
