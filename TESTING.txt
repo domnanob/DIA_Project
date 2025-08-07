@@ -83,4 +83,5 @@ A már létrehozott dolgozatokat pedig a domnanob fiokban nézhetjük/írhatjuk 
 
 --------------/ Tesztelés Vége! /--------------
 
+
 A programot és a hozzátartozó fájlokat Domnánovich Bálint készítette 2022. 04. 01!
